@@ -1,0 +1,86 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#ap-submit').click(function(event) { 
+      $.ajax({
+        type: "POST",
+        url: "/setup/ap",
+        data: $('form#ap-form').serialize(),
+        success: function(data) {
+          if (data == 'SUCCESS') {
+            window.location.href = '/setup/wan';
+          } else {
+            alert(data);
+          }
+        },
+      });
+      event.preventDefault();
+    });
+    
+    $('#finish-setup').click(function(event) {
+        $('#network-name').html($('#ap-form #login-name').val());
+    });
+});
+</script>  
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <img src="/img/logo/logo-nak-square.png">
+      <h3>Setup</h3>
+      <p>Before you can use the NetAidKit, you've got to make it your own. On this page, we will give your NetAidKit a new wireless network name and password and choose an administrator password you will use to make changes in the future.</p>
+      <p>Let's get started!</p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="tile">
+        <div class="login-form">
+          <form action="/setup/ap" method="POST" id="ap-form">
+              <div class="form-group">
+                <input name="ssid" type="text" class="form-control login-field" value="" placeholder="Enter a new network name" id="login-name" onfocus="$('#ssid').collapse('toggle')" onfocusout="$('#ssid').collapse('toggle')"/>
+                <label class="login-field-icon fui-loop" for="login-name"></label>
+              </div>
+              <div id="ssid" class="collapse in"><div class="tile"><p>Enter a new wireless network name for your NetAidKit. You will connect your devices to this wireless network once you completed setting up.</p></div></div>
+              <div class="form-group">
+                <input name="key" type="password" class="form-control login-field" value="" placeholder="Enter a new network password" id="login-pass" onfocus="$('#pass').collapse('toggle')" onfocusout="$('#pass').collapse('toggle')"/>
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+              </div>
+              <div id="pass" class="collapse in"><div class="tile"><p>To make sure only you and people you trust can connect to your NetAidKit, choose a password to protect your new wireless network.</p></div></div>
+              <div class="form-group">
+                <input name="adminpass" type="password" class="form-control login-field" value="" placeholder="Enter a new administrator password" id="login-pass" onfocus="$('#password').collapse('toggle')" onfocusout="$('#password').collapse('toggle')"/>
+                <label class="login-field-icon fui-user" for="login-pass"></label>
+              </div>
+              <div id="password" class="collapse in"><div class="tile"><p>You will need a password to make changes to the configuration of the NetAidKit after setting up, choose one here.</p></div></div>
+              <div class="form-group">
+                <input name="distresspass" type="password" class="form-control login-field" value="" placeholder="Enter a distress password" id="login-pass" onfocus="$('#distress').collapse('toggle')" onfocusout="$('#distress').collapse('toggle')"/>
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+              </div>
+              <div id="distress" class="collapse in"><div class="tile"><p>If you plan on using the NetAidKit in repressive countries you can choose a distress password. Entering the distress password instead of your regular password will delete all information from the NetAidKit and make it present itself as a regular router.</p><p>If you do not think you will need it, you can just leave it empty.</p></div></div>
+              <a id="finish-setup" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#apModal">Finish Setup</a>
+          </form>
+        </div>
+      </div>
+      <div class="modal fade" id="apModal" tabindex="-1" role="dialog" aria-labelledby="apLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Reset Access Point</h4>
+            </div>
+            <div class="modal-body">
+              <p>You are about to reconfigure the netaidkit Access Point.
+                 You will be disconnected after clicking the 'Yes' button.</p>
+              <p>You can then reconnect with your new settings.</p>
+              <table>
+                <tr><td>New network name:</td> <td id="network-name" style="padding-left:10px" > ---</td></tr>
+                <!--<tr><td>Network password:</td> <td>---</td></tr>
+                <tr><td>Admin password:</td> <td>---</td></tr>
+                <tr><td>Distress password:</td> <td>---</td></tr>-->
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+              <button id="ap-submit" href="/setup/ap" type="button" class="btn btn-primary">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>   

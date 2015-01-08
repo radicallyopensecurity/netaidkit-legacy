@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome!</title>
+<!-- Loading Bootstrap -->
+<link href="dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    padding-top: 60px;
+  }
+  @media {
+    body {
+      padding-top: 10;
+    }
+  }
+  
+</style>
+<!-- Loading Flat UI -->
+<link href="dist/css/flat-ui.css" rel="stylesheet">
+
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">      
+      <div class="row">
+            <div class="col-xs-12 col-md-6">
+                  <img src="img/logo/logo-nak-square.png">
+                  <h3>Welcome!</h3>
+                  <p>The NetAidKit is currently connected to the following wireless network:</p>
+                  <div class="tile"><h3>Sheraton Hotel Wifi</h3></div>
+                  <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#wifiModal" href="#">Change Wireless Network</a>
+            </div>
+            <div class="modal fade" id="wifiModal" tabindex="-1" role="dialog" aria-labelledby="myWifiLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Change Wireless Network:</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Choose a new wireless network to connect to with the NetAidKit and enter the password if any:</p>
+                      <h3>Select a wireless network:</h3>
+                      <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">RadissonBlue Wifi</label>
+                      <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio">UPC24097798</label>
+                      <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio">Hide ur kids, hide ur wifi</label>
+                      <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio">Tele2 - 8272</label>
+                      <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio">FON Wifi Network</label>
+                      <div class="login-form">
+                            <div class="form-group">
+                                  <input type="password" class="form-control login-field" value="" placeholder="Wireless Password" id="login-pass" />
+                                  <label class="login-field-icon fui-lock" for="login-pass"></label>
+                            </div>
+                            <a class="btn btn-primary btn-lg btn-block" href="#">Connect</a>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                  <div class="tile">
+                        <h3>Tor</h3>
+                        <p>The Tor network can be used for extra anonymity and to circumvent censorship. Connecting to Tor will send all your traffic over the anonymous Tor network.</p>
+                        <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#torModal" href="#">Connect to Tor</a>
+                  </div>
+                  <div class="modal fade" id="torModal" tabindex="-1" role="dialog" aria-labelledby="myTorLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Connect to Tor</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>Connecting to the Tor network will anonymize your network traffic and allow you to circumvent censorship. We highly recommend using the <a href="https://www.torproject.org/projects/torbrowser.html" target="_new">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</p>
+                          <p>In some repressive countries, using Tor can get you into trouble with the authorities. Please be aware of what the situation is for the country you are in before you connect to Tor.</p>
+                          <p>Are you sure you want to connect to Tor?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                          <button type="button" class="btn btn-primary">Yes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tile">
+                        <h3>VPN</h3>
+                        <p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>
+                        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios0" value="option0" data-toggle="radio" disabled><a href="#" data-toggle="modal" data-target="#addVPN">Add a VPN connection...</a></label>
+                        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">FPU Office <a href="#"><span class="fui-trash"></a></span></label>
+                        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" data-toggle="radio">ROS Office <a href="#"><span class="fui-trash"></span></a></label>
+                        <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#vpnModal" href="#">Connect to VPN</a>
+                  </div>
+                  <div class="modal fade" id="vpnModal" tabindex="-1" role="dialog" aria-labelledby="myVPNLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Connect to VPN</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>Connecting to a VPN will send all your internet traffic through an encrypted VPN tunnel.</p>
+                          <p>If you trust the other end of the tunnel, VPNs are a great way to secure your data and enhance your privacy.</p>
+                          <p>Please note that the VPN operator can still monitor your network traffic.</p>
+                          <p>Are you sure you want to connect to the VPN?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                          <button type="button" class="btn btn-primary">Yes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="addVPN" tabindex="-1" role="dialog" aria-labelledby="addVPN" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Connect to VPN</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                          <p>Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.</p>
+                          <input type="file" data-filename-placement="inside">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                          <button type="button" class="btn btn-primary">Yes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+      </div>   
+
+</div>
+<script src="dist/js/vendor/jquery.min.js"></script>
+<script src="dist/js/flat-ui.min.js"></script>
+<script src="docs/assets/js/application.js"></script>
+</body>
+</html>

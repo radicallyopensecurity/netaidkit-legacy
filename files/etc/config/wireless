@@ -1,0 +1,22 @@
+config wifi-device  radio0
+	option type     mac80211
+	option channel  11
+	option hwmode	11g
+	option path	'platform/ar933x_wmac'
+	option htmode	HT20
+	# REMOVE THIS LINE TO ENABLE WIFI:
+	# option disabled 1
+
+config wifi-iface
+	option device   radio0
+	option network  wwan
+	option mode     sta
+
+config wifi-iface
+	option device radio0
+	option mode ap
+	option ssid NETAIDKIT
+	option encryption psk2
+	option key s3cr3tp4ss
+	option network wlan
+
