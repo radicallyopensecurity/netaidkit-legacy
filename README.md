@@ -8,7 +8,7 @@ some shortcuts were made. Some code is temporary, and is annotated as such.
 
 
 Building the image
-====
+----
 
 Create a working directory somewhere and perform the following steps:
 
@@ -23,7 +23,7 @@ Create a working directory somewhere and perform the following steps:
 
 
 Flashing the device for the first time:
-====
+----
 
 <ol>
     <li>Plug the GL-Inet into an USB port.</li>
@@ -43,7 +43,7 @@ Flashing the device for the first time:
 
 
 Reflashing an already flashed device:
-====
+----
 
 The default root password for the image is '6BXm47M3um', 
 you can change this by editing the files/etc/shadow file.
