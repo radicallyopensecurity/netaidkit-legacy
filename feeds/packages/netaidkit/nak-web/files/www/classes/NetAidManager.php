@@ -10,14 +10,14 @@ class NetAidManager
         $ssid = escapeshellarg($ssid);
         $key  = escapeshellarg($key);
         
-        $output = shell_exec("/usr/bin/sbox apconfig $ssid $key");
+        $output = shell_exec("/usr/bin/netaidkit apconfig $ssid $key");
         
         return true;
     }
     
     static public function scan_wifi()
     {
-        $output = shell_exec("/usr/bin/sbox wifiscan");
+        $output = shell_exec("/usr/bin/netaidkit wifiscan");
         preg_match_all("/ESSID: \"(.*)\"/", $output, $ssids);
         
         return $ssids[1];
@@ -31,7 +31,7 @@ class NetAidManager
         $ssid = escapeshellarg($ssid);
         $key  = escapeshellarg($key);
         
-        $output = shell_exec("/usr/bin/sbox wificonn $ssid $key");
+        $output = shell_exec("/usr/bin/netaidkit wificonn $ssid $key");
         
         return true;
     }
@@ -43,14 +43,14 @@ class NetAidManager
         
         $adminpass = escapeshellarg($adminpass);
         
-        $output = shell_exec("/usr/bin/sbox adminpwd $adminpass");
+        $output = shell_exec("/usr/bin/netaidkit adminpwd $adminpass");
         
         return true;
     }
     
     static public function get_stage()
     {
-        return shell_exec("/usr/bin/sbox getstage");
+        return shell_exec("/usr/bin/netaidkit getstage");
     }
     
     static public function set_stage($stage)
@@ -60,7 +60,7 @@ class NetAidManager
             
         $stage = escapeshellarg($stage);
         
-        $output = shell_exec("/usr/bin/sbox setstage $stage");
+        $output = shell_exec("/usr/bin/netaidkit setstage $stage");
         
         return true;
     }
@@ -78,7 +78,7 @@ class NetAidManager
             return false;
         }
             
-        $output = shell_exec("/usr/bin/sbox stagetor $mode");
+        $output = shell_exec("/usr/bin/netaidkit stagetor $mode");
         
         return true;
     }
@@ -96,14 +96,14 @@ class NetAidManager
             return false;
         }
             
-        $output = shell_exec("/usr/bin/sbox stagevpn $mode");
+        $output = shell_exec("/usr/bin/netaidkit stagevpn $mode");
         
         return true;
     }
     
     static public function wan_ssid()
     {
-        $output = shell_exec("/usr/bin/sbox wlaninfo wlan0");
+        $output = shell_exec("/usr/bin/netaidkit wlaninfo wlan0");
 
         preg_match_all("/ESSID: \"(.*)\"/", $output, $ssids);
 

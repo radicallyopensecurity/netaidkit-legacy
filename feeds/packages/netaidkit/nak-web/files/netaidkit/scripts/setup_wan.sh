@@ -10,4 +10,4 @@ fi
 
 uci commit wireless;
 
-/sbox/scripts/go_online.sh;
+/netaidkit/scripts/go_online.sh;
