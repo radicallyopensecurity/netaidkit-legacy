@@ -9,7 +9,7 @@ $(document).ready(function() {
           if (data == 'SUCCESS') {
             window.location.href = '/setup/wan';
           } else {
-            alert(data);
+            window.location.href = '/setup/ap';
           }
         },
       });
@@ -28,6 +28,7 @@ $(document).ready(function() {
       <h3>Setup</h3>
       <p>Before you can use the NetAidKit, you've got to make it your own. On this page, we will give your NetAidKit a new wireless network name and password and choose an administrator password you will use to make changes in the future.</p>
       <p>Let's get started!</p>
+      <?php $this->_displayMessages(); ?>
     </div>
     <div class="col-xs-12 col-md-6">
       <div class="tile">

@@ -29,4 +29,10 @@ class Page
         header('Location: ' . $location);
         die();
     }
+    
+    protected function _addMessage($type, $text)
+    {
+        $flashMessager = new FlashMessager();
+        $flashMessager->addMessage($type, $text);
+    }
 }
