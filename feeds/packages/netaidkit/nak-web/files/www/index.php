@@ -15,6 +15,9 @@ define('CONTROLLER_DIR' , ROOT_DIR . '/controllers');
 include 'classes/Autoloader.php';
 spl_autoload_register('Autoloader::load');
 
+if (!session_id())
+    session_start();
+
 $cur_stage = NetAidManager::get_stage();
 
 $request    = new Request($_GET['query']);
@@ -23,7 +26,7 @@ $dispatcher = new Dispatcher();
 $controller = $request->getController();
 $action     = $request->getAction();
 
-if ($cur_stage != STAGE_ONLINE && $_SERVER['SERVER_NAME'] != '192.168.101.1') {
+if ($cur_stage != STAGE_ONLINE && !strstr($_SERVER['SERVER_NAME'], '192.168')) {
     header('Location: http://192.168.101.1/' . $controller . '/' . $action);
     die();
 }
@@ -32,7 +35,7 @@ try {
     $page_html = $dispatcher->run($request);
 } catch (NotFoundException $e) {
     if ($cur_stage != STAGE_ONLINE) {
-        header('Location: http://192.168.101.1/index/index');
+        header('Location: http://192.168.100.1/index/index');
         die();
     }
     $e->do_404();
