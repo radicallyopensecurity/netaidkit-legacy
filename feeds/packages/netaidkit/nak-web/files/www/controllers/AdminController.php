@@ -2,7 +2,9 @@
 
 class AdminController extends Page
 {
-    protected $_allowed_actions = array('index', 'toggle_tor', 'get_wifi', 'wan', 'toggle_vpn');
+    protected $_torLogfile = '/var/log/tor/notices.log';
+
+    protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status', 'get_wifi', 'wan', 'toggle_vpn');
     
     public function index()
     {
@@ -33,6 +35,15 @@ class AdminController extends Page
             } else {
                 $this->_redirect('admin/index');
             }
+        }
+    }
+    
+    public function tor_status()
+    {
+        if (file_exists($this->_torLogfile)) {
+            die('<pre>' . file_get_contents($this->_torLogfile) . '</pre>');
+        } else {
+            die('not running');
         }
     }
     
