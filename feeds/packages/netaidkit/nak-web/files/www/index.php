@@ -35,7 +35,7 @@ try {
     $page_html = $dispatcher->run($request);
 } catch (NotFoundException $e) {
     if ($cur_stage != STAGE_ONLINE) {
-        header('Location: http://192.168.100.1/index/index');
+        header('Location: ' . $_SERVER['SERVER_NAME'] . '/index/index');
         die();
     }
     $e->do_404();
