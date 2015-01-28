@@ -24,25 +24,46 @@ class SetupController extends Page
             $adminpass    = $request->postvar('adminpass');
             $distresspass = $request->postvar('distresspass');
             
-            $all_fields = ($ssid && key && $adminpass && $distresspass);
-            if (!$all_fields)
-                $this->_addMessage('error', 'All fields are required.');
+            $valid = $this->ap_validate($ssid, $key, $adminpass, $distresspass);
             
-            $ap_success = NetAidManager::setup_ap($ssid, $key);
-            $pass_success = NetAidManager::set_adminpass($adminpass);
-            $success = ($all_fields && $ap_success && $pass_success);
-
-            if ($success)
-                NetAidManager::set_stage(STAGE_OFFLINE);
+            if ($valid) {
+                $ap_success = NetAidManager::setup_ap($ssid, $key);
+                $pass_success = NetAidManager::set_adminpass($adminpass);
+                $success = ($ap_success && $pass_success);
+                
+                if ($success)
+                    NetAidManager::set_stage(STAGE_OFFLINE);
+            } else {
+                // FormData
+            }
 
             if ($request->isAjax()) {
-                echo $ap_success ? "SUCCESS" : "FAILURE";
+                echo ($valid && $success) ? "SUCCESS" : "FAILURE";
                 exit;
             }
         }
         
         $view = new View('setup_ap');
         return $view->display();
+    }
+    
+    protected function ap_validate($ssid, $key, $adminpass, $distresspass)
+    {
+        $valid = true;
+    
+        if (!($ssid && $key && $adminpass && $distresspass)) {
+            $valid = false;
+            $this->_addMessage('error', 'All fields are required.');
+        }
+                
+        $keylen = strlen($key);
+        if ($keylen && (($keylen < 8) || ($keylen > 63))) {
+            $valid = false;        
+            $this->_addMessage('error', 'Invalid key length, must be between
+                                             8 and 63 characters.');
+        }
+        
+        return $valid;
     }
     
     public function wan()
