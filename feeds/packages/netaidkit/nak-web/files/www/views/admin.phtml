@@ -55,6 +55,18 @@ $(document).ready(function() {
       });
       event.preventDefault();
     });
+    
+    <?php if ($this->_params['cur_stage'] == STAGE_TOR): ?>
+    setInterval(function() {
+      $.ajax({
+        type: "GET",
+        url: "/admin/tor_status",
+        success: function(data) {
+            $('#tor-status').html(data);
+        },
+      });
+    }, 2000);
+    <?php endif; ?>
 });
 </script>  
 
@@ -101,6 +113,7 @@ $(document).ready(function() {
                   <?php if ($this->_params['cur_stage'] == STAGE_TOR): ?>
                   <div class="connected">
                         <h3>You are connected to Tor</h3>
+                        <p>Status: <span id="tor-status"></span></p>
                         <p>The Tor network can be used for extra anonymity and to circumvent censorship. Connecting to Tor will send all your traffic over the anonymous Tor network.</p>
                         <a class="btn btn-primary btn-lg btn-block btn-danger" data-toggle="modal" data-target="#tordcModal">Disconnect from Tor</a>
                   </div>

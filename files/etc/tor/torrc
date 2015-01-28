@@ -34,7 +34,7 @@
 ## may provide sensitive information to an attacker who obtains the logs. 
 ##                                                                        
 ## Send all messages of level 'notice' or higher to /var/log/tor/notices.log
-#Log notice file /var/log/tor/notices.log                                  
+Log notice file /var/log/tor/notices.log                                  
 ## Send every possible message to /var/log/tor/debug.log                            
 #Log debug file /var/log/tor/debug.log                                              
 ## Use the system log instead of Tor's logfiles                                     

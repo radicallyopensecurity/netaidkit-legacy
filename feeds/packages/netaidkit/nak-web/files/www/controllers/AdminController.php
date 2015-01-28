@@ -41,7 +41,21 @@ class AdminController extends Page
     public function tor_status()
     {
         if (file_exists($this->_torLogfile)) {
-            die('<pre>' . file_get_contents($this->_torLogfile) . '</pre>');
+            $log = file_get_contents($this->_torLogfile);
+            
+            preg_match_all('/Bootstrapped (\d{1,3})\%/', $log, $bootstrap);
+            
+            $status = 'Starting';
+            
+            if (!empty($bootstrap[1])) {
+                $progress = end(array_values($bootstrap[1]));
+                if ($progress == '100')
+                    $status = 'Running.';
+                else 
+                    $status = "Bootstrapping: $progress%";
+            }
+            
+            die($status);
         } else {
             die('not running');
         }
