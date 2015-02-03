@@ -55,7 +55,7 @@ class AdminController extends Page
                     $status = "Bootstrapping: $progress%";
             }
             
-            die($status);
+            die($progress);
         } else {
             die('not running');
         }
