@@ -8,20 +8,20 @@ int main(int argc, char **argv)
     char **args;
     int cmd_status;
  
-	/* We need a minimal an argument */   
+    /* We need a minimal an argument */   
     if (argc < 2) {
         fprintf(stderr, "Usage: %s COMMAND [ARGS]...\n", argv[0]);
         exit(-1);
     }
  
-	/* Get the first command and check if this command exists */   
+    /* Get the first command and check if this command exists */   
     cmd = get_command(argv[1]);
     if (cmd == NULL) {
         fprintf(stderr, "Unrecognized command.\n");
         exit(-1);
     }
     
-	/* The get_command() returns an object where arg_count is set.
+    /* The get_command() returns an object where arg_count is set.
      * if we have not an exact match between expected arguments 
      * and actual aguments, we exit this application */
     if ((argc - 2) != cmd->arg_count) {
