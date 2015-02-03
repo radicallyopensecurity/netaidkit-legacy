@@ -52,6 +52,21 @@ class NetAidManager
     {
         return shell_exec("/usr/bin/netaidkit getstage");
     }
+
+    static public function get_inetstat()
+    {
+        $out = array();
+        $status = -1;
+
+        exec("/usr/bin/netaidkit inetstat", $out, $status);
+        Log::debug("inetstat result: $status"); // status = 0 when there is inet connection, 4 if there isn't
+
+        if($status == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     static public function set_stage($stage)
     {
