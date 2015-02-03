@@ -201,7 +201,9 @@ $(document).ready(function() {
                   <div class="tile">
                         <h3>VPN</h3>
                         <p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>
-                        <label class="radio"><input type="radio" checked="checked" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio">AirVPN_United-Kingdom_UDP-443.ovpn</label>
+                        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios0" value="option0" data-toggle="radio" disabled><a href="#" data-toggle="modal" data-target="#addVPN">Add a VPN connection...</a></label>
+                        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">FPU Office <a href="#"><span class="fui-trash"></a></span></label>
+                        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" data-toggle="radio">ROS Office <a href="#"><span class="fui-trash"></span></a></label>
                         <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#vpnModal" href="online.html#">Connect to VPN</a>
                   </div>
                   <?php endif; ?>
@@ -225,5 +227,24 @@ $(document).ready(function() {
                       </div>
                     </div>
                   </div>
+                  <div class="modal fade" id="addVPN" tabindex="-1" role="dialog" aria-labelledby="addVPN" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Connect to VPN</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                          <p>Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.</p>
+                          <input type="file" data-filename-placement="inside">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                          <button type="button" class="btn btn-primary">Yes</button>
+                        </div>
+                      </div>
+                    </div>
+
             </div>
       </div>   
