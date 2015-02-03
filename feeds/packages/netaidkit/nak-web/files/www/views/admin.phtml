@@ -1,4 +1,6 @@
 <script type="text/javascript">
+
+
 $(document).ready(function() {
 
     $.ajax({
@@ -39,7 +41,22 @@ $(document).ready(function() {
       });
       event.preventDefault();
     });
+ 
+    $('.upload-vpn').click(function(event) {
+
+        
+        var file = document.getElementById('vpnfile').files[0];
+        var size = file.size;
+
+        if (size > 10000) {
+            alert('Sorry, your file is to big. Are you sure it is a valid .ovpn file?');
+            return;
+        }
+
+        document.getElementById('add-vpn').submit();
     
+    });
+       
     $('#wan-submit').click(function(event) {
       $.ajax({
         type: "POST",
@@ -171,6 +188,9 @@ $(document).ready(function() {
                         <h3>AirVPN_United-Kingdom_UDP-443</h3>
                         <a class="btn btn-primary btn-lg btn-block btn-danger" data-toggle="modal" data-target="#vpnModal" href="#">Disconnect from VPN</a>
                   </div>
+
+
+
                   <div class="modal fade" id="vpnModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -193,7 +213,22 @@ $(document).ready(function() {
                   <div class="tile">
                         <h3>VPN</h3>
                         <p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>
-                        <label class="radio"><input type="radio" checked="checked" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio">AirVPN_United-Kingdom_UDP-443.ovpn</label>
+
+
+
+
+
+                        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios0" value="option0" data-toggle="radio" disabled><a href="#" data-toggle="modal" data-target="#addVPN">Add a VPN connection...</a></label>
+
+                        <?php
+                            $checked = 'checked="checked"';
+                            foreach($this->_params['vpn_options'] as $config) { 
+                            $file = $config['file'];  ?>
+                        <label class="radio"><input type="radio" <?= $checked?> name="optionsRadios" id="optionsRadios2" value="<?php echo $file ?>" data-toggle="radio"><?php echo $config['title']; ?> <a href="#"><span class="fui-trash"></span></a> </label>
+
+            
+                        <?php $checked = ''; /* Reset checked to empty for next items */ } ?>
+
                         <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#vpnModal" href="online.html#">Connect to VPN</a>
                   </div>
                   <?php endif; ?>
@@ -217,5 +252,24 @@ $(document).ready(function() {
                       </div>
                     </div>
                   </div>
+                  <div class="modal fade" id="addVPN" tabindex="-1" role="dialog" aria-labelledby="addVPN" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Connect to VPN</h4>
+                        </div>
+                          <form id="add-vpn" action="/admin/upload_vpn" method="POST" enctype="multipart/form-data" >                
+                        <div class="modal-body">
+                          <p>Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.</p>
+                          <input type="file" name='vpnfile' id='vpnfile' data-filename-placement="inside">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="upload-vpn btn btn-primary">Upload</button>
+                        </div>
+                          </form>
+                      </div>
+                    </div>
+
             </div>
       </div>   
