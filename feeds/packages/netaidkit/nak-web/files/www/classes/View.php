@@ -19,7 +19,7 @@ class View
     public function __construct($template, $params = null)
     {
         /* We only expect a-z filename/template names */
-        if (!preg_match("/^[a-zA-Z]*$/")) {
+        if (!preg_match("/^[a-zA-Z]*$/",$template)) {
             /* We throw a notfoundexception, so a catched break-in attempt 
              * does not differ from a genuine not found exception */
             throw new NotFoundException("View file does not exist.");
