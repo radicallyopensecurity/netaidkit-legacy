@@ -11,6 +11,7 @@ Building the image
 ----
 
 Create a working directory somewhere and perform the following steps:
+(If you have OpenWRT already built, skip step 1
 
 <ol>
     <li>git clone git://git.openwrt.org/openwrt.git && cd openwrt && make defconfig</li>
