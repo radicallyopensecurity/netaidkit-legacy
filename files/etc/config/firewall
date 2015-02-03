@@ -42,6 +42,11 @@ config forwarding
         option src              'wlan'
         option dest             'wan'
         option enabled          '0'
+        
+config forwarding
+        option src              'lan'
+        option dest             'wan'
+        option enabled          '0'
 
 # TOR DNS
 config redirect

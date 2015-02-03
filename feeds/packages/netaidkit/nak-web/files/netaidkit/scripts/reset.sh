@@ -12,6 +12,7 @@ uci set firewall.@redirect[0].enabled=1
 uci set firewall.@redirect[1].enabled=0
 uci set firewall.@redirect[2].enabled=0
 uci set firewall.@forwarding[0].enabled=0
+uci set firewall.@forwarding[1].enabled=0
 uci commit firewall
 /etc/init.d/firewall restart
 

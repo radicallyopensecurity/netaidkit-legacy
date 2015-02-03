@@ -16,12 +16,11 @@ config dnsmasq
 	option resolvfile '/tmp/resolv.conf.auto'
 
 config dhcp 'lan'
-	option interface 'lan'
-	option start '100'
-	option limit '150'
-	option leasetime '12h'
-	option dhcpv6 'server'
-	option ra 'server'
+    option interface 'lan'
+    option start 100
+    option limit 150
+    option leastime 12h
+    option ignore 0
 
 config dhcp 'wlan'
 	option interface 'wlan'
