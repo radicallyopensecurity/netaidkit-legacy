@@ -14,7 +14,10 @@ class SetupController extends Page
         $cur_stage = NetAidManager::get_stage();
         if ($cur_stage == STAGE_OFFLINE)
             $this->_redirect('/setup/wan');
-        if ($cur_stage == STAGE_ONLINE)
+
+        /* All stages higher then STAGE_ONLINE are versions "ONLINE" versions, 
+         * so redirect to admin/index */
+        if ($cur_stage >= STAGE_ONLINE)
             $this->_redirect('/admin/index');
             
         $request = $this->getRequest();

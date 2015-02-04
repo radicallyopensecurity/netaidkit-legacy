@@ -3,7 +3,14 @@
 /* UNSAFE */
 /* UNSAFE */
 /* UNSAFE */
+/* Please explain what is unsafe. Hardend a bit */
 
+
+/* 
+ * This class View($template, $params) load a template.phtml file
+ * by including this file. It passes the params to _params, so 
+ * they can be used by the view 
+ */
 class View
 {
     protected $_template;
@@ -11,6 +18,13 @@ class View
 
     public function __construct($template, $params = null)
     {
+        /* We only expect a-z filename/template names */
+        if (!preg_match("/^[a-zA-Z]*$/",$template)) {
+            /* We throw a notfoundexception, so a catched break-in attempt 
+             * does not differ from a genuine not found exception */
+            throw new NotFoundException("View file does not exist.");
+        }
+
         $filename = VIEW_DIR . "/$template.phtml";
         if (!file_exists($filename))
             throw new NotFoundException("View file does not exist.");

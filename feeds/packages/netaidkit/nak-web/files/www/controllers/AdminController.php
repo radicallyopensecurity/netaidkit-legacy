@@ -4,7 +4,7 @@ class AdminController extends Page
 {
     protected $_torLogfile = '/var/log/tor/notices.log';
 
-    protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status', 'get_wifi', 'wan', 'toggle_vpn');
+    protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status', 'get_wifi', 'wan', 'toggle_vpn', 'upload_vpn');
     
     public function index()
     {
@@ -17,12 +17,24 @@ class AdminController extends Page
         $wan_ssid = NetAidManager::wan_ssid();
         $cur_stage = NetAidManager::get_stage();
         
-        
-        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid);
+        $vpn_obj = new Ovpn();
+        $vpn_options = $vpn_obj->getOptions();
+
+        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 'vpn_options' => $vpn_options);
         $view = new View('admin', $params);
         return $view->display();
     }
     
+
+    public function upload_vpn() 
+    {
+        
+        $vpn_obj = new Ovpn();
+        $vpn_obj->handleUpload();
+        /* TODO: Should handle return state of handeUpload and add some flash message */
+        $this->_redirect('/setup/index');
+    }
+
     public function toggle_tor()
     {
         $request = $this->getRequest();

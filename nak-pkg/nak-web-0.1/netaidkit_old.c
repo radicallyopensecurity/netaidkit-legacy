@@ -52,6 +52,15 @@ void get_stage()
     execve(dirty[0], dirty, NULL);
 }
 
+void get_inetstat()
+{
+    uid_t uid = geteuid();
+    setreuid(uid, uid); 
+
+    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/get_inetstat.sh", NULL};
+    execve(dirty[0], dirty, NULL);
+}
+
 void toggle_tor(char *mode)
 {
     uid_t uid = geteuid();
@@ -99,6 +108,8 @@ int main(int argc, char *argv[])
         set_stage(argv[2]);
     } else if (!strncmp("getstage", action, 8)) {
         get_stage();
+    } else if (!strncmp("inetstat", action, 8)) {
+        get_inetstat();
     } else if (!strncmp("stagetor", action, 8)) {
         toggle_tor(argv[2]);
     } else if (!strncmp("wlaninfo", action, 8)) {
