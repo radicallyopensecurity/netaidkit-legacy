@@ -1,15 +1,9 @@
 <?php
 
-/* UNSAFE */
-/* UNSAFE */
-/* UNSAFE */
-/* Please explain what is unsafe. Hardend a bit */
-
-
 /* 
  * This class View($template, $params) load a template.phtml file
  * by including this file. It passes the params to _params, so 
- * they can be used by the view 
+ * they can be used by the view.
  */
 class View
 {
@@ -18,10 +12,10 @@ class View
 
     public function __construct($template, $params = null)
     {
-        /* We only expect a-z filename/template names */
-        if (!preg_match("/^[a-zA-Z]*$/",$template)) {
-            /* We throw a notfoundexception, so a catched break-in attempt 
-             * does not differ from a genuine not found exception */
+        /* Validate template name. */
+        if (!preg_match("/^[a-zA-Z\_]*$/",$template)) {
+            /* We throw a notfoundexception, so a caught break-in attempt 
+             * does not differ from a genuine not found exception. */
             throw new NotFoundException("View file does not exist.");
         }
 
@@ -45,7 +39,9 @@ class View
         
         if (!empty($messages)) {
             foreach ($messages as $message) {
-                echo "<p class=\"{$message['type']}\">{$message['text']}</p>";
+                $type = htmlspecialchars($message['type']);
+                $text = htmlspecialchars($message['text']);
+                echo "<p class=\"$type\">$text</p>";
             }
         }    
     }

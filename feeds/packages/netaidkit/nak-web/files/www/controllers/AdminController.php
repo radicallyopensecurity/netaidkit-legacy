@@ -28,11 +28,13 @@ class AdminController extends Page
 
     public function upload_vpn() 
     {
-        
         $vpn_obj = new Ovpn();
-        $vpn_obj->handleUpload();
-        /* TODO: Should handle return state of handeUpload and add some flash message */
-        $this->_redirect('/setup/index');
+        if ($vpn_obj->handleUpload())
+            $this->_addMessage('info', 'VPN config file uploaded.');
+        else
+            $this->_addMessage('error', 'File upload failed.');
+
+        $this->_redirect('/admin/index');
     }
 
     public function toggle_tor()

@@ -26,7 +26,7 @@ $dispatcher = new Dispatcher();
 $controller = $request->getController();
 $action     = $request->getAction();
 
-if ($cur_stage != STAGE_ONLINE && !strstr($_SERVER['SERVER_NAME'], '192.168')) {
+if ($cur_stage != STAGE_ONLINE && $_SERVER['SERVER_NAME'] != '192.168.101.1') {
     header('Location: http://192.168.101.1/' . $controller . '/' . $action);
     die();
 }
@@ -35,7 +35,7 @@ try {
     $page_html = $dispatcher->run($request);
 } catch (NotFoundException $e) {
     if ($cur_stage != STAGE_ONLINE) {
-        header('Location: ' . $_SERVER['SERVER_NAME'] . '/index/index');
+        header('Location: http://192.168.101.1/index/index');
         die();
     }
     $e->do_404();

@@ -6,13 +6,6 @@ config defaults
         option disable_ipv6     1
 
 config zone
-        option name             lan
-        list   network          'lan'
-        option input            ACCEPT
-        option output           ACCEPT
-        option forward          REJECT
-
-config zone
         option name 'wlan'
         option network 'wlan'
         option input ACCEPT
@@ -40,11 +33,6 @@ config redirect
 # ROUTER MODE
 config forwarding
         option src              'wlan'
-        option dest             'wan'
-        option enabled          '0'
-        
-config forwarding
-        option src              'lan'
         option dest             'wan'
         option enabled          '0'
 
