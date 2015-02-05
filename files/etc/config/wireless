@@ -11,6 +11,7 @@ config wifi-iface
 	option device   radio0
 	option network  wwan
 	option mode     sta
+	option disabled 1
 
 config wifi-iface
 	option device radio0

@@ -21,6 +21,7 @@ uci set wireless.@wifi-iface[1].key='s3cr3tp4ss';
 
 
 # reset uplink wifi
+uci set wireless.@wifi-iface[0].disabled=1
 uci set wireless.@wifi-iface[0].ssid='';
 uci set wireless.@wifi-iface[0].encryption='';
 uci set wireless.@wifi-iface[0].key='';
