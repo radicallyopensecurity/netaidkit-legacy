@@ -95,6 +95,21 @@ config rule
         option dest_port '9050'                  
         option target 'ACCEPT'                   
         option family 'ipv4'                     
+                                               
+                                               
+#VPN
+config zone 
+        option name 'vpn'
+        list network 'vpn'
+        option input 'REJECT'
+        option output 'ACCEPT'
+        option forward 'REJECT'
+        option masq '1'
+	
+config forwarding
+        option src 'wlan'
+        option dest 'vpn'             
+        option enabled '0'                           
                                                  
 # include a file with users custom iptables rules
 config include                        

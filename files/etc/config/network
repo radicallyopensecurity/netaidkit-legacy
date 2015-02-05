@@ -18,3 +18,6 @@ config interface 'wan'
 config interface 'wwan'
         option proto 'dhcp'
 
+config interface 'vpn'
+        option ifname 'tun0'
+        option proto 'none'
