@@ -28,9 +28,16 @@ $(document).ready(function() {
     });
     
     $('.toggle-vpn').click(function(event) {
+      var file = $("#vpnform input[type='radio']:checked").val();                                                     
+                                                                                                                       
+      var postdata = [];                                                                                               
+      if (typeof(file) != 'undefined')                                                                                 
+        postdata = {'file': file};   
+    
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: "/admin/toggle_vpn",
+        data: postdata,
         success: function(data) {
           if (data == 'SUCCESS') {
             window.location.href = '/admin/index';
@@ -55,12 +62,25 @@ $(document).ready(function() {
     
     $('.delete-vpn').click(function(event) {        
         var file = document.getElementById('myVPN').innerHTML;
-        alert(file);
-        alert(document.getElementById('myVPNFile').value);
-        /* document.getElementById('delete-vpn').submit(); */
+        $.ajax({
+            type: "POST",
+            url: "/admin/delete_vpn",
+            data: {'file': file},
+            success: function(data) {
+                window.location.href = '/admin/index';
+            },
+        });    
     
     });
     
+    $('#vpnConnectBtn').click(function(event) {
+        var file = $("#vpnform input[type='radio']:checked").val();                                                     
+                                                                                                                                                                                                      
+        if (typeof(file) == 'undefined') {
+            event.preventDefault();
+            return false;            
+        }
+    });
     
        
     $('#wan-submit').click(function(event) {
@@ -238,7 +258,7 @@ $(document).ready(function() {
 
 
 
-
+                        <form id="vpnform">
                         <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios0" value="option0" data-toggle="radio" disabled><a href="#" data-toggle="modal" data-target="#addVPN">Add a VPN connection...</a></label>
 
                         <?php
@@ -250,7 +270,8 @@ $(document).ready(function() {
             
                         <?php $checked = ''; /* Reset checked to empty for next items */ } ?>
 
-                        <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#vpnModal" href="online.html#">Connect to VPN</a>
+                        <a id="vpnConnectBtn" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#vpnModal" href="online.html#">Connect to VPN</a>
+                        </form>
                   </div>
                   <?php endif; ?>
                   <div class="modal fade" id="vpnModal" tabindex="-1" role="dialog" aria-labelledby="myVPNLabel" aria-hidden="true">

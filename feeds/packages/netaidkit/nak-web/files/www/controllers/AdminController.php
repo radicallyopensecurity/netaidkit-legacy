@@ -4,7 +4,9 @@ class AdminController extends Page
 {
     protected $_torLogfile = '/var/log/tor/notices.log';
 
-    protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status', 'get_wifi', 'wan', 'toggle_vpn', 'upload_vpn');
+    protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status', 
+                                        'get_wifi', 'wan', 'toggle_vpn', 
+                                        'upload_vpn', 'delete_vpn');
     
     public function index()
     {
@@ -33,6 +35,20 @@ class AdminController extends Page
             $this->_addMessage('info', 'VPN config file uploaded.');
         else
             $this->_addMessage('error', 'File upload failed.');
+
+        $this->_redirect('/admin/index');
+    }
+    
+    public function delete_vpn()
+    {
+        $request = $this->getRequest();
+        $file = $request->postvar('file');
+    
+        $vpn_obj = new Ovpn();
+        if ($vpn_obj->removeFile($file))
+            $this->_addMessage('info', 'VPN config file removed.');
+        else
+            $this->_addMessage('error', 'Could not remove file.');
 
         $this->_redirect('/admin/index');
     }
@@ -78,6 +94,15 @@ class AdminController extends Page
     public function toggle_vpn()
     {
         $request = $this->getRequest();
+        $ovpn_obj = new Ovpn();
+        $ovpn_file = $ovpn_obj->ovpn_root . '/upload/' . $request->postvar('file');
+        
+        if (file_exists($ovpn_file)) {
+            $ovpn_file = escapeshellarg($ovpn_file);
+            $current = escapeshellarg($ovpn_obj->ovpn_root . '/current.ovpn');
+            shell_exec("ln -s $ovpn_file $current");
+        }
+        
         $vpn_success = NetAidManager::toggle_vpn();
         
         if ($vpn_success) {

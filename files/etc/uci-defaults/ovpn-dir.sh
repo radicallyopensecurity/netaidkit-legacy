@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # Create folder for VPN files
-mkdir /netaidkit/ovpn
-chgrp www-data /netaidkit/ovpn
-chmod g+w /netaidkit/ovpn
+mkdir -p /netaidkit/ovpn/upload
+chgrp -R www-data /netaidkit/ovpn
+chmod -R g+w /netaidkit/ovpn

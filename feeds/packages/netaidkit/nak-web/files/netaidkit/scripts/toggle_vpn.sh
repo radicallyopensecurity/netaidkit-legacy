@@ -7,7 +7,7 @@ if [ $1 = "on" ];then
     uci commit firewall
     /etc/init.d/firewall restart;
 
-    openvpn --daemon --config /netaidkit/ovpn/AirVPN_United-Kingdom_UDP-443.ovpn
+    openvpn --daemon --config /netaidkit/ovpn/current.ovpn
     
     /netaidkit/scripts/set_stage.sh 4
 elif [ $1 = "off" ]

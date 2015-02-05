@@ -8,7 +8,7 @@ class Ovpn {
     /* Returns a list of found files */
     public function getOptions() {
 
-        $ovpn = $this->ovpn_root;
+        $ovpn = $this->ovpn_root . '/upload/';
         $files = array();
 
         /* Open ovpn dir, and on success, concat all found .ovpn files to 
@@ -28,6 +28,16 @@ class Ovpn {
 
     }
 
+    public function removeFile($file) {
+        $path = "{$this->ovpn_root}/upload/$file";
+        
+        if (file_exists($path)) {
+            unlink($path);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function handleUpload() {
         if (isset($_FILES['vpnfile'])) {
@@ -35,8 +45,9 @@ class Ovpn {
             $tmp_file = $_FILES['vpnfile']['tmp_name'];
 
             if (preg_match("/^[a-zA-Z0-9\ -_\.]+.ovpn/", $name)) {        
-                $destination = $this->ovpn_root . "/" . $name;
+                $destination = $this->ovpn_root . "/upload/" . $name;
                 move_uploaded_file($tmp_file, $destination);
+                
                 return true;
             }
             else {
