@@ -29,6 +29,9 @@ class Ovpn {
     }
 
     public function removeFile($file) {
+        if (!preg_match("/^[0-9a-zA-Z\_\-\.]*$/", $file))
+            return false;
+    
         $path = "{$this->ovpn_root}/upload/$file";
         
         if (file_exists($path)) {

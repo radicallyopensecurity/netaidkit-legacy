@@ -31,8 +31,8 @@ class SetupController extends Page
             
             if ($valid) {
                 $ap_success = NetAidManager::setup_ap($ssid, $key);
-                $pass_success = NetAidManager::set_adminpass($adminpass);
-                $success = ($ap_success && $pass_success);
+                //$pass_success = NetAidManager::set_adminpass($adminpass);
+                $success = ($ap_success ); //&& $pass_success);
                 
                 if ($success)
                     NetAidManager::set_stage(STAGE_OFFLINE);
@@ -54,7 +54,7 @@ class SetupController extends Page
     {
         $valid = true;
     
-        if (!($ssid && $key && $adminpass && $distresspass)) {
+        if (!($ssid && $key)) {
             $valid = false;
             $this->_addMessage('error', 'All fields are required.');
         }
