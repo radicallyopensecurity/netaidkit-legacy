@@ -28,8 +28,6 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/www
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/netaidkit $(1)/usr/bin/netaidkit
 	chmod +s $(1)/usr/bin/netaidkit
-	$(CP) ./files/www/* $(1)/www
-	$(CP) -R ./files/netaidkit $(1)/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

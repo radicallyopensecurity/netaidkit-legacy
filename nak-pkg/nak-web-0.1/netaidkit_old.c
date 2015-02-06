@@ -21,7 +21,7 @@ void connect_wifi(char *ssid, char *key)
     uid_t uid = geteuid();
     setreuid(uid, uid); 
     
-    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/setup_wan.sh", ssid, key, NULL};
+    char *dirty[] = {"/bin/sh", "/nak/scripts/setup_wan.sh", ssid, key, NULL};
     execve(dirty[0], dirty, NULL);
 }
 
@@ -30,7 +30,7 @@ void ap_config(char *ssid, char *key)
     uid_t uid = geteuid();
     setreuid(uid, uid); 
     
-    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/setup_ap.sh", ssid, key, NULL};
+    char *dirty[] = {"/bin/sh", "/nak/scripts/setup_ap.sh", ssid, key, NULL};
     execve(dirty[0], dirty, NULL);
 }
 
@@ -39,7 +39,7 @@ void set_stage(char *stage)
     uid_t uid = geteuid();
     setreuid(uid, uid); 
     
-    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/set_stage.sh", stage, NULL};
+    char *dirty[] = {"/bin/sh", "/nak/scripts/set_stage.sh", stage, NULL};
     execve(dirty[0], dirty, NULL);
 }
 
@@ -48,7 +48,7 @@ void get_stage()
     uid_t uid = geteuid();
     setreuid(uid, uid); 
 
-    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/get_stage.sh", NULL};
+    char *dirty[] = {"/bin/sh", "/nak/scripts/get_stage.sh", NULL};
     execve(dirty[0], dirty, NULL);
 }
 
@@ -57,7 +57,7 @@ void get_inetstat()
     uid_t uid = geteuid();
     setreuid(uid, uid); 
 
-    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/get_inetstat.sh", NULL};
+    char *dirty[] = {"/bin/sh", "/nak/scripts/get_inetstat.sh", NULL};
     execve(dirty[0], dirty, NULL);
 }
 
@@ -66,7 +66,7 @@ void toggle_tor(char *mode)
     uid_t uid = geteuid();
     setreuid(uid, uid); 
 
-    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/toggle_tor.sh", mode, NULL};
+    char *dirty[] = {"/bin/sh", "/nak/scripts/toggle_tor.sh", mode, NULL};
     execve(dirty[0], dirty, NULL);
 }
 
@@ -75,7 +75,7 @@ void toggle_vpn(char *mode)
     uid_t uid = geteuid();
     setreuid(uid, uid); 
 
-    char *dirty[] = {"/bin/sh", "/netaidkit/scripts/toggle_vpn.sh", mode, NULL};
+    char *dirty[] = {"/bin/sh", "/nak/scripts/toggle_vpn.sh", mode, NULL};
     execve(dirty[0], dirty, NULL);
 }
 
