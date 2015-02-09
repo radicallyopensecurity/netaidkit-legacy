@@ -31,7 +31,7 @@ class NetAidManager
         $ssid = escapeshellarg($ssid);
         $key  = escapeshellarg($key);
         
-        $output = shell_exec("/usr/bin/netaidkit wificonn \"$ssid\" \"$key\"");
+        $output = shell_exec("/usr/bin/netaidkit wificonn $ssid $key");
         
         return true;
     }
