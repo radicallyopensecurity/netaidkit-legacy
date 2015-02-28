@@ -3,6 +3,9 @@
 # reset stage
 /nak/scripts/set_stage.sh 0;
 
+# reset password
+echo "" > /nak/webapp/data/pass
+
 # reset captive portal dns
 echo "address=/#/192.168.101.1" > /etc/dnsmasq.conf;
 /etc/init.d/dnsmasq restart

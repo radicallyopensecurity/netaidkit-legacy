@@ -25,6 +25,15 @@ void connect_wifi(char *ssid, char *key)
     execve(dirty[0], dirty, NULL);
 }
 
+void go_online()
+{
+    uid_t uid = geteuid();
+    setreuid(uid, uid); 
+    
+    char *dirty[] = {"/bin/sh", "/nak/scripts/go_online.sh", NULL};
+    execve(dirty[0], dirty, NULL);
+}
+
 void ap_config(char *ssid, char *key)
 {
     uid_t uid = geteuid();
@@ -116,6 +125,8 @@ int main(int argc, char *argv[])
         wlan_info(argv[2]);
     } else if (!strncmp("stagevpn", action, 8)) {
         toggle_vpn(argv[2]);
+    } else if (!strncmp("goonline", action, 8)) {
+        go_online();
     } else {
         fprintf(stderr, "Specified action does not exist.\n");
         exit(-1);

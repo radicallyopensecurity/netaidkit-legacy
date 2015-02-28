@@ -8,4 +8,4 @@ uci commit firewall;
 echo > /etc/dnsmasq.conf
 /etc/init.d/dnsmasq restart
 
-wifi
+/etc/init.d/sysntpd restart

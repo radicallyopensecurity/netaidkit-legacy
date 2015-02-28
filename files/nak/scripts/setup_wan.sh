@@ -12,3 +12,4 @@ fi
 uci commit wireless;
 
 /nak/scripts/go_online.sh;
+wifi

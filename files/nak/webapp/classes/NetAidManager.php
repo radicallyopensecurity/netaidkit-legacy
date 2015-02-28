@@ -36,17 +36,36 @@ class NetAidManager
         return true;
     }
     
+    static public function go_online()
+    {
+        $output = shell_exec("/usr/bin/netaidkit goonline");
+        
+        return true;    
+    }
+    
     static public function set_adminpass($adminpass)
     {
-        if (empty($adminpass))
+        if (empty($adminpass) || strlen($adminpass) < 8)
             return false;
         
-        $adminpass = escapeshellarg($adminpass);
+        $passfile = ROOT_DIR . '/data/pass';
         
-        $output = shell_exec("/usr/bin/netaidkit adminpwd $adminpass");
+        $admin_hash = password_hash($adminpass, PASSWORD_BCRYPT);
         
-        return true;
+        return file_put_contents($passfile, $admin_hash);
     }
+    
+    static public function check_adminpass($loginpass)
+    {   
+        $passfile = ROOT_DIR . '/data/pass';
+        
+        if (!file_exists($passfile))
+            throw new Exception('Password file missing.');
+
+        $admin_hash = file_get_contents($passfile);
+        
+        return password_verify($loginpass, $admin_hash);
+    }    
     
     static public function get_stage()
     {
@@ -120,9 +139,13 @@ class NetAidManager
     {
         $output = shell_exec("/usr/bin/netaidkit wlaninfo wlan0");
 
+        preg_match_all("/Mode: (Master|Client) /", $output, $mode);
         preg_match_all("/ESSID: \"(.*)\"/", $output, $ssids);
 
-        return $ssids[1][0];
+        if ($mode[1][0] == 'Master')
+            return 'Wired connection';
+        else
+            return $ssids[1][0];
     }
 }
 

@@ -31,8 +31,8 @@ class SetupController extends Page
             
             if ($valid) {
                 $ap_success = NetAidManager::setup_ap($ssid, $key);
-                //$pass_success = NetAidManager::set_adminpass($adminpass);
-                $success = ($ap_success ); //&& $pass_success);
+                $pass_success = NetAidManager::set_adminpass($adminpass);
+                $success = ($ap_success && $pass_success);
                 
                 if ($success)
                     NetAidManager::set_stage(STAGE_OFFLINE);
@@ -54,7 +54,7 @@ class SetupController extends Page
     {
         $valid = true;
     
-        if (!($ssid && $key)) {
+        if (!($ssid && $key && $adminpass)) {
             $valid = false;
             $this->_addMessage('error', 'All fields are required.');
         }
@@ -62,8 +62,13 @@ class SetupController extends Page
         $keylen = strlen($key);
         if ($keylen && (($keylen < 8) || ($keylen > 63))) {
             $valid = false;        
-            $this->_addMessage('error', 'Invalid key length, must be between
-                                             8 and 63 characters.');
+            $this->_addMessage('error', 'Invalid key length, must be between 8 and 63 characters.');
+        }
+        
+        $passlen = strlen($adminpass);
+        if ($passlen < 8) {
+            $valid = false;
+            $this->_addMessage('error', 'Password must be at least 8 characters.');
         }
         
         return $valid;
@@ -77,6 +82,13 @@ class SetupController extends Page
         if ($cur_stage == STAGE_ONLINE)
             $this->_redirect('/admin/index');
     
+        if (NetAidManager::get_inetstat()) {
+                NetAidManager::go_online();
+                NetAidManager::set_stage(STAGE_ONLINE);
+                $this->_addMessage('info', 'Setup complete.');
+                $this->_redirect('/admin/index');            
+        }
+    
         $request = $this->getRequest();
         if ($request->isPost()) {
             $ssid = $request->postvar('ssid');
@@ -84,8 +96,10 @@ class SetupController extends Page
             
             $wan_success  = NetAidManager::setup_wan($ssid, $key);
             
-            if ($wan_success)
+            if ($wan_success) {
                 NetAidManager::set_stage(STAGE_ONLINE);
+                $this->_addMessage('info', 'Setup complete.');
+            }
 
             if ($request->isAjax()) {
                 echo $wan_success ? "SUCCESS" : "FAILURE";

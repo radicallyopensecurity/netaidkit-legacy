@@ -8,6 +8,12 @@ class AdminController extends Page
                                         'get_wifi', 'wan', 'toggle_vpn', 
                                         'upload_vpn', 'delete_vpn');
     
+    public function init()
+    {
+        if ($_SESSION['logged_in'] != 1)
+            $this->_redirect('/user/login');
+    }
+    
     public function index()
     {
         $cur_stage = NetAidManager::get_stage();
@@ -17,6 +23,9 @@ class AdminController extends Page
             $this->_redirect('/setup/wan');
     
         $wan_ssid = NetAidManager::wan_ssid();
+        if ($wan_ssid == 'NETAIDKIT')
+            $wan_ssid = 'Wired connection';
+            
         $cur_stage = NetAidManager::get_stage();
         
         $vpn_obj = new Ovpn();

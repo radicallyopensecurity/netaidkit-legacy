@@ -7,7 +7,7 @@ $(document).ready(function() {
         data: $('form#wan-form').serialize(),
         success: function(data) {
           if (data == 'SUCCESS') {
-            window.location.href = '/admin/index';
+            window.location.href = '/user/login';
           } else {
             alert(data);
           }

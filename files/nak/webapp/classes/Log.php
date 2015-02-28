@@ -3,7 +3,7 @@
 class Log {
 
   public static function trace($level = "debug", $msg) {
-    $tstamp = date('Y-m-d H:i:s');
+    @$tstamp = date('Y-m-d H:i:s');
     error_log("$tstamp :: $level :: $msg");
   }
 

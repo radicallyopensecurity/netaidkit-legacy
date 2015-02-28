@@ -22,6 +22,10 @@ class Dispatcher
         
         ob_start();
         $controller_obj = new $controller_class($request);
+        
+        if (method_exists($controller_obj, 'init'))
+            $controller_obj->init();
+        
         $controller_obj->do_action($action);
         $output = ob_get_clean();
 
