@@ -18,9 +18,21 @@ class NetAidManager
     static public function scan_wifi()
     {
         $output = shell_exec("/usr/bin/netaidkit wifiscan");
-        preg_match_all("/ESSID: \"(.*)\"/", $output, $ssids);
+        preg_match_all("/ESSID: \"(.+?)\".+?Encryption: (.+?) ?[\(|\n]/s", $output, $wifi_info);  
+
+        $wifi_list = array();
+        foreach($wifi_info[1] as $i => $wifi) {
+            $ssid = $wifi_info[1][$i];
+            $enctype = $wifi_info[2][$i];
+            
+            $enctype = preg_replace('/mixed | PSK| 802.1X/', '', $enctype);
+            if ($enctype == 'none')
+                $enctype = 'Open';
+            
+            $wifi_list[$ssid] = $enctype;
+        }
         
-        return $ssids[1];
+        return $wifi_list;
     }
     
     static public function setup_wan($ssid, $key)

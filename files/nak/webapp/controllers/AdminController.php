@@ -32,7 +32,9 @@ class AdminController extends Page
         $vpn_options = $vpn_obj->getOptions();
         $cur_vpn = basename($vpn_obj->getCurrent());
 
-        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 'vpn_options' => $vpn_options, 'cur_vpn' => $cur_vpn);
+        $tor_status = $this->_get_tor_status();
+
+        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 'vpn_options' => $vpn_options, 'cur_vpn' => $cur_vpn, 'tor_status' => $tor_status);
         $view = new View('admin', $params);
         return $view->display();
     }
@@ -80,25 +82,30 @@ class AdminController extends Page
     
     public function tor_status()
     {
+        $status = $this->_get_tor_status();
+        
+        die($status);
+    }
+    
+    protected function _get_tor_status()
+    {
         if (file_exists($this->_torLogfile)) {
             $log = file_get_contents($this->_torLogfile);
             
             preg_match_all('/Bootstrapped (\d{1,3})\%/', $log, $bootstrap);
             
-            $status = 'Starting';
+            $progress = '5';
             
             if (!empty($bootstrap[1])) {
                 $progress = end(array_values($bootstrap[1]));
-                if ($progress == '100')
-                    $status = 'Running.';
-                else 
-                    $status = "Bootstrapping: $progress%";
+                if ($progress == '0')
+                    $progress = '5';
             }
             
-            die($progress);
+            return $progress;
         } else {
-            die('not running');
-        }
+            return 'not running';
+        }    
     }
     
     public function toggle_vpn()

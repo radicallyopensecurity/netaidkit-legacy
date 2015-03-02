@@ -105,20 +105,27 @@ $(document).ready(function() {
         $("#myVPNFile").val(myVPNid);
     });
     
-    <?php if ($this->_params['cur_stage'] == STAGE_TOR): ?>
-    setInterval(function() {
-      $.ajax({
-        type: "GET",
-        url: "/admin/tor_status",
-        success: function(data) {
-            $('#torprogressbar').css('width', data+'%');
-            if (data=='100') {
-                $("#TorStatus").html('<h3>You are connected to Tor</h3>');
-                $("#torTile").addClass("connected");
-            }
-        },
-      });
-    }, 2000);
+    <?php if ($this->_params['cur_stage'] == STAGE_TOR
+              && $this->_params['tor_status'] != '100'): ?>
+
+        updateTorStatus();
+        function updateTorStatus() {
+          $.ajax({
+            type: "GET",
+            url: "/admin/tor_status",
+            success: function(data) {
+                $('#torprogressbar').css('width', data+'%');
+                if (data=='100') {
+                    $("#TorStatus").html('<h3>You are connected to Tor</h3>');
+                    $("#torTile").addClass("connected");
+                }
+            }    
+          });
+        }    
+        setInterval(function() {
+          updateTorStatus();
+        }, 2000);
+
     <?php endif; ?>
 });
 </script>  
@@ -165,20 +172,26 @@ $(document).ready(function() {
             </div>
             <div class="col-xs-12 col-md-6">
                   <?php if ($this->_params['cur_stage'] == STAGE_TOR): ?>
-                  <div id="torTile" class="tile">
-                      <div id="TorStatus"><h3>Connecting to Tor</h3></div>
+                  <div id="torTile" class="tile <?php if ($this->_params['tor_status'] == '100') echo "connected"; ?>">
+                      <div id="TorStatus">
+                        <?php if ($this->_params['tor_status'] == '100'): ?>
+                        <h3>You are connected to Tor</h3>
+                        <?php else: ?>
+                        <h3>Connecting to Tor</h3>
+                        <?php endif; ?>
+                      </div>
                         <div class="progress">
-                            <div id="torprogressbar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+                            <div id="torprogressbar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?= $this->_params['tor_status']?>%">
                                 <span class="sr-only">10% Complete (success)</span>
                             </div>
                         </div>
-                        <p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>
+                        <p>The Tor network can be used for extra anonymity and to circumvent censorship. Connecting to Tor will send all your traffic over the anonymous Tor network.</p>
                         <a class="btn btn-primary btn-lg btn-block btn-danger" data-toggle="modal" data-target="#tordcModal">Disconnect from Tor</a>
                   </div>
                   <?php else: ?>
                   <div class="tile">
                         <h3>Tor</h3>
-                        <p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>
+                        <p>The Tor network can be used for extra anonymity and to circumvent censorship. Connecting to Tor will send all your traffic over the anonymous Tor network.</p>
                         <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#torModal" href="online.html#">Connect to Tor</a>
                   </div>
                   <?php endif; ?>
@@ -190,8 +203,7 @@ $(document).ready(function() {
                           <h4 class="modal-title" id="myModalLabel">Connect to Tor</h4>
                         </div>
                         <div class="modal-body">
-                          <p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>
-                          <p><strong>If you wish to use Tor for anonymity purposes, please use the <a href="https://www.torproject.org/projects/torbrowser.html" target="_new">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</strong></p>
+                          <p>Connecting to the Tor network will anonymize your network traffic and allow you to circumvent censorship. We highly recommend using the <a href="https://www.torproject.org/projects/torbrowser.html" target="_new">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</p>
                           <p>In some repressive countries, using Tor can get you into trouble with the authorities. Please be aware of what the situation is for the country you are in before you connect to Tor.</p>
                           <p>Are you sure you want to connect to Tor?</p>
                         </div>
