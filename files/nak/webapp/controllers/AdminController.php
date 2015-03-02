@@ -30,8 +30,9 @@ class AdminController extends Page
         
         $vpn_obj = new Ovpn();
         $vpn_options = $vpn_obj->getOptions();
+        $cur_vpn = basename($vpn_obj->getCurrent());
 
-        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 'vpn_options' => $vpn_options);
+        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 'vpn_options' => $vpn_options, 'cur_vpn' => $cur_vpn);
         $view = new View('admin', $params);
         return $view->display();
     }
@@ -104,12 +105,14 @@ class AdminController extends Page
     {
         $request = $this->getRequest();
         $ovpn_obj = new Ovpn();
-        $ovpn_file = $ovpn_obj->ovpn_root . '/upload/' . $request->postvar('file');
         
-        if (file_exists($ovpn_file)) {
+        if (!empty($request->postvar('file')))
+            $ovpn_file = $ovpn_obj->ovpn_root . '/upload/' . basename($request->postvar('file'));
+        
+        if ($ovpn_file && file_exists($ovpn_file)) {
             $ovpn_file = escapeshellarg($ovpn_file);
             $current = escapeshellarg($ovpn_obj->ovpn_root . '/current.ovpn');
-            shell_exec("ln -s $ovpn_file $current");
+            shell_exec("rm $current; ln -s $ovpn_file $current");
         }
         
         $vpn_success = NetAidManager::toggle_vpn();

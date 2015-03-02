@@ -27,6 +27,14 @@ class Ovpn {
         return $files;
 
     }
+    
+    public function getCurrent() {
+        $current = $this->ovpn_root . '/current.ovpn';
+        
+        $current = escapeshellarg($current);
+        
+        return shell_exec("readlink $current");
+    }
 
     public function removeFile($file) {
         if (!preg_match("/^[0-9a-zA-Z\_\-\.]*$/", $file))

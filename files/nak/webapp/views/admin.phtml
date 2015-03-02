@@ -226,7 +226,7 @@ $(document).ready(function() {
                         <h3>You are connected to a VPN</h3>
                         <p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>
                         <p>You are currently connected to VPN network:</p>
-                        <h3>AirVPN_United-Kingdom_UDP-443</h3>
+                        <h3><?= $this->_params['cur_vpn'] ?></h3>
                         <a class="btn btn-primary btn-lg btn-block btn-danger" data-toggle="modal" data-target="#vpnModal" href="#">Disconnect from VPN</a>
                   </div>
 
