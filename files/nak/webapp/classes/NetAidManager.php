@@ -32,6 +32,8 @@ class NetAidManager
             $wifi_list[$ssid] = $enctype;
         }
         
+        asort($wifi_list);
+            
         return $wifi_list;
     }
     
