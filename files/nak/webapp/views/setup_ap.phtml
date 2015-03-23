@@ -19,6 +19,32 @@ $(document).ready(function() {
     $('#finish-setup').click(function(event) {
         $('#network-name').html($('#ap-form #login-name').val());
     });
+    
+    $('#ssid').focus(function() {
+        $('#desc_ssid').collapse('show');
+    });
+    $('#key').focus(function() {
+        $('#desc_key').collapse('show');
+    });
+    $('#adminpass').focus(function() {
+        $('#desc_adminpass').collapse('show');
+    });
+    $('#distresspass').focus(function() {
+        $('#desc_distresspass').collapse('show');
+    });
+    $('#ssid').blur(function() {
+        $('#desc_ssid').collapse('hide');
+    });
+    $('#key').blur(function() {
+        $('#desc_key').collapse('hide');
+    });
+    $('#adminpass').blur(function() {
+        $('#desc_adminpass').collapse('hide');
+    });
+    $('#distresspass').blur(function() {
+        $('#desc_distresspass').collapse('hide');
+    });
+
 });
 </script>  
   
@@ -35,25 +61,25 @@ $(document).ready(function() {
         <div class="login-form">
           <form action="/setup/ap" method="POST" id="ap-form">
               <div class="form-group">
-                <input name="ssid" type="text" class="form-control login-field" value="" placeholder="Enter a new network name" id="login-name" onfocus="$('#ssid').collapse('toggle')" onfocusout="$('#ssid').collapse('toggle')"/>
+                <input name="ssid" type="text" class="form-control login-field" value="" placeholder="Enter a new network name" id="ssid"/>
                 <label class="login-field-icon fui-loop" for="login-name"></label>
               </div>
-              <div id="ssid" class="collapse in"><div class="tile"><p>Enter a new wireless network name for your NetAidKit. You will connect your devices to this wireless network once you completed setting up.</p></div></div>
+              <div id="desc_ssid" class="collapse in"><div class="tile"><p>Enter a new wireless network name for your NetAidKit. You will connect your devices to this wireless network once you completed setting up.</p></div></div>
               <div class="form-group">
-                <input name="key" type="password" class="form-control login-field" value="" placeholder="Enter a new network password" id="login-pass" onfocus="$('#pass').collapse('toggle')" onfocusout="$('#pass').collapse('toggle')"/>
+                <input name="key" type="password" class="form-control login-field" value="" placeholder="Enter a new network password" id="key"/>
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
               </div>
-              <div id="pass" class="collapse in"><div class="tile"><p>To make sure only you and people you trust can connect to your NetAidKit, choose a password to protect your new wireless network.</p></div></div>
+              <div id="desc_key" class="collapse in"><div class="tile"><p>To make sure only you and people you trust can connect to your NetAidKit, choose a password to protect your new wireless network.</p></div></div>
               <div class="form-group">
-                <input name="adminpass" type="password" class="form-control login-field" value="" placeholder="Enter a new administrator password" id="login-pass" onfocus="$('#password').collapse('toggle')" onfocusout="$('#password').collapse('toggle')"/>
+                <input name="adminpass" type="password" class="form-control login-field" value="" placeholder="Enter a new administrator password" id="adminpass"/>
                 <label class="login-field-icon fui-user" for="login-pass"></label>
               </div>
-              <div id="password" class="collapse in"><div class="tile"><p>You will need a password to make changes to the configuration of the NetAidKit after setting up, choose one here.</p></div></div>
+              <div id="desc_adminpass" class="collapse in"><div class="tile"><p>You will need a password to make changes to the configuration of the NetAidKit after setting up, choose one here.</p></div></div>
               <div class="form-group">
-                <input name="distresspass" type="password" class="form-control login-field" value="" placeholder="Enter a distress password" id="login-pass" onfocus="$('#distress').collapse('toggle')" onfocusout="$('#distress').collapse('toggle')"/>
+                <input name="distresspass" type="password" class="form-control login-field" value="" placeholder="Enter a distress password" id="distresspass" />
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
               </div>
-              <div id="distress" class="collapse in"><div class="tile"><p>If you plan on using the NetAidKit in repressive countries you can choose a distress password. Entering the distress password instead of your regular password will delete all information from the NetAidKit and make it present itself as a regular router.</p><p>If you do not think you will need it, you can just leave it empty.</p></div></div>
+              <div id="desc_distresspass" class="collapse in"><div class="tile"><p>If you plan on using the NetAidKit in repressive countries you can choose a distress password. Entering the distress password instead of your regular password will delete all information from the NetAidKit and make it present itself as a regular router.</p><p>If you do not think you will need it, you can just leave it empty.</p></div></div>
               <a id="finish-setup" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#apModal">Finish Setup</a>
           </form>
         </div>

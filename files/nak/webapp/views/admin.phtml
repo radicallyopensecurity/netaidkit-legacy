@@ -318,7 +318,7 @@ $(document).ready(function() {
                           <form id="add-vpn" action="/admin/upload_vpn" method="POST" enctype="multipart/form-data" >                
                         <div class="modal-body">
                           <p>Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.</p>
-                          <input type="file" name='vpnfile' id='vpnfile' data-filename-placement="inside">
+                          <input type="file" name='vpnfile' id='vpnfile' accept='application/x-openvpn-profile' data-filename-placement="inside">
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="upload-vpn btn btn-primary">Upload</button>
