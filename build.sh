@@ -24,7 +24,7 @@ tar cf - --exclude=openwrt --exclude=.git ./../ | tar xvf -
 ./scripts/feeds update && ./scripts/feeds install -a
 
 # Copy configuration overwrites and start the build process.
-cat netaidkit.config >> .config && make oldconfig && make V=s -j3
+cat netaidkit.config >> .config && make oldconfig && make V=s
 
 # Copy images over to netaidkit bin folder.
 cp bin/ar71xx/openwrt-ar71xx-generic-gl-inet-6416A-v1-squashfs-* ../bin/ar71xx
