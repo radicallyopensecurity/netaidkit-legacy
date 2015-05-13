@@ -16,6 +16,7 @@ git clone https://github.com/radicallyopensecurity/netaidkit
 cd netaidkit && ./build.sh
 ```
 
+You will be prompted to create a root password.
 The compiled images will be in the netaidkit/bin folder.
 
 Flashing the device for the first time:
@@ -48,15 +49,12 @@ Flashing the device for the first time:
 Reflashing an already flashed device:
 ----
 
-The default root password for the image is '6BXm47M3um', 
-you can change this by editing the files/etc/shadow file.
-
 Execute the following commands while in your working build directory:
 
 <ol>
-    <li>sshpass -p 6BXm47M3um scp
+    <li>scp
     bin/ar71xx/openwrt-ar71xx-generic-gl-inet-6416A-v1-squashfs-sysupgrade.bin
         root@192.168.101.1:/tmp</li>
-    <li>sshpass -p 6BXm47M3um ssh root@192.168.101.1 "sysupgrade -n 
+    <li>ssh root@192.168.101.1 "sysupgrade -n 
     /tmp/openwrt-ar71xx-generic-gl-inet-6416A-v1-squashfs-sysupgrade.bin"</li>
 </ol>
