@@ -15,9 +15,9 @@ Create a working directory somewhere and perform the following steps:
   
   
 <ol>
-    <li>git clone git://git.openwrt.org/openwrt.git && cd openwrt && make defconfig</li>
+    <li>git clone --depth 1 git://git.openwrt.org/openwrt.git && cd openwrt && make defconfig</li>
     <li>./scripts/feeds update && ./scripts/feeds install -a && cd ..</li>
-    <li>git clone https://github.com/radicallyopensecurity/netaidkit && rm -rf netaidkit/.git</li>
+    <li>git clone --depth 1 https://github.com/radicallyopensecurity/netaidkit && rm -rf netaidkit/.git</li>
     <li>cp -R netaidkit/. openwrt/ && cd openwrt && ./nak-pkg/pkg.sh</li>
     <li>./scripts/feeds update && ./scripts/feeds install -a && make defconfig</li>
     <li>cat netaidkit.config >> .config && make oldconfig && make V=s # Use default answers</li>
