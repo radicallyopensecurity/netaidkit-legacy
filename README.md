@@ -21,8 +21,8 @@ Flashing the GL-iNet:
 
 <ol>
     <li>While pressing the reset button on the side of the GL-iNet,
-        power on the device. You will see the green LED flashing.</li>
-    <li>Hold the reset button until the green LED flashes 5 times.
+        power on the device. You will see the green LED flashing.
+        Hold the reset button until the green LED flashes 5 times.
         When the red light flashes once, release your finger.</li>
     <li>Connect to the device using an ethernet cable and manually 
         set your IP address to 192.168.1.2.</li>
