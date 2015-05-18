@@ -3,7 +3,7 @@ NetAidKit
 
 Standalone VPN/Tor router for journalists and activists.
 
-Building the image
+Building the firmware image
 ----
 
 Create a working directory somewhere and execute the following commands:
@@ -13,7 +13,6 @@ git clone https://github.com/radicallyopensecurity/netaidkit
 cd netaidkit && ./build.sh
 ```
 
-You will be prompted to create a root password.
 The compiled images will be in the netaidkit/bin folder.
 
 Flashing the GL-iNet:

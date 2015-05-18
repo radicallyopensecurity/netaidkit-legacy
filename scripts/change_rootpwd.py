@@ -27,8 +27,9 @@ with open('files/etc/shadow', 'r') as f:
     for i in root_ent:
         old_ent = lines[i].split(':')
         old_ent[1] = password_h
-        new_ent = ':'.join(old_ent)
-        lines[i] = new_ent
+        old_ent[2] = '16464'
+        old_ent[3] = '0'
+        lines[i] = ':'.join(old_ent)
 
 with open('files/etc/shadow', 'w') as f:
     print 'Updating shadow file (files/etc/shadow)...'
