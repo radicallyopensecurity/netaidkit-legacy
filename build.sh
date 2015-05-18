@@ -18,7 +18,7 @@ make defconfig
 tar cf - --exclude=openwrt --exclude=.git ./../ | tar xvf -
 
 # Prompt for root password and update shadow file.
-./scripts/change_rootpwd.py
+# ./scripts/change_rootpwd.py
 
 # Build the netaidkit package archive.
 ./nak-pkg/pkg.sh
