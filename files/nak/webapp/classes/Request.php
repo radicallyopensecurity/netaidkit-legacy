@@ -33,7 +33,7 @@ class Request
     
     public function isPost()
     {
-        return !empty($this->_postvars);
+        return ($_SERVER['REQUEST_METHOD'] === 'POST');
     }
     
     public function isAjax() {
@@ -50,4 +50,15 @@ class Request
     {
         return $this->_action;
     }
+    
+    public function setController($controller)
+    {
+        $this->_controller = $controller;
+    }
+    
+    public function setAction($action)
+    {
+        $this->_action = $action;
+    }
+
 }

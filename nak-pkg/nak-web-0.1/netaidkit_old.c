@@ -97,6 +97,15 @@ void wlan_info(char *iface)
     execve(dirty[0], dirty, NULL);
 }
 
+void do_update(char *image)
+{
+    uid_t uid = geteuid();
+    setreuid(uid, uid); 
+
+    char *dirty[] = {"/bin/sh", "/nak/scripts/do_update.sh", image, NULL};
+    execve(dirty[0], dirty, NULL);
+}
+
 int main(int argc, char *argv[])
 {
     char *action;
@@ -127,6 +136,8 @@ int main(int argc, char *argv[])
         toggle_vpn(argv[2]);
     } else if (!strncmp("goonline", action, 8)) {
         go_online();
+    } else if (!strncmp("doupdate", action, 8)) {
+        do_update(argv[2]);
     } else {
         fprintf(stderr, "Specified action does not exist.\n");
         exit(-1);

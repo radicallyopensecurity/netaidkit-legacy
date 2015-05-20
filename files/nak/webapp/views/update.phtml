@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#upgrade').click(function() {
+            $('#upgrade').html('<img src="/img/load.gif">');
+            $.ajax({
+                type: "POST",
+                url: "/update/do_upgrade",
+                data: '',
+                success: function(data) {
+                    $('#upgrade').html('Upgrade');
+                    if (data == '')
+                        data = 'Updating, please wait for the device to reboot.';
+                    alert(data);
+                },
+            });
+        }); 
+    });
+</script>
+
+       <div class="row">
+            <div class="col-xs-12 col-md-6">
+                  <img src="/img/logo/logo-nak-square.png">
+                  <h3>Update Required</h3>
+                  <p>A newer version of the software is available, please upgrade.</p>
+                  <p style="font-weight: bold">Warning: DO NOT turn off or disconnect the device during the upgrade process.</p>
+                  <form id="upgrade-form" action="/update/do_upgrade" method="POST">
+                      <a id="upgrade" type="button" class="btn btn-primary">Upgrade</a>
+                  </form>
+            </div>
+      </div>   

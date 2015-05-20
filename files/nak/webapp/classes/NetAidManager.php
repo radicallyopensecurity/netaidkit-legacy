@@ -161,5 +161,15 @@ class NetAidManager
         else
             return $ssids[1][0];
     }
+    
+    static public function do_update($image_file)
+    {
+        $image_file = escapeshellarg($image_file);
+
+        $output = shell_exec("/usr/bin/netaidkit doupdate $image_file");
+
+        return $output;
+    }
+
 }
 

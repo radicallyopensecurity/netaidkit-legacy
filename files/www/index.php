@@ -13,10 +13,18 @@ $dispatcher = new Dispatcher();
 $controller = $request->getController();
 $action     = $request->getAction();
 
-if ($cur_stage != STAGE_ONLINE && $_SERVER['SERVER_NAME'] != '192.168.101.1') {
-    header('Location: http://192.168.101.1/' . $controller . '/' . $action);
-    die();
-}
+//$updater = new Updater();
+//if ($cur_stage >= STAGE_ONLINE && $updater->updateAvailable()) {
+//    if ($controller != 'update') {
+//        $request->setController('update');
+//        $request->setAction('index');
+//    }
+//} else {
+    if ($cur_stage != STAGE_ONLINE && $_SERVER['SERVER_NAME'] != '192.168.101.1') {
+        header('Location: http://192.168.101.1/' . $controller . '/' . $action);
+        die();
+    }
+//}
 
 try {
     $page_html = $dispatcher->run($request);

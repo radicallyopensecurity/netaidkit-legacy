@@ -5,7 +5,8 @@ class Dispatcher
     protected $_allowed_controllers = array( 'IndexController',
                                              'SetupController',
                                              'AdminController',
-                                             'UserController' );
+                                             'UserController',
+                                             'UpdateController' );
 
     public function run($request)
     {
