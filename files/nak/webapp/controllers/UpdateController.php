@@ -34,7 +34,7 @@ class UpdateController extends Page
                     die('INVALID SIGNATURE');
                     
                 if ($updater->performUpdate($image_data))
-                    die('UPGRADED');
+                    die('Upgrading, please wait for the device to reboot.');
                 else
                     die('FAILED');
             }

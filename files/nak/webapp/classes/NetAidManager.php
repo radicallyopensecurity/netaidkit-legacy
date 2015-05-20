@@ -166,9 +166,14 @@ class NetAidManager
     {
         $image_file = escapeshellarg($image_file);
 
-        $output = shell_exec("/usr/bin/netaidkit doupdate $image_file");
-
-        return $output;
+        $pid = pcntl_fork();
+        if ($pid == -1) {
+             die('could not fork');
+        } else if ($pid) {
+            //parent
+        } else {
+            exec("sudo /usr/bin/netaidkit doupdate $image_file");
+        }
     }
 
 }
