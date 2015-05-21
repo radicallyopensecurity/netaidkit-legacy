@@ -14,7 +14,7 @@ $controller = $request->getController();
 $action     = $request->getAction();
 
 $updater = new Updater();
-if ($cur_stage >= STAGE_ONLINE && $updater->updateAvailable()) {
+if ($cur_stage >= STAGE_ONLINE && $_SESSION['logged_in'] == 1 && $updater->updateAvailable()) {
     if ($controller != 'update') {
         $request->setController('update');
         $request->setAction('index');
