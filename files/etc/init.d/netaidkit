@@ -1,0 +1,24 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=99
+
+start() {
+    echo "starting netaidkit."
+}
+
+stop() {
+    echo "stopping netaidkit."
+}
+
+boot() {
+    stage=$(cat /etc/stage)
+
+    if [ $stage = "3" ]; then
+        rm /var/log/tor/notices.log
+        /etc/init.d/tor start
+    elif [ $stage = "4" ]; then
+        openvpn --daemon --config /nak/ovpn/current.ovpn
+    fi
+}
+
