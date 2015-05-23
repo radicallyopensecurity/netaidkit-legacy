@@ -16,49 +16,7 @@
         }); 
     });
     
-    <?php if ???? && $this->_params['download_status'] != '100'): ?>
-
-    updateDownloadStatus();
-    function updateDownloadStatus() {
-      $.ajax({
-        type: "GET",
-        url: "/admin/download_status",
-        success: function(data) {
-            $('#progressbar').css('width', data+'%');
-            if (data=='100') {
-                $("#UpdateStatus").html('<h3>Download complete, applying update:</h3>');
-                // $("#torTile").addClass("connected");
-            }
-        }    
-      });
-    }    
-    setInterval(function() {
-      updateDownloadStatus();
-    }, 2000);
-
     
-    <?php if ???? && $this->_params['download_status'] == '100'): ?>
-    iProgress = 0 
-    $('#progressbar').css('width', iProgress + '%');
-    
-    updateUpdateStatus();
-    function updateUpdateStatus() {
-        iProgress = iProgress +2; 
-        $('#progressbar').css('width', data+'%');
-            if (iProgress > '100') {
-                $("#UpdateStatus").html('<h3>Update Applied. Reload Page!</h3>');
-                // $("#torTile").addClass("connected");
-            }
-        }    
-      });
-    }    
-    setInterval(function() {
-      updateUpdateStatus();
-    }, 2000);
-
-    
-    
-<?php endif; ?>
 </script>
 
        <div class="row">

@@ -31,7 +31,7 @@ class Updater
         $current = $this->getCurrentVersion();
         $latest  = $this->getLatestVersion();
         
-        if ($current < $latest)
+        if (intval($current) < intval($latest))
             return true;
         else
             return false;

@@ -21,6 +21,8 @@ rm -f .config; make defconfig
 ts=`date +%s`
 echo $ts > ../files/etc/nak-release
 
+rm -rf files/*
+
 # Copy the netaidkit sources to the OpenWRT directory.
 tar cf - --exclude=openwrt --exclude=.git ./../ | tar xvf -
 
