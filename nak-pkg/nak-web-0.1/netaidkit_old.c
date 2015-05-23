@@ -106,6 +106,15 @@ void do_update(char *image)
     execve(dirty[0], dirty, NULL);
 }
 
+void toggle_routing(char *mode)
+{
+    uid_t uid = geteuid();
+    setreuid(uid, uid); 
+
+    char *dirty[] = {"/bin/sh", "/nak/scripts/toggle_routing.sh", mode, NULL};
+    execve(dirty[0], dirty, NULL);
+}
+
 int main(int argc, char *argv[])
 {
     char *action;
@@ -138,6 +147,8 @@ int main(int argc, char *argv[])
         go_online();
     } else if (!strncmp("doupdate", action, 8)) {
         do_update(argv[2]);
+    } else if (!strncmp("nrouting", action, 8)) {
+        toggle_routing(argv[2]);
     } else {
         fprintf(stderr, "Specified action does not exist.\n");
         exit(-1);

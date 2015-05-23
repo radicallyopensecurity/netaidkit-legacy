@@ -13,7 +13,6 @@ then
     /etc/init.d/tor stop
     uci set firewall.@redirect[1].enabled=0;
     uci set firewall.@redirect[2].enabled=0;
-    uci set firewall.@forwarding[0].enabled=1;
     /nak/scripts/set_stage.sh 2
 fi
 

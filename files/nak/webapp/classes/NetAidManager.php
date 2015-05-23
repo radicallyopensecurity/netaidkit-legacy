@@ -176,5 +176,21 @@ class NetAidManager
         }
     }
 
+    static public function toggle_routing($mode)
+    {
+        if ($mode != 'on')
+            $mode = 'off';
+            
+        shell_exec("/usr/bin/netaidkit nrouting $mode");
+        
+        return true;
+    }
+    
+    static public function routing_status()                                                                        
+    {                                                                                                              
+        $setting = shell_exec('uci show firewall.@forwarding[0].enabled');                                     
+        $mode = substr($setting, -3, 1);                                                                       
+        return $mode;                                                                                          
+    }   
 }
 

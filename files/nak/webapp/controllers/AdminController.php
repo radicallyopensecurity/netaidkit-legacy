@@ -6,7 +6,8 @@ class AdminController extends Page
 
     protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status', 
                                         'get_wifi', 'wan', 'toggle_vpn', 
-                                        'upload_vpn', 'delete_vpn');
+                                        'upload_vpn', 'delete_vpn', 
+                                        'toggle_routing');
     
     public function init()
     {
@@ -33,8 +34,12 @@ class AdminController extends Page
         $cur_vpn = basename($vpn_obj->getCurrent());
 
         $tor_status = $this->_get_tor_status();
+        $routing_status = NetAidManager::routing_status();
 
-        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 'vpn_options' => $vpn_options, 'cur_vpn' => $cur_vpn, 'tor_status' => $tor_status);
+        $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 
+                        'vpn_options' => $vpn_options, 'cur_vpn' => $cur_vpn, 
+                        'tor_status' => $tor_status, 
+                        'routing_status' => $routing_status);
         $view = new View('admin', $params);
         return $view->display();
     }
@@ -73,6 +78,22 @@ class AdminController extends Page
         if ($tor_success) {
             if ($request->isAjax()) {
                 echo $tor_success ? "SUCCESS" : "FAILURE";
+                exit;
+            } else {
+                $this->_redirect('admin/index');
+            }
+        }
+    }
+    
+    public function toggle_routing()
+    {
+        $request = $this->getRequest();
+        $mode = $request->postvar('mode');
+        $routing_success = NetAidManager::toggle_routing($mode);
+        
+        if ($routing_success) {
+            if ($request->isAjax()) {
+                echo $routing_success ? "SUCCESS" : "FAILURE";
                 exit;
             } else {
                 $this->_redirect('admin/index');
