@@ -2,6 +2,22 @@
     $(document).ready(function() {
         $('#upgrade').click(function() {
             $('#upgrade').html('<img src="/img/load.gif">');
+            
+            /*$('#UpdateStatus').css('display', 'block');
+            function updateDownloadStatus() {
+                $.ajax({
+                    type: "GET",
+                    url: "/update/download_status",
+                    success: function(data) {
+                        $('#progressbar').css('width', data+'%');
+                    }
+                });
+            }
+
+            setInterval(function() {
+                updateDownloadStatus();
+            }, 2000);*/
+            
             $.ajax({
                 type: "POST",
                 url: "/update/do_upgrade",
@@ -13,9 +29,9 @@
                     alert(data);
                 },
             });
-        }); 
+        });
     });
-    
+   
     
 </script>
 
@@ -28,17 +44,13 @@
                   <form id="upgrade-form" action="/update/do_upgrade" method="POST">
                       <a id="upgrade" type="button" class="btn btn-primary">Upgrade</a>
                   </form>
-                  <div id="UpdateStatus">
-                        <?php if ($this->_params['download_status'] == '100'): ?>
-                        <h3>Download complete, applying update:</h3>
-                        <?php else: ?>
-                        <h3>Downloading update:</h3>
-                        <?php endif; ?>
-                  </div>
-                  <div class="progress">
-                    <div id="progressbar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?= $this->_params['progress_status']?>%">
-                        <span class="sr-only">10% Complete (success)</span>
-                    </div>
-                  </div>
+                  <div id="UpdateStatus" style="display:none">
+                        <h3 id="update_phase">Downloading update:</h3>
+                  	<div class="progress">
+                    		<div id="progressbar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                        		<span class="sr-only">10% Complete (success)</span>
+                    		</div>
+                  	</div>
+		  </div>
             </div>
       </div>   
