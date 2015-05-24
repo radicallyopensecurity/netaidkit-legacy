@@ -21,3 +21,5 @@ uci commit wireless;
 
 /nak/scripts/go_online.sh;
 wifi
+
+(sleep 15; /nak/scripts/fix_wifi.sh) &
