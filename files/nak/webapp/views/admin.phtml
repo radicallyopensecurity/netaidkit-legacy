@@ -128,36 +128,25 @@ $(document).ready(function() {
 
     <?php endif; ?>
     
-    $(document).on("click", "#nrouting_on", function() {
-        $.ajax({
-            type: "POST",
-            url: "/admin/toggle_routing",
-            data: {mode: 'on'},
-            success: function(data) {
-                if (data=='SUCCESS') {
-                    $('#nrouting_off').css('text-decoration', 'none');
-                    $('#nrouting_off').css('font-weight', 'normal');
-                    $('#nrouting_on').css('text-decoration', 'underline');
-                    $('#nrouting_on').css('font-weight', 'bold');
-                }
+    $('#nroutingswitch').on('switchChange.bootstrapSwitch', function(event, state) {
+    if (state==1) {                                                         
+            console.log('turn it on');
+            $sdata = 'on'; 
+    } else {                                                                        
+            console.log('turn it off');                                     
+            $sdata = 'off';
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/admin/toggle_routing",
+        data: {mode: $sdata},
+        success: function(data) {
+            if (data=='SUCCESS') {
+                $('#nroutingswitch').bootstrapSwitch('state', state);                          
             }
-        });
-    });
+        }
     
-    $(document).on("click", "#nrouting_off", function() {
-        $.ajax({
-            type: "POST",
-            url: "/admin/toggle_routing",
-            data: {mode: 'off'},
-            success: function(data) {
-                if (data=='SUCCESS') {
-                    $('#nrouting_on').css('text-decoration', 'none');
-                    $('#nrouting_on').css('font-weight', 'normal');
-                    $('#nrouting_off').css('text-decoration', 'underline');
-                    $('#nrouting_off').css('font-weight', 'bold');
-                }
-            }
-        });
     });
 });
 </script>  
@@ -175,16 +164,12 @@ $(document).ready(function() {
                                                                                                                        
                 <div class="tile">                                                                                     
                     <h3>Internet</h3>                                                                                  
-                    <p>Allow routing of normal traffic when tor and VPN are disabled:                                  
-                        <?php if ($this->_params['routing_status'] == "0"): ?>                                         
-                        <a id="nrouting_on" style="margin-left:10px; text-decoration:none;">On</a>                     
-                        /                                                                                              
-                        <a id="nrouting_off" style="font-weight: bold">Off</a>                                         
-                        <?php else: ?>                                                                                 
-                        <a id="nrouting_on" style="margin-left:10px; font-weight: bold;">On</a>                        
-                        /                                                                                              
-                        <a id="nrouting_off" style="text-decoration:none;">Off</a>                                     
-                        <?php endif; ?>                                                                                
+                    <p>Allow outside connections without using Tor or VPN is currently:                                   
+                    <?php if ($this->_params['routing_status'] == "0"): ?>                                         
+			             <input type="checkbox" data-toggle="switch" id="nroutingswitch"> 
+			         <?php else: ?>                                                                                 
+                        <input type="checkbox" checked data-toggle="switch" id="nroutingswitch">
+			         <?php endif; ?>                                                                                    
                     </p>                                                                                               
                   </div>                                                                                                
             </div>  
