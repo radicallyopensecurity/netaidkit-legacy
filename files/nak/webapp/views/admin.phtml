@@ -129,24 +129,24 @@ $(document).ready(function() {
     <?php endif; ?>
     
     $('#nroutingswitch').on('switchChange.bootstrapSwitch', function(event, state) {
-    if (state==1) {                                                         
-            console.log('turn it on');
-            $sdata = 'on'; 
-    } else {                                                                        
-            console.log('turn it off');                                     
-            $sdata = 'off';
-    };
+        if (state==1) {                                                         
+                console.log('turn it on');
+                $sdata = 'on'; 
+        } else {                                                                        
+                console.log('turn it off');                                     
+                $sdata = 'off';
+        };
 
-    $.ajax({
-        type: "POST",
-        url: "/admin/toggle_routing",
-        data: {mode: $sdata},
-        success: function(data) {
-            if (data=='SUCCESS') {
-                $('#nroutingswitch').bootstrapSwitch('state', state);                          
+        $.ajax({
+            type: "POST",
+            url: "/admin/toggle_routing",
+            data: {mode: $sdata},
+            success: function(data) {
+                if (data=='SUCCESS') {
+                    $('#nroutingswitch').bootstrapSwitch('state', state);                          
+                }
             }
-        }
-    
+        });
     });
 });
 </script>  
