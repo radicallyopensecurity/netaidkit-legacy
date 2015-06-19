@@ -3,11 +3,12 @@
 class AdminController extends Page
 {
     protected $_torLogfile = '/var/log/tor/notices.log';
+    protected $_vpnLogfile = '/var/log/openvpn.log';
 
     protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status', 
                                         'get_wifi', 'wan', 'toggle_vpn', 
                                         'upload_vpn', 'delete_vpn', 
-                                        'toggle_routing');
+                                        'toggle_routing', 'vpn_status');
     
     public function init()
     {
@@ -34,11 +35,12 @@ class AdminController extends Page
         $cur_vpn = basename($vpn_obj->getCurrent());
 
         $tor_status = $this->_get_tor_status();
+        $vpn_status = $this->_get_vpn_status();
         $routing_status = NetAidManager::routing_status();
 
         $params = array('cur_stage' => $cur_stage, 'wan_ssid' => $wan_ssid, 
                         'vpn_options' => $vpn_options, 'cur_vpn' => $cur_vpn, 
-                        'tor_status' => $tor_status, 
+                        'tor_status' => $tor_status, 'vpn_status' => $vpn_status,
                         'routing_status' => $routing_status);
         $view = new View('admin', $params);
         return $view->display();
@@ -183,5 +185,40 @@ class AdminController extends Page
                 exit;
             }
         }
+    }
+    
+    public function vpn_status()
+    {
+        $status = $this->_get_vpn_status();
+        
+        die($status);
+    }
+    
+    protected function _get_vpn_status()
+    {
+        if (file_exists($this->_vpnLogfile)) {
+            $log = file_get_contents($this->_vpnLogfile);
+            
+            if (strstr($log, 'Initialization Sequence Completed'))
+                return '100';
+
+            $s_start = substr($log, 0, strpos($log, 'OpenVPN') - 1);
+            if (!$s_start)
+                return 'not running';
+            
+            @$t_start = strtotime($s_start);
+            $t_sec = time() - $t_start;
+            $estimated_sec = 30;
+            
+            if ($t_sec > $estimated_sec)
+                $progress = 95;
+            else {
+                $progress = (95 / $estimated_sec) * $t_sec;
+            }
+            
+            return strval(intval($progress));
+        }
+        
+        return 'not running';
     }
 }

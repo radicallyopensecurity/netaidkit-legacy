@@ -7,7 +7,7 @@ if [ $1 = "on" ];then
     uci commit firewall
     /etc/init.d/firewall restart;
 
-    openvpn --daemon --config /nak/ovpn/current.ovpn
+    openvpn --log-append /var/log/openvpn.log --daemon --config /nak/ovpn/current.ovpn
     
     /nak/scripts/set_stage.sh 4
 elif [ $1 = "off" ]
@@ -17,6 +17,7 @@ then
     uci commit firewall
     /etc/init.d/firewall restart;
 
+    > /var/log/openvpn.log
     killall -9 openvpn
     
     /nak/scripts/set_stage.sh 2
