@@ -1,0 +1,21 @@
+<div class="modal fade" id="deleteVPN" tabindex="-1" role="dialog" aria-labelledby="deleteVPN" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete VPN configuration</h4>
+            </div>
+            <form id="delete-vpn" action="/admin/delete_vpn" method="POST">
+                <div class="modal-body">
+                    <p>Are you sure you want to delete the following VPN:</p>
+                    <p id="myVPN"></p>
+                    <input type="hidden" id="myVPNFile" value="">
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="delete-vpn btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

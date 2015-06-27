@@ -1,0 +1,55 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#ap-submit').click(function(event) {
+            $.ajax({
+                type: "POST",
+                url: "/setup/ap",
+                data: $('form#ap-form').serialize(),
+                success: function(data) {
+                    if (data == 'SUCCESS') {
+                        window.location.href = '/setup/wan';
+                    } else {
+                        window.location.href = '/setup/ap';
+                    }
+                },
+            });
+            event.preventDefault();
+        });
+
+        $('#finish-setup').click(function(event) {
+            $('#network-name').html($('#ap-form #ssid').val());
+        });
+
+        $('#ssid').focus(function() {
+            $('#desc_ssid').collapse('show');
+        });
+
+        $('#key').focus(function() {
+            $('#desc_key').collapse('show');
+        });
+
+        $('#adminpass').focus(function() {
+            $('#desc_adminpass').collapse('show');
+        });
+
+        $('#distresspass').focus(function() {
+            $('#desc_distresspass').collapse('show');
+        });
+
+        $('#ssid').blur(function() {
+            $('#desc_ssid').collapse('hide');
+        });
+
+        $('#key').blur(function() {
+            $('#desc_key').collapse('hide');
+        });
+
+        $('#adminpass').blur(function() {
+            $('#desc_adminpass').collapse('hide');
+        });
+
+        $('#distresspass').blur(function() {
+            $('#desc_distresspass').collapse('hide');
+        });
+    });
+</script>

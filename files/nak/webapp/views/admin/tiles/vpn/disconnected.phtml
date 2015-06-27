@@ -1,0 +1,22 @@
+<div class="tile">
+    <h3>VPN</h3>
+    <p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>
+
+    <form id="vpnform">
+        <label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios0" value="option0" data-toggle="radio" disabled><a href="#" data-toggle="modal" data-target="#addVPN">Add a VPN connection...</a></label>
+
+        <?php
+            $checked = 'checked="checked"';
+            foreach ($this->_params['vpn_options'] as $config) {
+                $file = $config['file'];
+        ?>
+
+            <label class="radio"><input type="radio" <?= $checked?> name="optionsRadios" id="optionsRadios2" value="<?php echo $file ?>" data-toggle="radio"><?php echo $config['title']; ?> <a class="open-deleteVPN" data-toggle="modal" data-id="<?php echo $file ?>" href="#deleteVPN"  style="text-decoration: none;"><span class="fui-trash"></span></a> </label>
+
+        <?php
+            $checked = ''; /* Reset checked to empty for next items */ }
+        ?>
+
+        <a id="vpnConnectBtn" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#vpnModal" href="online.html#">Connect to VPN</a>
+    </form>
+</div>

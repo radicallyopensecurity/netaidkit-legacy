@@ -1,0 +1,27 @@
+<div class="modal fade" id="wifiModal" tabindex="-1" role="dialog" aria-labelledby="myWifiLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Change Wireless Network:</h4>
+            </div>
+            <div class="modal-body">
+                <p>Choose a new wireless network to connect to with the NetAidKit and enter the password if any:</p>
+                <h3>Select a wireless network:</h3>
+                <form id="wan-form" action="/admin/wan" method="POST">
+                    <div id="wifi-list"></div>
+                    <div class="login-form">
+                        <div class="form-group">
+                            <input name="key" type="password" class="form-control login-field" value="" placeholder="Wireless Password" id="login-pass" />
+                            <label class="login-field-icon fui-lock" for="login-pass"></label>
+                        </div>
+                        <a id="wan-submit" class="btn btn-primary btn-lg btn-block">Connect</a>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

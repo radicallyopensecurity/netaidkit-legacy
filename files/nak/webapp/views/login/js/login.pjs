@@ -1,0 +1,7 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#finish-setup').click(function () {
+            $('#login-form').submit();
+        });
+    });
+</script>

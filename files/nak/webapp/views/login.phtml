@@ -1,33 +1,9 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#finish-setup').click(function () {
-            $('#login-form').submit();
-        });
-    });
-</script>  
-  
-  
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <h3>Login</h3>
-      <?php $this->_displayMessages(); ?>
-      <div class="tile">
-        <div class="login-form">
-          <form action="/user/do_login" method="POST" id="login-form">
-              <div class="form-group">
-                <input name="username" type="text" class="form-control login-field" value="admin" disabled="disabled" id="login-user" />
-                <input name="username" type="hidden" value="admin" />
-                <label class="login-field-icon fui-user" for="login-user"></label>
-              </div>
-              <div class="form-group">
-                <input name="password" type="password" class="form-control login-field" value="" placeholder="Enter your password" id="login-pass" onfocus="$('#password').collapse('toggle')" onfocusout="$('#password').collapse('toggle')"/>
-                <label class="login-field-icon fui-lock" for="login-pass"></label>
-              </div>
-              <div id="password" class="collapse in"><div class="tile"><p>The password you configured during setup.</p></div></div>
-              <a id="finish-setup" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#apModal">Login</a>
-          </form>
-        </div>
-      </div>
+<?php include ('login/js/login.pjs'); ?>
 
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <h3>Login</h3>
+        <?php $this->_displayMessages(); ?>
+        <?php include ('login/tiles/password.phtml'); ?>        
     </div>
-  </div>   
+</div>

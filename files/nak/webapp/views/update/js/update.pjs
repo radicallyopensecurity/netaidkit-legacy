@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#upgrade').click(function() {
+            $('#upgrade').html('<img src="/img/load.gif">');
+
+            /*$('#UpdateStatus').css('display', 'block');
+            function updateDownloadStatus() {
+                $.ajax({
+                    type: "GET",
+                    url: "/update/download_status",
+                    success: function(data) {
+                        $('#progressbar').css('width', data+'%');
+                    }
+                });
+            }
+
+            setInterval(function() {
+                updateDownloadStatus();
+            }, 2000);*/
+
+            $.ajax({
+                type: "POST",
+                url: "/update/do_upgrade",
+                data: '',
+                success: function(data) {
+                    $('#upgrade').html('Upgrade');
+                    if (data == '')
+                        data = 'Updating, please wait for the device to reboot.';
+                    alert(data);
+                },
+            });
+        });
+    });
+</script>

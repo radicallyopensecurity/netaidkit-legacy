@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#wan-submit').click(function(event) {
+            $.ajax({
+                type: "POST",
+                url: "/setup/wan",
+                data: $('form#wan-form').serialize(),
+                success: function(data) {
+                    if (data == 'SUCCESS') {
+                        window.location.href = '/user/login';
+                    } else {
+                        alert(data);
+                    }
+                },
+            });
+            event.preventDefault();
+        });
+    });
+</script>

@@ -1,0 +1,8 @@
+<?php
+    if ($this->_params['cur_stage'] == STAGE_TOR)
+        include ('tor/connected.phtml');
+    else
+        include ('tor/disconnected.phtml');
+
+include ('tor/modals/connect.phtml');
+include ('tor/modals/disconnect.phtml');
