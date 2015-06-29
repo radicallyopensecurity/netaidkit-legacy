@@ -3,7 +3,7 @@
 from getpass import *
 from random  import *
 from string  import *
-from crypt   import *
+from passlib.hash import md5_crypt
 
 password = getpass('Enter a new root password: ')
 passconf = getpass('Confirm password: ')
@@ -17,8 +17,7 @@ if len(password) < 8:
     exit(-1)
 
 # Generate random salt and create (TODO: use sha512 with libpam) sha512 hash.
-salt = ''.join([choice(ascii_letters + digits) for _ in range(16)])
-password_h = crypt(password, '$1$%s' % salt) # NOT sha512
+password_h = md5_crypt.encrypt(password) # NOT sha512
 
 with open('files/etc/shadow', 'r') as f:
     lines = f.readlines()
@@ -33,4 +32,4 @@ with open('files/etc/shadow', 'r') as f:
 
 with open('files/etc/shadow', 'w') as f:
     print 'Updating shadow file (files/etc/shadow)...'
-    f.writelines(lines) 
+    f.writelines(lines)
