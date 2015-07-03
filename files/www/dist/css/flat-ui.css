@@ -6217,4 +6217,28 @@ footer p {
     background: #666666 !important;
     }
   }
+
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 1px solid;
+}
+
+.info {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 1px solid;
+}
+
+.error p, .info p {
+    margin-bottom:5px;
+}
+
+.error ul, .info ul {
+    margin-bottom:5px;
+}
+
+.error ul li {
+    font-size: 12px;
+}
 /*# sourceMappingURL=flat-ui.css.map */

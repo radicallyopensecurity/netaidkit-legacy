@@ -6,27 +6,29 @@ class Dispatcher
                                              'SetupController',
                                              'AdminController',
                                              'UserController',
-                                             'UpdateController' );
+                                             'UpdateController',
+                                             'SettingsController',
+                                             'LogsController' );
 
     public function run($request)
     {
         $controller = $request->getController();
         $action     = $request->getAction();
-    
+
         if (empty($controller) || empty($action))
             throw new Exception("Invalid request.");
-    
+
         // Sanitize $controller_class before autoloading.
         $controller_class = ucfirst($controller) . 'Controller';
         if (!in_array($controller_class, $this->_allowed_controllers))
             throw new NotFoundException("Controller not defined.");
-        
+
         ob_start();
         $controller_obj = new $controller_class($request);
-        
+
         if (method_exists($controller_obj, 'init'))
             $controller_obj->init();
-        
+
         $controller_obj->do_action($action);
         $output = ob_get_clean();
 

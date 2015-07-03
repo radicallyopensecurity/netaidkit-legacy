@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#ap-submit').click(function(event) {
+            $.ajax({
+                type: "POST",
+                url: "/settings/ap",
+                data: $('form#ap-form').serialize(),
+                success: function(data) {
+                    window.location.href = '/settings';
+                },
+            });
+            event.preventDefault();
+        });
+
+        $('#submit-wireless').click(function(event) {
+            $('#network-name').html($('#ap-form #ssid').val());
+        });
+
+        $('#ssid').focus(function() {
+            $('#desc_ssid').collapse('show');
+        });
+
+        $('#key').focus(function() {
+            $('#desc_key').collapse('show');
+        });
+
+        $('#key_confirm').focus(function() {
+            $('#desc_key_confirm').collapse('show');
+        });
+
+        $('#ssid').blur(function() {
+            $('#desc_ssid').collapse('hide');
+        });
+
+        $('#key').blur(function() {
+            $('#desc_key').collapse('hide');
+        });
+
+        $('#key_confirm').blur(function() {
+            $('#desc_key_confirm').collapse('hide');
+        });
+    });
+</script>

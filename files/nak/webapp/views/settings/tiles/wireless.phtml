@@ -1,0 +1,36 @@
+<?php include('wireless/modals/configure.phtml'); ?>
+
+<div class="tile">
+    <div class="login-form">
+        <form action="/settings/ap" method="POST" id="ap-form">
+            <div class="form-group">
+                <input name="ssid" type="text" class="form-control login-field" value="" placeholder="Enter a new network name" id="ssid"/>
+                <label class="login-field-icon fui-loop" for="login-name"></label>
+            </div>
+            <div id="desc_ssid" class="collapse in">
+                <div class="tile">
+                    <p>Enter a new wireless network name for your NetAidKit. You will connect your devices to this wireless network.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <input name="key" type="password" class="form-control login-field" value="" placeholder="Enter a new network password" id="key"/>
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            <div id="desc_key" class="collapse in">
+                <div class="tile">
+                    <p>To make sure only you and people you trust can connect to your NetAidKit, choose a password to protect your new wireless network.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <input name="key_confirm" type="password" class="form-control login-field" value="" placeholder="Confirm new network password" id="key_confirm"/>
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            <div id="desc_key_confirm" class="collapse in">
+                <div class="tile">
+                    <p>Please retype your wireless network key.</p>
+                </div>
+            </div>
+            <a id="submit-wireless" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#apModal">Change Wireless Settings</a>
+        </form>
+    </div>
+</div>

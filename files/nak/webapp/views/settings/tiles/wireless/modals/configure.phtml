@@ -1,0 +1,25 @@
+<div class="modal fade" id="apModal" tabindex="-1" role="dialog" aria-labelledby="apLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Reset Access Point</h4>
+            </div>
+            <div class="modal-body">
+                <p>You are about to reconfigure the netaidkit Access Point.
+                    You will be disconnected after clicking the 'Yes' button.</p>
+                <p>You can then reconnect with your new settings.</p>
+                <table>
+                    <tr><td>New network name:</td> <td id="network-name" style="padding-left:10px" > ---</td></tr>
+                    <!--<tr><td>Network password:</td> <td>---</td></tr>
+                    <tr><td>Admin password:</td> <td>---</td></tr>
+                    <tr><td>Distress password:</td> <td>---</td></tr>-->
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button id="ap-submit" href="/setup/ap" type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
