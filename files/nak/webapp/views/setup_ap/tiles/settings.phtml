@@ -4,7 +4,7 @@
     <div class="login-form">
         <form action="/setup/ap" method="POST" id="ap-form">
             <div class="form-group">
-                <input name="ssid" type="text" class="form-control login-field" value="" placeholder="Enter a new network name" id="ssid"/>
+                <input name="ssid" type="text" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'ssid'); ?>" placeholder="Enter a new network name" id="ssid"/>
                 <label class="login-field-icon fui-loop" for="login-name"></label>
             </div>
             <div id="desc_ssid" class="collapse in">
@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input name="key" type="password" class="form-control login-field" value="" placeholder="Enter a new network password" id="key"/>
+                <input name="key" type="password" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'key'); ?>" placeholder="Enter a new network password" id="key"/>
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
             </div>
             <div id="desc_key" class="collapse in">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input name="key_confirm" type="password" class="form-control login-field" value="" placeholder="Confirm new network password" id="key_confirm"/>
+                <input name="key_confirm" type="password" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'key_confirm'); ?>" placeholder="Confirm new network password" id="key_confirm"/>
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
             </div>
             <div id="desc_key_confirm" class="collapse in">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input name="adminpass" type="password" class="form-control login-field" value="" placeholder="Enter a new administrator password" id="adminpass"/>
+                <input name="adminpass" type="password" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'adminpass'); ?>" placeholder="Enter a new administrator password" id="adminpass"/>
                 <label class="login-field-icon fui-user" for="login-pass"></label>
             </div>
             <div id="desc_adminpass" class="collapse in">
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input name="adminpass_confirm" type="password" class="form-control login-field" value="" placeholder="Confirm new administrator password" id="adminpass_confirm"/>
+                <input name="adminpass_confirm" type="password" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'adminpass_confirm'); ?>" placeholder="Confirm new administrator password" id="adminpass_confirm"/>
                 <label class="login-field-icon fui-user" for="login-pass"></label>
             </div>
             <div id="desc_adminpass_confirm" class="collapse in">

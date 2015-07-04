@@ -36,10 +36,16 @@ class SetupController extends Page
                 $pass_success = NetAidManager::set_adminpass($adminpass);
                 $success = ($ap_success && $pass_success);
 
-                if ($success)
+                if ($success) {
                     NetAidManager::set_stage(STAGE_OFFLINE);
+                    $this->addMessage('info', 'Access Point successfully set up.', 'wan');
+                }
             } else {
-                // FormData
+                $this->_addFormData('ssid', $ssid, 'ap');
+                $this->_addFormData('key', $key, 'ap');
+                $this->_addFormData('key_confirm', $key_confirm, 'ap');
+                $this->_addFormData('adminpass', $adminpass, 'ap');
+                $this->_addFormData('adminpass_confirm', $adminpass_confirm, 'ap');
             }
 
             if ($request->isAjax()) {
@@ -58,29 +64,29 @@ class SetupController extends Page
 
         if (!($ssid && $key && $adminpass)) {
             $valid = false;
-            $this->_addMessage('error', 'All fields are required.');
+            $this->_addMessage('error', 'All fields are required.', 'ap');
         }
 
         if ($key != $key_confirm) {
             $valid = false;
-            $this->_addMessage('error', 'Wireless key does not match.');
+            $this->_addMessage('error', 'Wireless key does not match.', 'ap');
         }
 
         $keylen = strlen($key);
         if ($keylen && (($keylen < 8) || ($keylen > 63))) {
             $valid = false;
-            $this->_addMessage('error', 'Invalid key length, must be between 8 and 63 characters.');
+            $this->_addMessage('error', 'Invalid key length, must be between 8 and 63 characters.', 'ap');
         }
 
         if ($adminpass != $adminpass_confirm) {
             $valid = false;
-            $this->_addMessage('error', 'Admin password does not match.');
+            $this->_addMessage('error', 'Admin password does not match.', 'ap');
         }
 
         $passlen = strlen($adminpass);
         if ($passlen < 8) {
             $valid = false;
-            $this->_addMessage('error', 'Password must be at least 8 characters.');
+            $this->_addMessage('error', 'Password must be at least 8 characters.', 'ap');
         }
 
         return $valid;
@@ -97,7 +103,7 @@ class SetupController extends Page
         if (NetAidManager::get_inetstat()) {
                 NetAidManager::go_online();
                 NetAidManager::set_stage(STAGE_ONLINE);
-                $this->_addMessage('info', 'Setup complete.');
+                $this->_addMessage('info', 'Setup complete.', 'setup');
                 $this->_redirect('/admin/index');
         }
 
@@ -110,7 +116,7 @@ class SetupController extends Page
 
             if ($wan_success) {
                 NetAidManager::set_stage(STAGE_ONLINE);
-                $this->_addMessage('info', 'Setup complete.');
+                $this->_addMessage('info', 'Setup complete.', 'setup');
             }
 
             if ($request->isAjax()) {

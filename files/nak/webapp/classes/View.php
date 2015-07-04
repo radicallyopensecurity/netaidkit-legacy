@@ -32,10 +32,10 @@ class View
         return include($this->_template);
     }
 
-    protected function _displayMessages()
+    protected function _displayMessages($form)
     {
         $flashMessager = new FlashMessager();
-        $messages = $flashMessager->getMessages();
+        $messages = $flashMessager->getMessages($form);
 
         $errors = $this->_getErrors($messages);
         if (!empty($errors)) {
@@ -78,5 +78,11 @@ class View
                     $errors[] = $message;
 
         return $errors;
+    }
+
+    protected function _getFormValue($form, $name)
+    {
+        $flashMessager = new FlashMessager();
+        return $flashMessager->getFormData($form, $name);
     }
 }

@@ -6,7 +6,7 @@ class AdminController extends Page
     protected $_vpnLogfile = '/var/log/openvpn.log';
 
     protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status',
-                                        'get_wifi', 'wan', 'toggle_vpn', 
+                                        'get_wifi', 'wan', 'toggle_vpn',
                                         'upload_vpn', 'delete_vpn',
                                         'toggle_routing', 'vpn_status');
 
@@ -51,9 +51,9 @@ class AdminController extends Page
     {
         $vpn_obj = new Ovpn();
         if ($vpn_obj->handleUpload())
-            $this->_addMessage('info', 'VPN config file uploaded.');
+            $this->_addMessage('info', 'VPN config file uploaded.', 'vpn');
         else
-            $this->_addMessage('error', 'File upload failed.');
+            $this->_addMessage('error', 'File upload failed.', 'vpn');
 
         $this->_redirect('/admin/index');
     }
@@ -65,9 +65,9 @@ class AdminController extends Page
 
         $vpn_obj = new Ovpn();
         if ($vpn_obj->removeFile($file))
-            $this->_addMessage('info', 'VPN config file removed.');
+            $this->_addMessage('info', 'VPN config file removed.', 'vpn');
         else
-            $this->_addMessage('error', 'Could not remove file.');
+            $this->_addMessage('error', 'Could not remove file.', 'vpn');
 
         $this->_redirect('/admin/index');
     }
