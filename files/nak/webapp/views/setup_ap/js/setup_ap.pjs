@@ -28,8 +28,16 @@
             $('#desc_key').collapse('show');
         });
 
+        $('#key_confirm').focus(function() {
+            $('#desc_key_confirm').collapse('show');
+        });
+
         $('#adminpass').focus(function() {
             $('#desc_adminpass').collapse('show');
+        });
+
+        $('#adminpass_confirm').focus(function() {
+            $('#desc_adminpass_confirm').collapse('show');
         });
 
         $('#distresspass').focus(function() {
@@ -44,8 +52,16 @@
             $('#desc_key').collapse('hide');
         });
 
+        $('#key_confirm').blur(function() {
+            $('#desc_key_confirm').collapse('hide');
+        });
+
         $('#adminpass').blur(function() {
             $('#desc_adminpass').collapse('hide');
+        });
+
+        $('#adminpass_confirm').blur(function() {
+            $('#desc_adminpass_confirm').collapse('hide');
         });
 
         $('#distresspass').blur(function() {
