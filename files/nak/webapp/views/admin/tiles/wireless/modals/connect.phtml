@@ -15,7 +15,7 @@
                             <input name="key" type="password" class="form-control login-field" value="" placeholder="Wireless Password" id="login-pass" />
                             <label class="login-field-icon fui-lock" for="login-pass"></label>
                         </div>
-                        <a id="wan-submit" class="btn btn-primary btn-lg btn-block">Connect</a>
+                        <a onclick="$('#wifiModal').modal('hide');" id="wan-submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#wanModal">Connect</a>
                     </div>
                 </form>
             </div>
@@ -25,3 +25,5 @@
         </div>
     </div>
 </div>
+
+<?php include ('connecting.phtml'); ?>
