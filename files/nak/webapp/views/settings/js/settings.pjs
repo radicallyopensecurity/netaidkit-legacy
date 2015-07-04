@@ -12,6 +12,18 @@
             event.preventDefault();
         });
 
+        $('#submit-password').click(function(event) {
+            $.ajax({
+                type: "POST",
+                url: "/settings/password",
+                data: $('form#password-form').serialize(),
+                success: function(data) {
+                    window.location.href = '/settings';
+                },
+            });
+            event.preventDefault();
+        });
+
         $('#submit-wireless').click(function(event) {
             $('#network-name').html($('#ap-form #ssid').val());
         });
@@ -28,6 +40,18 @@
             $('#desc_key_confirm').collapse('show');
         });
 
+        $('#adminpass_check').focus(function() {
+            $('#desc_adminpass_check').collapse('show');
+        });
+
+        $('#adminpass').focus(function() {
+            $('#desc_adminpass').collapse('show');
+        });
+
+        $('#adminpass_confirm').focus(function() {
+            $('#desc_adminpass_confirm').collapse('show');
+        });
+
         $('#ssid').blur(function() {
             $('#desc_ssid').collapse('hide');
         });
@@ -38,6 +62,18 @@
 
         $('#key_confirm').blur(function() {
             $('#desc_key_confirm').collapse('hide');
+        });
+
+        $('#adminpass_check').blur(function() {
+            $('#desc_adminpass_check').collapse('hide');
+        });
+
+        $('#adminpass').blur(function() {
+            $('#desc_adminpass').collapse('hide');
+        });
+
+        $('#adminpass_confirm').blur(function() {
+            $('#desc_adminpass_confirm').collapse('hide');
         });
     });
 </script>
