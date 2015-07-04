@@ -59,7 +59,7 @@ class SettingsController extends Page
 
         if (!($key == $key_confirm)) {
             $valid = false;
-            $this->_addMessage('error', 'Passwords do not match.');
+            $this->_addMessage('error', 'Keys do not match.');
         }
 
         $keylen = strlen($key);
