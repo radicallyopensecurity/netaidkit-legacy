@@ -41,4 +41,10 @@ class Page
         $flashMessager = new FlashMessager();
         $flashMessager->addFormData($name, $value, $form);
     }
+
+    protected function _addFormError($name, $form)
+    {
+        $flashMessager = new FlashMessager();
+        $flashMessager->addFormError($name, $form);
+    }
 }

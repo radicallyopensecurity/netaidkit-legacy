@@ -3,8 +3,10 @@
 <div class="tile">
     <div class="login-form">
         <form action="/settings/ap" method="POST" id="ap-form">
-            <div class="form-group">
-                <input name="ssid" type="text" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'ssid'); ?>" placeholder="Enter a new network name" id="ssid"/>
+            <?php $ssid_error = $this->_getFormError('ap', 'ssid'); ?>
+            <?php $ssid_value = $this->_getFormValue('ap', 'ssid'); ?>
+            <div class="form-group<?php if($ssid_error) echo ' has-error'; ?>">
+                <input name="ssid" type="text" class="form-control login-field" value="<?php if(!$ssid_error) echo $ssid_value; ?>" placeholder="Enter a new network name" id="ssid"/>
                 <label class="login-field-icon fui-loop" for="login-name"></label>
             </div>
             <div id="desc_ssid" class="collapse in">
@@ -12,8 +14,10 @@
                     <p>Enter a new wireless network name for your NetAidKit. You will connect your devices to this wireless network.</p>
                 </div>
             </div>
-            <div class="form-group">
-                <input name="key" type="password" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'key'); ?>" placeholder="Enter a new network password" id="key"/>
+            <?php $key_error = $this->_getFormError('ap', 'key'); ?>
+            <?php $key_value = $this->_getFormValue('ap', 'key'); ?>
+            <div class="form-group<?php if($key_error) echo ' has-error'; ?>">
+                <input name="key" type="password" class="form-control login-field" value="<?php if(!$key_error) echo $key_value; ?>" placeholder="Enter a new network password" id="key"/>
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
             </div>
             <div id="desc_key" class="collapse in">
@@ -21,8 +25,10 @@
                     <p>To make sure only you and people you trust can connect to your NetAidKit, choose a password to protect your new wireless network. The key must be between 8 and 64 characters long.</p>
                 </div>
             </div>
-            <div class="form-group">
-                <input name="key_confirm" type="password" class="form-control login-field" value="<?= $this->_getFormValue('ap', 'key_confirm'); ?>" placeholder="Confirm new network password" id="key_confirm"/>
+            <?php $key_confirm_error = $this->_getFormError('ap', 'key_confirm'); ?>
+            <?php $key_confirm_value = $this->_getFormValue('ap', 'key_confirm'); ?>
+            <div class="form-group<?php if($key_confirm_error) echo ' has-error'; ?>">
+                <input name="key_confirm" type="password" class="form-control login-field" value="<?php if(!$key_confirm_error) echo $key_confirm_value; ?>" placeholder="Confirm new network password" id="key_confirm"/>
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
             </div>
             <div id="desc_key_confirm" class="collapse in">

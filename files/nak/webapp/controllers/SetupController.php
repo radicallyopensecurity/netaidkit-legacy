@@ -62,31 +62,54 @@ class SetupController extends Page
     {
         $valid = true;
 
-        if (!($ssid && $key && $adminpass)) {
+        if (!($ssid && $key && $adminpass && $key_confirm && $adminpass_confirm)) {
             $valid = false;
             $this->_addMessage('error', 'All fields are required.', 'ap');
+
+            if (empty($ssid))
+                $this->_addFormError('ssid', 'ap');
+
+            if (empty($key))
+                $this->_addFormError('key', 'ap');
+
+            if (empty($adminpass))
+                $this->_addFormError('adminpass', 'ap');
+
+            if (empty($key_confirm))
+                $this->_addFormError('key_confirm', 'ap');
+
+            if (empty($adminpass_confirm))
+                $this->_addFormError('adminpass_confirm', 'ap');
         }
 
         if ($key != $key_confirm) {
             $valid = false;
             $this->_addMessage('error', 'Wireless key does not match.', 'ap');
+            $this->_addFormError('key', 'ap');
+            $this->_addFormError('key_confirm', 'ap');
         }
 
         $keylen = strlen($key);
         if ($keylen && (($keylen < 8) || ($keylen > 63))) {
             $valid = false;
             $this->_addMessage('error', 'Invalid key length, must be between 8 and 63 characters.', 'ap');
+            $this->_addFormError('key', 'ap');
+            $this->_addFormError('key_confirm', 'ap');
         }
 
         if ($adminpass != $adminpass_confirm) {
             $valid = false;
             $this->_addMessage('error', 'Admin password does not match.', 'ap');
+            $this->_addFormError('adminpass', 'ap');
+            $this->_addFormError('adminpass_confirm', 'ap');
         }
 
         $passlen = strlen($adminpass);
         if ($passlen < 8) {
             $valid = false;
-            $this->_addMessage('error', 'Password must be at least 8 characters.', 'ap');
+            $this->_addMessage('error', 'Admin password must be at least 8 characters.', 'ap');
+            $this->_addFormError('adminpass', 'ap');
+            $this->_addFormError('adminpass_confirm', 'ap');
         }
 
         return $valid;

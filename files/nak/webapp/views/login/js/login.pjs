@@ -3,5 +3,9 @@
         $('#finish-setup').click(function () {
             $('#login-form').submit();
         });
+
+        $('#login-pass').focus(function() {
+            $('#desc_password').collapse('show');
+        });
     });
 </script>

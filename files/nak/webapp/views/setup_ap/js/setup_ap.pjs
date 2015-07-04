@@ -36,22 +36,27 @@
 
         $('#ssid').focus(function() {
             $('#desc_ssid').collapse('show');
+            $('#ssid').parent().removeClass('has-error');
         });
 
         $('#key').focus(function() {
             $('#desc_key').collapse('show');
+            $('#key').parent().removeClass('has-error');
         });
 
         $('#key_confirm').focus(function() {
             $('#desc_key_confirm').collapse('show');
+            $('#key_confirm').parent().removeClass('has-error');
         });
 
         $('#adminpass').focus(function() {
             $('#desc_adminpass').collapse('show');
+            $('#adminpass').parent().removeClass('has-error');
         });
 
         $('#adminpass_confirm').focus(function() {
             $('#desc_adminpass_confirm').collapse('show');
+            $('#adminpass_confirm').parent().removeClass('has-error');
         });
 
         $('#distresspass').focus(function() {
@@ -75,7 +80,7 @@
         });
 
         $('#adminpass_confirm').blur(function() {
-            $('#desc_adminpass_confirm').collapse('hide');
+            //$('#desc_adminpass_confirm').collapse('hide');
         });
 
         $('#distresspass').blur(function() {

@@ -36,7 +36,7 @@ class UserController extends Page
             $password = $request->postvar('password');
 
             if (empty($username) || empty($password)) {
-                $this->_addMessage('error', 'All fields are required');
+                $this->_addMessage('error', 'All fields are required', 'login');
                 $this->_redirect('/user/login');
             }
 
@@ -44,7 +44,7 @@ class UserController extends Page
                 $_SESSION['logged_in'] = 1;
                 $this->_redirect('/admin/index');
             } else {
-                $this->_addMessage('error', 'Username/password is incorrect.');
+                $this->_addMessage('error', 'Username/password is incorrect.', 'login');
                 $this->_redirect('/user/login');
             }
         }

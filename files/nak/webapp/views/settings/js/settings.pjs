@@ -32,6 +32,7 @@
         });
 
         $('#submit-password').click(function(event) {
+            $('html').find('*').css("cursor", "wait");
             $.ajax({
                 type: "POST",
                 url: "/settings/password",
@@ -49,26 +50,32 @@
 
         $('#ssid').focus(function() {
             $('#desc_ssid').collapse('show');
+            $('#ssid').parent().removeClass('has-error');
         });
 
         $('#key').focus(function() {
             $('#desc_key').collapse('show');
+            $('#key').parent().removeClass('has-error');
         });
 
         $('#key_confirm').focus(function() {
             $('#desc_key_confirm').collapse('show');
+            $('#key_confirm').parent().removeClass('has-error');
         });
 
         $('#adminpass_check').focus(function() {
             $('#desc_adminpass_check').collapse('show');
+            $('#adminpass_check').parent().removeClass('has-error');
         });
 
         $('#adminpass').focus(function() {
             $('#desc_adminpass').collapse('show');
+            $('#adminpass').parent().removeClass('has-error');
         });
 
         $('#adminpass_confirm').focus(function() {
             $('#desc_adminpass_confirm').collapse('show');
+            $('#adminpass_confirm').parent().removeClass('has-error');
         });
 
         $('#ssid').blur(function() {
@@ -80,7 +87,7 @@
         });
 
         $('#key_confirm').blur(function() {
-            $('#desc_key_confirm').collapse('hide');
+            //$('#desc_key_confirm').collapse('hide');
         });
 
         $('#adminpass_check').blur(function() {
@@ -92,7 +99,7 @@
         });
 
         $('#adminpass_confirm').blur(function() {
-            $('#desc_adminpass_confirm').collapse('hide');
+            //$('#desc_adminpass_confirm').collapse('hide');
         });
     });
 </script>

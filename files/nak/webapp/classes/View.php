@@ -85,4 +85,10 @@ class View
         $flashMessager = new FlashMessager();
         return $flashMessager->getFormData($form, $name);
     }
+
+    protected function _getFormError($form, $name)
+    {
+        $flashMessager = new FlashMessager();
+        return $flashMessager->getFormError($form, $name);
+    }
 }

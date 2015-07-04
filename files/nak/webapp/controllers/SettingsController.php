@@ -57,17 +57,30 @@ class SettingsController extends Page
         if (!($ssid && $key && $key_confirm)) {
             $valid = false;
             $this->_addMessage('error', 'All fields are required.', 'ap');
+
+            if (empty($ssid))
+                $this->_addFormError('ssid', 'ap');
+
+            if (empty($key))
+                $this->_addFormError('key', 'ap');
+
+            if (empty($key_confirm))
+                $this->_addFormError('key_confirm', 'ap');
         }
 
         if (!($key == $key_confirm)) {
             $valid = false;
             $this->_addMessage('error', 'Keys do not match.', 'ap');
+            $this->_addFormError('key', 'ap');
+            $this->_addFormError('key_confirm', 'ap');
         }
 
         $keylen = strlen($key);
         if ($keylen && (($keylen < 8) || ($keylen > 63))) {
             $valid = false;
             $this->_addMessage('error', 'Invalid key length, must be between 8 and 63 characters.', 'ap');
+            $this->_addFormError('key', 'ap');
+            $this->_addFormError('key_confirm', 'ap');
         }
 
         return $valid;
@@ -107,22 +120,36 @@ class SettingsController extends Page
         if (!($adminpass_check && $adminpass && $adminpass_confirm)) {
             $valid = false;
             $this->_addMessage('error', 'All fields are required.', 'pwd');
+
+            if (empty($adminpass_check))
+                $this->_addFormError('adminpass_check', 'pwd');
+
+            if (empty($adminpass))
+                $this->_addFormError('adminpass', 'pwd');
+
+            if (empty($adminpass_confirm))
+                $this->_addFormError('adminpass_confirm', 'pwd');
         }
 
         if (!(NetAidManager::check_adminpass($adminpass_check))) {
             $valid = false;
             $this->_addMessage('error', 'Current admin password is incorrect.', 'pwd');
+            $this->_addFormError('adminpass_check', 'pwd');
         }
 
         if (!($adminpass == $adminpass_confirm)) {
             $valid = false;
             $this->_addMessage('error', 'Passwords do not match.', 'pwd');
+            $this->_addFormError('adminpass', 'pwd');
+            $this->_addFormError('adminpass_confirm', 'pwd');
         }
 
         $passlen = strlen($adminpass);
         if ($passlen < 8) {
             $valid = false;
             $this->_addMessage('error', 'Password must be at least 8 characters.', 'pwd');
+            $this->_addFormError('adminpass', 'pwd');
+            $this->_addFormError('adminpass_confirm', 'pwd');
         }
 
         return $valid;

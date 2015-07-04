@@ -9,6 +9,9 @@ class FlashMessager
 
         if (!array_key_exists('formdata', $_SESSION))
             $_SESSION['formdata'] = array();
+
+        if (!array_key_exists('formerrors', $_SESSION))
+            $_SESSION['formerrors'] = array();
     }
 
     public function addMessage($type, $text, $form)
@@ -19,6 +22,11 @@ class FlashMessager
     public function addFormData($name, $value, $form)
     {
         $_SESSION['formdata'][$form][$name] = $value;
+    }
+
+    public function addFormError($name, $form)
+    {
+        $_SESSION['formerrors'][$form][$name] = 1;
     }
 
     public function getMessages($form)
@@ -46,6 +54,21 @@ class FlashMessager
 
         $value = $_SESSION['formdata'][$form][$name];
         unset($_SESSION['formdata'][$form][$name]);
+
+        return $value;
+    }
+
+    public function getFormError($form, $name)
+    {
+        if ($this->_isAjax())
+            return false; // Don't return form errors in ajax responses.
+
+        if (empty($_SESSION['formerrors'][$form]) ||
+            !array_key_exists($name, $_SESSION['formerrors'][$form]))
+            return false;
+
+        $value = $_SESSION['formerrors'][$form][$name];
+        unset($_SESSION['formerrors'][$form][$name]);
 
         return $value;
     }
