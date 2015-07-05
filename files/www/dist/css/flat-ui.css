@@ -6241,4 +6241,12 @@ footer p {
 .error ul li {
     font-size: 12px;
 }
+
+div.log {
+    max-height: 460px;
+    overflow: -moz-scrollbars-vertical;
+    overflow: scroll;
+    white-space: pre;
+    font-size:10pt;
+}
 /*# sourceMappingURL=flat-ui.css.map */
