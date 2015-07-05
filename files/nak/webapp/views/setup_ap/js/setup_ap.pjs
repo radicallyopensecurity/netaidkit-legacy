@@ -17,11 +17,12 @@
                 }
             });
 
-            setInterval(function() {
+            var interval = setInterval(function() {
                 $.ajax({
                     type: "GET",
                     url: "/setup/wan",
                     success: function(data) {
+                        clearInterval(interval);
                         window.location.href = '/setup/wan';
                     }
                 });
