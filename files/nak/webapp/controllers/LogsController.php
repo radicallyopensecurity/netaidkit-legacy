@@ -2,7 +2,7 @@
 
 class LogsController extends Page
 {
-    protected $_allowed_actions = array('index');
+    protected $_allowed_actions = array('index', 'download_tor', 'download_vpn');
 
     protected $_torLogFile = '/var/log/tor/notices.log';
     protected $_vpnLogFile = '/var/log/openvpn.log';
@@ -27,6 +27,22 @@ class LogsController extends Page
         $params = array('torLog' => $torLog, 'vpnLog' => $vpnLog);
         $view = new View('logs', $params);
         return $view->display();
+    }
+
+    public function download_tor()
+    {
+        header('Content-type: text/plain');
+        header('Content-Disposition: attachment; filename="netaidkit_tor_log.txt"');
+        echo $this->_getTorLog();
+        exit;
+    }
+
+    public function download_vpn()
+    {
+        header('Content-type: text/plain');
+        header('Content-Disposition: attachment; filename="netaidkit_vpn_log.txt"');
+        echo $this->_getVpnLog();
+        exit;
     }
 
     protected function _getTorLog()
