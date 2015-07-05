@@ -91,4 +91,9 @@ class View
         $flashMessager = new FlashMessager();
         return $flashMessager->getFormError($form, $name);
     }
+
+    protected function _getFormToken()
+    {
+        return $_SESSION['token'];
+    }
 }

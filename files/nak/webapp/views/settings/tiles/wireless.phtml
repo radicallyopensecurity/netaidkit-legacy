@@ -36,6 +36,7 @@
                     <p>Please retype your wireless network key.</p>
                 </div>
             </div>
+            <input type="hidden" name="token" value="<?= $this->_getFormToken(); ?>" />
             <a id="submit-wireless" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#apModal">Change Wireless Settings</a>
         </form>
     </div>

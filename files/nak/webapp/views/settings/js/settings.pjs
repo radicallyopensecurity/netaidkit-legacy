@@ -15,15 +15,17 @@
                         $('#apModalText').html('Please reconnect using the new settings. This page will reload automatically.');
                         $('#apModal .modal-footer').html('');
 
-                        setInterval(function() {
+                        var interval = setInterval(function() {
                             $.ajax({
                                 type: "GET",
-                                url: "/settings",
+                                url: "/setup/wan",
+                                timeout: 3000,
                                 success: function(data) {
-                                    window.location.href = '/settings';
+                                    clearInterval(interval);
+                                    window.location.href = '/setup/wan';
                                 }
                             });
-                        }, 1000);
+                        }, 5000);
                     }
                 },
             });

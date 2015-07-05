@@ -14,19 +14,20 @@
                     $('#apModalTitle').html('Disconnected');
                     $('#apModalText').html('Please reconnect using the new settings. This page will reload automatically.');
                     $('#apModal .modal-footer').html('');
+
+                    var interval = setInterval(function() {
+                        $.ajax({
+                            type: "GET",
+                            url: "/setup/wan",
+                            timeout: 3000,
+                            success: function(data) {
+                                clearInterval(interval);
+                                window.location.href = '/setup/wan';
+                            }
+                        });
+                    }, 5000);
                 }
             });
-
-            var interval = setInterval(function() {
-                $.ajax({
-                    type: "GET",
-                    url: "/setup/wan",
-                    success: function(data) {
-                        clearInterval(interval);
-                        window.location.href = '/setup/wan';
-                    }
-                });
-            }, 1000);
 
             event.preventDefault();
         });

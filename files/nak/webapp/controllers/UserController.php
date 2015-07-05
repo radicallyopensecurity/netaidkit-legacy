@@ -41,6 +41,7 @@ class UserController extends Page
             }
 
             if ($username == 'admin' && NetAidManager::check_adminpass($password)) {
+                $_SESSION['token'] = md5(uniqid(rand(), true));
                 $_SESSION['logged_in'] = 1;
                 $this->_redirect('/admin/index');
             } else {

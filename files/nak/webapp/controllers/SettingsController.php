@@ -30,6 +30,10 @@ class SettingsController extends Page
             $ssid         = $request->postvar('ssid');
             $key          = $request->postvar('key');
             $key_confirm  = $request->postvar('key_confirm');
+            $token        = $request->postvar('token');
+
+            if (!$this->_checkToken($token))
+                exit(-1);
 
             $valid = $this->ap_validate($ssid, $key, $key_confirm);
 

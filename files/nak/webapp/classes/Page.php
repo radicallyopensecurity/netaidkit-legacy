@@ -47,4 +47,12 @@ class Page
         $flashMessager = new FlashMessager();
         $flashMessager->addFormError($name, $form);
     }
+
+    protected function _checkToken($token)
+    {
+        if (!empty($token) && $token == $_SESSION['token'])
+            return true;
+
+        return false;
+    }
 }
