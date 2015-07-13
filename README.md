@@ -6,6 +6,14 @@ Standalone VPN/Tor router for journalists and activists.
 Building the firmware image
 ----
 
+Install dependencies
+
+```bash
+sudo apt-get update
+sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip subversion gawk
+```
+
+
 Create a working directory somewhere and execute the following commands:
 
 ```bash
