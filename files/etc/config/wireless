@@ -18,6 +18,6 @@ config wifi-iface
 	option mode ap
 	option ssid NETAIDKIT
 	option encryption psk2
-	option key s3cr3tp4ss
+	option key netaidkit
 	option network wlan
 
