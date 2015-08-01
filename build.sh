@@ -5,7 +5,7 @@
 
 # If this is the first build, pull the OpenWRT sources.
 if [ ! -d "openwrt" ]; then
-    git clone git://git.openwrt.org/openwrt.git && cd openwrt
+    git clone git://git.openwrt.org/15.05/openwrt.git && cd openwrt
 else
     # On subsequent builds, update the OpenWRT sources.
     cd openwrt && git pull
