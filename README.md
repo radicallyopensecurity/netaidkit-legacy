@@ -42,4 +42,4 @@ Flashing the GL-iNet:
 
 Set-up
 ----
-Connect to the NETAIDKIT access point using password 's3cr3tp4ss'. Browse to 192.168.101.1 and follow the steps to set-up your own AP and change the passwords.
+Connect to the NETAIDKIT access point using password 'netaidkit'. Browse to 192.168.101.1 and follow the steps to set-up your own AP and change the passwords.
