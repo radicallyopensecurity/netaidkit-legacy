@@ -50,7 +50,8 @@ boot() {
         /etc/init.d/tor start
     elif [ $stage = "4" ]; then
         echo "1" > /sys/class/leds/gl-connect\:green\:lan/brightness
-        openvpn --daemon --config /nak/ovpn/current.ovpn
+        > /var/log/openvpn.log
+        openvpn --log-append /var/log/openvpn.log --daemon --config /nak/ovpn/current.ovpn
     else
         echo "1" > /sys/class/leds/gl-connect\:red\:wlan/brightness
     fi
