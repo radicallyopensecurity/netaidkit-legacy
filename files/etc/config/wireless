@@ -20,4 +20,4 @@ config wifi-iface
 	option encryption psk2
 	option key netaidkit
 	option network wlan
-
+	option hidden 0

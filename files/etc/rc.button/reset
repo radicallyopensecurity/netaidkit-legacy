@@ -8,11 +8,8 @@ logger "$BUTTON pressed for $SEEN seconds"
 
 if [ "$SEEN" -lt 1 ]
 then
-	echo "REBOOT" > /dev/console
-	sync
 	/nak/scripts/reset_uplink_wifi.sh
 elif [ "$SEEN" -gt 5 ]
 then
-	echo "FACTORY RESET" > /dev/console
-	jffs2reset -y && reboot &
+	/nak/scripts/reset.sh
 fi

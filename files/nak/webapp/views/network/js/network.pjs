@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#submit-network').click(function(event) {
+            $('html').find('*').css("cursor", "wait");
+            $.ajax({
+                type: "POST",
+                url: "/network/save",
+                data: $('form#network-form').serialize(),
+                success: function(data) {
+                    $('html').find('*').css("cursor", "");
+                    window.location.href = '/network';
+                },
+            });
+        });
+    });
+</script>

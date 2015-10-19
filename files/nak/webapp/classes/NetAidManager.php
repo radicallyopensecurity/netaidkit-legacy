@@ -6,113 +6,107 @@ class NetAidManager
     {
         if (empty($ssid) || empty($key))
             return false;
-        
-        $ssid = escapeshellarg($ssid);
-        $key  = escapeshellarg($key);
-        
-        $output = shell_exec("/usr/bin/netaidkit apconfig $ssid $key");
-        
+
+        $client = new NakdClient();
+        $output = $client->doCommand('apconfig', array($ssid, $key));
+
         return true;
     }
-    
+
     static public function scan_wifi()
     {
-        $output = shell_exec("/usr/bin/netaidkit wifiscan");
-        preg_match_all("/ESSID: \"(.+?)\".+?Encryption: (.+?) ?[\(|\n]/s", $output, $wifi_info);  
+        $client = new NakdClient();
+        $output = $client->doCommand('wifiscan');
+
+        preg_match_all("/ESSID: \"(.+?)\".+?Encryption: (.+?) ?[\(|\n]/s", $output, $wifi_info);
 
         $wifi_list = array();
         foreach($wifi_info[1] as $i => $wifi) {
             $ssid = $wifi_info[1][$i];
             $enctype = $wifi_info[2][$i];
-            
+
             $enctype = preg_replace('/mixed | PSK| 802.1X/', '', $enctype);
             if ($enctype == 'none')
                 $enctype = 'Open';
-            
+
             $wifi_list[$ssid] = $enctype;
         }
-        
+
         asort($wifi_list);
-            
+
         return $wifi_list;
     }
-    
+
     static public function setup_wan($ssid, $key)
     {
         if (empty($ssid))
             return false;
-            
-        $ssid = escapeshellarg($ssid);
-        $key  = escapeshellarg($key);
-        
-        $output = shell_exec("/usr/bin/netaidkit wificonn $ssid $key");
-        
+
+        $client = new NakdClient();
+        $output = $client->doCommand('wificonn', array($ssid, $key));
+
         return true;
     }
-    
+
     static public function go_online()
     {
-        $output = shell_exec("/usr/bin/netaidkit goonline");
-        
-        return true;    
+        $client = new NakdClient();
+        $output = $client->doCommand('goonline');
+
+        return true;
     }
-    
+
     static public function set_adminpass($adminpass)
     {
         if (empty($adminpass) || strlen($adminpass) < 8)
             return false;
-        
+
         $passfile = ROOT_DIR . '/data/pass';
-        
+
         $admin_hash = password_hash($adminpass, PASSWORD_BCRYPT);
-        
+
         return file_put_contents($passfile, $admin_hash);
     }
-    
+
     static public function check_adminpass($loginpass)
-    {   
+    {
         $passfile = ROOT_DIR . '/data/pass';
-        
+
         if (!file_exists($passfile))
             throw new Exception('Password file missing.');
 
         $admin_hash = file_get_contents($passfile);
-        
+
         return password_verify($loginpass, $admin_hash);
-    }    
-    
+    }
+
     static public function get_stage()
     {
-        return shell_exec("/usr/bin/netaidkit getstage");
+        $client = new NakdClient();
+        $output = $client->doCommand('getstage');
+
+        return $output;
     }
 
     static public function get_inetstat()
     {
-        $out = array();
-        $status = -1;
+        $client = new NakdClient();
+        $output = $client->doCommand('inetstat');
 
-        exec("/usr/bin/netaidkit inetstat", $out, $status);
-        Log::debug("inetstat result: $status"); // status = 0 when there is inet connection, 4 if there isn't
-
-        if($status == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return ($output == "0") ? true : false;
     }
-    
+
     static public function set_stage($stage)
     {
         if (empty($stage))
             return false;
-            
-        $stage = escapeshellarg($stage);
-        
-        $output = shell_exec("/usr/bin/netaidkit setstage $stage");
-        
+
+        $client = new NakdClient();
+        $output = $client->doCommand('setstage', array($stage));
+
         return true;
     }
-    
+
     static public function toggle_tor()
     {
         $cur_stage = self::get_stage();
@@ -125,12 +119,13 @@ class NetAidManager
         } else {
             return false;
         }
-            
-        $output = shell_exec("/usr/bin/netaidkit stagetor $mode");
-        
+
+        $client = new NakdClient();
+        $output = $client->doCommand('stagetor', array($mode));
+
         return true;
     }
-    
+
     static public function toggle_vpn()
     {
         $cur_stage = self::get_stage();
@@ -143,15 +138,17 @@ class NetAidManager
         } else {
             return false;
         }
-            
-        $output = shell_exec("/usr/bin/netaidkit stagevpn $mode");
-        
+
+        $client = new NakdClient();
+        $output = $client->doCommand('stagevpn', array($mode));
+
         return true;
     }
-    
+
     static public function wan_ssid()
     {
-        $output = shell_exec("/usr/bin/netaidkit wlaninfo wlan0");
+        $client = new NakdClient();
+        $output = $client->doCommand('wlaninfo', array("wlan0"));
 
         preg_match_all("/Mode: (Master|Client) /", $output, $mode);
         preg_match_all("/ESSID: \"(.*)\"/", $output, $ssids);
@@ -161,10 +158,9 @@ class NetAidManager
         else
             return $ssids[1][0];
     }
-    
+
     static public function do_update($image_file)
     {
-        $image_file = escapeshellarg($image_file);
 
         $pid = pcntl_fork();
         if ($pid == -1) {
@@ -172,7 +168,8 @@ class NetAidManager
         } else if ($pid) {
             //parent
         } else {
-            exec("sudo /usr/bin/netaidkit doupdate $image_file");
+            $client = new NakdClient();
+            $output = $client->doCommand('doupdate', array($image_file));
         }
     }
 
@@ -180,17 +177,42 @@ class NetAidManager
     {
         if ($mode != 'on')
             $mode = 'off';
-            
-        shell_exec("/usr/bin/netaidkit nrouting $mode");
-        
+
+        $client = new NakdClient();
+        $output = $client->doCommand('nrouting', array($mode));
+
         return true;
     }
-    
-    static public function routing_status()                                                                        
-    {                                                                                                              
-        $setting = shell_exec('uci show firewall.@forwarding[0].enabled');                                     
-        $mode = substr($setting, -3, 1);                                                                       
-        return $mode;                                                                                          
-    }   
-}
 
+    static public function toggle_broadcast($mode)
+    {
+        if ($mode != 'on')
+            $mode = 'off';
+
+        $client = new NakdClient();
+        $output = $client->doCommand('broadcst', array($mode));
+
+        return true;
+    }
+
+    static public function routing_status()
+    {
+        $setting = shell_exec('uci show firewall.@forwarding[0].enabled');
+        $mode = substr($setting, -3, 1);
+        return $mode;
+    }
+
+    static public function broadcast_hidden_status()
+    {
+        $setting = shell_exec('uci show wireless.@wifi-iface[1].hidden');
+        $mode = substr($setting, -3, 1);
+        return $mode;
+    }
+
+    static public function detect_portal() {
+        $client = new NakdClient();
+        $output = $client->doCommand('isportal', array($mode));
+
+        return (trim($output) == "yes" ? true : false);
+    }
+}

@@ -1,0 +1,44 @@
+Command messages format:
+
+    COMMAND command\n
+    arg1\n
+    arg2\n
+    ...
+    argn\n
+    \n
+
+Command response format:
+
+    STATUS success/error\n
+    base64(data)\n
+    \n
+
+list of current commands:
+    apconfig - configure wireless AP
+    wificonn - connect upstream wifi
+    inetstat - check internet connectivity
+    wlaninfo - get current wlan info
+    wifiscan - print wireless networks
+    nrouting - toggle normal routing
+    goonline - toggle captive portal redirect
+    doupdate - perform system update
+
+    - REPLACE THIS WITH CTX? */ -
+    setstage - set current stage
+    getstage - get current stage
+    stagevpn - toggle vpn mode
+    stagetor - toggle tor mode
+
+
+X    /usr/bin/netaidkit apconfig
+X    /usr/bin/netaidkit wifiscan
+X    /usr/bin/netaidkit wificonn
+X    /usr/bin/netaidkit goonline
+X    /usr/bin/netaidkit getstage
+X    /usr/bin/netaidkit inetstat
+X    /usr/bin/netaidkit setstage
+X    /usr/bin/netaidkit stagetor
+X    /usr/bin/netaidkit stagevpn
+X    /usr/bin/netaidkit wlaninfo
+    /usr/bin/netaidkit doupdate
+X    /usr/bin/netaidkit nrouting

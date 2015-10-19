@@ -9,7 +9,7 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/$(PKG_NAME)    
+define Package/$(PKG_NAME)
 	SECTION:=NetAidKit
 	CATEGORY:=NetAidKit
 	TITLE:=$(PKG_NAME)
@@ -26,8 +26,8 @@ CONFIGURE_VARS+= \
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_DIR) $(1)/www
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/netaidkit $(1)/usr/bin/netaidkit
-	chmod +s $(1)/usr/bin/netaidkit
+	$(INSTALL_DIR) $(1)/run/nakd
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/nakd $(1)/usr/bin/nakd
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

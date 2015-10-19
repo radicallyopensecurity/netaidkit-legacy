@@ -1,0 +1,10 @@
+<?php $check = (($this->_params['broadcast_hidden_status'] == "1") ? '' : 'checked'); ?>
+
+<div class="tile">
+    <div class="login-form">
+        <form action="/network/save" method="POST" id="network-form">
+            <input type="checkbox" name="broadcast_ssid" value="broadcast_ssid" <?= $check ?> /> Broadcast SSID
+            <a id="submit-network" class="btn btn-primary btn-lg btn-block">Change Network Settings</a>
+        </form>
+    </div>
+</div>

@@ -12,7 +12,8 @@ else
 fi
 
 # Create a default configuration.
-rm -f .config; make defconfig
+#rm -f .config; make defconfig
+make defconfig
 
 # Update the package feed and install packages.
 ./scripts/feeds update && ./scripts/feeds install -a

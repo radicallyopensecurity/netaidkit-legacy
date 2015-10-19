@@ -1,0 +1,33 @@
+<?php $portal = NetAidManager::detect_portal(); ?>
+
+<?php if ($portal) : ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#portal').modal('toggle');
+
+            $('#popup_portal').on('click', function() {
+                window.open("http://google.com",null,
+                    "height=600,width=800,status=yes,toolbar=no,menubar=no,location=no");
+
+                $('#portal').modal('toggle');
+            });
+        });
+    </script>
+
+    <div class="modal fade" id="portal" tabindex="-1" role="dialog" aria-labelledby="portal" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Captive portal detected</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <a id="popup_portal">Click here to open portal page.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php endif; ?>

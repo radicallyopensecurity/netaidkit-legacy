@@ -6,12 +6,14 @@
         <a class="navbar-brand" href="/admin/index">NetAidKit</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <?php include('portal.phtml'); ?>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advanced <b class="caret"></b></a>
                 <span class="dropdown-arrow"></span>
                 <ul class="dropdown-menu">
                     <li><a href="/settings/index">Settings</a></li>
+                    <li><a href="/network/index">Network</a></li>
                     <li><a href="/logs/index">Show logs</a></li>
                     <li><a href="/user/logout">Log out</a></li>
                 </ul>
