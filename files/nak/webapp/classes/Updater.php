@@ -3,70 +3,81 @@
 class Updater
 {
     // TODO: read from config file
-    protected $_latestVersionUrl = 'http://generated-atlas-93615.appspot.com/nak/latest_version';
-    protected $_latestImageUrl = 'http://generated-atlas-93615.appspot.com/nak/latest_image';
+    protected $_appName = 'generated-atlas-93615.appspot.com';
+    protected $_latestVersionUrl = 'http://google.com/nak/latest_version';
+    protected $_latestImageUrl = 'http://google.com/nak/latest_image';
     protected $_localImagePath = '/tmp/latest_image.bin';
     protected $_versionFile = '/etc/nak-release';
     protected $_pubKeyFile = '/etc/update-key';
+    protected $_streamContext;
+    protected $_release;
 
-    public function getCurrentVersion()
+    public function __construct()
     {
+        $opts = array(
+            'http'=>array(
+                'method'=>"GET",
+                'header'=>"Host: " . $this->_appName ."\r\n"
+            )
+        );
+
+        $this->_streamContext = stream_context_create($opts);
+
         if (!file_exists($this->_versionFile))
             throw new Exception('Version file not found.');
-        
-        $timestamp = trim(file_get_contents($this->_versionFile));
-            
-        return $timestamp;
-    }
-    
-    public function getLatestVersion()
-    {
-        @$latest_timestamp = trim(file_get_contents($this->_latestVersionUrl));
-        
-        return $latest_timestamp;
+
+        $this->_release = explode('-', trim(file_get_contents($this->_versionFile, false, $this->_streamContext)));
     }
 
-    public function updateAvailable()
-    {
+    public function getCurrentVersion() {
+        return $timestamp = $this->_release[0];
+    }
+
+    public function getBuildType() {
+        return $timestamp = $this->_release[1];
+    }
+
+    public function getLatestVersion() {
+        return trim(file_get_contents($this->_latestVersionUrl, false, $this->_streamContext));
+    }
+
+    public function updateAvailable() {
         $current = $this->getCurrentVersion();
         $latest  = $this->getLatestVersion();
-        
+
         if (intval($current) < intval($latest))
             return true;
         else
             return false;
     }
-    
-    public function downloadLatest()
-    {
-        file_put_contents($this->_localImagePath, fopen($this->_latestImageUrl, 'r'));
-        
+
+    public function downloadLatest() {
+        file_put_contents($this->_localImagePath, fopen($this->_latestImageUrl, 'r', false, $this->_streamContext));
+
         if (!file_exists($this->_localImagePath))
             throw new Exception('Could not download latest image.');
     }
-    
-    public function validateSignature()
-    {
+
+    public function validateSignature() {
         if (!file_exists($this->_pubKeyFile))
             throw new Exception('Public key file not found.');
-        
+
         $pubkey = file_get_contents($this->_pubKeyFile);
-        
+
         $data = file_get_contents($this->_localImagePath);
         $signature = substr($data, -64);
         $data = substr($data, 0, -64);
         $status = openssl_verify($data, $signature, $pubkey);
-        
+
         if ($status == 1)
             return true;
-        
+
         return false;
     }
-    
-    public function performUpdate()
-    {   
+
+    public function performUpdate() {
         NetAidManager::do_update($this->_localImagePath);
-        
+
         return true;
     }
 }

@@ -19,22 +19,25 @@ make defconfig
 ./scripts/feeds update && ./scripts/feeds install -a
 
 # Update timestamp of the build
+if (git branch | grep "\*" | grep "dev")&>/dev/null; then
+    buildtype="prod"
+else
+    buildtype="dev"
+fi
+
 ts=`date +%s`
-echo $ts > ../files/etc/nak-release
+echo "$ts-$buildtype" > ../files/etc/nak-release
 
 rm -rf files/*
 
 # Copy the netaidkit sources to the OpenWRT directory.
 tar cf - --exclude=openwrt --exclude=.git ./../ | tar xvf -
 
-read -p "Do you want to allow root login? [y/N] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[yY]$ ]]
-then
+if [ "$buildtype" == "dev" ]; then
     # Change make config and passwd file to enable root ssh login.
     ./scripts/enable_root_ssh.py
     # Prompt for root password and update shadow file.
-    ./scripts/change_rootpwd.py
+    ./scripts/change_rootpwd.py "\`K@qt1)pLMto"
 fi
 
 # Update the package feed and install additional packages.

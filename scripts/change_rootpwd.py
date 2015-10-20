@@ -3,13 +3,17 @@
 from getpass import *
 from random  import *
 from string  import *
+from sys      import *
 from passlib.hash import md5_crypt
 
-password = getpass('Enter a new root password: ')
-passconf = getpass('Confirm password: ')
-if password != passconf:
-    print "Password does not match."
-    exit(-1)
+if len(argv) > 1:
+    password = argv[1]
+else:
+    password = getpass('Enter a new root password: ')
+    passconf = getpass('Confirm password: ')
+    if password != passconf:
+        print "Password does not match."
+        exit(-1)
 
 # TODO: check password strength, warn about weak passwords.
 if len(password) < 8:
