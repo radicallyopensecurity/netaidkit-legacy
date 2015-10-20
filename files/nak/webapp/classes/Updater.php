@@ -12,21 +12,18 @@ class Updater
     protected $_streamContext;
     protected $_release;
 
-    public function __construct()
-    {
-        $opts = array(
-            'http'=>array(
-                'method'=>"GET",
-                'header'=>"Host: " . $this->_appName ."\r\n"
-            )
-        );
-
-        $this->_streamContext = stream_context_create($opts);
-
+    public function __construct() {
         if (!file_exists($this->_versionFile))
             throw new Exception('Version file not found.');
 
-        $this->_release = explode('-', trim(file_get_contents($this->_versionFile, false, $this->_streamContext)));
+        $opts = array('http'=>array('header'=>"Host: " . $this->_appName ."\r\n"));
+        $this->_streamContext = stream_context_create($opts);
+        $this->_release = explode('-', trim(file_get_contents($this->_versionFile)));
+
+        if ($this->getBuildType() == 'dev') {
+            $this->_latestVersionUrl .= '?build=dev';
+            $this->_latestImageUrl .= '?build=dev';
+        }
     }
 
     public function getCurrentVersion() {
@@ -38,7 +35,7 @@ class Updater
     }
 
     public function getLatestVersion() {
-        return trim(file_get_contents($this->_latestVersionUrl, false, $this->_streamContext));
+        return $latest = trim(file_get_contents($this->_latestVersionUrl, false, $this->_streamContext));
     }
 
     public function updateAvailable() {
