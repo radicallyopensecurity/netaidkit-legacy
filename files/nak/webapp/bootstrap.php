@@ -13,6 +13,8 @@ define('STAGE_ONLINE',  2);
 define('STAGE_TOR',     3);
 define('STAGE_VPN',     4);
 
+define('UPDATE_REMIND_MAX', 4);
+
 // Register class autoloader.
 include 'classes/Autoloader.php';
 spl_autoload_register('Autoloader::load');

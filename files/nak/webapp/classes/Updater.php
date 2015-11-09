@@ -35,10 +35,15 @@ class Updater
     }
 
     public function getLatestVersion() {
-        return $latest = trim(file_get_contents($this->_latestVersionUrl, false, $this->_streamContext));
+        $latest = trim(@file_get_contents($this->_latestVersionUrl, false, $this->_streamContext));
+        return $latest;
     }
 
     public function updateAvailable() {
+        $reminder = UpdateReminder::get_reminder();
+        if (!($reminder->isExpired()))
+            return false;
+
         $current = $this->getCurrentVersion();
         $latest  = $this->getLatestVersion();
 
@@ -49,7 +54,7 @@ class Updater
     }
 
     public function downloadLatest() {
-        file_put_contents($this->_localImagePath, fopen($this->_latestImageUrl, 'r', false, $this->_streamContext));
+        @file_put_contents($this->_localImagePath, fopen($this->_latestImageUrl, 'r', false, $this->_streamContext));
 
         if (!file_exists($this->_localImagePath))
             throw new Exception('Could not download latest image.');

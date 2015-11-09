@@ -1,4 +1,5 @@
 <?php include ('update/js/update.pjs'); ?>
+<?php $reminder = UpdateReminder::get_reminder(); ?>
 
 <div class="row">
     <div class="col-xs-12 col-md-6">
@@ -8,6 +9,7 @@
         <p style="font-weight: bold">Warning: DO NOT turn off or disconnect the device during the upgrade process.</p>
         <form id="upgrade-form" action="/update/do_upgrade" method="POST">
             <a id="upgrade" type="button" class="btn btn-primary">Upgrade</a>
+            <?php if ($reminder->getCounter() < 4): ?><a id="remind" type="button" class="btn btn-primary">Remind me later</a><?php endif; ?>
         </form>
         <div id="UpdateStatus" style="display:none">
             <h3 id="update_phase">Downloading update:</h3>

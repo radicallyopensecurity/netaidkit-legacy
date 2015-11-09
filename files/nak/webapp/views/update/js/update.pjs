@@ -30,5 +30,20 @@
                 },
             });
         });
+
+        $('#remind').click(function() {
+            $.ajax({
+                type: "POST",
+                url: "/update/do_remind",
+                data: '',
+                success: function(data) {
+                    if (data == 'SUCCESS') {
+                        window.location.href = '/admin/index';
+                    } else {
+                        alert(data);
+                    }
+                }
+            });
+        });
     });
 </script>

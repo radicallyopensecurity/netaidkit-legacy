@@ -215,4 +215,5 @@ class NetAidManager
 
         return (trim($output) == "yes" ? true : false);
     }
+
 }

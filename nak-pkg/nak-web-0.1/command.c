@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <command.h>
 
-#define N_COMMANDS  sizeof(commands) / sizeof(commands[0])
+#define N_COMMANDS  (sizeof(commands) / sizeof(commands[0]))
 
 static command commands[] = {
     { "wifiscan", scan_wifi, 0 },
