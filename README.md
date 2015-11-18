@@ -10,7 +10,7 @@ Install dependencies
 
 ```bash
 sudo apt-get update
-sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip subversion gawk
+sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip subversion gawk python
 ```
 
 
