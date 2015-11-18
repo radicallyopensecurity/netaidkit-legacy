@@ -10,7 +10,7 @@ Install dependencies
 
 ```bash
 sudo apt-get update
-sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip subversion gawk
+sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip subversion gawk python python-passlib
 ```
 
 
@@ -43,3 +43,7 @@ Flashing the GL-iNet:
 Set-up
 ----
 Connect to the NETAIDKIT access point using password 'netaidkit'. Browse to 192.168.101.1 and follow the steps to set-up your own AP and change the passwords.
+
+Disconnect from wifi
+----
+To disconnect from a wifi network, press the reset button on the side of the device once (do not hold, simply press)
