@@ -3,12 +3,24 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <json-c/json.h>
 #include "wrap.h"
 #include "command.h"
 #include "message.h"
 
 #define PIPE_READ       0
 #define PIPE_WRITE      1
+
+static char *json_wrap(const char *result) {
+	char *json;
+	json_object *jobj = json_object_new_object();
+	json_object *jstring = json_object_new_string(result);
+
+	json_object_object_add(jobj, "result", jstring);
+	json = strdup(json_object_to_json_string(jobj));
+	json_object_put(jobj);
+	return json;
+}
 
 /* Returns NULL if the command failed.
  * args must end with a NULL pointer.
@@ -53,7 +65,7 @@ char *do_command(char *script, char *args[]) {
         close(pipe_fd[PIPE_READ]);
     }
 
-    return strdup(response);
+    return json_wrap(response);
 }
 
 /* create {"/bin/sh", "script", args[0], ..., args[n], NULL} on heap */

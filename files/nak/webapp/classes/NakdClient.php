@@ -35,8 +35,9 @@ class NakdClient {
     public function doCommand($cmdString, $args = array()) {
         $command = new CommandMessage($cmdString, $args);
         $response = $this->_sendCommand($command);
+		$json = json_decode($response, true);
 
-        return $response;
+        return $json["result"];
     }
 
 }

@@ -13,7 +13,7 @@ define Package/$(PKG_NAME)
 	SECTION:=NetAidKit
 	CATEGORY:=NetAidKit
 	TITLE:=$(PKG_NAME)
-	DEPENDS:=+lighttpd +lighttpd-mod-cgi
+	DEPENDS:=+lighttpd +lighttpd-mod-cgi +libjson-c
 endef
 
 define Package/$(PKG_NAME)/description
