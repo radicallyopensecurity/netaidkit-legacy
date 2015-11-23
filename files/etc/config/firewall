@@ -24,34 +24,57 @@ config zone
     
 # CAPTIVE WEB
 config redirect
+        option name				'captive_web'
         option src              'wlan'
         option proto            'tcp'
         option src_dip          '!192.168.101.0/24'
         option dest_port        '80'
         option enabled          '1'
+        list   nak-hooks-enable  'reset'
+        list   nak-hooks-disable 'stage_online'
+        list   nak-hooks-disable 'stage_vpn'
+        list   nak-hooks-disable 'stage_tor'
+        list   nak-hooks-disable 'stage_default'
 
 # ROUTER MODE
 config forwarding
+        option name             'internet'
         option src              'wlan'
         option dest             'wan'
         option enabled          '0'
+        list   nak-hooks-enable 'stage_online'
+        list   nak-hooks-disable 'stage_vpn'
+        list   nak-hooks-disable 'stage_tor'
+        list   nak-hooks-disable 'stage_default'
+        list   nak-hooks-disable 'reset'
 
 # TOR DNS
 config redirect
+        option name             'tor_dns'
         option src              'wlan'
         option proto            'udp'
         option src_port         '53'
         option dest_port        '9053'
         option enabled          '0'
+        list   nak-hooks-enable  'stage_tor'
+        list   nak-hooks-disable 'stage_online'
+        list   nak-hooks-disable 'stage_vpn'
+        list   nak-hooks-disable 'stage_default'
+        list   nak-hooks-disable 'reset'
 
 # TOR PROXY
 config redirect
+        option name             'tor_proxy'
         option src              'wlan'
         option proto            'tcp'
         option src_dip          !192.168.101.0/24
         option dest_port        '9040'
         option enabled          '0'
-
+        list   nak-hooks-enable  'stage_tor'
+        list   nak-hooks-disable 'stage_online'
+        list   nak-hooks-disable 'stage_vpn'
+        list   nak-hooks-disable 'stage_default'
+        list   nak-hooks-disable 'reset'
 
 # We need to accept udp packets on port 68,
 # see https://dev.openwrt.org/ticket/4108
@@ -110,6 +133,11 @@ config forwarding
         option src 'wlan'
         option dest 'vpn'             
         option enabled '0'                           
+        list   nak-hooks-enable  'stage_vpn'
+        list   nak-hooks-disable 'stage_tor'
+        list   nak-hooks-disable 'stage_online'
+        list   nak-hooks-disable 'stage_default'
+        list   nak-hooks-disable 'reset'
                                                  
 # include a file with users custom iptables rules
 config include                        
