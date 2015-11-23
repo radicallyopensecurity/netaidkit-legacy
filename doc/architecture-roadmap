@@ -1,0 +1,51 @@
+The overall goal is to improve NetAidKit usability and error reporting. In
+some cases a deeper architectural change is needed. This is my personal TODO
+list and some of these items probably should be made into github issue
+following discussion.
+
+1. Implement ubus [1] support in nakd.
+
+2. Call rpcd [3] via ubus at STAGE_OFFLINE to query ethernet state. Proceed to the
+   next stage if the link is up, possibly automatically connect whenever the link
+   is up.
+   Currently it's impossible to pass through /setup/wan if the only Internet
+   connection available is through the cable.
+
+3. While configuring AP, iterate through uci [2] items and, using ubus,
+   restart only the interface(s) having "mode ap" option set.
+
+4. While selecting wifi network to connect to, do the same with client
+   interface.
+   Currently all wireless interfaces are restarted, needlessly breaking
+   connections and negatively affecting user experience.
+
+5. Add support for WPA and WEP, even though insecure.
+
+6. Get more wifi information from rpcd via ubus. Make webapp display
+   signal strength.
+
+7. nakd: listen to rpcd network interface state notifications. Make nakd
+   change STAGE accordingly whenever connection breaks or ethernet link
+   goes down.
+
+8. webapp: poll STAGE in background, update UI accordingly.
+
+9. webapp: change STAGE only through nakd.
+
+10. nakd: make codebase portable and extensible by replacing uci CLI
+    invocations with config rule hooks.
+
+11. nakd: blink twice when ethernet link detected.
+
+12. nakd: log to syslog
+
+13. Add support for translation with GNU gettext.
+
+14. Discuss whether automatic association with previously used networks is
+    a safe practice.
+
+15. Discuss whether storage of wifi credentials is desired.
+
+[1] https://wiki.openwrt.org/doc/techref/ubus
+[2] https://wiki.openwrt.org/doc/uci 
+[3] https://wiki.openwrt.org/doc/techref/rpcd
