@@ -1,8 +1,6 @@
 #include <nakd.h>
 #include <stdio.h>
-#include <errno.h>
 #include <fcntl.h>
-#include <stdlib.h>
 #include <string.h>
 #include <command.h>
 #include <message.h>
@@ -11,13 +9,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/socket.h>
-
-/* TODO: PASS FORMAT STRING AND VARIABLE AMOUNT OF ARGS */
-void p_error(const char *ctx, const char *err) {
-    fprintf (stderr, "[ERROR]\tnakd: %s: %s\n", ctx,
-             (err == NULL) ? strerror(errno) : err);
-    exit(-1);
-}
+#include "misc.h"
 
 int handle_connection(int sock) {
     struct sockaddr_un client_addr;
