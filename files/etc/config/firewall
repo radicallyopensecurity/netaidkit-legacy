@@ -30,11 +30,11 @@ config redirect
         option src_dip          '!192.168.101.0/24'
         option dest_port        '80'
         option enabled          '1'
-        list   nak-hooks-enable  'reset'
-        list   nak-hooks-disable 'stage_online'
-        list   nak-hooks-disable 'stage_vpn'
-        list   nak-hooks-disable 'stage_tor'
-        list   nak-hooks-disable 'stage_default'
+        list   nak_hooks_enable  'reset'
+        list   nak_hooks_disable 'stage_online'
+        list   nak_hooks_disable 'stage_vpn'
+        list   nak_hooks_disable 'stage_tor'
+        list   nak_hooks_disable 'stage_default'
 
 # ROUTER MODE
 config forwarding
@@ -42,11 +42,11 @@ config forwarding
         option src              'wlan'
         option dest             'wan'
         option enabled          '0'
-        list   nak-hooks-enable 'stage_online'
-        list   nak-hooks-disable 'stage_vpn'
-        list   nak-hooks-disable 'stage_tor'
-        list   nak-hooks-disable 'stage_default'
-        list   nak-hooks-disable 'reset'
+        list   nak_hooks_enable 'stage_online'
+        list   nak_hooks_disable 'stage_vpn'
+        list   nak_hooks_disable 'stage_tor'
+        list   nak_hooks_disable 'stage_default'
+        list   nak_hooks_disable 'reset'
 
 # TOR DNS
 config redirect
@@ -56,11 +56,11 @@ config redirect
         option src_port         '53'
         option dest_port        '9053'
         option enabled          '0'
-        list   nak-hooks-enable  'stage_tor'
-        list   nak-hooks-disable 'stage_online'
-        list   nak-hooks-disable 'stage_vpn'
-        list   nak-hooks-disable 'stage_default'
-        list   nak-hooks-disable 'reset'
+        list   nak_hooks_enable  'stage_tor'
+        list   nak_hooks_disable 'stage_online'
+        list   nak_hooks_disable 'stage_vpn'
+        list   nak_hooks_disable 'stage_default'
+        list   nak_hooks_disable 'reset'
 
 # TOR PROXY
 config redirect
@@ -70,11 +70,11 @@ config redirect
         option src_dip          !192.168.101.0/24
         option dest_port        '9040'
         option enabled          '0'
-        list   nak-hooks-enable  'stage_tor'
-        list   nak-hooks-disable 'stage_online'
-        list   nak-hooks-disable 'stage_vpn'
-        list   nak-hooks-disable 'stage_default'
-        list   nak-hooks-disable 'reset'
+        list   nak_hooks_enable  'stage_tor'
+        list   nak_hooks_disable 'stage_online'
+        list   nak_hooks_disable 'stage_vpn'
+        list   nak_hooks_disable 'stage_default'
+        list   nak_hooks_disable 'reset'
 
 # We need to accept udp packets on port 68,
 # see https://dev.openwrt.org/ticket/4108
@@ -133,11 +133,11 @@ config forwarding
         option src 'wlan'
         option dest 'vpn'             
         option enabled '0'                           
-        list   nak-hooks-enable  'stage_vpn'
-        list   nak-hooks-disable 'stage_tor'
-        list   nak-hooks-disable 'stage_online'
-        list   nak-hooks-disable 'stage_default'
-        list   nak-hooks-disable 'reset'
+        list   nak_hooks_enable  'stage_vpn'
+        list   nak_hooks_disable 'stage_tor'
+        list   nak_hooks_disable 'stage_online'
+        list   nak_hooks_disable 'stage_default'
+        list   nak_hooks_disable 'reset'
                                                  
 # include a file with users custom iptables rules
 config include                        
