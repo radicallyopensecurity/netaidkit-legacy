@@ -1,7 +1,33 @@
-LDLIBS = -ljson-c -lubus -lubox -lblobmsg_json -luci
+BUILD = .
 
-nakd: nakd.c
-	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) -I inc nakd.c command.c wifi.c message.c wrap.c inet.c stage.c update.c misc.c ubus.c config.c hooks.c stage_hooks.c -o nakd
+SRC = $(wildcard *.c)
+OBJ = $(patsubst %.c, $(BUILD)/%.o, $(SRC))
+DEPEND = $(patsubst %.c, $(BUILD)/%.d, $(SRC))
+
+.PRECIOUS: $(DEPEND)
+
+INC = -Iinc
+CFLAGS += $(INC)
+
+LDLIBS += -ljson-c -lubus -lubox -lblobmsg_json -luci -lc
+
+TARGETS = $(BUILD)/nakd
+
+all: $(TARGETS)
+
+-include $(DEPEND)
+
+$(BUILD)/nakd: $(OBJ)
+	$(LD) $(LDFLAGS) $(LDLIBS) $(OBJ) -o $@
+
+$(BUILD)/%.d: %.c
+	$(CC) $(CFLAGS) -MM $< -o $(BUILD)/$*.d
+
+$(BUILD)/%.o: %.c $(BUILD)/%.d
+	$(CC) -c $(CFLAGS) $< -o $(BUILD)/$*.o
 
 clean:
-	rm -f nakd
+	rm -f $(TARGETS) $(OBJ) $(DEPEND)
+
+.PHONY: all clean
+.DEFAULT: all
