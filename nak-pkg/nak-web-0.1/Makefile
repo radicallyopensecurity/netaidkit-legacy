@@ -1,7 +1,7 @@
-LDLIBS = -ljson-c -lubus -lubox -lblobmsg_json
+LDLIBS = -ljson-c -lubus -lubox -lblobmsg_json -luci
 
 nakd: nakd.c
-	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) -I inc nakd.c command.c wifi.c message.c wrap.c inet.c stage.c update.c misc.c ubus.c -o nakd
+	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) -I inc nakd.c command.c wifi.c message.c wrap.c inet.c stage.c update.c misc.c ubus.c config.c hooks.c stage_hooks.c -o nakd
 
 clean:
 	rm -f nakd
