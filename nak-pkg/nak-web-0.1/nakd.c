@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#include "log.h"
 #include "misc.h"
 
 int handle_connection(int sock) {
@@ -85,6 +86,8 @@ int main(int argc, char *argv[]) {
     struct sockaddr_un server;
     int pid_fd, sock, n_sock_path = strlen(SOCK_PATH);
 
+    nakd_log_init();
+
     /* Check if nakd is already running. */
     if ((pid_fd = writePid(PID_PATH)) == -1)
         p_error("writePid()", "nakd is already running.");
@@ -150,5 +153,6 @@ int main(int argc, char *argv[]) {
     if (unlink(SOCK_PATH) == -1)
         p_error("unlink()", NULL);
 
+    nakd_log_close();
     return 0;
 }
