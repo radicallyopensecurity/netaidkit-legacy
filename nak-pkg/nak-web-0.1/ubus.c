@@ -40,7 +40,7 @@ int nakd_ubus_call(const char *namespace, const char* procedure,
                                         cb, cb_priv, UBUS_CALL_TIMEOUT);
 }
 
-int nakd_ubus_free() {
+void nakd_ubus_free() {
     if (ubus_buf.buf != NULL)
         blob_buf_free(&ubus_buf);
     if (ubus_ctx != NULL)
