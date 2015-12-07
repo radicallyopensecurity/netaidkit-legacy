@@ -21,3 +21,4 @@ config wifi-iface
 	option key netaidkit
 	option network wlan
 	option hidden 0
+    option isolate 1
