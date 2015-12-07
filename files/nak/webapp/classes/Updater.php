@@ -4,8 +4,8 @@ class Updater
 {
     // TODO: read from config file
     protected $_appName = 'generated-atlas-93615.appspot.com';
-    protected $_latestVersionUrl = 'http://google.com/nak/latest_version';
-    protected $_latestImageUrl = 'http://google.com/nak/latest_image';
+    protected $_latestVersionUrl = 'https://google.com/nak/latest_version';
+    protected $_latestImageUrl = 'https://google.com/nak/latest_image';
     protected $_localImagePath = '/tmp/latest_image.bin';
     protected $_versionFile = '/etc/nak-release';
     protected $_pubKeyFile = '/etc/update-key';
