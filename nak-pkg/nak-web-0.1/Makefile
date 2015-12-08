@@ -9,7 +9,7 @@ DEPEND = $(patsubst %.c, $(BUILD)/%.d, $(SRC))
 INC = -Iinc
 CFLAGS += $(INC)
 
-LDLIBS += -ljson-c -lubus -lubox -lblobmsg_json -luci -lc
+LDLIBS += -ljson-c -lubus -lubox -lblobmsg_json -luci
 
 TARGETS = $(BUILD)/nakd
 
@@ -18,7 +18,7 @@ all: $(TARGETS)
 -include $(DEPEND)
 
 $(BUILD)/nakd: $(OBJ)
-	$(LD) $(LDFLAGS) $(LDLIBS) $(OBJ) -o $@
+	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 $(BUILD)/%.d: %.c
 	$(CC) $(CFLAGS) -MM $< -o $(BUILD)/$*.d
