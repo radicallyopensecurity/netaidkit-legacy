@@ -1,22 +1,74 @@
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#upgrade').click(function() {
-            $('#upgrade').html('<img src="/img/load.gif">');
+        function disable_button(id) {
+            $(id).css('pointer-events', 'none');
+            $(id).addClass('disabled');
+        }
 
-            /*$('#UpdateStatus').css('display', 'block');
+        function enable_button(id) {
+            $(id).css('pointer-events', 'auto');
+            $(id).removeClass('disabled');
+        }
+
+        disable_button('#upgrade');
+
+        $('#download').click(function() {
+            disable_button('#download');
+            $('#UpdateStatus').css('display', 'block');
+
             function updateDownloadStatus() {
                 $.ajax({
                     type: "GET",
                     url: "/update/download_status",
                     success: function(data) {
                         $('#progressbar').css('width', data+'%');
+                        $('#progressbar').html(data + '%');
+                        
+                        if (data == "100") {
+                            enable_button('#upgrade');
+                        }
+                    },
+                    error: function(data) {
+                        $('#progressbar').html('N/A');
                     }
                 });
             }
 
             setInterval(function() {
                 updateDownloadStatus();
-            }, 2000);*/
+            }, 2000);
+
+            $.ajax({
+                type: "POST",
+                url: "/update/download",
+                data: '',
+                success: function(data) {
+                    $('#progressbar').html('Downloading...');
+                },
+            });
+        });
+
+        $('#upgrade').click(function() {
+            $('#sysupgrade-warning').css('color', 'red');
+            $('#UpdateStatus').css('display', 'none');
+            $('#PleaseWait').css('display', 'block');
+            $('#upgrade').html('<img src="/img/load.gif">');
+            disable_button('#upgrade');
+            disable_button('#remind');
+
+            function waitForWebUI() {
+                 $.ajax({
+                    type: "GET",
+                    url: "/admin/index",
+                    success: function(data) {
+                        window.location.href = '/admin/index';
+                    }
+                });           
+            }
+
+            webui_timer = setInterval(function() {
+                waitForWebUI();
+            }, 15000);
 
             $.ajax({
                 type: "POST",
@@ -24,10 +76,26 @@
                 data: '',
                 success: function(data) {
                     $('#upgrade').html('Upgrade');
-                    if (data == '')
-                        data = 'Updating, please wait for the device to reboot.';
-                    alert(data);
-                },
+                    if (data == 'SUCCESS') {
+                        // OpenWRT's sysupgrade kills all processes, it doesn't
+                        // ever reach this point.
+                        alert('Updating, please wait for the device to reboot.');
+                    } else if (data == 'INVALID SIGNATURE') {
+                        enable_button('#download');
+                        disable_button('#upgrade');
+                        enable_button('#remind');
+                        alert("The downloaded update has an invalid \
+                              cryptographic signature. Most likely it\
+                              didn't download properly. Please try again.");
+                    } else {
+                        enable_button('#download');
+                        disable_button('#upgrade');
+                        enable_button('#remind');
+                        alert("Couldn't install the update. Please try again later.");
+                    }
+
+                    clearInterval(webui_timer);
+                }
             });
         });
 

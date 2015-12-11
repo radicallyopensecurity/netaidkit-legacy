@@ -54,6 +54,10 @@ class UpdateReminder {
         return $this->_counter;
     }
 
+    public function reminderAvailable() {
+        return $this->_counter < 4;
+    }
+
     public function getExpirationTimestamp() {
         return $this->_expirationTimestamp;
     }

@@ -2,7 +2,8 @@
 
 class UpdateController extends Page
 {
-    protected $_allowed_actions = array('index', 'do_upgrade', 'do_remind', 'download_status');
+    protected $_allowed_actions = array('index', 'download', 'do_upgrade',
+                                          'do_remind', 'download_status');
 
     public function init() {
         if ($_SESSION['logged_in'] != 1)
@@ -20,27 +21,40 @@ class UpdateController extends Page
         return $view->display();
     }
 
-    public function do_upgrade() {
+    public function download() {
         $request = $this->getRequest();
         if ($request->isPost()) {
             $updater = new Updater();
             if ($updater->updateAvailable()) {
                 $image_data = $updater->downloadLatest();
+                die('OK');
+            }
+        }
+    }
 
-                if (!$updater->validateSignature($image_data))
+    public function do_upgrade() {
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $updater = new Updater();
+            if ($updater->updateAvailable()) {
+                if (!$updater->validateSignature()) {
+                    $updater->deleteImage();
                     die('INVALID SIGNATURE');
+                }
 
-                if ($updater->performUpdate($image_data))
-                    die('Upgrading, please wait for the device to reboot.');
+                if ($updater->performUpdate())
+                    die('SUCCESS');
                 else
-                    die('FAILED');
+                    die('FAILURE');
             }
         }
     }
 
     public function do_remind() {
         $reminder = UpdateReminder::get_reminder();
+        $updater = new Updater();
         try {
+            $updater->stopDownload();
             $reminder->postpone();
             die('SUCCESS');
         } catch (Exception $e) {
@@ -49,15 +63,7 @@ class UpdateController extends Page
     }
 
     public function download_status() {
-        die($this->_get_image_size());
+        $updater = new Updater();
+        die($updater->get_percentage_downloaded());
     }
-
-    protected function _get_image_size() {
-        $image = '/tmp/latest_image';
-        if (!file_exists($image))
-            return '0';
-
-        return floor((filesize($image) / 7471108) * 100);
-    }
-
 }
