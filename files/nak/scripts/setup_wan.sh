@@ -21,8 +21,8 @@ else
 fi
 
 uci commit wireless;
+/nak/scripts/restart_iface.sh wwan
 
 /nak/scripts/go_online.sh;
-wifi
 
 (sleep 15; /nak/scripts/fix_wifi.sh) &

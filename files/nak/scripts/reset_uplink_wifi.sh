@@ -6,5 +6,5 @@ uci set wireless.@wifi-iface[0].ssid='';
 uci set wireless.@wifi-iface[0].encryption='';
 uci set wireless.@wifi-iface[0].key='';
 uci commit wireless
-wifi
 
+./reset_iface.sh wwan

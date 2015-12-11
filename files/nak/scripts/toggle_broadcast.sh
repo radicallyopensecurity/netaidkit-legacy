@@ -8,4 +8,4 @@ then
 fi
 
 uci commit wireless
-wifi
+./restart_iface.sh wlan
