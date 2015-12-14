@@ -1,1 +1,4 @@
 openwrt
+*.swn
+*.swo
+*.swp
