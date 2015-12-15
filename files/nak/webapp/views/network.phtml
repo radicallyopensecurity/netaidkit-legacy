@@ -4,8 +4,11 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-6">
-        <h3>Network</h3>
-        <p>Here you can manage the NetAidKit network settings.</p>
+        <?php echo _('
+<h3>Network</h3>
+<p>Here you can manage the NetAidKit network settings.</p>
+            ');
+        ?>
         <?php $this->_displayMessages('network'); ?>
         <?php include ('network/tiles/network.phtml'); ?>
     </div>

@@ -2,18 +2,26 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Connect to VPN</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo _('Close'); ?></span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <?php
+                        /// TRANSLATORS: header/title context
+                        echo _('Connect to VPN');
+                    ?>
+                </h4>
             </div>
             <div class="modal-body">
-                <p>Connecting to a VPN will send all your internet traffic through an encrypted VPN tunnel.</p>
-                <p>If you trust the other end of the tunnel, VPNs are a great way to secure your data and enhance your privacy.</p>
-                <p>Please note that the VPN operator can still monitor your network traffic.</p>
-                <p>Are you sure you want to connect to the VPN?</p>
+                <?php echo _('
+<p>Connecting to a VPN will send all your internet traffic through an encrypted VPN tunnel.</p>
+<p>If you trust the other end of the tunnel, VPNs are a great way to secure your data and enhance your privacy.</p>
+<p>Please note that the VPN operator can still monitor your network traffic.</p>
+<p>Are you sure you want to connect to the VPN?</p>
+                    ');
+                ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                <button type="button" class="toggle-vpn btn btn-primary">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _('No'); ?></button>
+                <button type="button" class="toggle-vpn btn btn-primary"><?php echo _('Yes'); ?></button>
             </div>
         </div>
     </div>

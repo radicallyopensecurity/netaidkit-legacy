@@ -4,12 +4,15 @@
     <div class="col-xs-12 col-md-6">
         <img src="/img/logo/logo-nak-square.png">
         <?php $this->_displayMessages('wan'); ?>
-        <h3>Connect</h3>
-        <p>The NetAidKit is currently not connected to the Internet.</p>
-        <p>To connect, choose a wireless network on the right.</p>
-        <p>Enter a password if the network requires it.</p>
-        <p>Click on the Connect button.</p>
-        <p>Alternatively, you can connect by plugging a network cable into the WAN port</p>
+        <?php echo _('
+<h3>Connect</h3>
+<p>The NetAidKit is currently not connected to the Internet.</p>
+<p>To connect, choose a wireless network on the right.</p>
+<p>Enter a password if the network requires it.</p>
+<p>Click on the Connect button.</p>
+<p>Alternatively, you can connect by plugging a network cable into the WAN port</p>
+            ');
+        ?>
     </div>
     <div class="col-xs-12 col-md-6">
         <?php include ('setup_wan/tiles/wireless.phtml'); ?>

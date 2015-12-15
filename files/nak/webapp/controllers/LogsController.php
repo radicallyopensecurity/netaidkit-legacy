@@ -50,7 +50,7 @@ class LogsController extends Page
         if (file_exists($this->_torLogFile))
             return trim(file_get_contents($this->_torLogFile));
 
-        return 'Tor log empty.';
+        return _('Tor log empty.');
     }
 
     protected function _getVpnLog()
@@ -61,6 +61,6 @@ class LogsController extends Page
                 return trim($log);
         }
 
-        return 'OpenVPN log empty.';
+        return _('OpenVPN log empty.');
     }
 }

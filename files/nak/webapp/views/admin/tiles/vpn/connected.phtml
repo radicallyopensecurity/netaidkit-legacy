@@ -1,10 +1,14 @@
 <div id="VpnTile" class="tile <?php if ($this->_params['vpn_status'] == '100') echo 'connected'; ?>">
     <div>
-        <?php if ($this->_params['vpn_status'] == '100'): ?>
-            <h3 id="VpnStatus">You are connected to a VPN</h3>
-        <?php else: ?>
-            <h3 id="VpnStatus">Connecting to VPN</h3>
-        <?php endif; ?>
+        <h3 id="VpnStatus">
+            <?php
+                if ($this->_params['vpn_status'] == '100')
+                    echo _('You are connected to a VPN');
+                else
+                    /// TRANSLATORS: status context 
+                    echo _('Connecting to VPN');
+            ?>
+        </h3>
     </div>
     <div class="progress">
         <div id="vpnprogressbar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?= $this->_params['vpn_status']?>%">
@@ -12,12 +16,14 @@
         </div>
     </div>
 
-    <p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>
+    <p><?php echo _('A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.'); ?></p>
     <div style="<?php if ($this->_params['vpn_status'] != '100') echo 'display: none'; ?>" id="vpn_connected">
-        <p>You are currently connected to VPN network:</p>
+        <p><?php echo _('You are currently connected to VPN network:'); ?></p>
         <h3><?= $this->_params['cur_vpn'] ?></h3>
     </div>
-    <a class="btn btn-primary btn-lg btn-block btn-danger" data-toggle="modal" data-target="#vpnModal" href="#">Disconnect from VPN</a>
+    <a class="btn btn-primary btn-lg btn-block btn-danger" data-toggle="modal" data-target="#vpnModal" href="#">
+        <?php echo _('Disconnect from VPN'); ?>
+    </a>
 </div>
 
 <?php include('modals/disconnect.phtml'); ?>

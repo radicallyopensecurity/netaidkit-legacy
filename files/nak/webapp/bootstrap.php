@@ -18,3 +18,5 @@ define('UPDATE_REMIND_MAX', 4);
 // Register class autoloader.
 include 'classes/Autoloader.php';
 spl_autoload_register('Autoloader::load');
+
+I18n::setlocale_preference($_SERVER['HTTP_ACCEPT_LANGUAGE']);
