@@ -29,7 +29,7 @@
                         }
                     },
                     error: function(data) {
-                        $('#progressbar').html('N/A');
+                        $('#progressbar').html('<?php echo _('N/A'); ?>');
                     }
                 });
             }
@@ -43,7 +43,7 @@
                 url: "/update/download",
                 data: '',
                 success: function(data) {
-                    $('#progressbar').html('Downloading...');
+                    $('#progressbar').html('<?php echo _('Downloading...'); ?>');
                 },
             });
         });
@@ -84,14 +84,12 @@
                         enable_button('#download');
                         disable_button('#upgrade');
                         enable_button('#remind');
-                        alert("The downloaded update has an invalid \
-                              cryptographic signature. Most likely it\
-                              didn't download properly. Please try again.");
+                        alert("<? echo _("The downloaded update has an invalid cryptographic signature. Most likely it didn't download properly. Please try again."); ?>");
                     } else {
                         enable_button('#download');
                         disable_button('#upgrade');
                         enable_button('#remind');
-                        alert("Couldn't install the update. Please try again later.");
+                        alert("<?php echo _("Couldn't install the update. Please try again later."); ?>");
                     }
 
                     clearInterval(webui_timer);

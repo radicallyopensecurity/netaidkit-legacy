@@ -54,7 +54,7 @@
             var size = file.size;
 
             if (size > 20000) {
-                alert('Sorry, your file is to big. Are you sure it is a valid .ovpn file?');
+                alert('<?php echo _("Sorry, your file is to big. Are you sure it is a valid .ovpn file?"); ?>');
                 return;
             }
             document.getElementById('add-vpn').submit();
@@ -119,7 +119,7 @@
                 success: function(data) {
                     $('#torprogressbar').css('width', data + '%');
                     if (data == '100') {
-                        $("#TorStatus").html('<h3>You are connected to Tor</h3>');
+                        $("#TorStatus").html('<?php echo _("<h3>You are connected to Tor</h3>"); ?>');
                         $("#torTile").addClass("connected");
                     }
                 }
@@ -143,7 +143,7 @@
                 success: function(data) {
                     $('#vpnprogressbar').css('width', data + '%');
                     if (data == '100') {
-                        $("#VpnStatus").html('<h3>You are connected to a VPN</h3>');
+                        $("#VpnStatus").html('<?php echo _("<h3>You are connected to a VPN</h3>"); ?>');
                         $("#VpnTile").addClass("connected");
                         $("#vpn_connected").css('display', 'block');
                     }

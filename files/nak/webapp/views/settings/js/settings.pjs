@@ -11,8 +11,8 @@
                     if (data == 'FAILURE')
                         window.location.href = '/settings';
                     else {
-                        $('#apModalTitle').html('Disconnected');
-                        $('#apModalText').html('Please reconnect using the new settings. This page will reload automatically.');
+                        $('#apModalTitle').html('<?php echo _('Disconnected'); ?>');
+                        $('#apModalText').html('<?php echo _('Please reconnect using the new settings. This page will reload automatically.'); ?>');
                         $('#apModal .modal-footer').html('');
 
                         var interval = setInterval(function() {
