@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-16 19:15+0100\n"
+"POT-Creation-Date: 2015-12-17 13:57+0100\n"
 "PO-Revision-Date: 2015-12-14 13:37+0100\n"
 "Last-Translator: Mateusz Zalega <mateusz@appliedsourcery.com>\n"
 "Language-Team: NetAidKit Team <info@netaidkit.net>\n"
@@ -152,6 +152,33 @@ msgstr "<h3>Wybierz sieć bezprzewodową:</h3>"
 msgid "Connect"
 msgstr "Połącz"
 
+#. TRANSLATORS: as in, close window
+#. TRANSLATORS: as in: close the dialog
+#: views/setup_wan/tiles/wireless/modals/connecting.phtml:5
+#: views/admin/tiles/wireless/modals/connecting.phtml:6
+#: views/admin/tiles/wireless/modals/connect.phtml:5
+#: views/admin/tiles/tor/modals/disconnect.phtml:5
+#: views/admin/tiles/tor/modals/connect.phtml:5
+#: views/admin/tiles/vpn/modals/connect.phtml:5
+#: views/admin/tiles/vpn/modals/add.phtml:5
+#: views/admin/tiles/vpn/modals/delete.phtml:5 views/admin/portal.phtml:21
+#: views/settings/tiles/wireless/modals/configure.phtml:5
+#: views/setup_ap/tiles/settings/modals/configure.phtml:5
+msgid "Close"
+msgstr "Zamknij"
+
+#. TRANSLATORS: window header/title
+#. TRANSLATORS: window header
+#: views/setup_wan/tiles/wireless/modals/connecting.phtml:6
+#: views/admin/tiles/wireless/modals/connecting.phtml:8
+msgid "Connecting"
+msgstr "Łączę"
+
+#: views/setup_wan/tiles/wireless/modals/connecting.phtml:9
+#: views/admin/tiles/wireless/modals/connecting.phtml:11
+msgid "Connecting..."
+msgstr "Łączę..."
+
 #. TRANSLATORS: menu context
 #: views/admin/menu.phtml:4
 msgid "Toggle navigation"
@@ -182,28 +209,6 @@ msgstr "Dziennik"
 msgid "Log out"
 msgstr "Wyloguj"
 
-#. TRANSLATORS: as in: close the dialog
-#: views/admin/tiles/wireless/modals/connecting.phtml:6
-#: views/admin/tiles/wireless/modals/connect.phtml:5
-#: views/admin/tiles/tor/modals/disconnect.phtml:5
-#: views/admin/tiles/tor/modals/connect.phtml:5
-#: views/admin/tiles/vpn/modals/connect.phtml:5
-#: views/admin/tiles/vpn/modals/add.phtml:5
-#: views/admin/tiles/vpn/modals/delete.phtml:5 views/admin/portal.phtml:21
-#: views/settings/tiles/wireless/modals/configure.phtml:5
-#: views/setup_ap/tiles/settings/modals/configure.phtml:5
-msgid "Close"
-msgstr "Zamknij"
-
-#. TRANSLATORS: window header
-#: views/admin/tiles/wireless/modals/connecting.phtml:8
-msgid "Connecting"
-msgstr "Łączę"
-
-#: views/admin/tiles/wireless/modals/connecting.phtml:11
-msgid "Connecting..."
-msgstr "Łączę..."
-
 #: views/admin/tiles/wireless/modals/connect.phtml:6
 msgid "Change Wireless Network:"
 msgstr "Zmień sieć bezprzewodową:"
@@ -224,7 +229,7 @@ msgstr "Hasło sieci bezprzewodowej"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: views/admin/tiles/tor/connected.phtml:5
+#: views/admin/tiles/tor/connected.phtml:5 views/admin/js/admin.pjs:122
 msgid "<h3>You are connected to Tor</h3>"
 msgstr "<h3>Jesteś połączony z siecią Tor</h3>"
 
@@ -574,6 +579,65 @@ msgstr "Wpisz ponownie hasło administratora w celu weryfikacji"
 msgid "Change Password Settings"
 msgstr "Zmień ustawienia logowania"
 
+#: views/admin.phtml:10
+msgid "The NetAidKit is currently connected to the following wireless network:"
+msgstr ""
+"The NetAidKit is currently connected to the following wireless network:"
+
+#: views/settings.phtml:7
+msgid "<h3>Wireless</h3>"
+msgstr "<h3>Wireless</h3>"
+
+#: views/settings.phtml:8
+msgid ""
+"Here you can manage the NetAidKit basic wireless configuration settings."
+msgstr ""
+"Here you can manage the NetAidKit basic wireless configuration settings."
+
+#: views/settings.phtml:13
+msgid "<h3>Password</h3>"
+msgstr "<h3>Password</h3>"
+
+#: views/settings.phtml:14
+msgid "Here you can change the NetAidKit admin login password."
+msgstr "Here you can change the NetAidKit admin login password."
+
+#: views/network/tiles/network.phtml:6
+msgid "Broadcast SSID"
+msgstr "Broadcast SSID"
+
+#: views/network/tiles/network.phtml:7
+msgid "Change Network Settings"
+msgstr "Change Network Settings"
+
+#: views/logs.phtml:6
+msgid "This is the basic Tor logfile"
+msgstr "This is the basic Tor logfile"
+
+#: views/logs.phtml:6 views/logs.phtml:11
+msgid "click to download"
+msgstr "click to download"
+
+#: views/logs.phtml:10
+msgid "<h3>OpenVPN</h3>"
+msgstr "<h3>OpenVPN</h3>"
+
+#: views/logs.phtml:11
+msgid "This is the basic OpenVPN logfile"
+msgstr "This is the basic OpenVPN logfile"
+
+#: views/login/tiles/password.phtml:10
+msgid "Enter your password"
+msgstr "Enter your password"
+
+#: views/login/tiles/password.phtml:16
+msgid "The password you configured during setup."
+msgstr "The password you configured during setup."
+
+#: views/login.phtml:5
+msgid "<h3>Login</h3>"
+msgstr "<h3>Login</h3>"
+
 #: views/setup_ap.phtml:7
 msgid ""
 "\n"
@@ -589,8 +653,10 @@ msgstr ""
 "\n"
 "<h3>Setup</h3>\n"
 "<p>Przed użyciem urządzenia NetAidKit konieczna jest jego personalizacja.\n"
-"Na tej stronie możesz wybrać nazwę sieci bezprzewodowej, którą utworzy NetAidKit,\n"
-"jej hasło, oraz hasło administratora, które posłuży Ci do zmiany ustawień w przyszłości.</p>\n"
+"Na tej stronie możesz wybrać nazwę sieci bezprzewodowej, którą utworzy "
+"NetAidKit,\n"
+"jej hasło, oraz hasło administratora, które posłuży Ci do zmiany ustawień w "
+"przyszłości.</p>\n"
 "<p>Zaczynajmy!</p>\n"
 "            "
 
@@ -719,3 +785,41 @@ msgstr ""
 #: views/setup_ap/tiles/settings.phtml:58
 msgid "Please retype the new admin password."
 msgstr "Please retype the new admin password."
+
+#: views/update/js/update.pjs:32
+msgid "N/A"
+msgstr "N/A"
+
+#: views/update/js/update.pjs:46
+msgid "Downloading..."
+msgstr "Downloading..."
+
+#: views/update/js/update.pjs:87
+msgid ""
+"The downloaded update has an invalid cryptographic signature. Most likely it "
+"didn't download properly. Please try again."
+msgstr ""
+"The downloaded update has an invalid cryptographic signature. Most likely it "
+"didn't download properly. Please try again."
+
+#: views/update/js/update.pjs:92
+msgid "Couldn't install the update. Please try again later."
+msgstr "Couldn't install the update. Please try again later."
+
+#: views/admin/js/admin.pjs:57
+msgid "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
+msgstr "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
+
+#: views/admin/js/admin.pjs:146
+msgid "<h3>You are connected to a VPN</h3>"
+msgstr "<h3>You are connected to a VPN</h3>"
+
+#: views/settings/js/settings.pjs:14 views/setup_ap/js/setup_ap.pjs:14
+msgid "Disconnected"
+msgstr "Disconnected"
+
+#: views/settings/js/settings.pjs:15 views/setup_ap/js/setup_ap.pjs:15
+msgid ""
+"Please reconnect using the new settings. This page will reload automatically."
+msgstr ""
+"Please reconnect using the new settings. This page will reload automatically."
