@@ -6,6 +6,9 @@
 # reset password
 echo "" > /nak/webapp/data/pass
 
+# iptables flushing
+/nak/scripts/reset_iptables.sh
+
 # reset captive portal dns
 echo "address=/#/192.168.101.1" > /etc/dnsmasq.conf;
 /etc/init.d/dnsmasq restart
@@ -23,7 +26,6 @@ uci commit firewall
 # reset wifi AP
 uci set wireless.@wifi-iface[1].ssid='NETAIDKIT';
 uci set wireless.@wifi-iface[1].key='s3cr3tp4ss';
-
 
 # reset uplink wifi
 uci set wireless.@wifi-iface[0].disabled=1

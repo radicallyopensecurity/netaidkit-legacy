@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# iptables flushing
+/nak/scripts/reset_iptables.sh
+
 if [ $1 = "on" ];then
     rm /var/log/tor/notices.log
     /etc/init.d/tor start
