@@ -50,6 +50,19 @@
             $('#network-name').html($('#ap-form #ssid').val());
         });
 
+	$('#submit-localization').click(function(event) {
+            $('html').find('*').css("cursor", "wait");
+	    $.ajax({
+		type: "POST",
+		url: "/settings/localization",
+		data: $('form#localization-form').serialize(),
+		success: function(data) {
+		    window.location.href = '/settings';
+		},
+	    });
+	    event.preventDefault();
+        });
+
         $('#ssid').focus(function() {
             $('#desc_ssid').collapse('show');
             $('#ssid').parent().removeClass('has-error');

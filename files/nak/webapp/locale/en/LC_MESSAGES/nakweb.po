@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-17 13:57+0100\n"
+"POT-Creation-Date: 2016-01-04 22:38+0100\n"
 "PO-Revision-Date: 2015-12-14 13:37+0100\n"
 "Last-Translator: Mateusz Zalega <mateusz@appliedsourcery.com>\n"
 "Language-Team: NetAidKit Team <info@netaidkit.net>\n"
@@ -534,6 +534,14 @@ msgstr "Admin password:"
 msgid "Distress password:"
 msgstr "Distress password:"
 
+#: views/settings/tiles/localization.phtml:8
+msgid "Detect automatically"
+msgstr "Detect automatically"
+
+#: views/settings/tiles/localization.phtml:17
+msgid "Change localization settings"
+msgstr "Change localization settings"
+
 #: views/settings/tiles/password.phtml:7
 msgid "Enter the current administrator password"
 msgstr "Enter the current administrator password"
@@ -602,6 +610,14 @@ msgstr "<h3>Password</h3>"
 #: views/settings.phtml:14
 msgid "Here you can change the NetAidKit admin login password."
 msgstr "Here you can change the NetAidKit admin login password."
+
+#: views/settings.phtml:19
+msgid "<h3>Localization</h3>"
+msgstr "<h3>Localization</h3>"
+
+#: views/settings.phtml:20
+msgid "Here you can change interface language."
+msgstr "Here you can change interface language."
 
 #: views/network/tiles/network.phtml:6
 msgid "Broadcast SSID"

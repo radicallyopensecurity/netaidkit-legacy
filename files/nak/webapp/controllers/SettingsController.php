@@ -2,7 +2,7 @@
 
 class SettingsController extends Page
 {
-    protected $_allowed_actions = array('index', 'ap', 'password');
+    protected $_allowed_actions = array('index', 'ap', 'password', 'localization');
 
     public function init()
     {
@@ -158,5 +158,22 @@ class SettingsController extends Page
         }
 
         return $valid;
+    }
+
+    public function localization()
+    {
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $lang = $request->postvar('language');
+            if (empty($lang))
+                return;
+
+            if ($lang == 'auto') { 
+                I18n::settings_set_autodetect();
+            } else {
+                // sanitized in I18n class
+                I18n::settings_set_language($lang);
+            }
+        }
     }
 }
