@@ -1,9 +1,9 @@
-<?php $check = (($this->_params['routing_status'] == "0") ? '' : 'checked'); ?>
+<?php $check = (($this->_params['routing_status'] == "0") ? 'checked' : ''); ?>
 
 <div class="tile">
     <h3>Internet</h3>
     <p>
-        Allow outside connections without using Tor or VPN is currently:
+        Only allow secure connections over TOR or VPN:
         <input type="checkbox" <?= $check; ?> data-toggle="switch" id="nroutingswitch">
     </p>
 </div>

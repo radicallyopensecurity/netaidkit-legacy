@@ -1,5 +1,7 @@
 #!/bin/sh
 
+/nak/scripts/reset_iptables.sh # iptables flushing
+
 if [ $1 = "on" ];then
 
     uci set firewall.@forwarding[0].enabled=0;

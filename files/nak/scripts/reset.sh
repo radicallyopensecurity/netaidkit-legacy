@@ -6,6 +6,9 @@
 # reset password
 echo "" > /nak/webapp/data/pass
 
+# iptables flushing
+/nak/scripts/reset_iptables.sh
+
 # reset captive portal dns
 echo "address=/#/192.168.101.1" > /etc/dnsmasq.conf;
 /etc/init.d/dnsmasq restart

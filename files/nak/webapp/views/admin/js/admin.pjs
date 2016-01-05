@@ -18,7 +18,7 @@
                     if (data == 'SUCCESS') {
                         window.location.href = '/admin/index';
                     } else {
-                        alert(data);
+                        alert("Before you can connect to TOR, you must first disconnect from the VPN!");
                     }
                 },
             });
@@ -42,7 +42,7 @@
                     if (data == 'SUCCESS') {
                         window.location.href = '/admin/index';
                     } else {
-                        alert(data);
+                        alert("Before you can connect to the VPN, you must first disconnect from TOR!");
                     }
                 },
             });
@@ -159,10 +159,10 @@
         $('#nroutingswitch').on('switchChange.bootstrapSwitch', function(event, state) {
             if (state == 1) {
                 console.log('turn it on');
-                $sdata = 'on';
+                $sdata = 'off';
             } else {
                 console.log('turn it off');
-                $sdata = 'off';
+                $sdata = 'on';
             };
 
             $.ajax({

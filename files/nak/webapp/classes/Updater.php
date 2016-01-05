@@ -54,7 +54,7 @@ class Updater
         if (intval($current) < intval($latest))
             return true;
         else
-            return false;
+            return false;	# SET TO TRUE TO DEBUG!
     }
 
     public function downloadLatest() {

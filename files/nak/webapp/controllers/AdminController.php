@@ -202,7 +202,11 @@ class AdminController extends Page
             if (strstr($log, 'Initialization Sequence Completed'))
                 return '100';
 
-            $s_start = substr($log, 0, strpos($log, 'OpenVPN') - 1);
+            if (strstr($log, 'Peer Connection Initiated'))
+                return '90';
+
+            $s_start = substr($log, 0, 24);  // deprecated log warnings disable functionality of strpos($log,'OpenVPN')-1
+            
             if (!$s_start)
                 return 'not running';
 
@@ -211,9 +215,9 @@ class AdminController extends Page
             $estimated_sec = 30;
 
             if ($t_sec > $estimated_sec)
-                $progress = 95;
+                $progress = 80;
             else {
-                $progress = (95 / $estimated_sec) * $t_sec;
+                $progress = (80 / $estimated_sec) * $t_sec;
             }
 
             return strval(intval($progress));

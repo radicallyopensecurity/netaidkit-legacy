@@ -9,7 +9,9 @@ class NakdClient {
     public function __construct() {
         $this->_conn = $this->_connect($this->_socketFile);
         if (!$this->_conn) {
-            throw new Exception("Couldn't connect to nakd, is it running?");
+            $view = new View('booting');
+            $view->display();   
+            die();         
         }
     }
 
@@ -22,7 +24,7 @@ class NakdClient {
     }
 
     protected function _disconnect() {
-        fclose($this->_conn);
+        @fclose($this->_conn);
     }
 
     protected function _sendCommand($command) {

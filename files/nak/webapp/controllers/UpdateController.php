@@ -42,6 +42,7 @@ class UpdateController extends Page
                     die('INVALID SIGNATURE');
                 }
 
+                    //die('SUCCESS'); # ENABLE TO DEBUG!
                 if ($updater->performUpdate())
                     die('SUCCESS');
                 else

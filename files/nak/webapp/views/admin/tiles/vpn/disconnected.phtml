@@ -17,6 +17,6 @@
             $checked = ''; /* Reset checked to empty for next items */ }
         ?>
 
-        <a id="vpnConnectBtn" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#vpnModal" href="online.html#">Connect to VPN</a>
+        <a id="vpnConnectBtn" class="btn <?=($this->_params['cur_stage'] != STAGE_TOR && count($this->_params['vpn_options'])?'btn-primary':'btn-disabled')?> btn-lg btn-block" data-toggle="modal" <?=($this->_params['cur_stage'] != STAGE_TOR ? 'data-target="#vpnModal" href="online.html#"':'href=""');?>>Connect to VPN</a>
     </form>
 </div>

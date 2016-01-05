@@ -53,7 +53,7 @@ config redirect
         option name             'tor_dns'
         option src              'wlan'
         option proto            'udp'
-        option src_port         '53'
+        option src_dport        '53'
         option dest_port        '9053'
         option enabled          '0'
         list   nak_hooks_enable  'stage_tor'

@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#ap-submit').click(function(event) {
-            $('#apModalText').html('<img src="/img/load.gif" />');
+            $('#apModalText').html('<center><img src="/img/load.gif" /><br><br></center>');
             $.ajax({
                 type: "POST",
                 url: "/setup/ap",
