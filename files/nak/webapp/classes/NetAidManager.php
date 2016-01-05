@@ -18,7 +18,7 @@ class NetAidManager
         $client = new NakdClient();
         $output = $client->doCommand('wifiscan');
 
-        preg_match_all("/ESSID: \"(.+?)\".+?Encryption: (.+?) ?[\(|\n]/s", $output, $wifi_info);
+        preg_match_all("/ESSID: \"([\s\S]+?)\"[\s\S]+?Encryption: ([\s\S]+?) ?[\(|\n]/s", $output, $wifi_info);
 
         $wifi_list = array();
         foreach($wifi_info[1] as $i => $wifi) {
