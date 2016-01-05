@@ -23,7 +23,7 @@
                     url: "/update/download_status",
                     success: function(data) {
                         $('#progressbar').css('width', data+'%');
-                        if(data>4) { $('#progressbar').html(data + '%'); }
+                        if(data>4) { $('#progressbar').html(Math.round(data) + '%'); }
                         
                         if (data == "100") {
                             enable_button('#upgrade');
@@ -76,16 +76,12 @@
                 url: "/update/do_upgrade",
                 data: '',
                 success: function(data) {
-                    //$('#upgrade').html('Upgrade');
                     $('#progressbar').html('');
                     $('#progressbar').css('width', '0%')
                     if (data == 'SUCCESS') {
-                        // OpenWRT's sysupgrade kills all processes, it doesn't
-                        // ever reach this point.
-                        //alert('Updating, please wait for the device to reboot.');
                         upgrade_cnt = 0;
                         progress = 0;
-                        timetotal = 240;
+                        timetotal = 216;
                         setInterval(function() {
 							if(upgrade_cnt<timetotal) {
 								upgrade_cnt++;
@@ -95,18 +91,18 @@
 							}
 						}, 500);
                     } else if (data == 'INVALID SIGNATURE') {
+						clearInterval(webui_timer);
                         enable_button('#download');
                         disable_button('#upgrade');
                         enable_button('#remind');
-                        alert("<? echo _("The downloaded update has an invalid cryptographic signature. Most likely it didn't download properly. Please try again."); ?>");
+                        alert("The downloaded update has an invalid cryptographic signature. Most likely it didn't download properly. Please try again.");
                     } else {
+						clearInterval(webui_timer);
                         enable_button('#download');
                         disable_button('#upgrade');
                         enable_button('#remind');
-                        alert("<?php echo _("Couldn't install the update. Please try again later."); ?>");
+                        alert("Couldn't install the update. Please try again later.");
                     }
-
-                    clearInterval(webui_timer);
                 }
             });
         });
