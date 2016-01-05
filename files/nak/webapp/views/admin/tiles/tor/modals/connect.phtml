@@ -2,18 +2,21 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Connect to Tor</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo _('Close'); ?></span></button>
+                <h4 class="modal-title" id="myModalLabel"><?php echo _('Connect to Tor'); ?></h4>
             </div>
             <div class="modal-body">
-                <p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>
-                <p><strong>If you wish to use Tor for anonymity purposes, please use the <a href="https://www.torproject.org/download/download-easy" target="_new">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</strong></p>
-                <p>In some repressive countries, using Tor can get you into trouble with the authorities. Please be aware of what the situation is for the country you are in before you connect to Tor.</p>
-                <p>Are you sure you want to connect to Tor?</p>
+            <?php echo _('
+<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>
+<p><strong>If you wish to use Tor for anonymity purposes, please use the <a href="https://www.torproject.org/download/download-easy" target="_new">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</strong></p>
+<p>In some repressive countries, using Tor can get you into trouble with the authorities. Please be aware of what the situation is for the country you are in before you connect to Tor.</p>
+<p>Are you sure you want to connect to Tor?</p>
+                ');
+            ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                <button type="button" class="toggle-tor btn btn-primary" data-dismiss="modal">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _('No'); ?></button>
+                <button type="button" class="toggle-tor btn btn-primary"><?php echo _('Yes'); ?></button>
             </div>
         </div>
     </div>

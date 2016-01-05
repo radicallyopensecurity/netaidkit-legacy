@@ -1,0 +1,20 @@
+<div class="tile">
+    <div class="login-form">
+        <form action="/settings/localization" method="POST" id="localization-form">
+            <div class="form-group">
+                <select class="form-control" name="language">
+                <?php
+		   $autodetect_selected = I18n::settings_get_autodetect() ? 'selected' : '';
+                   echo "<option value=\"auto\" $autodetect_selected>" . _('Detect automatically') . "</option>\n";
+                   foreach(I18n::available_languages_display_fmt() as $lang => $display_string) {
+                       $selected = !I18n::settings_get_autodetect() && (I18n::getlocale() == $lang)
+		           ? 'selected' : '';
+                       echo "<option value=\"$lang\" $selected>$display_string</option>\n";
+                   }
+                ?>
+                </select>
+            </div>
+            <a id="submit-localization" class="btn btn-primary btn-lg btn-block"><?php echo _('Change localization settings'); ?></a>
+        </form>
+    </div>
+</div>

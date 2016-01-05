@@ -2,16 +2,23 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Connect to VPN</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo _('Close'); ?></span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <?php echo _('Connect to VPN'); ?>
+                </h4>
             </div>
             <form id="add-vpn" action="/admin/upload_vpn" method="POST" enctype="multipart/form-data" >
                 <div class="modal-body">
-                    <p>Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.</p>
+                    <p>
+                        <?php echo _('
+Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.
+                            ');
+                        ?>
+                    </p>
                     <input type="file" name='vpnfile' id='vpnfile' accept='application/x-openvpn-profile' data-filename-placement="inside">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="upload-vpn btn btn-primary">Upload</button>
+                    <button type="button" class="upload-vpn btn btn-primary"><?php echo _('Upload'); ?></button>
                 </div>
             </form>
         </div>

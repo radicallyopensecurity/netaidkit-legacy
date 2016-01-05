@@ -1,5 +1,11 @@
 <div class="tile">
-    <h3>Tor</h3>
-    <p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>
-    <a class="btn <?=($this->_params['cur_stage'] != STAGE_VPN?'btn-primary':'btn-disabled');?> btn-lg btn-block" data-toggle="modal" <?=($this->_params['cur_stage'] != STAGE_VPN?'data-target="#torModal" href="online.html#"':'href=""');?>>Connect to Tor</a>
+    <?php
+        echo _('
+<h3>Tor</h3>
+<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>
+        ');
+    ?>
+    <a class="btn <?=($this->_params['cur_stage'] != STAGE_VPN?'btn-primary':'btn-disabled');?> btn-lg btn-block" data-toggle="modal" <?=($this->_params['cur_stage'] != STAGE_VPN?'data-target="#torModal" href="online.html#"':'href=""');?>>
+        <?php echo _('Connect to Tor'); ?>
+    </a>
 </div>

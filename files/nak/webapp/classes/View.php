@@ -40,12 +40,12 @@ class View
         $errors = $this->_getErrors($messages);
         if (!empty($errors)) {
             echo '<div class="tile error"><p><span class="fui-cross-circle">
-                  </span>The following errors have occurred:<ul>';
+                  </span>' . _('The following errors have occurred:') . '<ul>';
             foreach ($errors as $error) {
                 $text = htmlspecialchars($error['text']);
                 echo "<li>$text</li>";
             }
-            echo '</div></ul>';
+            echo '</ul></div>';
         }
 
         $info = $this->_getInfo($messages);

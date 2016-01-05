@@ -1,3 +1,9 @@
 openwrt
+<<<<<<< HEAD
 files/nak/webapp/data/pass
 
+=======
+*.swn
+*.swo
+*.swp
+>>>>>>> 9ea615ac6f3d592b543675056f8a791101c22201

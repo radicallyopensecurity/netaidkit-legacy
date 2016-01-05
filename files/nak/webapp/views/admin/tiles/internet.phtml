@@ -1,9 +1,9 @@
 <?php $check = (($this->_params['routing_status'] == "0") ? 'checked' : ''); ?>
 
 <div class="tile">
-    <h3>Internet</h3>
+    <?php echo _('<h3>Internet</h3>'); ?>
     <p>
-        Only allow secure connections over TOR or VPN:
+        <?php echo _('Only allow secure connections over TOR or VPN:'); ?>
         <input type="checkbox" <?= $check; ?> data-toggle="switch" id="nroutingswitch">
     </p>
 </div>

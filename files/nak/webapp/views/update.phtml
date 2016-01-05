@@ -4,28 +4,40 @@
 <div class="row">
     <div class="col-xs-12 col-md-6">
         <img src="/img/logo/logo-nak-square.png">
-        <h3>Update Required</h3>
-        <p>A newer version of the software is available.</p>
+        <?php
+            echo _('
+<h3>Update Required</h3>
+<p>A newer version of the software is available.</p>
+            ');
+        ?>
         <p>
-            Please press the <i>download</i> button to start. 
+            <?php echo _('Please press the <i>download</i> button to start.'); ?>
            
-            <?php if ($reminder->reminderAvailable()): ?>
-            You can cancel 
-            the download if it takes too long - just press <i>remind me later</i>.
-            <?php endif; ?>
+            <?php 
+                if ($reminder->reminderAvailable()) {
+                    echo _('
+You can cancel the download if it takes too long - just
+press <i>remind me later</i>.
+                    ');
+                } else {
+                    echo _('
+This step is required to ensure the device will continue to serve
+its purpose.
+                    ');
+                }
 
-            <?php if (!$reminder->reminderAvailable()): ?>
-            This step is required to ensure the device will continue to serve
-            its purpose.
-            <?php endif; ?>
-            
-            After the update is downloaded, press the <i>upgrade</i> button to
-            install. At this point, there's no going back. The upgrade itself
-            should take no more than two minutes.
+                echo _("
+After the update is downloaded, press the <i>upgrade</i> button to
+install. At this point, there's no going back. The upgrade itself
+should take no more than two minutes.
+                ");
+            ?>
         </p>
         <p id="sysupgrade-warning" style="font-weight: bold">
+		<?php echo _("
             Warning: DO NOT turn off or disconnect the device during the
-            install process!
+            install process!");
+        ?>
         </p>
         <div id="UpdateStatus" style="display:none">
             <h3 id="update_phase">...</h3>
@@ -34,12 +46,12 @@
             </div>
         </div>
         <div id="PleaseWait" style="display:none">
-            <h3 style="color: red">Please wait until the device reboots.</h3>
+            <h3 style="color: red"><?php echo _('Please wait until the device reboots.'); ?></h3>
         </div>
         <form id="upgrade-form" action="/update/do_upgrade" method="POST">
-            <a id="download" type="button" class="btn btn-primary">Download</a>
-            <?php if ($reminder->reminderAvailable()): ?><a id="remind" type="button" class="btn btn-primary">Remind me later</a><?php endif; ?>
-            <a id="upgrade" type="button" class="btn btn-primary">Upgrade</a>
+            <a id="download" type="button" class="btn btn-primary"><?php echo _('Download'); ?></a>
+            <?php if ($reminder->reminderAvailable()): ?><a id="remind" type="button" class="btn btn-primary"><?php echo _('Remind me later'); ?></a><?php endif; ?>
+            <a id="upgrade" type="button" class="btn btn-primary"><?php echo _('Upgrade'); ?></a>
         </form>
     </div>
 </div>

@@ -35,7 +35,8 @@ class NetworkController extends Page
             $success = NetAidManager::toggle_broadcast($mode);
 
             if ($success)
-                $this->_addMessage('info', 'Successfully saved network settings.', 'network');
+                $this->_addMessage('info',
+                    _('Successfully saved network settings.'), 'network');
 
             if ($request->isAjax()) {
                 echo ($success) ? "SUCCESS" : "FAILURE";
