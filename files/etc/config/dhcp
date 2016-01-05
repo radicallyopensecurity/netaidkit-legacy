@@ -23,7 +23,7 @@ config dhcp 'wlan'
 	option interface 'wlan'
 	option start 100
 	option limit 150
-	option leastime 12h
+	option leasetime 12h
 	option ignore 0
 
 config dhcp 'wan'
