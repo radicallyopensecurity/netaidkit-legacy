@@ -1,13 +1,20 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
-        $.ajax({
-            type: "GET",
-            url: "/admin/get_wifi",
-            success: function(data) {
-                $('#wifi-list').html(data);
-                $('#wifi-list').trigger("create");
-            }
+        function update_wifi() {
+            $.ajax({
+                type: "GET",
+                url: "/admin/get_wifi",
+                success: function(data) {
+                    $('#wifi-list').html(data);
+                    $('#wifi-list').trigger("create");
+                }
+            });
+        }
+        update_wifi();
+
+        $('#wifi-refresh').click(function(event) {
+            update_wifi();
         });
 
         $('.toggle-tor').click(function(event) {

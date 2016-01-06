@@ -8,6 +8,9 @@
             <div class="modal-body">
                 <p><?php echo _('Choose a new wireless network to connect to with the NetAidKit and enter the password if any:');?></p>
                 <?php echo _('<h3>Select a wireless network:</h3>'); ?>
+		<div style="float: right">
+	                <button id="wifi-refresh" type="button" class="btn btn-primary btn-default"><?php echo _('Refresh'); ?></button>
+		</div>
                 <form id="wan-form" action="/admin/wan" method="POST">
                     <div id="wifi-list"></div>
                     <div class="login-form">
