@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 22:38+0100\n"
+"POT-Creation-Date: 2016-01-06 20:38+0100\n"
 "PO-Revision-Date: 2015-12-14 13:37+0100\n"
 "Last-Translator: Mateusz Zalega <mateusz@appliedsourcery.com>\n"
 "Language-Team: NetAidKit Team <info@netaidkit.net>\n"
@@ -146,7 +146,7 @@ msgstr "<h3>Select a wireless network:</h3>"
 
 #. / TRANSLATORS: in the context of WiFi network selection
 #: views/setup_wan/tiles/wireless.phtml:15
-#: views/admin/tiles/wireless/modals/connect.phtml:18
+#: views/admin/tiles/wireless/modals/connect.phtml:21
 msgid "Connect"
 msgstr "Connect"
 
@@ -174,8 +174,8 @@ msgstr "Connecting"
 
 #: views/setup_wan/tiles/wireless/modals/connecting.phtml:9
 #: views/admin/tiles/wireless/modals/connecting.phtml:11
-msgid "Connecting..."
-msgstr "Connecting..."
+msgid "Connecting to wireless network..."
+msgstr "Connecting to wireless network..."
 
 #. TRANSLATORS: menu context
 #: views/admin/menu.phtml:4
@@ -219,15 +219,19 @@ msgstr ""
 "Choose a new wireless network to connect to with the NetAidKit and enter the "
 "password if any:"
 
-#: views/admin/tiles/wireless/modals/connect.phtml:15
+#: views/admin/tiles/wireless/modals/connect.phtml:12
+msgid "Refresh"
+msgstr "Refresh"
+
+#: views/admin/tiles/wireless/modals/connect.phtml:18
 msgid "Wireless Password"
 msgstr "Wireless Password"
 
-#: views/admin/tiles/wireless/modals/connect.phtml:23
+#: views/admin/tiles/wireless/modals/connect.phtml:26
 msgid "Cancel"
 msgstr "Cancel"
 
-#: views/admin/tiles/tor/connected.phtml:5 views/admin/js/admin.pjs:122
+#: views/admin/tiles/tor/connected.phtml:5 views/admin/js/admin.pjs:129
 msgid "<h3>You are connected to Tor</h3>"
 msgstr "<h3>You are connected to Tor</h3>"
 
@@ -334,8 +338,8 @@ msgid "<h3>Internet</h3>"
 msgstr "<h3>Internet</h3>"
 
 #: views/admin/tiles/internet.phtml:6
-msgid "Allow outside connections without using Tor or VPN is currently:"
-msgstr "Allow outside connections without using Tor or VPN is currently:"
+msgid "Only allow connections over TOR or VPN:"
+msgstr "Only allow connections over TOR or VPN:"
 
 #: views/admin/tiles/vpn/connected.phtml:6
 msgid "You are connected to a VPN"
@@ -731,35 +735,29 @@ msgstr ""
 "should take no more than two minutes.\n"
 "                "
 
-#: views/update.phtml:38
+#: views/update.phtml:37
 msgid ""
 "\n"
-"Warning: DO NOT turn off or disconnect the device during the\n"
-"install process.\n"
-"                "
+"            Warning: DO NOT turn off or disconnect the device during the\n"
+"            install process!"
 msgstr ""
 "\n"
-"Warning: DO NOT turn off or disconnect the device during the\n"
-"install process.\n"
-"                "
+"            Warning: DO NOT turn off or disconnect the device during the\n"
+"            install process!"
 
-#: views/update.phtml:45
-msgid "Downloading update:"
-msgstr "Downloading update:"
-
-#: views/update.phtml:53
+#: views/update.phtml:49
 msgid "Please wait until the device reboots."
 msgstr "Please wait until the device reboots."
 
-#: views/update.phtml:56
+#: views/update.phtml:52
 msgid "Download"
 msgstr "Download"
 
-#: views/update.phtml:57
+#: views/update.phtml:53
 msgid "Remind me later"
 msgstr "Remind me later"
 
-#: views/update.phtml:58
+#: views/update.phtml:54
 msgid "Upgrade"
 msgstr "Upgrade"
 
@@ -803,31 +801,15 @@ msgstr ""
 msgid "Please retype the new admin password."
 msgstr "Please retype the new admin password."
 
-#: views/update/js/update.pjs:32
+#: views/update/js/update.pjs:34
 msgid "N/A"
 msgstr "N/A"
 
-#: views/update/js/update.pjs:46
-msgid "Downloading..."
-msgstr "Downloading..."
-
-#: views/update/js/update.pjs:87
-msgid ""
-"The downloaded update has an invalid cryptographic signature. Most likely it "
-"didn't download properly. Please try again."
-msgstr ""
-"The downloaded update has an invalid cryptographic signature. Most likely it "
-"didn't download properly. Please try again."
-
-#: views/update/js/update.pjs:92
-msgid "Couldn't install the update. Please try again later."
-msgstr "Couldn't install the update. Please try again later."
-
-#: views/admin/js/admin.pjs:57
+#: views/admin/js/admin.pjs:64
 msgid "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
 msgstr "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
 
-#: views/admin/js/admin.pjs:146
+#: views/admin/js/admin.pjs:153
 msgid "<h3>You are connected to a VPN</h3>"
 msgstr "<h3>You are connected to a VPN</h3>"
 
@@ -840,3 +822,36 @@ msgid ""
 "Please reconnect using the new settings. This page will reload automatically."
 msgstr ""
 "Please reconnect using the new settings. This page will reload automatically."
+
+#~ msgid "Connecting..."
+#~ msgstr "Connecting..."
+
+#~ msgid "Allow outside connections without using Tor or VPN is currently:"
+#~ msgstr "Allow outside connections without using Tor or VPN is currently:"
+
+#~ msgid ""
+#~ "\n"
+#~ "Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "install process.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "install process.\n"
+#~ "                "
+
+#~ msgid "Downloading update:"
+#~ msgstr "Downloading update:"
+
+#~ msgid "Downloading..."
+#~ msgstr "Downloading..."
+
+#~ msgid ""
+#~ "The downloaded update has an invalid cryptographic signature. Most likely "
+#~ "it didn't download properly. Please try again."
+#~ msgstr ""
+#~ "The downloaded update has an invalid cryptographic signature. Most likely "
+#~ "it didn't download properly. Please try again."
+
+#~ msgid "Couldn't install the update. Please try again later."
+#~ msgstr "Couldn't install the update. Please try again later."
