@@ -75,7 +75,7 @@ function transifex_download_translations() {
         echo Downloading translation for $lang.
 
         curl -f -s -L --user $1:$2 -X GET \
-            http://www.transifex.com/api/2/project/$TRANSIFEX_PROJECT_NAME/resource/$TRANSIFEX_WEBAPP_RESOURCE_NAME/translation/$lang \
+            https://www.transifex.com/api/2/project/$TRANSIFEX_PROJECT_NAME/resource/$TRANSIFEX_WEBAPP_RESOURCE_NAME/translation/$lang \
             -o $api_output
 
         if [ ! -f $api_output ]; then
