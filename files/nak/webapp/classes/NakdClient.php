@@ -1,5 +1,5 @@
 <?php
-define ('MAX_MSG_LEN', 4096);
+define ('MAX_MSG_LEN', 65536);
 
 /* TODO ADD EXCEPTIONS */
 class NakdClient {
