@@ -1,0 +1,725 @@
+# 
+# Translators:
+# Menso Heus <heus@freepressunlimited.org>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: NetAidKit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-06 20:38+0100\n"
+"PO-Revision-Date: 2016-01-07 16:41+0000\n"
+"Last-Translator: Menso Heus <heus@freepressunlimited.org>\n"
+"Language-Team: Dutch (http://www.transifex.com/netaidkit/netaidkit/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: controllers/NetworkController.php:39
+msgid "Successfully saved network settings."
+msgstr "Netwerk instellingen succesvol opgeslagen."
+
+#: controllers/LogsController.php:53
+msgid "Tor log empty."
+msgstr "Tor log is leeg."
+
+#: controllers/LogsController.php:64
+msgid "OpenVPN log empty."
+msgstr "OpenVPN log is leeg."
+
+#: controllers/AdminController.php:54
+msgid "VPN config file uploaded."
+msgstr "VPN configuratie bestand opgeslagen."
+
+#: controllers/AdminController.php:56
+msgid "File upload failed."
+msgstr "Bestand opslaan mislukt."
+
+#: controllers/AdminController.php:68
+msgid "VPN config file removed."
+msgstr "VPN configuratie verwijderd."
+
+#: controllers/AdminController.php:70
+msgid "Could not remove file."
+msgstr "Kon bestand niet verwijderen."
+
+#: controllers/SetupController.php:41
+msgid "Access Point successfully set up."
+msgstr "Access point succesvol ingesteld."
+
+#: controllers/SetupController.php:67 controllers/SettingsController.php:63
+#: controllers/SettingsController.php:127
+msgid "All fields are required."
+msgstr "Alle velden zijn verplicht."
+
+#: controllers/SetupController.php:87
+msgid "Wireless key does not match."
+msgstr "Draadloze sleutels komen niet overeen."
+
+#: controllers/SetupController.php:95 controllers/SettingsController.php:86
+msgid "Invalid key length, must be between 8 and 63 characters."
+msgstr "Ongeldige sleutel lengte, moet tussen de 8 en 63 characters lang zijn."
+
+#: controllers/SetupController.php:102
+msgid "Admin password does not match."
+msgstr "Admin wachtwoorden komen niet overeen."
+
+#: controllers/SetupController.php:110
+msgid "Admin password must be at least 8 characters."
+msgstr "Admin wachtwoord moet minimaal 8 characters lang zijn."
+
+#: controllers/SetupController.php:129 controllers/SetupController.php:142
+msgid "Setup complete."
+msgstr "Setup afgerond."
+
+#: controllers/SettingsController.php:43
+msgid "Successfully changed wireless access point."
+msgstr "Succesvol van wireless access point veranderd."
+
+#. / TRANSLATORS: in key confirmation context
+#: controllers/SettingsController.php:78
+msgid "Keys do not match."
+msgstr "Sleutels komen niet overeen."
+
+#: controllers/SettingsController.php:107
+msgid "Successfully changed administrator password."
+msgstr "Administrator wachtwoord succesvol gewijzigd."
+
+#: controllers/SettingsController.php:141
+msgid "Current admin password is incorrect."
+msgstr "Huidige admin wachtwoord is incorrect."
+
+#: controllers/SettingsController.php:147
+msgid "Passwords do not match."
+msgstr "Wachtwoorden komen niet overeen."
+
+#: controllers/SettingsController.php:155
+msgid "Password must be at least 8 characters."
+msgstr "Wachtwoord moet minimaal 8 tekens lang zijn."
+
+#: controllers/UserController.php:39
+msgid "All fields are required"
+msgstr "Alle velden zijn verplicht."
+
+#: controllers/UserController.php:48
+msgid "Username/password is incorrect."
+msgstr "Gebruikersnaam/wachtwoord is incorrect."
+
+#: classes/View.php:43
+msgid "The following errors have occurred:"
+msgstr "De volgende fouten zijn opgetreden:"
+
+#: views/setup_wan.phtml:7
+msgid ""
+"\n"
+"<h3>Connect</h3>\n"
+"<p>The NetAidKit is currently not connected to the Internet.</p>\n"
+"<p>To connect, choose a wireless network on the right.</p>\n"
+"<p>Enter a password if the network requires it.</p>\n"
+"<p>Click on the Connect button.</p>\n"
+"<p>Alternatively, you can connect by plugging a network cable into the WAN port</p>\n"
+"            "
+msgstr "\n<h3>Verbind</h3>\n<p>De NetAidKit is momenteel niet verbonden met het Internet.</p>\n<p>Kies rechts een draadloos netwerk om te verbinden.</p>\n<p>Vul een wachtwoord in indien nodig voor het netwerk.</p>\n<p>Klik op de Verbind knop.</p>\n<p>Tevens kun je verbinden door een kabel in de WAN poort te steken.</p>\n            "
+
+#: views/network.phtml:7
+msgid ""
+"\n"
+"<h3>Network</h3>\n"
+"<p>Here you can manage the NetAidKit network settings.</p>\n"
+"            "
+msgstr "\n<h3>Netwerk</h3>\n<p>Hier kun je de netwerk instellingen van de NetAidKit wijzigen.</p>\n            "
+
+#: views/setup_wan/tiles/wireless.phtml:2
+#: views/admin/tiles/wireless/modals/connect.phtml:10
+msgid "<h3>Select a wireless network:</h3>"
+msgstr "<h3>Kies een draadloos netwerk:</h3>"
+
+#. / TRANSLATORS: in the context of WiFi network selection
+#: views/setup_wan/tiles/wireless.phtml:15
+#: views/admin/tiles/wireless/modals/connect.phtml:21
+msgid "Connect"
+msgstr "Verbinden"
+
+#. TRANSLATORS: as in, close window
+#. TRANSLATORS: as in: close the dialog
+#: views/setup_wan/tiles/wireless/modals/connecting.phtml:5
+#: views/admin/tiles/wireless/modals/connecting.phtml:6
+#: views/admin/tiles/wireless/modals/connect.phtml:5
+#: views/admin/tiles/tor/modals/disconnect.phtml:5
+#: views/admin/tiles/tor/modals/connect.phtml:5
+#: views/admin/tiles/vpn/modals/connect.phtml:5
+#: views/admin/tiles/vpn/modals/add.phtml:5
+#: views/admin/tiles/vpn/modals/delete.phtml:5 views/admin/portal.phtml:21
+#: views/settings/tiles/wireless/modals/configure.phtml:5
+#: views/setup_ap/tiles/settings/modals/configure.phtml:5
+msgid "Close"
+msgstr "Sluiten"
+
+#. TRANSLATORS: window header/title
+#. TRANSLATORS: window header
+#: views/setup_wan/tiles/wireless/modals/connecting.phtml:6
+#: views/admin/tiles/wireless/modals/connecting.phtml:8
+msgid "Connecting"
+msgstr "Verbinding maken"
+
+#: views/setup_wan/tiles/wireless/modals/connecting.phtml:9
+#: views/admin/tiles/wireless/modals/connecting.phtml:11
+msgid "Connecting to wireless network..."
+msgstr "Verbinden met draadloos netwerk..."
+
+#. TRANSLATORS: menu context
+#: views/admin/menu.phtml:4
+msgid "Toggle navigation"
+msgstr "Toggle navigatie"
+
+#. TRANSLATORS: menu context
+#: views/admin/menu.phtml:12
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#. TRANSLATORS: menu context
+#: views/admin/menu.phtml:15
+msgid "Settings"
+msgstr "Instellingen"
+
+#. TRANSLATORS: menu context
+#: views/admin/menu.phtml:16
+msgid "Network"
+msgstr "Netwerk"
+
+#. TRANSLATORS: menu context
+#: views/admin/menu.phtml:17
+msgid "Show logs"
+msgstr "Logs tonen"
+
+#. TRANSLATORS: menu context
+#: views/admin/menu.phtml:18
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: views/admin/tiles/wireless/modals/connect.phtml:6
+msgid "Change Wireless Network:"
+msgstr "Wijzig draadloos netwerk:"
+
+#: views/admin/tiles/wireless/modals/connect.phtml:9
+msgid ""
+"Choose a new wireless network to connect to with the NetAidKit and enter the"
+" password if any:"
+msgstr "Kies een nieuw draadloos netwerk om mee te verbinden met de NetAidKit en vul het wachtwoord in indien nodig:"
+
+#: views/admin/tiles/wireless/modals/connect.phtml:12
+msgid "Refresh"
+msgstr "Verversen"
+
+#: views/admin/tiles/wireless/modals/connect.phtml:18
+msgid "Wireless Password"
+msgstr "Draadloos wachtwoord"
+
+#: views/admin/tiles/wireless/modals/connect.phtml:26
+msgid "Cancel"
+msgstr "Annuleer"
+
+#: views/admin/tiles/tor/connected.phtml:5 views/admin/js/admin.pjs:129
+msgid "<h3>You are connected to Tor</h3>"
+msgstr "<h3>Je bent verbonden met Tor</h3>"
+
+#: views/admin/tiles/tor/connected.phtml:7
+msgid "<h3>Connecting to Tor</h3>"
+msgstr "<h3>Verbinding maken met Tor</h3>"
+
+#: views/admin/tiles/tor/connected.phtml:17
+msgid ""
+"\n"
+"The Tor network can be used to circumvent censorship. Tor will send\n"
+"your data through different countries to bypass filtering."
+msgstr "\nHet Tor netwerk kan gebruikt worden om censuur te omzeilen. Tor stuurt je\nverkeer langs verschillende landen om filtering te vermijden."
+
+#: views/admin/tiles/tor/connected.phtml:23
+#: views/admin/tiles/tor/modals/disconnect.phtml:6
+msgid "Disconnect from Tor"
+msgstr "Tor verbinding verbreken"
+
+#: views/admin/tiles/tor/disconnected.phtml:3
+msgid ""
+"\n"
+"<h3>Tor</h3>\n"
+"<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>\n"
+"        "
+msgstr "\n<h3>Tor</h3>\n<p>Het Tor netwerk kan gebruikt worden om censuur te omzeilen. Tor stuurt je data langs verschillende landen om filtering te vermijden.</p>\n        "
+
+#: views/admin/tiles/tor/disconnected.phtml:9
+#: views/admin/tiles/tor/modals/connect.phtml:6
+msgid "Connect to Tor"
+msgstr "Verbind met Tor"
+
+#: views/admin/tiles/tor/modals/disconnect.phtml:9
+msgid ""
+"\n"
+"<p>By disconnecting from the Tor network, your data will no longer be anonymized. Are you sure this is what you want to do?</p>\n"
+"                "
+msgstr "\n<p>Door de verbinding met Tor te verbreken zal je data niet langer geanonimiseerd worden. Weet je zeker dat je dit wilt?</p>\n                "
+
+#: views/admin/tiles/tor/modals/disconnect.phtml:15
+#: views/admin/tiles/tor/modals/connect.phtml:18
+#: views/admin/tiles/vpn/modals/disconnect.phtml:17
+#: views/admin/tiles/vpn/modals/connect.phtml:23
+#: views/admin/tiles/vpn/modals/delete.phtml:18
+#: views/settings/tiles/wireless/modals/configure.phtml:26
+#: views/setup_ap/tiles/settings/modals/configure.phtml:25
+msgid "No"
+msgstr "Nee"
+
+#: views/admin/tiles/tor/modals/disconnect.phtml:16
+#: views/admin/tiles/tor/modals/connect.phtml:19
+#: views/admin/tiles/vpn/modals/disconnect.phtml:18
+#: views/admin/tiles/vpn/modals/connect.phtml:24
+#: views/admin/tiles/vpn/modals/delete.phtml:19
+#: views/settings/tiles/wireless/modals/configure.phtml:27
+#: views/setup_ap/tiles/settings/modals/configure.phtml:26
+msgid "Yes"
+msgstr "Ja"
+
+#: views/admin/tiles/tor/modals/connect.phtml:9
+msgid ""
+"\n"
+"<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>\n"
+"<p><strong>If you wish to use Tor for anonymity purposes, please use the <a href=\"https://www.torproject.org/download/download-easy\" target=\"_new\">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</strong></p>\n"
+"<p>In some repressive countries, using Tor can get you into trouble with the authorities. Please be aware of what the situation is for the country you are in before you connect to Tor.</p>\n"
+"<p>Are you sure you want to connect to Tor?</p>\n"
+"                "
+msgstr "\n<p>Het Tor netwerk kan gebruikt worden om censuur te omzeilen. Tor stuurt je data langs verschillende landen om filtering te vermijden.</p>\n<p><strong>Als je Tor wilt gebruiken om anoniem te blijven, gebruik dan de <a href=\"https://www.torproject.org/download/download-easy\" target=\"_new\">Tor Browser Bundle</a> voor additionele privacy en security verbeteringen.</strong></p>\n<p>In sommige repressieve landen kan het gebruik van Tor je in problemen brengen met de authoriteiten. Zorg dat je weet wat de situatie is in het land waar je Tor gebruikt.</p>\n<p>Weet je zeker dat je wilt verbinden met Tor?</p>\n                "
+
+#: views/admin/tiles/internet.phtml:4
+msgid "<h3>Internet</h3>"
+msgstr "<h3>Internet</h3>"
+
+#: views/admin/tiles/internet.phtml:6
+msgid "Only allow connections over TOR or VPN:"
+msgstr "Sta alleen verbindingen over Tor of VPN toe:"
+
+#: views/admin/tiles/vpn/connected.phtml:6
+msgid "You are connected to a VPN"
+msgstr "Je bent verbonden met een VPN"
+
+#. / TRANSLATORS: status context
+#: views/admin/tiles/vpn/connected.phtml:9
+msgid "Connecting to VPN"
+msgstr "Verbinding maken met VPN"
+
+#: views/admin/tiles/vpn/connected.phtml:19
+msgid ""
+"A Virtual Private Network creates an encrypted tunnel between the NetAidKit "
+"and a trusted network over the Internet."
+msgstr "Een Virtual Private Network maakt een versleutelde tunnel tussen de NetAidKit en een vertrouwd netwerk over het Internet."
+
+#: views/admin/tiles/vpn/connected.phtml:21
+msgid "You are currently connected to VPN network:"
+msgstr "Je bent momenteel verbonden met VPN netwerk:"
+
+#. / TRANSLATORS: header/title context
+#: views/admin/tiles/vpn/connected.phtml:25
+#: views/admin/tiles/vpn/modals/disconnect.phtml:9
+msgid "Disconnect from VPN"
+msgstr "Verbinding met VPN verbreken"
+
+#: views/admin/tiles/vpn/disconnected.phtml:2
+msgid ""
+"\n"
+"<h3>VPN</h3>\n"
+"<p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>\n"
+"        "
+msgstr "\n<h3>VPN</h3>\n<p>Een Virtual Private Network maakt een versleutelde tunnel tussen de NetAidKit en een vertrouwd netwerk over het Internet.</p>\n        "
+
+#. / TRANSLATORS: button context
+#: views/admin/tiles/vpn/disconnected.phtml:14
+msgid "Add a VPN connection..."
+msgstr "Voeg een VPN verbinding toe..."
+
+#. Reset checked to empty for next items
+#. / TRANSLATORS: header/title context
+#: views/admin/tiles/vpn/disconnected.phtml:31
+#: views/admin/tiles/vpn/modals/connect.phtml:9
+#: views/admin/tiles/vpn/modals/add.phtml:7
+msgid "Connect to VPN"
+msgstr "Verbind met VPN"
+
+#: views/admin/tiles/vpn/modals/disconnect.phtml:14
+msgid ""
+"By disconnecting from the VPN, your data will no longer be encrypted. Are "
+"you sure this is what you want to do?"
+msgstr "Door de VPN verbinding te verbreken zal je data niet langer versleuteld worden. Weet je zeker dat dit is wat je wilt?"
+
+#: views/admin/tiles/vpn/modals/connect.phtml:14
+msgid ""
+"\n"
+"<p>Connecting to a VPN will send all your internet traffic through an encrypted VPN tunnel.</p>\n"
+"<p>If you trust the other end of the tunnel, VPNs are a great way to secure your data and enhance your privacy.</p>\n"
+"<p>Please note that the VPN operator can still monitor your network traffic.</p>\n"
+"<p>Are you sure you want to connect to the VPN?</p>\n"
+"                    "
+msgstr "\n<p>Door te verbinden met een VPN zal al je Internet verkeer door een versleutelde tunnel gaan.</p>\n<p>Als je het eindpunt van de tunnel vertrouwd zijn VPN's een goede manier om je data te beveiligen en je privacy te verhogen.</p>\n<p>Wees ervan bewust dat de VPN eigenaar nog steeds je verkeer kan zien.</p>\n<p>Weet je zeker dat je wilt verbinden met een VPN?</p>\n                    "
+
+#: views/admin/tiles/vpn/modals/add.phtml:13
+msgid ""
+"\n"
+"Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.\n"
+"                            "
+msgstr "\nEen VPN configureren is zo eenvoudig als het uploaden van een OpenVPN configuratie bestand. Klik op de blader knop en en kies een ovpn configuratie bestand om toe te voegen aan de lijst van VPN verbindingen.\n                            "
+
+#: views/admin/tiles/vpn/modals/add.phtml:21
+msgid "Upload"
+msgstr "Uploaden"
+
+#: views/admin/tiles/vpn/modals/delete.phtml:7
+msgid "Delete VPN configuration"
+msgstr "Verwijder VPN configuratie"
+
+#: views/admin/tiles/vpn/modals/delete.phtml:12
+msgid "Are you sure you want to delete the following VPN:"
+msgstr "Weet je zeker dat je de volgende VPN wilt verwijderen:"
+
+#: views/admin/portal.phtml:22
+msgid "Captive portal detected"
+msgstr "Captive portal gedetecteerd"
+
+#: views/admin/portal.phtml:26
+msgid "Click here to open portal page."
+msgstr "Klik hier om de portal pagina te openen"
+
+#: views/layout.phtml:6
+msgid "<title>Welcome!</title>"
+msgstr "<title>Welkom!</title>"
+
+#: views/settings/tiles/wireless.phtml:9 views/setup_ap/tiles/settings.phtml:9
+msgid "Enter a new network name"
+msgstr "Vul een nieuw netwerk naam in"
+
+#: views/settings/tiles/wireless.phtml:16
+msgid ""
+"Enter a new wireless network name for your NetAidKit. You will connect your "
+"devices to this wireless network."
+msgstr "Vul een nieuw draadloos netwerk naam in voor je NetAidKit. Je zal je apparaten met dit netwerk verbinden."
+
+#: views/settings/tiles/wireless.phtml:24
+#: views/setup_ap/tiles/settings.phtml:20
+msgid "Enter a new network password"
+msgstr "Vul een nieuw netwerk wachtwoord in"
+
+#: views/settings/tiles/wireless.phtml:31
+#: views/setup_ap/tiles/settings.phtml:25
+msgid ""
+"To make sure only you and people you trust can connect to your NetAidKit, "
+"choose a password to protect your new wireless network. The key must be "
+"between 8 and 64 characters long."
+msgstr "Om er zeker van te zijn dat alleen jij en mensen die jij vertrouwt met je NetAidKit kunnen verbinden moet je een nieuw wachtwoord instellen. Het wachtwoord moet tussen de 8 en 64 tekens lang zijn."
+
+#: views/settings/tiles/wireless.phtml:39
+#: views/setup_ap/tiles/settings.phtml:31
+msgid "Confirm new network password"
+msgstr "Bevestig nieuw netwerk wachtwoord"
+
+#: views/settings/tiles/wireless.phtml:44
+msgid "Please retype your wireless network key."
+msgstr "Voer je draadloze netwerk sleutel nogmaals in"
+
+#: views/settings/tiles/wireless.phtml:48
+msgid "Change Wireless Settings"
+msgstr "Wijzig Draadloze Instellingen"
+
+#: views/settings/tiles/wireless/modals/configure.phtml:6
+#: views/setup_ap/tiles/settings/modals/configure.phtml:6
+msgid "Reset Access Point"
+msgstr "Reset Access Point"
+
+#: views/settings/tiles/wireless/modals/configure.phtml:11
+msgid ""
+"\n"
+"You are about to reconfigure the netaidkit Access Point.\n"
+"You will be disconnected after clicking the 'Yes' button.\n"
+"You can then reconnect with your new settings.\n"
+"                        "
+msgstr "\nJe staat op het punt de NetAidKit opnieuw in te stellen.\nDe verbindingen zal worden verbroken nadat je op 'Ja' klikt.\nJe kunt hierna verbinden met de nieuwe instellingen.\n                        "
+
+#: views/settings/tiles/wireless/modals/configure.phtml:19
+#: views/setup_ap/tiles/settings/modals/configure.phtml:18
+msgid "New network name:"
+msgstr "Nieuwe netwerk naam:"
+
+#: views/settings/tiles/wireless/modals/configure.phtml:21
+#: views/setup_ap/tiles/settings/modals/configure.phtml:20
+msgid "Admin password:"
+msgstr "Admin wachtwoord:"
+
+#: views/settings/tiles/wireless/modals/configure.phtml:22
+#: views/setup_ap/tiles/settings/modals/configure.phtml:21
+msgid "Distress password:"
+msgstr "Paniek wachtwoord:"
+
+#: views/settings/tiles/localization.phtml:8
+msgid "Detect automatically"
+msgstr "Automatisch herkennen"
+
+#: views/settings/tiles/localization.phtml:17
+msgid "Change localization settings"
+msgstr "Wijzig taalinstellingen"
+
+#: views/settings/tiles/password.phtml:7
+msgid "Enter the current administrator password"
+msgstr "Vul huidige administrator wachtwoord in"
+
+#: views/settings/tiles/password.phtml:14
+msgid ""
+"\n"
+"Please enter the current admininstrator password entered during configuration.\n"
+"                        "
+msgstr "\nVul het huidige administrator wachtwoord in zoals tijdens de configuratie ingegeven.\n                        "
+
+#: views/settings/tiles/password.phtml:24
+#: views/setup_ap/tiles/settings.phtml:42
+msgid "Enter a new administrator password"
+msgstr "Vul een nieuw administrator wachtwoord in"
+
+#: views/settings/tiles/password.phtml:31
+msgid ""
+"\n"
+"Enter a new administrator password used to log in to the configuration panel of the NetAidKit. The password must be at least 8 characters long.\n"
+"                            "
+msgstr "\nVul een nieuw administrator wachtwoord in om in te kunnen loggen in het configuratiescherm. Het wachtwoord moet minimaal 8 tekens lang zijn.\n                            "
+
+#: views/settings/tiles/password.phtml:41
+#: views/setup_ap/tiles/settings.phtml:53
+msgid "Confirm new administrator password"
+msgstr "Bevestig nieuw administrator wachtwoord"
+
+#: views/settings/tiles/password.phtml:47
+msgid "Please retype the new administrator password."
+msgstr "Vul het administator wachtwoord nogmaals in."
+
+#: views/settings/tiles/password.phtml:51
+msgid "Change Password Settings"
+msgstr "Wijzig Wachtwoord Instellingen"
+
+#: views/admin.phtml:10
+msgid ""
+"The NetAidKit is currently connected to the following wireless network:"
+msgstr "De NetAidKit is momenteel verbonden met het volgende draadloos netwerk:"
+
+#: views/settings.phtml:7
+msgid "<h3>Wireless</h3>"
+msgstr "<h3>Draadloos</h3>"
+
+#: views/settings.phtml:8
+msgid ""
+"Here you can manage the NetAidKit basic wireless configuration settings."
+msgstr "Hier kun je de NetAidKit basis draadloze instellingen wijzigen"
+
+#: views/settings.phtml:13
+msgid "<h3>Password</h3>"
+msgstr "<h3>Wachtwoord</h3>"
+
+#: views/settings.phtml:14
+msgid "Here you can change the NetAidKit admin login password."
+msgstr "Hier kun je het NetAidKit administrator wachtwoord wijzigen"
+
+#: views/settings.phtml:19
+msgid "<h3>Localization</h3>"
+msgstr "<h3>Taalinstellingen</h3>"
+
+#: views/settings.phtml:20
+msgid "Here you can change interface language."
+msgstr "Hier kun je de taalinstellingen wijzigen."
+
+#: views/network/tiles/network.phtml:6
+msgid "Broadcast SSID"
+msgstr "Broadcast SSID"
+
+#: views/network/tiles/network.phtml:7
+msgid "Change Network Settings"
+msgstr "Wijzig Netwerk Instellingen"
+
+#: views/logs.phtml:6
+msgid "This is the basic Tor logfile"
+msgstr "Dit is het standaard Tor logbestand"
+
+#: views/logs.phtml:6 views/logs.phtml:11
+msgid "click to download"
+msgstr "Klik om te downloaden"
+
+#: views/logs.phtml:10
+msgid "<h3>OpenVPN</h3>"
+msgstr "<h3>OpenVPN</h3>"
+
+#: views/logs.phtml:11
+msgid "This is the basic OpenVPN logfile"
+msgstr "Dit is het standaard OpenVPN logbestand"
+
+#: views/login/tiles/password.phtml:10
+msgid "Enter your password"
+msgstr "Vul je wachtwoord in"
+
+#: views/login/tiles/password.phtml:16
+msgid "The password you configured during setup."
+msgstr "Het wachtwoord dat je tijdens de Setup instelde"
+
+#: views/login.phtml:5
+msgid "<h3>Login</h3>"
+msgstr "<h3>Inloggen</h3>"
+
+#: views/setup_ap.phtml:7
+msgid ""
+"\n"
+"<h3>Setup</h3>\n"
+"<p>Before you can use the NetAidKit, you've got to make it\n"
+"your own. On this page, we will give your NetAidKit a new\n"
+"wireless network name and password and choose an\n"
+"administrator password you will use to make changes in\n"
+"the future.</p>\n"
+"<p>Let's get started!</p>\n"
+"            "
+msgstr "\n<h3>Setup</h3>\n<p>Voordat je de NetAidKit kunt gebruiken zul je hem \nmoeten instellen. Op deze pagina zullen we de NetAidKit\nvoorzien van een nieuwe draadloos netwerk naam en \nwachtwoord en een administrator wachtwoord kiezen\ndat je in de toekomst nodig hebt</p>\n<p>Aan de slag!</p>\n            "
+
+#: views/update.phtml:8
+msgid ""
+"\n"
+"<h3>Update Required</h3>\n"
+"<p>A newer version of the software is available.</p>\n"
+"            "
+msgstr "\n<h3>Update Noodzakelijk</h3>\n<p>Er is een nieuwe versie van de software beschikbaar.</p>\n            "
+
+#: views/update.phtml:14
+msgid "Please press the <i>download</i> button to start."
+msgstr "Klik op de <i>download</i> knop om te starten."
+
+#: views/update.phtml:18
+msgid ""
+"\n"
+"You can cancel the download if it takes too long - just\n"
+"press <i>remind me later</i>.\n"
+"                    "
+msgstr "\nJe kan de download annuleren als het te lang duurt - klik\nop <i>Herinner mij later</i>.\n                    "
+
+#: views/update.phtml:23
+msgid ""
+"\n"
+"This step is required to ensure the device will continue to serve\n"
+"its purpose.\n"
+"                    "
+msgstr "\nDeze stap is noodzakelijk om ervoor te zorgen dat het in de toekomst blijft functioneren.\n                    "
+
+#: views/update.phtml:29
+msgid ""
+"\n"
+"After the update is downloaded, press the <i>upgrade</i> button to\n"
+"install. At this point, there's no going back. The upgrade itself\n"
+"should take no more than two minutes.\n"
+"                "
+msgstr "\nAls de update gedownload is, klik dan op de <i>upgrade</i> knop om\nte installeren. Hierna is er geen weg terug. Het upgraden zelf\nduurt niet langer dan twee minuten.\n                "
+
+#: views/update.phtml:37
+msgid ""
+"\n"
+"            Warning: DO NOT turn off or disconnect the device during the\n"
+"            install process!"
+msgstr "\n            Waarschuwing: NIET uitzetten of afsluiten tijdens het\n            installatie proces!"
+
+#: views/update.phtml:49
+msgid "Please wait until the device reboots."
+msgstr "Wacht aub totdat het apparaat herstart"
+
+#: views/update.phtml:52
+msgid "Download"
+msgstr "Download"
+
+#: views/update.phtml:53
+msgid "Remind me later"
+msgstr "Herinner mij later"
+
+#: views/update.phtml:54
+msgid "Upgrade"
+msgstr "Upgrade"
+
+#: views/setup_ap/tiles/settings/modals/configure.phtml:11
+msgid ""
+"\n"
+"You are about to reconfigure the netaidkit Access Point.\n"
+"You will be disconnected after clicking the 'Yes' button.\n"
+"You can then reconnect with your new settings.</p>\n"
+"                        "
+msgstr "\nJe staat op het punt om de NetAidKit te herconfigureren.\nDe verbinding wordt verbroken nadat je op 'Ja' klikt.\nHierna kun je verbinden met de nieuwe instellingen.</p>\n                        "
+
+#: views/setup_ap/tiles/settings.phtml:14
+msgid ""
+"Enter a new wireless network name for your NetAidKit. You will connect your "
+"devices to this wireless network once you completed setting up."
+msgstr "Vul een nieuw draadloos netwerk naam in voor je NetAidKit. Je zal je apparaten met dit netwerk verbinden."
+
+#: views/setup_ap/tiles/settings.phtml:36
+msgid "Please retype the new wireless network key."
+msgstr "Vul je draadloze netwerk sleutel nogmaals in."
+
+#: views/setup_ap/tiles/settings.phtml:47
+msgid ""
+"You will need a password to make changes to the configuration of the "
+"NetAidKit after setting up, choose one here. The password must be at least 8"
+" characters long."
+msgstr "Je hebt een wachtwoord nodig om de instellingen van je NetAidKit te kunnen wijzigen. Kies er hier één. Het wachtwoord moet minimaal 8 tekens lang zijn."
+
+#: views/setup_ap/tiles/settings.phtml:58
+msgid "Please retype the new admin password."
+msgstr "Vul nogmaals het administrator wachtwoord in."
+
+#: views/update/js/update.pjs:34
+msgid "N/A"
+msgstr "Niet Beschikbaar"
+
+#: views/admin/js/admin.pjs:64
+msgid "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
+msgstr "Sorry, je bestand is te groot. Weet je zeker dat het een geldig ovpn bestand is?"
+
+#: views/admin/js/admin.pjs:153
+msgid "<h3>You are connected to a VPN</h3>"
+msgstr "<h3>Je bent verbonden met een VPN</h3>"
+
+#: views/settings/js/settings.pjs:14 views/setup_ap/js/setup_ap.pjs:14
+msgid "Disconnected"
+msgstr "Verbinding verbroken"
+
+#: views/settings/js/settings.pjs:15 views/setup_ap/js/setup_ap.pjs:15
+msgid ""
+"Please reconnect using the new settings. This page will reload "
+"automatically."
+msgstr "Verbind opnieuw met de nieuwe instellingen. Deze pagina zal automatisch herladen."
+
+#~ msgid "Connecting..."
+#~ msgstr "Connecting..."
+
+#~ msgid "Allow outside connections without using Tor or VPN is currently:"
+#~ msgstr "Allow outside connections without using Tor or VPN is currently:"
+
+#~ msgid ""
+#~ "\n"
+#~ "Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "install process.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "install process.\n"
+#~ "                "
+
+#~ msgid "Downloading update:"
+#~ msgstr "Downloading update:"
+
+#~ msgid "Downloading..."
+#~ msgstr "Downloading..."
+
+#~ msgid ""
+#~ "The downloaded update has an invalid cryptographic signature. Most likely it"
+#~ " didn't download properly. Please try again."
+#~ msgstr ""
+#~ "The downloaded update has an invalid cryptographic signature. Most likely it"
+#~ " didn't download properly. Please try again."
+
+#~ msgid "Couldn't install the update. Please try again later."
+#~ msgstr "Couldn't install the update. Please try again later."
+
