@@ -17,6 +17,7 @@ TRANSIFEX_WEBAPP_RESOURCE_NAME=nakwebpo
 function stage_lang() {
     git add $LOCALE_DIR/$1/LC_MESSAGES/${CATALOG_FILENAME} \
         $LOCALE_DIR/$1/LC_MESSAGES/${BINARY_FILENAME}
+    echo Adding $1 files to git staging area
 }
 
 function stage_all() {
@@ -95,8 +96,6 @@ function transifex_download_translations() {
         msgfmt $catalog -o $binary_catalog
 
         rm -f $api_output
-
-        echo Adding $lang files to git staging area.
     done
 }
 
