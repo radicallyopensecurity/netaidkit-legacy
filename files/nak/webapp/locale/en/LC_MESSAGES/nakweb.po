@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-06 20:38+0100\n"
+"POT-Creation-Date: 2016-01-09 13:51+0100\n"
 "PO-Revision-Date: 2015-12-14 13:37+0100\n"
 "Last-Translator: Mateusz Zalega <mateusz@appliedsourcery.com>\n"
 "Language-Team: NetAidKit Team <info@netaidkit.net>\n"
@@ -11,101 +11,104 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: controllers/NetworkController.php:39
+#: ../files/nak/webapp/controllers/NetworkController.php:39
 msgid "Successfully saved network settings."
 msgstr "Successfully saved network settings."
 
-#: controllers/LogsController.php:53
+#: ../files/nak/webapp/controllers/LogsController.php:53
 msgid "Tor log empty."
 msgstr "Tor log empty."
 
-#: controllers/LogsController.php:64
+#: ../files/nak/webapp/controllers/LogsController.php:64
 msgid "OpenVPN log empty."
 msgstr "OpenVPN log empty."
 
-#: controllers/AdminController.php:54
+#: ../files/nak/webapp/controllers/AdminController.php:54
 msgid "VPN config file uploaded."
 msgstr "VPN config file uploaded."
 
-#: controllers/AdminController.php:56
+#: ../files/nak/webapp/controllers/AdminController.php:56
 msgid "File upload failed."
 msgstr "File upload failed."
 
-#: controllers/AdminController.php:68
+#: ../files/nak/webapp/controllers/AdminController.php:68
 msgid "VPN config file removed."
 msgstr "VPN config file removed."
 
-#: controllers/AdminController.php:70
+#: ../files/nak/webapp/controllers/AdminController.php:70
 msgid "Could not remove file."
 msgstr "Could not remove file."
 
-#: controllers/SetupController.php:41
+#: ../files/nak/webapp/controllers/SetupController.php:41
 msgid "Access Point successfully set up."
 msgstr "Access Point successfully set up."
 
-#: controllers/SetupController.php:67 controllers/SettingsController.php:63
-#: controllers/SettingsController.php:127
+#: ../files/nak/webapp/controllers/SetupController.php:67
+#: ../files/nak/webapp/controllers/SettingsController.php:63
+#: ../files/nak/webapp/controllers/SettingsController.php:127
 msgid "All fields are required."
 msgstr "All fields are required."
 
-#: controllers/SetupController.php:87
+#: ../files/nak/webapp/controllers/SetupController.php:87
 msgid "Wireless key does not match."
 msgstr "Wireless key does not match."
 
-#: controllers/SetupController.php:95 controllers/SettingsController.php:86
+#: ../files/nak/webapp/controllers/SetupController.php:95
+#: ../files/nak/webapp/controllers/SettingsController.php:86
 msgid "Invalid key length, must be between 8 and 63 characters."
 msgstr "Invalid key length, must be between 8 and 63 characters."
 
-#: controllers/SetupController.php:102
+#: ../files/nak/webapp/controllers/SetupController.php:102
 msgid "Admin password does not match."
 msgstr "Admin password does not match."
 
-#: controllers/SetupController.php:110
+#: ../files/nak/webapp/controllers/SetupController.php:110
 msgid "Admin password must be at least 8 characters."
 msgstr "Admin password must be at least 8 characters."
 
-#: controllers/SetupController.php:129 controllers/SetupController.php:142
+#: ../files/nak/webapp/controllers/SetupController.php:129
+#: ../files/nak/webapp/controllers/SetupController.php:142
 msgid "Setup complete."
 msgstr "Setup complete."
 
-#: controllers/SettingsController.php:43
+#: ../files/nak/webapp/controllers/SettingsController.php:43
 msgid "Successfully changed wireless access point."
 msgstr "Successfully changed wireless access point."
 
 #. / TRANSLATORS: in key confirmation context
-#: controllers/SettingsController.php:78
+#: ../files/nak/webapp/controllers/SettingsController.php:78
 msgid "Keys do not match."
 msgstr "Keys do not match."
 
-#: controllers/SettingsController.php:107
+#: ../files/nak/webapp/controllers/SettingsController.php:107
 msgid "Successfully changed administrator password."
 msgstr "Successfully changed administrator password."
 
-#: controllers/SettingsController.php:141
+#: ../files/nak/webapp/controllers/SettingsController.php:141
 msgid "Current admin password is incorrect."
 msgstr "Current admin password is incorrect."
 
-#: controllers/SettingsController.php:147
+#: ../files/nak/webapp/controllers/SettingsController.php:147
 msgid "Passwords do not match."
 msgstr "Passwords do not match."
 
-#: controllers/SettingsController.php:155
+#: ../files/nak/webapp/controllers/SettingsController.php:155
 msgid "Password must be at least 8 characters."
 msgstr "Password must be at least 8 characters."
 
-#: controllers/UserController.php:39
+#: ../files/nak/webapp/controllers/UserController.php:39
 msgid "All fields are required"
 msgstr "All fields are required"
 
-#: controllers/UserController.php:48
+#: ../files/nak/webapp/controllers/UserController.php:48
 msgid "Username/password is incorrect."
 msgstr "Username/password is incorrect."
 
-#: classes/View.php:43
+#: ../files/nak/webapp/classes/View.php:43
 msgid "The following errors have occurred:"
 msgstr "The following errors have occurred:"
 
-#: views/setup_wan.phtml:7
+#: ../files/nak/webapp/views/setup_wan.phtml:7
 msgid ""
 "\n"
 "<h3>Connect</h3>\n"
@@ -127,7 +130,7 @@ msgstr ""
 "port</p>\n"
 "            "
 
-#: views/network.phtml:7
+#: ../files/nak/webapp/views/network.phtml:7
 msgid ""
 "\n"
 "<h3>Network</h3>\n"
@@ -139,79 +142,116 @@ msgstr ""
 "<p>Here you can manage the NetAidKit network settings.</p>\n"
 "            "
 
-#: views/setup_wan/tiles/wireless.phtml:2
-#: views/admin/tiles/wireless/modals/connect.phtml:10
+#. TRANSLATORS: window header
+#: ../files/nak/webapp/views/update/modals/restart.phtml:5
+msgid "The update is being installed"
+msgstr "The update is being installed"
+
+#: ../files/nak/webapp/views/update/modals/restart.phtml:11
+#, php-format
+msgid ""
+"\n"
+"                        Please make sure you are still connected to either "
+"<b>%s</b> wireless network or\n"
+"                        NetAidKit LAN port after the device restarts.\n"
+"                        This page will refresh automatically."
+msgstr ""
+"\n"
+"                        Please make sure you are still connected to either "
+"<b>%s</b> wireless network or\n"
+"                        NetAidKit LAN port after the device restarts.\n"
+"                        This page will refresh automatically."
+
+#: ../files/nak/webapp/views/update/modals/restart.phtml:18
+msgid ""
+"\n"
+"                    Warning: DO NOT turn off or disconnect the device during "
+"the\n"
+"                    install process!"
+msgstr ""
+"\n"
+"                    Warning: DO NOT turn off or disconnect the device during "
+"the\n"
+"                    install process!"
+
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless.phtml:2
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:10
 msgid "<h3>Select a wireless network:</h3>"
 msgstr "<h3>Select a wireless network:</h3>"
 
 #. / TRANSLATORS: in the context of WiFi network selection
-#: views/setup_wan/tiles/wireless.phtml:15
-#: views/admin/tiles/wireless/modals/connect.phtml:21
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless.phtml:15
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:21
 msgid "Connect"
 msgstr "Connect"
 
 #. TRANSLATORS: as in, close window
 #. TRANSLATORS: as in: close the dialog
-#: views/setup_wan/tiles/wireless/modals/connecting.phtml:5
-#: views/admin/tiles/wireless/modals/connecting.phtml:6
-#: views/admin/tiles/wireless/modals/connect.phtml:5
-#: views/admin/tiles/tor/modals/disconnect.phtml:5
-#: views/admin/tiles/tor/modals/connect.phtml:5
-#: views/admin/tiles/vpn/modals/connect.phtml:5
-#: views/admin/tiles/vpn/modals/add.phtml:5
-#: views/admin/tiles/vpn/modals/delete.phtml:5 views/admin/portal.phtml:21
-#: views/settings/tiles/wireless/modals/configure.phtml:5
-#: views/setup_ap/tiles/settings/modals/configure.phtml:5
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless/modals/connecting.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connecting.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:5
+#: ../files/nak/webapp/views/admin/portal.phtml:21
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:5
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:5
 msgid "Close"
 msgstr "Close"
 
 #. TRANSLATORS: window header/title
 #. TRANSLATORS: window header
-#: views/setup_wan/tiles/wireless/modals/connecting.phtml:6
-#: views/admin/tiles/wireless/modals/connecting.phtml:8
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless/modals/connecting.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connecting.phtml:8
 msgid "Connecting"
 msgstr "Connecting"
 
-#: views/setup_wan/tiles/wireless/modals/connecting.phtml:9
-#: views/admin/tiles/wireless/modals/connecting.phtml:11
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless/modals/connecting.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connecting.phtml:11
 msgid "Connecting to wireless network..."
 msgstr "Connecting to wireless network..."
 
 #. TRANSLATORS: menu context
-#: views/admin/menu.phtml:4
+#: ../files/nak/webapp/views/admin/menu.phtml:4
 msgid "Toggle navigation"
 msgstr "Toggle navigation"
 
 #. TRANSLATORS: menu context
-#: views/admin/menu.phtml:12
+#: ../files/nak/webapp/views/admin/menu.phtml:12
 msgid "Advanced"
 msgstr "Advanced"
 
 #. TRANSLATORS: menu context
-#: views/admin/menu.phtml:15
+#: ../files/nak/webapp/views/admin/menu.phtml:15
 msgid "Settings"
 msgstr "Settings"
 
 #. TRANSLATORS: menu context
-#: views/admin/menu.phtml:16
+#: ../files/nak/webapp/views/admin/menu.phtml:16
 msgid "Network"
 msgstr "Network"
 
 #. TRANSLATORS: menu context
-#: views/admin/menu.phtml:17
+#: ../files/nak/webapp/views/admin/menu.phtml:17
 msgid "Show logs"
 msgstr "Show logs"
 
 #. TRANSLATORS: menu context
-#: views/admin/menu.phtml:18
+#: ../files/nak/webapp/views/admin/menu.phtml:18
 msgid "Log out"
 msgstr "Log out"
 
-#: views/admin/tiles/wireless/modals/connect.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/wireless.phtml:3
+msgid "Change Wireless Network"
+msgstr "Change Wireless Network"
+
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:6
 msgid "Change Wireless Network:"
 msgstr "Change Wireless Network:"
 
-#: views/admin/tiles/wireless/modals/connect.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:9
 msgid ""
 "Choose a new wireless network to connect to with the NetAidKit and enter the "
 "password if any:"
@@ -219,27 +259,28 @@ msgstr ""
 "Choose a new wireless network to connect to with the NetAidKit and enter the "
 "password if any:"
 
-#: views/admin/tiles/wireless/modals/connect.phtml:12
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:12
 msgid "Refresh"
 msgstr "Refresh"
 
-#: views/admin/tiles/wireless/modals/connect.phtml:18
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:18
 msgid "Wireless Password"
 msgstr "Wireless Password"
 
-#: views/admin/tiles/wireless/modals/connect.phtml:26
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:26
 msgid "Cancel"
 msgstr "Cancel"
 
-#: views/admin/tiles/tor/connected.phtml:5 views/admin/js/admin.pjs:129
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:5
+#: ../files/nak/webapp/views/admin/js/admin.pjs:129
 msgid "<h3>You are connected to Tor</h3>"
 msgstr "<h3>You are connected to Tor</h3>"
 
-#: views/admin/tiles/tor/connected.phtml:7
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:7
 msgid "<h3>Connecting to Tor</h3>"
 msgstr "<h3>Connecting to Tor</h3>"
 
-#: views/admin/tiles/tor/connected.phtml:17
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:17
 msgid ""
 "\n"
 "The Tor network can be used to circumvent censorship. Tor will send\n"
@@ -249,12 +290,12 @@ msgstr ""
 "The Tor network can be used to circumvent censorship. Tor will send\n"
 "your data through different countries to bypass filtering."
 
-#: views/admin/tiles/tor/connected.phtml:23
-#: views/admin/tiles/tor/modals/disconnect.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:23
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:6
 msgid "Disconnect from Tor"
 msgstr "Disconnect from Tor"
 
-#: views/admin/tiles/tor/disconnected.phtml:3
+#: ../files/nak/webapp/views/admin/tiles/tor/disconnected.phtml:3
 msgid ""
 "\n"
 "<h3>Tor</h3>\n"
@@ -268,12 +309,12 @@ msgstr ""
 "data through different countries to bypass filtering.</p>\n"
 "        "
 
-#: views/admin/tiles/tor/disconnected.phtml:9
-#: views/admin/tiles/tor/modals/connect.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/tor/disconnected.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:6
 msgid "Connect to Tor"
 msgstr "Connect to Tor"
 
-#: views/admin/tiles/tor/modals/disconnect.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:9
 msgid ""
 "\n"
 "<p>By disconnecting from the Tor network, your data will no longer be "
@@ -285,27 +326,27 @@ msgstr ""
 "anonymized. Are you sure this is what you want to do?</p>\n"
 "                "
 
-#: views/admin/tiles/tor/modals/disconnect.phtml:15
-#: views/admin/tiles/tor/modals/connect.phtml:18
-#: views/admin/tiles/vpn/modals/disconnect.phtml:17
-#: views/admin/tiles/vpn/modals/connect.phtml:23
-#: views/admin/tiles/vpn/modals/delete.phtml:18
-#: views/settings/tiles/wireless/modals/configure.phtml:26
-#: views/setup_ap/tiles/settings/modals/configure.phtml:25
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:15
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:18
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:17
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:23
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:18
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:26
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:25
 msgid "No"
 msgstr "No"
 
-#: views/admin/tiles/tor/modals/disconnect.phtml:16
-#: views/admin/tiles/tor/modals/connect.phtml:19
-#: views/admin/tiles/vpn/modals/disconnect.phtml:18
-#: views/admin/tiles/vpn/modals/connect.phtml:24
-#: views/admin/tiles/vpn/modals/delete.phtml:19
-#: views/settings/tiles/wireless/modals/configure.phtml:27
-#: views/setup_ap/tiles/settings/modals/configure.phtml:26
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:16
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:19
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:18
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:24
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:19
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:27
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:26
 msgid "Yes"
 msgstr "Yes"
 
-#: views/admin/tiles/tor/modals/connect.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:9
 msgid ""
 "\n"
 "<p>The Tor network can be used to circumvent censorship. Tor will send your "
@@ -333,24 +374,24 @@ msgstr ""
 "<p>Are you sure you want to connect to Tor?</p>\n"
 "                "
 
-#: views/admin/tiles/internet.phtml:4
+#: ../files/nak/webapp/views/admin/tiles/internet.phtml:4
 msgid "<h3>Internet</h3>"
 msgstr "<h3>Internet</h3>"
 
-#: views/admin/tiles/internet.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/internet.phtml:6
 msgid "Only allow connections over TOR or VPN:"
 msgstr "Only allow connections over TOR or VPN:"
 
-#: views/admin/tiles/vpn/connected.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:6
 msgid "You are connected to a VPN"
 msgstr "You are connected to a VPN"
 
 #. / TRANSLATORS: status context
-#: views/admin/tiles/vpn/connected.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:9
 msgid "Connecting to VPN"
 msgstr "Connecting to VPN"
 
-#: views/admin/tiles/vpn/connected.phtml:19
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:19
 msgid ""
 "A Virtual Private Network creates an encrypted tunnel between the NetAidKit "
 "and a trusted network over the Internet."
@@ -358,17 +399,17 @@ msgstr ""
 "A Virtual Private Network creates an encrypted tunnel between the NetAidKit "
 "and a trusted network over the Internet."
 
-#: views/admin/tiles/vpn/connected.phtml:21
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:21
 msgid "You are currently connected to VPN network:"
 msgstr "You are currently connected to VPN network:"
 
 #. / TRANSLATORS: header/title context
-#: views/admin/tiles/vpn/connected.phtml:25
-#: views/admin/tiles/vpn/modals/disconnect.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:25
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:9
 msgid "Disconnect from VPN"
 msgstr "Disconnect from VPN"
 
-#: views/admin/tiles/vpn/disconnected.phtml:2
+#: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:2
 msgid ""
 "\n"
 "<h3>VPN</h3>\n"
@@ -383,19 +424,19 @@ msgstr ""
 "        "
 
 #. / TRANSLATORS: button context
-#: views/admin/tiles/vpn/disconnected.phtml:14
+#: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:14
 msgid "Add a VPN connection..."
 msgstr "Add a VPN connection..."
 
 #. Reset checked to empty for next items
 #. / TRANSLATORS: header/title context
-#: views/admin/tiles/vpn/disconnected.phtml:31
-#: views/admin/tiles/vpn/modals/connect.phtml:9
-#: views/admin/tiles/vpn/modals/add.phtml:7
+#: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:31
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:7
 msgid "Connect to VPN"
 msgstr "Connect to VPN"
 
-#: views/admin/tiles/vpn/modals/disconnect.phtml:14
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:14
 msgid ""
 "By disconnecting from the VPN, your data will no longer be encrypted. Are "
 "you sure this is what you want to do?"
@@ -403,7 +444,7 @@ msgstr ""
 "By disconnecting from the VPN, your data will no longer be encrypted. Are "
 "you sure this is what you want to do?"
 
-#: views/admin/tiles/vpn/modals/connect.phtml:14
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:14
 msgid ""
 "\n"
 "<p>Connecting to a VPN will send all your internet traffic through an "
@@ -425,7 +466,7 @@ msgstr ""
 "<p>Are you sure you want to connect to the VPN?</p>\n"
 "                    "
 
-#: views/admin/tiles/vpn/modals/add.phtml:13
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:13
 msgid ""
 "\n"
 "Configuring a VPN connection is as easy as uploading an OpenVPN "
@@ -439,35 +480,36 @@ msgstr ""
 "file to add it to the list of VPN connections.\n"
 "                            "
 
-#: views/admin/tiles/vpn/modals/add.phtml:21
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:21
 msgid "Upload"
 msgstr "Upload"
 
-#: views/admin/tiles/vpn/modals/delete.phtml:7
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:7
 msgid "Delete VPN configuration"
 msgstr "Delete VPN configuration"
 
-#: views/admin/tiles/vpn/modals/delete.phtml:12
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:12
 msgid "Are you sure you want to delete the following VPN:"
 msgstr "Are you sure you want to delete the following VPN:"
 
-#: views/admin/portal.phtml:22
+#: ../files/nak/webapp/views/admin/portal.phtml:22
 msgid "Captive portal detected"
 msgstr "Captive portal detected"
 
-#: views/admin/portal.phtml:26
+#: ../files/nak/webapp/views/admin/portal.phtml:26
 msgid "Click here to open portal page."
 msgstr "Click here to open portal page."
 
-#: views/layout.phtml:6
+#: ../files/nak/webapp/views/layout.phtml:6
 msgid "<title>Welcome!</title>"
 msgstr "<title>Welcome!</title>"
 
-#: views/settings/tiles/wireless.phtml:9 views/setup_ap/tiles/settings.phtml:9
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:9
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:9
 msgid "Enter a new network name"
 msgstr "Enter a new network name"
 
-#: views/settings/tiles/wireless.phtml:16
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:16
 msgid ""
 "Enter a new wireless network name for your NetAidKit. You will connect your "
 "devices to this wireless network."
@@ -475,13 +517,13 @@ msgstr ""
 "Enter a new wireless network name for your NetAidKit. You will connect your "
 "devices to this wireless network."
 
-#: views/settings/tiles/wireless.phtml:24
-#: views/setup_ap/tiles/settings.phtml:20
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:24
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:20
 msgid "Enter a new network password"
 msgstr "Enter a new network password"
 
-#: views/settings/tiles/wireless.phtml:31
-#: views/setup_ap/tiles/settings.phtml:25
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:31
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:25
 msgid ""
 "To make sure only you and people you trust can connect to your NetAidKit, "
 "choose a password to protect your new wireless network. The key must be "
@@ -491,25 +533,25 @@ msgstr ""
 "choose a password to protect your new wireless network. The key must be "
 "between 8 and 64 characters long."
 
-#: views/settings/tiles/wireless.phtml:39
-#: views/setup_ap/tiles/settings.phtml:31
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:39
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:31
 msgid "Confirm new network password"
 msgstr "Confirm new network password"
 
-#: views/settings/tiles/wireless.phtml:44
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:44
 msgid "Please retype your wireless network key."
 msgstr "Please retype your wireless network key."
 
-#: views/settings/tiles/wireless.phtml:48
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:48
 msgid "Change Wireless Settings"
 msgstr "Change Wireless Settings"
 
-#: views/settings/tiles/wireless/modals/configure.phtml:6
-#: views/setup_ap/tiles/settings/modals/configure.phtml:6
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:6
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:6
 msgid "Reset Access Point"
 msgstr "Reset Access Point"
 
-#: views/settings/tiles/wireless/modals/configure.phtml:11
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:11
 msgid ""
 "\n"
 "You are about to reconfigure the netaidkit Access Point.\n"
@@ -523,34 +565,34 @@ msgstr ""
 "You can then reconnect with your new settings.\n"
 "                        "
 
-#: views/settings/tiles/wireless/modals/configure.phtml:19
-#: views/setup_ap/tiles/settings/modals/configure.phtml:18
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:19
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:18
 msgid "New network name:"
 msgstr "New network name:"
 
-#: views/settings/tiles/wireless/modals/configure.phtml:21
-#: views/setup_ap/tiles/settings/modals/configure.phtml:20
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:21
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:20
 msgid "Admin password:"
 msgstr "Admin password:"
 
-#: views/settings/tiles/wireless/modals/configure.phtml:22
-#: views/setup_ap/tiles/settings/modals/configure.phtml:21
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:22
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:21
 msgid "Distress password:"
 msgstr "Distress password:"
 
-#: views/settings/tiles/localization.phtml:8
+#: ../files/nak/webapp/views/settings/tiles/localization.phtml:8
 msgid "Detect automatically"
 msgstr "Detect automatically"
 
-#: views/settings/tiles/localization.phtml:17
+#: ../files/nak/webapp/views/settings/tiles/localization.phtml:17
 msgid "Change localization settings"
 msgstr "Change localization settings"
 
-#: views/settings/tiles/password.phtml:7
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:7
 msgid "Enter the current administrator password"
 msgstr "Enter the current administrator password"
 
-#: views/settings/tiles/password.phtml:14
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:14
 msgid ""
 "\n"
 "Please enter the current admininstrator password entered during "
@@ -562,12 +604,12 @@ msgstr ""
 "configuration.\n"
 "                        "
 
-#: views/settings/tiles/password.phtml:24
-#: views/setup_ap/tiles/settings.phtml:42
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:24
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:42
 msgid "Enter a new administrator password"
 msgstr "Enter a new administrator password"
 
-#: views/settings/tiles/password.phtml:31
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:31
 msgid ""
 "\n"
 "Enter a new administrator password used to log in to the configuration panel "
@@ -579,87 +621,88 @@ msgstr ""
 "of the NetAidKit. The password must be at least 8 characters long.\n"
 "                            "
 
-#: views/settings/tiles/password.phtml:41
-#: views/setup_ap/tiles/settings.phtml:53
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:41
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:53
 msgid "Confirm new administrator password"
 msgstr "Confirm new administrator password"
 
-#: views/settings/tiles/password.phtml:47
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:47
 msgid "Please retype the new administrator password."
 msgstr "Please retype the new administrator password."
 
-#: views/settings/tiles/password.phtml:51
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:51
 msgid "Change Password Settings"
 msgstr "Change Password Settings"
 
-#: views/admin.phtml:10
+#: ../files/nak/webapp/views/admin.phtml:10
 msgid "The NetAidKit is currently connected to the following wireless network:"
 msgstr ""
 "The NetAidKit is currently connected to the following wireless network:"
 
-#: views/settings.phtml:7
+#: ../files/nak/webapp/views/settings.phtml:7
 msgid "<h3>Wireless</h3>"
 msgstr "<h3>Wireless</h3>"
 
-#: views/settings.phtml:8
+#: ../files/nak/webapp/views/settings.phtml:8
 msgid ""
 "Here you can manage the NetAidKit basic wireless configuration settings."
 msgstr ""
 "Here you can manage the NetAidKit basic wireless configuration settings."
 
-#: views/settings.phtml:13
+#: ../files/nak/webapp/views/settings.phtml:13
 msgid "<h3>Password</h3>"
 msgstr "<h3>Password</h3>"
 
-#: views/settings.phtml:14
+#: ../files/nak/webapp/views/settings.phtml:14
 msgid "Here you can change the NetAidKit admin login password."
 msgstr "Here you can change the NetAidKit admin login password."
 
-#: views/settings.phtml:19
+#: ../files/nak/webapp/views/settings.phtml:19
 msgid "<h3>Localization</h3>"
 msgstr "<h3>Localization</h3>"
 
-#: views/settings.phtml:20
+#: ../files/nak/webapp/views/settings.phtml:20
 msgid "Here you can change interface language."
 msgstr "Here you can change interface language."
 
-#: views/network/tiles/network.phtml:6
+#: ../files/nak/webapp/views/network/tiles/network.phtml:6
 msgid "Broadcast SSID"
 msgstr "Broadcast SSID"
 
-#: views/network/tiles/network.phtml:7
+#: ../files/nak/webapp/views/network/tiles/network.phtml:7
 msgid "Change Network Settings"
 msgstr "Change Network Settings"
 
-#: views/logs.phtml:6
+#: ../files/nak/webapp/views/logs.phtml:6
 msgid "This is the basic Tor logfile"
 msgstr "This is the basic Tor logfile"
 
-#: views/logs.phtml:6 views/logs.phtml:11
+#: ../files/nak/webapp/views/logs.phtml:6
+#: ../files/nak/webapp/views/logs.phtml:11
 msgid "click to download"
 msgstr "click to download"
 
-#: views/logs.phtml:10
+#: ../files/nak/webapp/views/logs.phtml:10
 msgid "<h3>OpenVPN</h3>"
 msgstr "<h3>OpenVPN</h3>"
 
-#: views/logs.phtml:11
+#: ../files/nak/webapp/views/logs.phtml:11
 msgid "This is the basic OpenVPN logfile"
 msgstr "This is the basic OpenVPN logfile"
 
-#: views/login/tiles/password.phtml:10
+#: ../files/nak/webapp/views/login/tiles/password.phtml:10
 msgid "Enter your password"
 msgstr "Enter your password"
 
-#: views/login/tiles/password.phtml:16
+#: ../files/nak/webapp/views/login/tiles/password.phtml:16
 msgid "The password you configured during setup."
 msgstr "The password you configured during setup."
 
-#: views/login.phtml:5
+#: ../files/nak/webapp/views/login.phtml:5
 msgid "<h3>Login</h3>"
 msgstr "<h3>Login</h3>"
 
-#: views/setup_ap.phtml:7
+#: ../files/nak/webapp/views/setup_ap.phtml:7
 msgid ""
 "\n"
 "<h3>Setup</h3>\n"
@@ -681,7 +724,7 @@ msgstr ""
 "<p>Let's get started!</p>\n"
 "            "
 
-#: views/update.phtml:8
+#: ../files/nak/webapp/views/update.phtml:8
 msgid ""
 "\n"
 "<h3>Update Required</h3>\n"
@@ -693,11 +736,11 @@ msgstr ""
 "<p>A newer version of the software is available.</p>\n"
 "            "
 
-#: views/update.phtml:14
+#: ../files/nak/webapp/views/update.phtml:14
 msgid "Please press the <i>download</i> button to start."
 msgstr "Please press the <i>download</i> button to start."
 
-#: views/update.phtml:18
+#: ../files/nak/webapp/views/update.phtml:18
 msgid ""
 "\n"
 "You can cancel the download if it takes too long - just\n"
@@ -709,7 +752,7 @@ msgstr ""
 "press <i>remind me later</i>.\n"
 "                    "
 
-#: views/update.phtml:23
+#: ../files/nak/webapp/views/update.phtml:23
 msgid ""
 "\n"
 "This step is required to ensure the device will continue to serve\n"
@@ -721,7 +764,7 @@ msgstr ""
 "its purpose.\n"
 "                    "
 
-#: views/update.phtml:29
+#: ../files/nak/webapp/views/update.phtml:29
 msgid ""
 "\n"
 "After the update is downloaded, press the <i>upgrade</i> button to\n"
@@ -735,33 +778,38 @@ msgstr ""
 "should take no more than two minutes.\n"
 "                "
 
-#: views/update.phtml:37
+#: ../files/nak/webapp/views/update.phtml:39
+#, php-format
 msgid ""
 "\n"
-"            Warning: DO NOT turn off or disconnect the device during the\n"
-"            install process!"
+"The NetAidKit will reboot during the process, your device might then connect "
+"to a different network automatically.\n"
+"Please make sure you are connected to either <b>%s</b> wireless network or "
+"NetAidKit LAN port and this page will reload automatically."
 msgstr ""
 "\n"
-"            Warning: DO NOT turn off or disconnect the device during the\n"
-"            install process!"
+"The NetAidKit will reboot during the process, your device might then connect "
+"to a different network automatically.\n"
+"Please make sure you are connected to either <b>%s</b> wireless network or "
+"NetAidKit LAN port and this page will reload automatically."
 
-#: views/update.phtml:49
+#: ../files/nak/webapp/views/update.phtml:51
 msgid "Please wait until the device reboots."
 msgstr "Please wait until the device reboots."
 
-#: views/update.phtml:52
+#: ../files/nak/webapp/views/update.phtml:54
 msgid "Download"
 msgstr "Download"
 
-#: views/update.phtml:53
+#: ../files/nak/webapp/views/update.phtml:55
 msgid "Remind me later"
 msgstr "Remind me later"
 
-#: views/update.phtml:54
+#: ../files/nak/webapp/views/update.phtml:56
 msgid "Upgrade"
 msgstr "Upgrade"
 
-#: views/setup_ap/tiles/settings/modals/configure.phtml:11
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:11
 msgid ""
 "\n"
 "You are about to reconfigure the netaidkit Access Point.\n"
@@ -775,7 +823,7 @@ msgstr ""
 "You can then reconnect with your new settings.</p>\n"
 "                        "
 
-#: views/setup_ap/tiles/settings.phtml:14
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:14
 msgid ""
 "Enter a new wireless network name for your NetAidKit. You will connect your "
 "devices to this wireless network once you completed setting up."
@@ -783,11 +831,11 @@ msgstr ""
 "Enter a new wireless network name for your NetAidKit. You will connect your "
 "devices to this wireless network once you completed setting up."
 
-#: views/setup_ap/tiles/settings.phtml:36
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:36
 msgid "Please retype the new wireless network key."
 msgstr "Please retype the new wireless network key."
 
-#: views/setup_ap/tiles/settings.phtml:47
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:47
 msgid ""
 "You will need a password to make changes to the configuration of the "
 "NetAidKit after setting up, choose one here. The password must be at least 8 "
@@ -797,31 +845,42 @@ msgstr ""
 "NetAidKit after setting up, choose one here. The password must be at least 8 "
 "characters long."
 
-#: views/setup_ap/tiles/settings.phtml:58
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:58
 msgid "Please retype the new admin password."
 msgstr "Please retype the new admin password."
 
-#: views/update/js/update.pjs:34
+#: ../files/nak/webapp/views/update/js/update.pjs:34
 msgid "N/A"
 msgstr "N/A"
 
-#: views/admin/js/admin.pjs:64
+#: ../files/nak/webapp/views/admin/js/admin.pjs:64
 msgid "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
 msgstr "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
 
-#: views/admin/js/admin.pjs:153
+#: ../files/nak/webapp/views/admin/js/admin.pjs:153
 msgid "<h3>You are connected to a VPN</h3>"
 msgstr "<h3>You are connected to a VPN</h3>"
 
-#: views/settings/js/settings.pjs:14 views/setup_ap/js/setup_ap.pjs:14
+#: ../files/nak/webapp/views/settings/js/settings.pjs:14
+#: ../files/nak/webapp/views/setup_ap/js/setup_ap.pjs:14
 msgid "Disconnected"
 msgstr "Disconnected"
 
-#: views/settings/js/settings.pjs:15 views/setup_ap/js/setup_ap.pjs:15
+#: ../files/nak/webapp/views/settings/js/settings.pjs:15
+#: ../files/nak/webapp/views/setup_ap/js/setup_ap.pjs:15
 msgid ""
 "Please reconnect using the new settings. This page will reload automatically."
 msgstr ""
 "Please reconnect using the new settings. This page will reload automatically."
+
+#~ msgid ""
+#~ "\n"
+#~ "            Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "            install process!"
+#~ msgstr ""
+#~ "\n"
+#~ "            Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "            install process!"
 
 #~ msgid "Connecting..."
 #~ msgstr "Connecting..."
