@@ -6249,4 +6249,10 @@ div.log {
     white-space: pre;
     font-size:10pt;
 }
+
+.sysupgrade-warning {
+    font-weight: bold;
+    color: red;
+}
+
 /*# sourceMappingURL=flat-ui.css.map */

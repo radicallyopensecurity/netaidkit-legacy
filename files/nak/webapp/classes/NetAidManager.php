@@ -13,6 +13,14 @@ class NetAidManager
         return true;
     }
 
+    static public function ap_name()
+    {
+        $client = new NakdClient();
+        $output = $client->doCommand('getapnam');
+
+        return $output;
+    }
+
     static public function scan_wifi()
     {
         $client = new NakdClient();

@@ -27,6 +27,14 @@ char *ap_config(char **args) {
     return response;
 }
 
+char *get_ap_name(char **args) {
+    char *response = NULL;
+
+    response = do_command("/nak/scripts/get_ap_name.sh", args);
+
+    return response;
+}
+
 char *connect_wifi(char **args) {
     char *response = NULL;
 

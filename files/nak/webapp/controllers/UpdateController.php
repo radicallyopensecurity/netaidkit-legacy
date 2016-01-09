@@ -15,7 +15,8 @@ class UpdateController extends Page
         if (!$updater->updateAvailable())
             $this->_redirect('/admin/index');
 
-        $params = array();
+        $network = NetAidManager::ap_name();
+        $params = array('network' => $network);
 
         $view = new View('update', $params);
         return $view->display();

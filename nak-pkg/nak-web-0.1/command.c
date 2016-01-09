@@ -11,6 +11,7 @@
 static command commands[] = {
     { "wifiscan", scan_wifi, 0 },
     { "apconfig", ap_config, 2 },
+    { "getapnam", get_ap_name, 0 },
     { "wificonn", connect_wifi, 2 },
     { "goonline", go_online, 0 },
     { "inetstat", inet_stat, 0 },

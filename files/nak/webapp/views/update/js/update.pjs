@@ -51,11 +51,10 @@
         });
 
         $('#upgrade').click(function() {
-			$('#update_phase').html('Upgrading NetAidKit...');
-            $('#sysupgrade-warning').css('color', 'red');
             $('#UpdateStatus').css('display', 'block');        
             disable_button('#upgrade');
             disable_button('#remind');
+            $('#restartModal').modal('show');
 
             function waitForWebUI() {
                  $.ajax({
@@ -69,7 +68,7 @@
 
             webui_timer = setInterval(function() {
                 waitForWebUI();
-            }, 15000);
+            }, 20000);
 
             $.ajax({
                 type: "POST",
