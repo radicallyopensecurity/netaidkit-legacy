@@ -224,4 +224,7 @@ class NetAidManager
         return (trim($output) == "yes" ? true : false);
     }
 
+    static public function release_info() {
+        return file_get_contents('/etc/nak-release');
+    }
 }
