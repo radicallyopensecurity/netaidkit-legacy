@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Update release info
+tag=$(./scripts/make_release.sh)
+
 # Build the netaidkit package archive.
 ./nak-pkg/pkg.sh
 
@@ -25,9 +28,6 @@ else
     buildtype="dev"
 fi
 
-ts=`date +%s`
-echo "$ts-$buildtype" > ../files/etc/nak-release
-
 rm -rf files/*
 
 # Copy the netaidkit sources to the OpenWRT directory.
@@ -50,5 +50,5 @@ cat netaidkit.config >> .config && make oldconfig && make V=s
 rm -rf build_dir/target*/nak-web-*
 
 # Copy images over to netaidkit bin folder.
-cp bin/ar71xx/openwrt-ar71xx-generic-gl-inet-6416A-v1-squashfs-factory.bin ../bin/netaidkit_firmware_${ts}.bin
-cp bin/ar71xx/openwrt-ar71xx-generic-gl-inet-6416A-v1-squashfs-sysupgrade.bin ../bin/netaidkit_firmware_${ts}_sysupgrade.bin
+cp bin/ar71xx/openwrt-ar71xx-generic-gl-inet-6416A-v1-squashfs-factory.bin ../bin/netaidkit_firmware_${tag}.bin
+cp bin/ar71xx/openwrt-ar71xx-generic-gl-inet-6416A-v1-squashfs-sysupgrade.bin ../bin/netaidkit_firmware_${tag}_sysupgrade.bin

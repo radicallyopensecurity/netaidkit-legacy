@@ -9,7 +9,7 @@ class Updater
     protected $_localImagePath = '/tmp/latest_image.bin';
     // server-side HTTP header (Content-Length, etc.)
     protected $_imageHeaderFile = '/tmp/update_header';
-    protected $_versionFile = '/etc/nak-release';
+    protected $_versionFile = '/etc/nak-timestamp';
     protected $_pubKeyFile = '/etc/update-key';
     protected $_streamContext;
     protected $_release;
