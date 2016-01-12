@@ -51,10 +51,11 @@
         });
 
         $('#upgrade').click(function() {
+			$('#update_phase').html('Upgrading NetAidKit...');
+            $('#sysupgrade-warning').css('color', 'red');
             $('#UpdateStatus').css('display', 'block');        
             disable_button('#upgrade');
             disable_button('#remind');
-            $('#restartModal').modal('show');
 
             function waitForWebUI() {
                  $.ajax({
@@ -68,7 +69,7 @@
 
             webui_timer = setInterval(function() {
                 waitForWebUI();
-            }, 20000);
+            }, 15000);
 
             $.ajax({
                 type: "POST",
@@ -87,6 +88,14 @@
 								progress = Math.round((upgrade_cnt/timetotal)*100);
 								$('#progressbar').css('width', progress+'%');
 								if(progress>4) { $('#progressbar').html(progress + '%'); }
+							} else {
+								if(upgrade_cnt<timetotal+32) {
+									upgrade_cnt++;
+								}
+								if(upgrade_cnt=timetotal+32) {
+									upgrade_cnt++;
+									$('#restartModal').modal('show');
+								}
 							}
 						}, 500);
                     } else if (data == 'INVALID SIGNATURE') {
