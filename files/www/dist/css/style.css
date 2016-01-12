@@ -1,0 +1,38 @@
+/*
+ *   Final stylesheet to be applied, after framework CSS.
+ *   Use this to add customized tweaks specific to NetAidKit.
+ */
+ 
+body {
+	padding-top: 60px;
+}
+
+@media {
+	body {
+		padding-top: 10px;
+	}
+}
+
+.btn-disabled {
+	background-color: #CCC;
+	color: #EEE;
+}
+.btn-disabled:hover {
+	background-color: #DDD;
+	color: #FFF;
+}
+
+.bootstrap-switch-id-nroutingswitch {
+	float: right;
+	margin-top: -1px;
+}
+
+#wifi-list {
+	max-height: 150px;
+	margin-bottom: 24px;
+	overflow-y: auto;
+}
+
+#wifi-list .radio {
+	padding-right: 8px;
+}
