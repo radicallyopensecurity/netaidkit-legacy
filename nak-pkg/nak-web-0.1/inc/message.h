@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 /* Max size of command sent over domain socket. */
-#define MAX_MSG_LEN     65536
+#define MAX_MSG_LEN     262144
 
 /* Max number of arguments passed along with a command. */
 #define MAX_MSG_ARG     8
