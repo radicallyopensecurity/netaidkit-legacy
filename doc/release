@@ -1,0 +1,13 @@
+MAKING A RELEASE
+================
+
+To make a release:
+* Make sure translation strings are in place (see: docs/translation)
+* Tag your version:
+    * run:
+        git tag <version>
+* Build the image
+    * run:
+        ./build.sh
+* Test the resulting image
+* Don't forget to push your tags (man git-push) 
