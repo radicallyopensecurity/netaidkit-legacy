@@ -1,0 +1,80 @@
+UPDATING ENGLISH CATALOG
+========================
+
+To rescan the codebase in search for new translation strings, run:
+
+~/prj/netaidkit/scripts ➤  ./translation_tool rescan
+
+This will:
+* update English catalog source file (.po)
+* regenerate binary catalog (.mo)
+* add English placeholders in other language files in the tree, as well as
+  regenerate binary catalogues
+
+Currently translation is only available for the webapp, since there's no
+user interface available in NAK helper daemon (nakd).
+
+For reference, locale/ tree should look like this:
+
+~/prj/netaidkit ➤  tree files/nak/webapp/locale    
+files/nak/webapp/locale                  
+├── ar                                   
+│   └── LC_MESSAGES                      
+│       ├── nakweb.mo                    
+│       ├── nakweb.po                    
+├── en                                   
+│   └── LC_MESSAGES                      
+│       ├── nakweb.mo                    
+│       ├── nakweb.po                    
+├── nl                                   
+│   └── LC_MESSAGES                      
+│       ├── nakweb.mo                    
+│       ├── nakweb.po                    
+└── pl                                   
+    └── LC_MESSAGES                      
+        ├── nakweb.mo                    
+        ├── nakweb.po                   
+
+UPLOADING ENGLISH CATALOG TO TRANSIFEX
+======================================
+
+NetAidKit developers use Transifex [1] to easily translate gettext catalogues.
+
+To upload current English strings for translation:
+* regenerate English catalog (see: UPDATING ENGLISH CATALOG)
+* run:
+    ~/prj/netaidkit/scripts ➤  ./translation_tool upload <username> <password>
+
+Transifex project name and organisation are hardcoded in the script.
+
+DOWNLOADING TRANSLATIONS
+========================
+
+To download all available translations:
+* run:
+    ~/prj/netaidkit/scripts ➤  ./translation_tool download <username> <password>
+
+Note that translation won't be downloaded for languages not present in locale tree.
+To add a language:
+* run:
+    ~/prj/netaidkit/scripts ➤  ./translation_tool add-lang <lang two-letter code>
+
+COMMITING YOUR CHANGES
+======================
+
+First, move translation files to git staging area:
+For just one language:
+* run:
+    ~/prj/netaidkit/scripts ➤  ./translation_tool stage-lang <lang two-letter code>
+
+For all:
+* run:
+    ~/prj/netaidkit/scripts ➤  ./translation_tool stage-all <lang two-letter code>
+
+Then commit your changes.
+
+Note that if you'd like to stage source (English) catalog, you just need to
+stage English (en) files.
+
+References:
+[1] http://transifex.com
