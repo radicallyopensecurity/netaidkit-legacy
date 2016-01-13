@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetAidKit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 13:51+0100\n"
+"POT-Creation-Date: 2016-01-13 12:36+0100\n"
 "PO-Revision-Date: 2016-01-07 18:00+0000\n"
 "Last-Translator: May Youssef <mayyoussef@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/netaidkit/netaidkit/language/"
@@ -571,6 +571,10 @@ msgstr ""
 msgid "Change Password Settings"
 msgstr ""
 
+#: ../files/nak/webapp/views/settings/tiles/info.phtml:3
+msgid "Software version: "
+msgstr "Software version: "
+
 #: ../files/nak/webapp/views/admin.phtml:10
 msgid "The NetAidKit is currently connected to the following wireless network:"
 msgstr ""
@@ -599,6 +603,10 @@ msgstr ""
 #: ../files/nak/webapp/views/settings.phtml:20
 msgid "Here you can change interface language."
 msgstr ""
+
+#: ../files/nak/webapp/views/settings.phtml:24
+msgid "<h3>Device information</h3>"
+msgstr "<h3>Device information</h3>"
 
 #: ../files/nak/webapp/views/network/tiles/network.phtml:6
 msgid "Broadcast SSID"
@@ -770,6 +778,15 @@ msgstr ""
 msgid ""
 "Please reconnect using the new settings. This page will reload automatically."
 msgstr ""
+
+msgid ""
+"\n"
+"            Warning: DO NOT turn off or disconnect the device during the\n"
+"            install process!"
+msgstr ""
+"\n"
+"            Warning: DO NOT turn off or disconnect the device during the\n"
+"            install process!"
 
 #~ msgid "Connecting..."
 #~ msgstr "Connecting..."

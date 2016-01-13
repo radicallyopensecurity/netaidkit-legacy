@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetAidKit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 13:51+0100\n"
+"POT-Creation-Date: 2016-01-13 12:36+0100\n"
 "PO-Revision-Date: 2016-01-07 16:41+0000\n"
 "Last-Translator: Menso Heus <heus@freepressunlimited.org>\n"
 "Language-Team: Dutch (http://www.transifex.com/netaidkit/netaidkit/language/"
@@ -638,6 +638,10 @@ msgstr "Vul het administator wachtwoord nogmaals in."
 msgid "Change Password Settings"
 msgstr "Wijzig Wachtwoord Instellingen"
 
+#: ../files/nak/webapp/views/settings/tiles/info.phtml:3
+msgid "Software version: "
+msgstr "Software version: "
+
 #: ../files/nak/webapp/views/admin.phtml:10
 msgid "The NetAidKit is currently connected to the following wireless network:"
 msgstr ""
@@ -667,6 +671,10 @@ msgstr "<h3>Taalinstellingen</h3>"
 #: ../files/nak/webapp/views/settings.phtml:20
 msgid "Here you can change interface language."
 msgstr "Hier kun je de taalinstellingen wijzigen."
+
+#: ../files/nak/webapp/views/settings.phtml:24
+msgid "<h3>Device information</h3>"
+msgstr "<h3>Device information</h3>"
 
 #: ../files/nak/webapp/views/network/tiles/network.phtml:6
 msgid "Broadcast SSID"
