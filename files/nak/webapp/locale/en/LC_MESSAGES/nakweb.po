@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 13:51+0100\n"
+"POT-Creation-Date: 2016-01-13 12:36+0100\n"
 "PO-Revision-Date: 2015-12-14 13:37+0100\n"
 "Last-Translator: Mateusz Zalega <mateusz@appliedsourcery.com>\n"
 "Language-Team: NetAidKit Team <info@netaidkit.net>\n"
@@ -634,6 +634,10 @@ msgstr "Please retype the new administrator password."
 msgid "Change Password Settings"
 msgstr "Change Password Settings"
 
+#: ../files/nak/webapp/views/settings/tiles/info.phtml:3
+msgid "Software version: "
+msgstr "Software version: "
+
 #: ../files/nak/webapp/views/admin.phtml:10
 msgid "The NetAidKit is currently connected to the following wireless network:"
 msgstr ""
@@ -664,6 +668,10 @@ msgstr "<h3>Localization</h3>"
 #: ../files/nak/webapp/views/settings.phtml:20
 msgid "Here you can change interface language."
 msgstr "Here you can change interface language."
+
+#: ../files/nak/webapp/views/settings.phtml:24
+msgid "<h3>Device information</h3>"
+msgstr "<h3>Device information</h3>"
 
 #: ../files/nak/webapp/views/network/tiles/network.phtml:6
 msgid "Broadcast SSID"

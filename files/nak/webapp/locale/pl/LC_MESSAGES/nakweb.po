@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetAidKit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 13:51+0100\n"
+"POT-Creation-Date: 2016-01-13 12:36+0100\n"
 "PO-Revision-Date: 2016-01-07 13:06+0000\n"
 "Last-Translator: Mateusz Zalega <msgctl@centzontotochtin.org>\n"
 "Language-Team: Polish (http://www.transifex.com/netaidkit/netaidkit/language/"
@@ -639,6 +639,10 @@ msgstr "Wpisz ponownie hasło administratora w celu weryfikacji"
 msgid "Change Password Settings"
 msgstr "Zmień ustawienia logowania"
 
+#: ../files/nak/webapp/views/settings/tiles/info.phtml:3
+msgid "Software version: "
+msgstr "Software version: "
+
 #: ../files/nak/webapp/views/admin.phtml:10
 msgid "The NetAidKit is currently connected to the following wireless network:"
 msgstr "Urządzenie NetAidKit jest aktualnie połączone z siecią:"
@@ -667,6 +671,10 @@ msgstr "<h3>Ustawienia regionalne</h3>"
 #: ../files/nak/webapp/views/settings.phtml:20
 msgid "Here you can change interface language."
 msgstr "Tu możesz zmienić język interfejsu użytkownika."
+
+#: ../files/nak/webapp/views/settings.phtml:24
+msgid "<h3>Device information</h3>"
+msgstr "<h3>Device information</h3>"
 
 #: ../files/nak/webapp/views/network/tiles/network.phtml:6
 msgid "Broadcast SSID"
