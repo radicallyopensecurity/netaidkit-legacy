@@ -29,7 +29,9 @@ class NakdClient {
 
     protected function _sendCommand($command) {
         fwrite($this->_conn, $command);
-        $response = fread($this->_conn, MAX_MSG_LEN);
+        $response = '';
+        while (!feof($this->_conn))
+            $response .= fread($this->_conn, MAX_MSG_LEN);
 
         return $response;
     }
