@@ -9,7 +9,8 @@ class Dispatcher
                                              'UpdateController',
                                              'SettingsController',
                                              'LogsController',
-                                             'NetworkController' );
+                                             'NetworkController',
+                                             'ClientController');
 
     public function run($request)
     {

@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+    	$('#submit-localization').click(function(event) {
+            $('html').find('*').css("cursor", "wait");
+	        $.ajax({
+                type: "POST",
+                url: "/client/set_locale",
+                data: $('form#localization-form').serialize(),
+                success: function(data) {
+                    window.location.href = '/client/locale';
+                },
+    	    });
+	    event.preventDefault();
+        });
+    });
+</script>

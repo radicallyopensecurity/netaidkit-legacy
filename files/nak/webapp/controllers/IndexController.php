@@ -6,6 +6,6 @@ class IndexController extends Page
     
     public function index()
     {
-        $this->_redirect('/setup/index');
+        $this->_redirect('/client/locale');
     }
 }

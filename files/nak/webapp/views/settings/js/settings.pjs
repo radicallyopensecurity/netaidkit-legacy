@@ -50,17 +50,17 @@
             $('#network-name').html($('#ap-form #ssid').val());
         });
 
-	$('#submit-localization').click(function(event) {
+    	$('#submit-localization').click(function(event) {
             $('html').find('*').css("cursor", "wait");
-	    $.ajax({
-		type: "POST",
-		url: "/settings/localization",
-		data: $('form#localization-form').serialize(),
-		success: function(data) {
-		    window.location.href = '/settings';
-		},
-	    });
-	    event.preventDefault();
+	        $.ajax({
+                type: "POST",
+                url: "/client/set_locale",
+                data: $('form#localization-form').serialize(),
+                success: function(data) {
+                    window.location.href = '/settings';
+                },
+    	    });
+    	    event.preventDefault();
         });
 
         $('#ssid').focus(function() {

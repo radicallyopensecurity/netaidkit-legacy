@@ -4,7 +4,7 @@ class I18n {
     const DEFAULT_LOCALE = 'en';
     const DOMAIN = 'nakweb';
     const LOCALEDIR = '/nak/webapp/locale';
-    const LANGFILE = ROOT_DIR . '/data/lang';
+    const LANGCOOKIE = 'lang';
 
     static public function setlocale() {
         self::setlocale_twoletter(self::getlocale());
@@ -74,24 +74,35 @@ class I18n {
     }
 
     static public function settings_set_language($twoletter) {
-       if (!in_array(trim($twoletter), self::available_languages()))
+       if (!in_array(trim($twoletter), self::available_languages()) &&
+                                                 $twoletter != 'auto')
            die('Language not supported.');
 
-       file_put_contents(self::LANGFILE, $twoletter);
+       self::set_localecookie($twoletter);
     }
 
     static public function settings_get_language() {
-        if (!file_exists(self::LANGFILE))
+        if (!isset($_COOKIE[self::LANGCOOKIE]))
             return false;
-        return trim(file_get_contents(self::LANGFILE));
+
+        if (self::settings_get_autodetect() ||
+            !in_array($_COOKIE[self::LANGCOOKIE],
+                    self::available_languages()))
+            return false;
+
+        return $_COOKIE[self::LANGCOOKIE];
     }
 
     static public function settings_get_autodetect() {
-        return !file_exists(self::LANGFILE);
+        return $_COOKIE[self::LANGCOOKIE] == 'auto';
     }
 
     static public function settings_set_autodetect() {
-        @unlink(self::LANGFILE);
+       self::set_localecookie('auto');
+    }
+
+    static private function set_localecookie($twoletter) {
+       setcookie(self::LANGCOOKIE, $twoletter, time()+365*86400, '/');
     }
 }
 
