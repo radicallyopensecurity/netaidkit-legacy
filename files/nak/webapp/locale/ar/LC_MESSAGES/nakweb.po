@@ -1,4 +1,4 @@
-#
+# 
 # Translators:
 # May Youssef <mayyoussef@gmail.com>, 2016
 msgid ""
@@ -6,16 +6,14 @@ msgstr ""
 "Project-Id-Version: NetAidKit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-13 12:36+0100\n"
-"PO-Revision-Date: 2016-01-07 18:00+0000\n"
+"PO-Revision-Date: 2016-01-14 07:44+0000\n"
 "Last-Translator: May Youssef <mayyoussef@gmail.com>\n"
-"Language-Team: Arabic (http://www.transifex.com/netaidkit/netaidkit/language/"
-"ar/)\n"
-"Language: ar\n"
+"Language-Team: Arabic (http://www.transifex.com/otf/netaidkit/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../files/nak/webapp/controllers/NetworkController.php:39
 msgid "Successfully saved network settings."
@@ -23,7 +21,7 @@ msgstr "تم بنجاح حفظ إعدادات الشبكة."
 
 #: ../files/nak/webapp/controllers/LogsController.php:53
 msgid "Tor log empty."
-msgstr "سجل بنود الاختصاصات فارغ."
+msgstr "سجل تور فارغ."
 
 #: ../files/nak/webapp/controllers/LogsController.php:64
 msgid "OpenVPN log empty."
@@ -47,7 +45,7 @@ msgstr "لا يمكن إزالة الملف."
 
 #: ../files/nak/webapp/controllers/SetupController.php:41
 msgid "Access Point successfully set up."
-msgstr "نجح إعداد نقطة الوصول."
+msgstr "تم بنجاح إعداد نقطة الوصول."
 
 #: ../files/nak/webapp/controllers/SetupController.php:67
 #: ../files/nak/webapp/controllers/SettingsController.php:63
@@ -122,18 +120,9 @@ msgid ""
 "<p>To connect, choose a wireless network on the right.</p>\n"
 "<p>Enter a password if the network requires it.</p>\n"
 "<p>Click on the Connect button.</p>\n"
-"<p>Alternatively, you can connect by plugging a network cable into the WAN "
-"port</p>\n"
+"<p>Alternatively, you can connect by plugging a network cable into the WAN port</p>\n"
 "            "
-msgstr ""
-"\n"
-"<H3>اتصل</H3>\n"
-"<p>حاليا NetAidKit غير متصلة بالإنترنت.</P>\n"
-"<p>للاتصال، اختر شبكة لاسلكية من على اليمين.</P>\n"
-"<P>أدخل كلمة السر إذا كانت الشبكة تتطلب ذلك.</P>\n"
-"<p>إضغط على زر الاتصال.</P>\n"
-"<p>أو كبديل، يمكنك الاتصال عن طريق توصيل كابل الشبكة بمنفذ شبكة المنطقة "
-"الواسعة</P>"
+msgstr "\n<H3>اتصل</H3>\n<p>حاليا NetAidKit غير متصلة بالإنترنت.</P>\n<p>للاتصال، اختر شبكة لاسلكية من على اليمين.</P>\n<P>أدخل كلمة السر إذا كانت الشبكة تتطلب ذلك.</P>\n<p>إضغط على زر الاتصال.</P>\n<p>أو كبديل، يمكنك الاتصال عن طريق توصيل كابل الشبكة بمنفذ شبكة المنطقة الواسعة WAN</P>"
 
 #: ../files/nak/webapp/views/network.phtml:7
 msgid ""
@@ -141,42 +130,28 @@ msgid ""
 "<h3>Network</h3>\n"
 "<p>Here you can manage the NetAidKit network settings.</p>\n"
 "            "
-msgstr ""
-"\n"
-"<h3>شبكة</h3>\n"
-"<p>يمكنك إدارة إعدادات شبكة NetAidKit هنا.</P>"
+msgstr "\n<h3>شبكة</h3>\n<p>يمكنك إدارة إعدادات شبكة NetAidKit هنا.</P>"
 
 #. TRANSLATORS: window header
 #: ../files/nak/webapp/views/update/modals/restart.phtml:5
 msgid "The update is being installed"
-msgstr "The update is being installed"
+msgstr "تم تنصيب التحديث"
 
 #: ../files/nak/webapp/views/update/modals/restart.phtml:11
 #, php-format
 msgid ""
 "\n"
-"                        Please make sure you are still connected to either "
-"<b>%s</b> wireless network or\n"
+"                        Please make sure you are still connected to either <b>%s</b> wireless network or\n"
 "                        NetAidKit LAN port after the device restarts.\n"
 "                        This page will refresh automatically."
-msgstr ""
-"\n"
-"                        Please make sure you are still connected to either "
-"<b>%s</b> wireless network or\n"
-"                        NetAidKit LAN port after the device restarts.\n"
-"                        This page will refresh automatically."
+msgstr "\nيرجى التأكد من أنك لا تزال متصل إما <b>%s</b>بالشبكة اللاسلكية\nأو NetAidKit منفذ الشبكة المحلية LAN بعد إعادة تشغيل الجهاز .\nهذه الصفحة سوف تتجدد تلقائيا."
 
 #: ../files/nak/webapp/views/update/modals/restart.phtml:18
 msgid ""
 "\n"
-"                    Warning: DO NOT turn off or disconnect the device during "
-"the\n"
+"                    Warning: DO NOT turn off or disconnect the device during the\n"
 "                    install process!"
-msgstr ""
-"\n"
-"                    Warning: DO NOT turn off or disconnect the device during "
-"the\n"
-"                    install process!"
+msgstr "\nتحذير: لا تغلق أو تقطع اتصال الجهاز خلال\nعملية التنصيب!"
 
 #: ../files/nak/webapp/views/setup_wan/tiles/wireless.phtml:2
 #: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:10
@@ -249,7 +224,7 @@ msgstr "خروج"
 
 #: ../files/nak/webapp/views/admin/tiles/wireless.phtml:3
 msgid "Change Wireless Network"
-msgstr "Change Wireless Network"
+msgstr "تغيير الشبكة اللاسلكية"
 
 #: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:6
 msgid "Change Wireless Network:"
@@ -257,64 +232,62 @@ msgstr "تغيير الشبكة اللاسلكية:"
 
 #: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:9
 msgid ""
-"Choose a new wireless network to connect to with the NetAidKit and enter the "
-"password if any:"
-msgstr ""
+"Choose a new wireless network to connect to with the NetAidKit and enter the"
+" password if any:"
+msgstr "اختر شبكة لاسلكية جديدة للاتصال مع NetAidKit وإدخل كلمة السر إن وجدت:"
 
 #: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:12
 msgid "Refresh"
-msgstr ""
+msgstr "تجديد"
 
 #: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:18
 msgid "Wireless Password"
-msgstr ""
+msgstr "كلمة السر اللاسلكية"
 
 #: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:26
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:5
 #: ../files/nak/webapp/views/admin/js/admin.pjs:129
 msgid "<h3>You are connected to Tor</h3>"
-msgstr ""
+msgstr "<h3>أنت الآن متصل بـتور</h3>"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:7
 msgid "<h3>Connecting to Tor</h3>"
-msgstr ""
+msgstr "<h3>جاري الاتصال بـتور</h3>"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:17
 msgid ""
 "\n"
 "The Tor network can be used to circumvent censorship. Tor will send\n"
 "your data through different countries to bypass filtering."
-msgstr ""
+msgstr "\nيمكن استخدام شبكة تور لحجب الرقابة. سوف تقوم تور بإرسال البيانات الخاصة بك من خلال مختلف البلدان لتجاوز التصفية."
 
 #: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:23
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:6
 msgid "Disconnect from Tor"
-msgstr ""
+msgstr "قطع الاتصال بـتور"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/disconnected.phtml:3
 msgid ""
 "\n"
 "<h3>Tor</h3>\n"
-"<p>The Tor network can be used to circumvent censorship. Tor will send your "
-"data through different countries to bypass filtering.</p>\n"
+"<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>\n"
 "        "
-msgstr ""
+msgstr "\n<h3>تور</h3>\n<p>يمكن استخدام شبكة تور لحجب الرقابة. سوف تقوم تور بإرسال البيانات الخاصة بك من خلال مختلف البلدان لتجاوز التصفية.</p>"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/disconnected.phtml:9
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:6
 msgid "Connect to Tor"
-msgstr ""
+msgstr "اتصل بـتور"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:9
 msgid ""
 "\n"
-"<p>By disconnecting from the Tor network, your data will no longer be "
-"anonymized. Are you sure this is what you want to do?</p>\n"
+"<p>By disconnecting from the Tor network, your data will no longer be anonymized. Are you sure this is what you want to do?</p>\n"
 "                "
-msgstr ""
+msgstr "\n<P>إذا قطعت الاتصال بشبكة تور، لن يكون مصدر البيانات الخاصة بك مجهولا. هل أنت متأكد أن هذا هو ما تريد أن تفعله؟</P>"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:15
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:18
@@ -324,7 +297,7 @@ msgstr ""
 #: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:26
 #: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:25
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:16
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:19
@@ -334,70 +307,63 @@ msgstr ""
 #: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:27
 #: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:26
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:9
 msgid ""
 "\n"
-"<p>The Tor network can be used to circumvent censorship. Tor will send your "
-"data through different countries to bypass filtering.</p>\n"
-"<p><strong>If you wish to use Tor for anonymity purposes, please use the <a "
-"href=\"https://www.torproject.org/download/download-easy\" target=\"_new"
-"\">Tor Browser Bundle</a> which provides additional privacy and security "
-"enhancements.</strong></p>\n"
-"<p>In some repressive countries, using Tor can get you into trouble with the "
-"authorities. Please be aware of what the situation is for the country you "
-"are in before you connect to Tor.</p>\n"
+"<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>\n"
+"<p><strong>If you wish to use Tor for anonymity purposes, please use the <a href=\"https://www.torproject.org/download/download-easy\" target=\"_new\">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</strong></p>\n"
+"<p>In some repressive countries, using Tor can get you into trouble with the authorities. Please be aware of what the situation is for the country you are in before you connect to Tor.</p>\n"
 "<p>Are you sure you want to connect to Tor?</p>\n"
 "                "
-msgstr ""
+msgstr "\n<P>يمكن استخدام شبكة تور لحجب الرقابة. وسوف تقوم تور بإرسال البيانات الخاصة بك من خلال مختلف البلدان لتجاوز التصفية.</P>\n<p> <strong> إذا كنت ترغب في استخدام تور لأغراض عدم الكشف عن الهوية، برجاء استخدام <a href=\"https://www.torproject.org/download/download-easy\" target=\"_new\"> وهي حزمة متصفح تور</أ> والذي يوفر المزيد من تحسينات الخصوصية والأمن. </strong> <P/>\n<p> في بعض الدول القمعية، يمكن ان يسبب استخدام تور المشاكل مع السلطات. يرجى أن تكون على علم بالوضع بالنسبة للبلد الذي أنت فيه قبل الاتصال بـتور . </P>\n<p> هل أنت متأكد أنك تريد الاتصال بتور؟</P>"
 
 #: ../files/nak/webapp/views/admin/tiles/internet.phtml:4
 msgid "<h3>Internet</h3>"
-msgstr ""
+msgstr "<h3>انترنت</h3>"
 
 #: ../files/nak/webapp/views/admin/tiles/internet.phtml:6
 msgid "Only allow connections over TOR or VPN:"
-msgstr ""
+msgstr "يسمح فقط بالاتصالات عبر تور أو الشبكة الخاصة الافتراضية:"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:6
 msgid "You are connected to a VPN"
-msgstr ""
+msgstr "أنت متصل بالشبكة الخاصة الافتراضية"
 
 #. / TRANSLATORS: status context
 #: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:9
 msgid "Connecting to VPN"
-msgstr ""
+msgstr "جاري الاتصال بالشبكة الخاصة الافتراضية"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:19
 msgid ""
 "A Virtual Private Network creates an encrypted tunnel between the NetAidKit "
 "and a trusted network over the Internet."
-msgstr ""
+msgstr "تخلق الشبكة الخاصة الافتراضية نفقا مشفرا بين NetAidKit وشبكة موثوق بها عبر الإنترنت."
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:21
 msgid "You are currently connected to VPN network:"
-msgstr ""
+msgstr "أنت الآن متصل بالشبكة الخاصة الافتراضية:"
 
 #. / TRANSLATORS: header/title context
 #: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:25
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:9
 msgid "Disconnect from VPN"
-msgstr ""
+msgstr "قطع الاتصال بالشبكة الخاصة الافتراضية"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:2
 msgid ""
 "\n"
 "<h3>VPN</h3>\n"
-"<p>A Virtual Private Network creates an encrypted tunnel between the "
-"NetAidKit and a trusted network over the Internet.</p>\n"
+"<p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>\n"
 "        "
-msgstr ""
+msgstr "\n<h3>الشبكة الخاصة الافتراضية</h3>\n<p>تخلق الشبكة الخاصة الافتراضية نفقا مشفرا بين NetAidKit وشبكة موثوق بها عبر الإنترنت.</p>"
 
 #. / TRANSLATORS: button context
 #: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:14
 msgid "Add a VPN connection..."
-msgstr ""
+msgstr "أضف اتصال بالشبكة الخاصة الافتراضية..."
 
 #. Reset checked to empty for next items
 #. / TRANSLATORS: header/title context
@@ -405,75 +371,70 @@ msgstr ""
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:9
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:7
 msgid "Connect to VPN"
-msgstr ""
+msgstr "اتصل بالشبكة الخاصة الافتراضية"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:14
 msgid ""
 "By disconnecting from the VPN, your data will no longer be encrypted. Are "
 "you sure this is what you want to do?"
-msgstr ""
+msgstr "حين تقطع الاتصال بالشبكة الخاصة الافتراضية، لن يتم تشفير البيانات الخاصة بك. هل أنت متأكد من أنك تريد أن تفعل ذلك؟"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:14
 msgid ""
 "\n"
-"<p>Connecting to a VPN will send all your internet traffic through an "
-"encrypted VPN tunnel.</p>\n"
-"<p>If you trust the other end of the tunnel, VPNs are a great way to secure "
-"your data and enhance your privacy.</p>\n"
-"<p>Please note that the VPN operator can still monitor your network traffic."
-"</p>\n"
+"<p>Connecting to a VPN will send all your internet traffic through an encrypted VPN tunnel.</p>\n"
+"<p>If you trust the other end of the tunnel, VPNs are a great way to secure your data and enhance your privacy.</p>\n"
+"<p>Please note that the VPN operator can still monitor your network traffic.</p>\n"
 "<p>Are you sure you want to connect to the VPN?</p>\n"
 "                    "
-msgstr ""
+msgstr "\n<P>الاتصال بالشبكة الخاصة الافتراضية سوف يرسل جميع تحركاتك على الإنترنت من خلال نفق الشبكة الخاصة الافتراضية المشفر. </P>\n<p>إذا كنت تثق في الطرف الآخر من النفق، فالشبكة الخاصة الإفتراضية هي طريقة رائعة لتأمين البيانات الخاصة بك وتعزيز خصوصيتك.</P>\n<p>برجاء ملاحظة أن مشغل الشبكة الخاصة الافتراضية لا يزال يراقب حركة مرور الشبكة الخاصة بك. </P>\n<p>هل أنت متأكد أنك تريد الاتصال بالشبكة الخاصة الافتراضية؟</P>"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:13
 msgid ""
 "\n"
-"Configuring a VPN connection is as easy as uploading an OpenVPN "
-"configuration file. Hit the browse button and select your ovpn configuration "
-"file to add it to the list of VPN connections.\n"
+"Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.\n"
 "                            "
-msgstr ""
+msgstr "\nإن تهيئة اتصال الشبكة الخاصة الافتراضية سهلا مثل تحميل ملف تكوين فتح الشبكة الخاصة الافتراضية. اضغط على زر التصفح واختر ملف التكوين ovpn لإضافته إلى قائمة الاتصالات VPN."
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:21
 msgid "Upload"
-msgstr ""
+msgstr "تحميل"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:7
 msgid "Delete VPN configuration"
-msgstr ""
+msgstr "مسح تهيئة الشبكة الخاصة الافتراضية"
 
 #: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:12
 msgid "Are you sure you want to delete the following VPN:"
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد مسح الشبكة الخاصة الافتراضية الآتية:"
 
 #: ../files/nak/webapp/views/admin/portal.phtml:22
 msgid "Captive portal detected"
-msgstr ""
+msgstr "تم اكتشاف البوابة الإلكترونية الأسيرة"
 
 #: ../files/nak/webapp/views/admin/portal.phtml:26
 msgid "Click here to open portal page."
-msgstr ""
+msgstr "إضغط هنا لفتح صفحة البوابة الإلكترونية."
 
 #: ../files/nak/webapp/views/layout.phtml:6
 msgid "<title>Welcome!</title>"
-msgstr ""
+msgstr "<title>مرحبا!</title>"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless.phtml:9
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:9
 msgid "Enter a new network name"
-msgstr ""
+msgstr "أدخل اسم الشبكة الجديدة"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless.phtml:16
 msgid ""
 "Enter a new wireless network name for your NetAidKit. You will connect your "
 "devices to this wireless network."
-msgstr ""
+msgstr "أدخل اسم شبكة لاسلكية جديدة لNetAidKit الخاصة بك. سوف تقوم بتوصيل الأجهزة الخاصة بك لهذه الشبكة اللاسلكية."
 
 #: ../files/nak/webapp/views/settings/tiles/wireless.phtml:24
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:20
 msgid "Enter a new network password"
-msgstr ""
+msgstr "أدخل كلمة السر للشبكة الجديدة"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless.phtml:31
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:25
@@ -481,25 +442,25 @@ msgid ""
 "To make sure only you and people you trust can connect to your NetAidKit, "
 "choose a password to protect your new wireless network. The key must be "
 "between 8 and 64 characters long."
-msgstr ""
+msgstr "للتأكد فقط أنك والناس التي تثق فيها يمكن الاتصال بـNetAidKit الخاصة بك، اختر كلمة سر لحماية الشبكة اللاسلكية الجديدة. يجب أن يكون المفتاح بين 8 و 64 حرفا."
 
 #: ../files/nak/webapp/views/settings/tiles/wireless.phtml:39
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:31
 msgid "Confirm new network password"
-msgstr ""
+msgstr "تأكيد كلمة السر الجديدة للشبكة"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless.phtml:44
 msgid "Please retype your wireless network key."
-msgstr ""
+msgstr "برجاء إعادة كتابة مفتاح الشبكة اللاسلكية الخاصة بك."
 
 #: ../files/nak/webapp/views/settings/tiles/wireless.phtml:48
 msgid "Change Wireless Settings"
-msgstr ""
+msgstr "تغيير الإعدادات اللاسلكية"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:6
 #: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:6
 msgid "Reset Access Point"
-msgstr ""
+msgstr "إعادة ضبط نقطة الوصول"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:11
 msgid ""
@@ -508,142 +469,141 @@ msgid ""
 "You will be disconnected after clicking the 'Yes' button.\n"
 "You can then reconnect with your new settings.\n"
 "                        "
-msgstr ""
+msgstr "\nأنت على وشك إعادة تهيئة نقطة وصول netaidkit.\nسيتم قطع الاتصال بعد الضغط على زر \"نعم\".\nيمكنك بعد ذلك إعادة الاتصال مع الإعدادات الجديدة."
 
 #: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:19
 #: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:18
 msgid "New network name:"
-msgstr ""
+msgstr "اسم الشبكة الجديدة:"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:21
 #: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:20
 msgid "Admin password:"
-msgstr ""
+msgstr "كلمة سر المشرف:"
 
 #: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:22
 #: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:21
 msgid "Distress password:"
-msgstr ""
+msgstr "كلمة السر للاستغاثة:"
 
 #: ../files/nak/webapp/views/settings/tiles/localization.phtml:8
 msgid "Detect automatically"
-msgstr ""
+msgstr "كشف تلقائي"
 
 #: ../files/nak/webapp/views/settings/tiles/localization.phtml:17
 msgid "Change localization settings"
-msgstr ""
+msgstr "تغيير إعدادات الترجمة"
 
 #: ../files/nak/webapp/views/settings/tiles/password.phtml:7
 msgid "Enter the current administrator password"
-msgstr ""
+msgstr "أدخل كلمة سر المشرف الحالي"
 
 #: ../files/nak/webapp/views/settings/tiles/password.phtml:14
 msgid ""
 "\n"
-"Please enter the current admininstrator password entered during "
-"configuration.\n"
+"Please enter the current admininstrator password entered during configuration.\n"
 "                        "
-msgstr ""
+msgstr "\nبرجاء إدخال كلمة سر المشرف الحالية التي تم إدخالها أثناء التهيئة."
 
 #: ../files/nak/webapp/views/settings/tiles/password.phtml:24
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:42
 msgid "Enter a new administrator password"
-msgstr ""
+msgstr "ادخل كلمة سر المشرف الجديدة"
 
 #: ../files/nak/webapp/views/settings/tiles/password.phtml:31
 msgid ""
 "\n"
-"Enter a new administrator password used to log in to the configuration panel "
-"of the NetAidKit. The password must be at least 8 characters long.\n"
+"Enter a new administrator password used to log in to the configuration panel of the NetAidKit. The password must be at least 8 characters long.\n"
 "                            "
-msgstr ""
+msgstr "\nادخل كلمة سر المشرف الجديدة المستخدمة لتسجيل الدخول إلى لوحة التهيئة الخاصة بـ NetAidKit. يجب أن تكون كلمة السر بطول 8 أحرف على الأقل."
 
 #: ../files/nak/webapp/views/settings/tiles/password.phtml:41
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:53
 msgid "Confirm new administrator password"
-msgstr ""
+msgstr "تأكيد كلمة السر الجديدة للمشرف"
 
 #: ../files/nak/webapp/views/settings/tiles/password.phtml:47
 msgid "Please retype the new administrator password."
-msgstr ""
+msgstr "برجاء إعادة كتابة كلمة سر المشرف الجديدة."
 
 #: ../files/nak/webapp/views/settings/tiles/password.phtml:51
 msgid "Change Password Settings"
-msgstr ""
+msgstr "تغيير إعدادات كلمة السر"
 
 #: ../files/nak/webapp/views/settings/tiles/info.phtml:3
 msgid "Software version: "
-msgstr "Software version: "
+msgstr "إصدار البرنامج:"
 
 #: ../files/nak/webapp/views/admin.phtml:10
-msgid "The NetAidKit is currently connected to the following wireless network:"
-msgstr ""
+msgid ""
+"The NetAidKit is currently connected to the following wireless network:"
+msgstr "حاليا NetAidKit متصلة بالشبكة اللاسلكية التالية:"
 
 #: ../files/nak/webapp/views/settings.phtml:7
 msgid "<h3>Wireless</h3>"
-msgstr ""
+msgstr "<h3>لاسلكية<h3/>"
 
 #: ../files/nak/webapp/views/settings.phtml:8
 msgid ""
 "Here you can manage the NetAidKit basic wireless configuration settings."
-msgstr ""
+msgstr "هنا يمكنك إدارة إعدادات التهيئة اللاسلكية الأساسية لـNetAidKit."
 
 #: ../files/nak/webapp/views/settings.phtml:13
 msgid "<h3>Password</h3>"
-msgstr ""
+msgstr "<h3>كلمة السر</h3>"
 
 #: ../files/nak/webapp/views/settings.phtml:14
 msgid "Here you can change the NetAidKit admin login password."
-msgstr ""
+msgstr "هنا يمكنك تغيير كلمة سر المشرف NetAidKit لتسجيل الدخول."
 
 #: ../files/nak/webapp/views/settings.phtml:19
 msgid "<h3>Localization</h3>"
-msgstr ""
+msgstr "<h3>الترجمة</h3>"
 
 #: ../files/nak/webapp/views/settings.phtml:20
 msgid "Here you can change interface language."
-msgstr ""
+msgstr "هنا يمكنك تغيير لغة الواجهة."
 
 #: ../files/nak/webapp/views/settings.phtml:24
 msgid "<h3>Device information</h3>"
-msgstr "<h3>Device information</h3>"
+msgstr "<h3>معلومات الجهاز</h3>"
 
 #: ../files/nak/webapp/views/network/tiles/network.phtml:6
 msgid "Broadcast SSID"
-msgstr ""
+msgstr "بث معرف مجموعة الخدمات"
 
 #: ../files/nak/webapp/views/network/tiles/network.phtml:7
 msgid "Change Network Settings"
-msgstr ""
+msgstr "تغيير إعدادات الشبكة"
 
 #: ../files/nak/webapp/views/logs.phtml:6
 msgid "This is the basic Tor logfile"
-msgstr ""
+msgstr "هذا هو ملف سجل تور الأساسي"
 
 #: ../files/nak/webapp/views/logs.phtml:6
 #: ../files/nak/webapp/views/logs.phtml:11
 msgid "click to download"
-msgstr ""
+msgstr "اضغط للتنزيل"
 
 #: ../files/nak/webapp/views/logs.phtml:10
 msgid "<h3>OpenVPN</h3>"
-msgstr ""
+msgstr "<h3>فتح الشبكة الخاصة الافتراضية</h3>"
 
 #: ../files/nak/webapp/views/logs.phtml:11
 msgid "This is the basic OpenVPN logfile"
-msgstr ""
+msgstr "هذا هو ملف التسجيل الأساسي لفتح الشبكة الخاصة الافتراضية"
 
 #: ../files/nak/webapp/views/login/tiles/password.phtml:10
 msgid "Enter your password"
-msgstr ""
+msgstr "ادخل كلمة السر"
 
 #: ../files/nak/webapp/views/login/tiles/password.phtml:16
 msgid "The password you configured during setup."
-msgstr ""
+msgstr "كلمة السر التي تم تكوينها أثناء الإعداد."
 
 #: ../files/nak/webapp/views/login.phtml:5
 msgid "<h3>Login</h3>"
-msgstr ""
+msgstr "<h3>تسجيل الدخول</h3>"
 
 #: ../files/nak/webapp/views/setup_ap.phtml:7
 msgid ""
@@ -656,7 +616,7 @@ msgid ""
 "the future.</p>\n"
 "<p>Let's get started!</p>\n"
 "            "
-msgstr ""
+msgstr "\n<h3>التثبيت</h3>\n<p>قبل أن تتمكن من استخدام NetAidKit، يجب أن تجعلها خاصة بك. وفي هذه الصفحة، سوف نعطي NetAidKit اسما جديدا للشبكة لاسلكية وكلمة سر واختيار كلمة سر المشرف التي ستستخدمها لإجراء التغييرات في المستقبل.</p>\n<p>هيا نبدأ!</p>"
 
 #: ../files/nak/webapp/views/update.phtml:8
 msgid ""
@@ -664,11 +624,11 @@ msgid ""
 "<h3>Update Required</h3>\n"
 "<p>A newer version of the software is available.</p>\n"
 "            "
-msgstr ""
+msgstr "\n<h3>التحديث مطلوب</h3>\n<p>تتوفر نسخة أحدث من البرنامج .</p>"
 
 #: ../files/nak/webapp/views/update.phtml:14
 msgid "Please press the <i>download</i> button to start."
-msgstr ""
+msgstr "برجاء اضغط على زر<i>تنزيل</i>للبدء."
 
 #: ../files/nak/webapp/views/update.phtml:18
 msgid ""
@@ -676,7 +636,7 @@ msgid ""
 "You can cancel the download if it takes too long - just\n"
 "press <i>remind me later</i>.\n"
 "                    "
-msgstr ""
+msgstr "\nيمكنك إلغاء التنزيل إذا كان يستغرق وقتا طويلا - فقط\nاضغط على <i>ذكرني لاحقا</i>."
 
 #: ../files/nak/webapp/views/update.phtml:23
 msgid ""
@@ -684,7 +644,7 @@ msgid ""
 "This step is required to ensure the device will continue to serve\n"
 "its purpose.\n"
 "                    "
-msgstr ""
+msgstr "\nهذه الخطوة مطلوبة لضمان أن الجهاز سوف يستمر لخدمة غرضه."
 
 #: ../files/nak/webapp/views/update.phtml:29
 msgid ""
@@ -693,38 +653,31 @@ msgid ""
 "install. At this point, there's no going back. The upgrade itself\n"
 "should take no more than two minutes.\n"
 "                "
-msgstr ""
+msgstr "\nبعد تنزيل التحديث، اضغط على زر <i>ترقية</i> للتثبيت. في هذه المرحلة، لا عودة للوراء. ينبغي ألا تزيد الترقية في حد ذاتها عن دقيقتين."
 
 #: ../files/nak/webapp/views/update.phtml:39
 #, php-format
 msgid ""
 "\n"
-"The NetAidKit will reboot during the process, your device might then connect "
-"to a different network automatically.\n"
-"Please make sure you are connected to either <b>%s</b> wireless network or "
-"NetAidKit LAN port and this page will reload automatically."
-msgstr ""
-"\n"
-"The NetAidKit will reboot during the process, your device might then connect "
-"to a different network automatically.\n"
-"Please make sure you are connected to either <b>%s</b> wireless network or "
-"NetAidKit LAN port and this page will reload automatically."
+"The NetAidKit will reboot during the process, your device might then connect to a different network automatically.\n"
+"Please make sure you are connected to either <b>%s</b> wireless network or NetAidKit LAN port and this page will reload automatically."
+msgstr "\nسوف يعاد تشغيل NetAidKit أثناء العملية، ثم قد يتم اتصال جهازك بشبكة مختلفة تلقائيا.\nبرجاء التأكد من أنك متصل إما <b>%s</b>بشبكة لاسلكية أو منفذ شبكة محلية NetAidKit وسوف يعاد تحميل هذه الصفحة تلقائيا."
 
 #: ../files/nak/webapp/views/update.phtml:51
 msgid "Please wait until the device reboots."
-msgstr ""
+msgstr "برجاء الإنتظار حتى يتم إعادة تشغيل الجهاز."
 
 #: ../files/nak/webapp/views/update.phtml:54
 msgid "Download"
-msgstr ""
+msgstr "تنزيل"
 
 #: ../files/nak/webapp/views/update.phtml:55
 msgid "Remind me later"
-msgstr ""
+msgstr "ذكرني لاحقا"
 
 #: ../files/nak/webapp/views/update.phtml:56
 msgid "Upgrade"
-msgstr ""
+msgstr "ترقية"
 
 #: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:11
 msgid ""
@@ -733,60 +686,61 @@ msgid ""
 "You will be disconnected after clicking the 'Yes' button.\n"
 "You can then reconnect with your new settings.</p>\n"
 "                        "
-msgstr ""
+msgstr "\nأنت على وشك تهيئة نقطة وصول netaidkit.\nسيتم قطع الاتصال بعد الضغط على زر \"نعم\".\nيمكنك بعد ذلك إعادة الاتصال مع الإعدادات الجديدة.</p>"
 
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:14
 msgid ""
 "Enter a new wireless network name for your NetAidKit. You will connect your "
 "devices to this wireless network once you completed setting up."
-msgstr ""
+msgstr "أدخل اسم شبكة لاسلكية جديدة لNetAidKit الخاصة بك. سوف تقوم بتوصيل الأجهزة الخاصة بك لهذه الشبكة اللاسلكية بمجرد الانتهاء من الإعداد."
 
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:36
 msgid "Please retype the new wireless network key."
-msgstr ""
+msgstr "برجاء إعادة كتابة مفتاح الشبكة اللاسلكية الجديدة."
 
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:47
 msgid ""
 "You will need a password to make changes to the configuration of the "
-"NetAidKit after setting up, choose one here. The password must be at least 8 "
-"characters long."
-msgstr ""
+"NetAidKit after setting up, choose one here. The password must be at least 8"
+" characters long."
+msgstr "سوف تحتاج إلى كلمة سر لإجراء تغييرات على التهيئة الخاصة بـNetAidKit بعد الإعداد، اختر واحدة هنا. يجب أن تكون كلمة السر بطول 8 أحرف على الأقل."
 
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:58
 msgid "Please retype the new admin password."
-msgstr ""
+msgstr "برجاء إعادة كتابة كلمة السر المشرف الجديدة."
 
 #: ../files/nak/webapp/views/update/js/update.pjs:34
 msgid "N/A"
-msgstr ""
+msgstr "لا ينطبق"
 
 #: ../files/nak/webapp/views/admin/js/admin.pjs:64
 msgid "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
-msgstr ""
+msgstr "عفوا، الملف الخاص بك كبير جدا. هل أنت متأكد من أن ملف .ovpn صالحا؟"
 
 #: ../files/nak/webapp/views/admin/js/admin.pjs:153
 msgid "<h3>You are connected to a VPN</h3>"
-msgstr ""
+msgstr "<h3>انت متصل بالشبكة الخاصة الافتراضية<h3/>"
 
 #: ../files/nak/webapp/views/settings/js/settings.pjs:14
 #: ../files/nak/webapp/views/setup_ap/js/setup_ap.pjs:14
 msgid "Disconnected"
-msgstr ""
+msgstr "غير متصل"
 
 #: ../files/nak/webapp/views/settings/js/settings.pjs:15
 #: ../files/nak/webapp/views/setup_ap/js/setup_ap.pjs:15
 msgid ""
-"Please reconnect using the new settings. This page will reload automatically."
-msgstr ""
+"Please reconnect using the new settings. This page will reload "
+"automatically."
+msgstr "برجاء إعادة استخدام الإعدادات الجديدة. سوف يتم إعادة تحميل هذه الصفحة تلقائيا."
 
-msgid ""
-"\n"
-"            Warning: DO NOT turn off or disconnect the device during the\n"
-"            install process!"
-msgstr ""
-"\n"
-"            Warning: DO NOT turn off or disconnect the device during the\n"
-"            install process!"
+#~ msgid ""
+#~ "\n"
+#~ "            Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "            install process!"
+#~ msgstr ""
+#~ "\n"
+#~ "            Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "            install process!"
 
 #~ msgid "Connecting..."
 #~ msgstr "Connecting..."
@@ -812,11 +766,12 @@ msgstr ""
 #~ msgstr "Downloading..."
 
 #~ msgid ""
-#~ "The downloaded update has an invalid cryptographic signature. Most likely "
-#~ "it didn't download properly. Please try again."
+#~ "The downloaded update has an invalid cryptographic signature. Most likely it"
+#~ " didn't download properly. Please try again."
 #~ msgstr ""
-#~ "The downloaded update has an invalid cryptographic signature. Most likely "
-#~ "it didn't download properly. Please try again."
+#~ "The downloaded update has an invalid cryptographic signature. Most likely it"
+#~ " didn't download properly. Please try again."
 
 #~ msgid "Couldn't install the update. Please try again later."
 #~ msgstr "Couldn't install the update. Please try again later."
+
