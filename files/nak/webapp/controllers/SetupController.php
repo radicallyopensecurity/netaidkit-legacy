@@ -27,10 +27,11 @@ class SetupController extends Page
             $key_confirm       = $request->postvar('key_confirm');
             $adminpass         = $request->postvar('adminpass');
             $adminpass_confirm = $request->postvar('adminpass_confirm');
-            $distresspass      = $request->postvar('distresspass');
+            //$distresspass      = $request->postvar('distresspass');
 
             $valid = $this->ap_validate($ssid, $key, $adminpass, $key_confirm, $adminpass_confirm);
 
+            $success = false;
             if ($valid) {
                 $ap_success = NetAidManager::setup_ap($ssid, $key);
                 $pass_success = NetAidManager::set_adminpass($adminpass);
@@ -38,7 +39,7 @@ class SetupController extends Page
 
                 if ($success) {
                     NetAidManager::set_stage(STAGE_OFFLINE);
-                    $this->addMessage('info', 'Access Point successfully set up.', 'wan');
+                    $this->_addMessage('info', 'Access Point successfully set up.', 'wan');
                 }
             } else {
                 $this->_addFormData('ssid', $ssid, 'ap');

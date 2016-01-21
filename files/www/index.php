@@ -1,6 +1,6 @@
 <?php
 
-require_once('/nak/webapp/bootstrap.php');
+require_once '/nak/webapp/bootstrap.php';
 
 if (!session_id())
     session_start();
@@ -26,6 +26,7 @@ if ($cur_stage >= STAGE_ONLINE && $_SESSION['logged_in'] == 1 && $updater->updat
     }
 }
 
+$page_html = '';
 try {
     $page_html = $dispatcher->run($request);
 } catch (NotFoundException $e) {
