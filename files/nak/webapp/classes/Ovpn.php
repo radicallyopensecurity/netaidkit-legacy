@@ -25,7 +25,6 @@ class Ovpn {
             }
         }
         return $files;
-
     }
     
     public function getCurrent() {
@@ -66,8 +65,6 @@ class Ovpn {
                 return false;
             }
         }
-
+        return false;
     }
 }
-
-?>

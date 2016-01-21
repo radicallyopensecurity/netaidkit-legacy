@@ -10,6 +10,12 @@ class Dispatcher
                                              'SettingsController',
                                              'LogsController' );
 
+    /**
+     * @param Request $request
+     * @return string
+     * @throws Exception
+     * @throws NotFoundException
+     */
     public function run($request)
     {
         $controller = $request->getController();

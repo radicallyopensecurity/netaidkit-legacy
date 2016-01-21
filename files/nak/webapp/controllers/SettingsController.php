@@ -37,6 +37,7 @@ class SettingsController extends Page
 
             $valid = $this->ap_validate($ssid, $key, $key_confirm);
 
+            $success = false;
             if ($valid) {
                 $success = NetAidManager::setup_ap($ssid, $key);
                 if ($success)
@@ -100,6 +101,7 @@ class SettingsController extends Page
 
             $valid = $this->password_validate($adminpass_check, $adminpass, $adminpass_confirm);
 
+            $success = false;
             if ($valid) {
                 $success = NetAidManager::set_adminpass($adminpass);
                 if ($success)

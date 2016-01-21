@@ -29,7 +29,7 @@ class View
 
     public function display()
     {
-        return include($this->_template);
+        return include $this->_template;
     }
 
     protected function _displayMessages($form)

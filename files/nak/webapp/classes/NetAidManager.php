@@ -10,7 +10,7 @@ class NetAidManager
         $ssid = escapeshellarg($ssid);
         $key  = escapeshellarg($key);
         
-        $output = shell_exec("/usr/bin/netaidkit apconfig $ssid $key");
+        shell_exec("/usr/bin/netaidkit apconfig $ssid $key");
         
         return true;
     }
@@ -45,14 +45,14 @@ class NetAidManager
         $ssid = escapeshellarg($ssid);
         $key  = escapeshellarg($key);
         
-        $output = shell_exec("/usr/bin/netaidkit wificonn $ssid $key");
+        shell_exec("/usr/bin/netaidkit wificonn $ssid $key");
         
         return true;
     }
     
     static public function go_online()
     {
-        $output = shell_exec("/usr/bin/netaidkit goonline");
+        shell_exec("/usr/bin/netaidkit goonline");
         
         return true;    
     }
@@ -108,7 +108,7 @@ class NetAidManager
             
         $stage = escapeshellarg($stage);
         
-        $output = shell_exec("/usr/bin/netaidkit setstage $stage");
+        shell_exec("/usr/bin/netaidkit setstage $stage");
         
         return true;
     }
@@ -126,7 +126,7 @@ class NetAidManager
             return false;
         }
             
-        $output = shell_exec("/usr/bin/netaidkit stagetor $mode");
+        shell_exec("/usr/bin/netaidkit stagetor $mode");
         
         return true;
     }
@@ -144,7 +144,7 @@ class NetAidManager
             return false;
         }
             
-        $output = shell_exec("/usr/bin/netaidkit stagevpn $mode");
+        shell_exec("/usr/bin/netaidkit stagevpn $mode");
         
         return true;
     }

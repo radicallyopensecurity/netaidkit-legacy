@@ -11,5 +11,3 @@ class Log {
     call_user_func_array(array('Log', 'trace'), array($fn, $args[0]));
   }
 }
-
-?>
