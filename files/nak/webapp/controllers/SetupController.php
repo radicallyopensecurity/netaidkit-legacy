@@ -39,7 +39,7 @@ class SetupController extends Page
 
                 if ($success) {
                     NetAidManager::set_stage(STAGE_OFFLINE);
-                    $this->addMessage('info', 'Access Point successfully set up.', 'wan');
+                    $this->_addMessage('info', 'Access Point successfully set up.', 'wan');
                 }
             } else {
                 $this->_addFormData('ssid', $ssid, 'ap');
