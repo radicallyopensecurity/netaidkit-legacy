@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetAidKit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-18 11:48+0100\n"
+"POT-Creation-Date: 2016-01-22 18:45+0100\n"
 "PO-Revision-Date: 2016-01-14 07:44+0000\n"
 "Last-Translator: May Youssef <mayyoussef@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/otf/netaidkit/language/ar/)\n"
@@ -630,6 +630,10 @@ msgstr "إصدار البرنامج:"
 msgid "Select language"
 msgstr "Select language"
 
+#: ../files/nak/webapp/views/admin.phtml:8
+msgid "<h3>Welcome!</h3>"
+msgstr "<h3>Welcome!</h3>"
+
 #: ../files/nak/webapp/views/admin.phtml:10
 msgid "The NetAidKit is currently connected to the following wireless network:"
 msgstr "حاليا NetAidKit متصلة بالشبكة اللاسلكية التالية:"
@@ -835,6 +839,10 @@ msgstr ""
 #: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:58
 msgid "Please retype the new admin password."
 msgstr "برجاء إعادة كتابة كلمة السر المشرف الجديدة."
+
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:70
+msgid "Finish Setup"
+msgstr "Finish Setup"
 
 #: ../files/nak/webapp/views/update/js/update.pjs:34
 msgid "N/A"
