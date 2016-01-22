@@ -104,6 +104,10 @@ class I18n {
     static private function set_localecookie($twoletter) {
        setcookie(self::LANGCOOKIE, $twoletter, time()+365*86400, '/');
     }
+
+    static public function is_rtl() {
+        return file_exists(self::LOCALEDIR.'/'.self::getlocale().'/rtl');
+    }
 }
 
 ?>

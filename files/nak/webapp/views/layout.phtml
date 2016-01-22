@@ -33,7 +33,7 @@
             }
         </script>
     </head>
-    <body onload="hideHelp();">
+    <body dir=<?php echo I18n::is_rtl() ? 'rtl' : 'ltr'; ?> onload="hideHelp();">
         <div class="container">
             <?= $this->_params['page_html']; ?>
         </div>
