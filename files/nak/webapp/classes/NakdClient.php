@@ -27,12 +27,6 @@ class NakdClient {
         @fclose($this->_conn);
     }
 
-    /* From http://php.net/feof */
-    protected function _safe_feof($fp, &$start = NULL) {
-        $start = microtime(true);
-        return feof($fp);
-    }
-
     protected function _sendCommand($command) {
         fwrite($this->_conn, $command);
         $response = '';
