@@ -5,7 +5,8 @@ class ClientController extends Page
     protected $_allowed_actions = array('locale', 'set_locale');
 
     public function locale() {
-        if (I18n::settings_get_language() !== false)
+        if (I18n::settings_get_language() !== false ||
+            I18n::settings_get_autodetect())
             $this->_redirect('/setup/index');
 
         $params = array();

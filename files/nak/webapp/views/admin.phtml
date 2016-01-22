@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-xs-12 col-md-6">
         <img src="/img/logo/logo-nak-square.png">
-        <h3>Welcome!</h3>
+        <?php echo _('<h3>Welcome!</h3>'); ?>
         <?php $this->_displayMessages('setup'); ?>
         <p><?php echo _('The NetAidKit is currently connected to the following wireless network:'); ?></p>
         <?php include('admin/tiles/wireless.phtml'); ?>
