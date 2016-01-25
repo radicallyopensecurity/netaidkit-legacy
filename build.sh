@@ -23,9 +23,9 @@ make defconfig
 
 # Update timestamp of the build
 if (git branch | grep "\*" | grep "dev")&>/dev/null; then
-    buildtype="prod"
-else
     buildtype="dev"
+else
+    buildtype="prod"
 fi
 
 rm -rf files/*
