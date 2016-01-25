@@ -1,0 +1,790 @@
+# 
+# Translators:
+# vargaviktor <viktor.varga@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: NetAidKit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-22 18:45+0100\n"
+"PO-Revision-Date: 2016-01-25 14:20+0000\n"
+"Last-Translator: vargaviktor <viktor.varga@gmail.com>\n"
+"Language-Team: Hungarian (http://www.transifex.com/otf/netaidkit/language/hu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../files/nak/webapp/controllers/NetworkController.php:39
+msgid "Successfully saved network settings."
+msgstr "Hálózati beállítások sikeresen mentve."
+
+#: ../files/nak/webapp/controllers/LogsController.php:53
+msgid "Tor log empty."
+msgstr "Tor log üres."
+
+#: ../files/nak/webapp/controllers/LogsController.php:64
+msgid "OpenVPN log empty."
+msgstr "OpenVPN log üres."
+
+#: ../files/nak/webapp/controllers/AdminController.php:54
+msgid "VPN config file uploaded."
+msgstr "VPN config fájl sikeresen feltöltve."
+
+#: ../files/nak/webapp/controllers/AdminController.php:56
+msgid "File upload failed."
+msgstr "Fájl feltöltés sikertelen."
+
+#: ../files/nak/webapp/controllers/AdminController.php:68
+msgid "VPN config file removed."
+msgstr "VPN konfig fájl törölve."
+
+#: ../files/nak/webapp/controllers/AdminController.php:70
+msgid "Could not remove file."
+msgstr "Fájl törlése nem sikertelen."
+
+#: ../files/nak/webapp/controllers/SetupController.php:41
+msgid "Access Point successfully set up."
+msgstr "A hozzáférési pont sikeresen beállítva."
+
+#: ../files/nak/webapp/controllers/SetupController.php:67
+#: ../files/nak/webapp/controllers/SettingsController.php:63
+#: ../files/nak/webapp/controllers/SettingsController.php:127
+msgid "All fields are required."
+msgstr "Minden mező kitöltése szükséges."
+
+#: ../files/nak/webapp/controllers/SetupController.php:87
+msgid "Wireless key does not match."
+msgstr "A Wifi jelszavak nem egyeznek."
+
+#: ../files/nak/webapp/controllers/SetupController.php:95
+#: ../files/nak/webapp/controllers/SettingsController.php:86
+msgid "Invalid key length, must be between 8 and 63 characters."
+msgstr "Érvénytelen jelszó hossz, 8 és 63 karakter között kell lennie."
+
+#: ../files/nak/webapp/controllers/SetupController.php:102
+msgid "Admin password does not match."
+msgstr "Admin jelszavak nem egyeznek."
+
+#: ../files/nak/webapp/controllers/SetupController.php:110
+msgid "Admin password must be at least 8 characters."
+msgstr "Az admin jelszó legalább 8 karakteres kell legyen."
+
+#: ../files/nak/webapp/controllers/SetupController.php:129
+#: ../files/nak/webapp/controllers/SetupController.php:142
+msgid "Setup complete."
+msgstr "Telepítés kész."
+
+#: ../files/nak/webapp/controllers/SettingsController.php:43
+msgid "Successfully changed wireless access point."
+msgstr "A Wifi sikeresen megváltoztatva."
+
+#. / TRANSLATORS: in key confirmation context
+#: ../files/nak/webapp/controllers/SettingsController.php:78
+msgid "Keys do not match."
+msgstr "Jelszó nem egyezik."
+
+#: ../files/nak/webapp/controllers/SettingsController.php:107
+msgid "Successfully changed administrator password."
+msgstr "Az adminisztrátor jelszó sikeresen megváltoztatva."
+
+#: ../files/nak/webapp/controllers/SettingsController.php:141
+msgid "Current admin password is incorrect."
+msgstr "Az aktuális admin jelszó nem megfelelő."
+
+#: ../files/nak/webapp/controllers/SettingsController.php:147
+msgid "Passwords do not match."
+msgstr "Jelszavak nem egyeznek."
+
+#: ../files/nak/webapp/controllers/SettingsController.php:155
+msgid "Password must be at least 8 characters."
+msgstr "A jelszó legalább 8 karakter kell legyen."
+
+#: ../files/nak/webapp/controllers/UserController.php:39
+msgid "All fields are required"
+msgstr "Minden mező kitöltése szükséges"
+
+#: ../files/nak/webapp/controllers/UserController.php:48
+msgid "Username/password is incorrect."
+msgstr "Felhasználónév/jelszó nem megfelelő."
+
+#: ../files/nak/webapp/classes/View.php:43
+msgid "The following errors have occurred:"
+msgstr "Az alábbi hibák történtek:"
+
+#: ../files/nak/webapp/views/setup_wan.phtml:7
+msgid ""
+"\n"
+"<h3>Connect</h3>\n"
+"<p>The NetAidKit is currently not connected to the Internet.</p>\n"
+"<p>To connect, choose a wireless network on the right.</p>\n"
+"<p>Enter a password if the network requires it.</p>\n"
+"<p>Click on the Connect button.</p>\n"
+"<p>Alternatively, you can connect by plugging a network cable into the WAN port</p>\n"
+"            "
+msgstr "\n<h3>Csatlakozás</h3>\n<p>A NetAidKit nem csatlakozik most az internethez..</p>\n<p>A csatlakozáshoz válasza a Wifi hálózatot a jobb oldalon.</p>\n<p>Adja meg a jelszót, ha szükséges.</p>\n<p>Kattintson a Csatlakozás gombra.</p>\n<p>Alternatív megoldás lehet, ha egy hálózati kábelt dug a WAN portra</p>\n            "
+
+#: ../files/nak/webapp/views/network.phtml:7
+msgid ""
+"\n"
+"<h3>Network</h3>\n"
+"<p>Here you can manage the NetAidKit network settings.</p>\n"
+"            "
+msgstr "\n<h3>Hálózat</h3>\n<p>Itt állíthatja a NetAidKit hálózati beállításait.</p>\n            "
+
+#. TRANSLATORS: window header
+#: ../files/nak/webapp/views/update/modals/restart.phtml:5
+msgid "The update is being installed"
+msgstr "A frissítés telepítésre kerül"
+
+#: ../files/nak/webapp/views/update/modals/restart.phtml:11
+#, php-format
+msgid ""
+"\n"
+"                        Please make sure you are still connected to either <b>%s</b> wireless network or\n"
+"                        NetAidKit LAN port after the device restarts.\n"
+"                        This page will refresh automatically."
+msgstr "\n                        Kérjük biztosítsa, hogy csatlakozva maradjon vagy a <b>%s</b> wifi hálózathoz vagy a \n                        NetAidKit LAN porthoz az eszköz újraindulása után.\n                        Ez az oldal automatikusan frissül."
+
+#: ../files/nak/webapp/views/update/modals/restart.phtml:18
+msgid ""
+"\n"
+"                    Warning: DO NOT turn off or disconnect the device during the\n"
+"                    install process!"
+msgstr "\n                    Figyelem: NE KAPCSOLJA KI vagy húzza ki az eszközt a\n                    telepítés folyamán!"
+
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless.phtml:2
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:10
+msgid "<h3>Select a wireless network:</h3>"
+msgstr "<h3>Wifi hálózat választása:</h3>"
+
+#. / TRANSLATORS: in the context of WiFi network selection
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless.phtml:15
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:21
+msgid "Connect"
+msgstr "Csatlakozás"
+
+#. TRANSLATORS: as in, close window
+#. TRANSLATORS: as in: close the dialog
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless/modals/connecting.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connecting.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:5
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:5
+#: ../files/nak/webapp/views/admin/portal.phtml:21
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:5
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:5
+msgid "Close"
+msgstr "Bezár"
+
+#. TRANSLATORS: window header/title
+#. TRANSLATORS: window header
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless/modals/connecting.phtml:6
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connecting.phtml:8
+msgid "Connecting"
+msgstr "Csatlakozás"
+
+#: ../files/nak/webapp/views/setup_wan/tiles/wireless/modals/connecting.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connecting.phtml:11
+msgid "Connecting to wireless network..."
+msgstr "Csatlakozás a wifi hálózathoz..."
+
+#. TRANSLATORS: menu context
+#: ../files/nak/webapp/views/admin/menu.phtml:4
+msgid "Toggle navigation"
+msgstr "Navigáció kapcsolása"
+
+#. TRANSLATORS: menu context
+#: ../files/nak/webapp/views/admin/menu.phtml:12
+msgid "Advanced"
+msgstr "Speciális"
+
+#. TRANSLATORS: menu context
+#: ../files/nak/webapp/views/admin/menu.phtml:15
+msgid "Settings"
+msgstr "Beállítások"
+
+#. TRANSLATORS: menu context
+#: ../files/nak/webapp/views/admin/menu.phtml:16
+msgid "Network"
+msgstr "Hálózat"
+
+#. TRANSLATORS: menu context
+#: ../files/nak/webapp/views/admin/menu.phtml:17
+msgid "Show logs"
+msgstr "Logok megtekintése"
+
+#. TRANSLATORS: menu context
+#: ../files/nak/webapp/views/admin/menu.phtml:18
+msgid "Log out"
+msgstr "Kilépés"
+
+#: ../files/nak/webapp/views/admin/tiles/wireless.phtml:3
+msgid "Change Wireless Network"
+msgstr "Wifi hálózat beállítása"
+
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:6
+msgid "Change Wireless Network:"
+msgstr "Wifi hálózat beállítása:"
+
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:9
+msgid ""
+"Choose a new wireless network to connect to with the NetAidKit and enter the"
+" password if any:"
+msgstr "Válassza ki az új wifi hálózatot, amire a NetAidKit csatlakozik, és adja meg a jelszavát, ha van:"
+
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:12
+msgid "Refresh"
+msgstr "Frissítés"
+
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:18
+msgid "Wireless Password"
+msgstr "Wifi jelszó"
+
+#: ../files/nak/webapp/views/admin/tiles/wireless/modals/connect.phtml:26
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:5
+#: ../files/nak/webapp/views/admin/js/admin.pjs:129
+msgid "<h3>You are connected to Tor</h3>"
+msgstr "<h3>YCsatlakoztatva a Tor-hoz</h3>"
+
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:7
+msgid "<h3>Connecting to Tor</h3>"
+msgstr "<h3>Csatlakozás a Tor-hoz</h3>"
+
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:17
+msgid ""
+"\n"
+"The Tor network can be used to circumvent censorship. Tor will send\n"
+"your data through different countries to bypass filtering."
+msgstr "\nA Tor hálózat arra használható cenzorálás megkerülésére. A Tor az adatát különféle országokon küldi keresztül, a korlátozások feloldásához."
+
+#: ../files/nak/webapp/views/admin/tiles/tor/connected.phtml:23
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:6
+msgid "Disconnect from Tor"
+msgstr "Lecsatlakozás a Tor-ról"
+
+#: ../files/nak/webapp/views/admin/tiles/tor/disconnected.phtml:3
+msgid ""
+"\n"
+"<h3>Tor</h3>\n"
+"<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>\n"
+"        "
+msgstr "\n<h3>Tor</h3>\n<p>A Tor hálózat a cenzúra megkerülésére szolgál.  Tor az adatát különféle országokon küldi keresztül, a korlátozások feloldásához.</p>\n        "
+
+#: ../files/nak/webapp/views/admin/tiles/tor/disconnected.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:6
+msgid "Connect to Tor"
+msgstr "Csatalkozás a Tor-hoz"
+
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:9
+msgid ""
+"\n"
+"<p>By disconnecting from the Tor network, your data will no longer be anonymized. Are you sure this is what you want to do?</p>\n"
+"                "
+msgstr "\n<p>A Tor hálótatról lecsatlakozással nem lesz többé anonimizált. Biztos szeretné ezt tenni?</p>\n                "
+
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:15
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:18
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:17
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:23
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:18
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:26
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:25
+msgid "No"
+msgstr "Nem"
+
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/disconnect.phtml:16
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:19
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:18
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:24
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:19
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:27
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:26
+msgid "Yes"
+msgstr "Igen"
+
+#: ../files/nak/webapp/views/admin/tiles/tor/modals/connect.phtml:9
+msgid ""
+"\n"
+"<p>The Tor network can be used to circumvent censorship. Tor will send your data through different countries to bypass filtering.</p>\n"
+"<p><strong>If you wish to use Tor for anonymity purposes, please use the <a href=\"https://www.torproject.org/download/download-easy\" target=\"_new\">Tor Browser Bundle</a> which provides additional privacy and security enhancements.</strong></p>\n"
+"<p>In some repressive countries, using Tor can get you into trouble with the authorities. Please be aware of what the situation is for the country you are in before you connect to Tor.</p>\n"
+"<p>Are you sure you want to connect to Tor?</p>\n"
+"                "
+msgstr "\n<p>AA Tor hálózat a cenzúra megkerülésére szolgál.  Tor az adatát különféle országokon küldi keresztül, a korlátozások feloldásához..</p>\n<p><strong>Ha a Tor-t anonimitási céllal használja, kérjük használja a   <a href=\"https://www.torproject.org/download/download-easy\" target=\"_new\">Tor Böngésző csomagot</a> ami további adatvédelmet és biztonságot nyújt.</strong></p>\n<p>Néhány elnyomó országban a Tor használatával összetűzésbe kerülhet a hatóságokkal. Kérjük figyeljen erre, mielőtt csatlakozna  a Tor-hoz.</p>\n<p>Biztosan szeretne csatlakozni a Tor-hoz?</p>\n                "
+
+#: ../files/nak/webapp/views/admin/tiles/internet.phtml:4
+msgid "<h3>Internet</h3>"
+msgstr "<h3>Internet</h3>"
+
+#: ../files/nak/webapp/views/admin/tiles/internet.phtml:6
+msgid "Only allow connections over TOR or VPN:"
+msgstr "Kapcsolatok engedélyezése csak TOR-on vagy VPN-en keresztül:"
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:6
+msgid "You are connected to a VPN"
+msgstr "VPN-hez csatlakoztatva"
+
+#. / TRANSLATORS: status context
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:9
+msgid "Connecting to VPN"
+msgstr "Csatlakozás VPN-hez"
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:19
+msgid ""
+"A Virtual Private Network creates an encrypted tunnel between the NetAidKit "
+"and a trusted network over the Internet."
+msgstr "A VPN (Virtuális magán hálózat) egy titkosított csatornát hoz létre az interneten keresztül a NetAidKit és egy megbízható hálózat közé."
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:21
+msgid "You are currently connected to VPN network:"
+msgstr "A csatlakoztatott VPN hálózat:"
+
+#. / TRANSLATORS: header/title context
+#: ../files/nak/webapp/views/admin/tiles/vpn/connected.phtml:25
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:9
+msgid "Disconnect from VPN"
+msgstr "VPN kapcsolat megszakítása"
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:2
+msgid ""
+"\n"
+"<h3>VPN</h3>\n"
+"<p>A Virtual Private Network creates an encrypted tunnel between the NetAidKit and a trusted network over the Internet.</p>\n"
+"        "
+msgstr "\n<h3>VPN</h3>\n<p>A Virtuális Magán Hálózat (VPN) egy titkosított csatornát hoz létre  a NetAidKit és egy megbizható hálózat között az interneten keresztül.</p>\n        "
+
+#. / TRANSLATORS: button context
+#: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:14
+msgid "Add a VPN connection..."
+msgstr "VPN kapcsolat hozzáadása"
+
+#. Reset checked to empty for next items
+#. / TRANSLATORS: header/title context
+#: ../files/nak/webapp/views/admin/tiles/vpn/disconnected.phtml:31
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:9
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:7
+msgid "Connect to VPN"
+msgstr "Csatlakozás VPN-hez"
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/disconnect.phtml:14
+msgid ""
+"By disconnecting from the VPN, your data will no longer be encrypted. Are "
+"you sure this is what you want to do?"
+msgstr "A VPN-ről lecsatlakozással az adatai nem lesznek többé titkosítva.  Biztosan szeretné ezt tenni?"
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/connect.phtml:14
+msgid ""
+"\n"
+"<p>Connecting to a VPN will send all your internet traffic through an encrypted VPN tunnel.</p>\n"
+"<p>If you trust the other end of the tunnel, VPNs are a great way to secure your data and enhance your privacy.</p>\n"
+"<p>Please note that the VPN operator can still monitor your network traffic.</p>\n"
+"<p>Are you sure you want to connect to the VPN?</p>\n"
+"                    "
+msgstr "\n<p>A VPN-hez csatlakozással a teljes internet forgalma átküldésre kerül egy titkosított internet csatornán.</p>\n<p>Ha megbízik a csatorna másik végében, akkor a VPN kitűnő megoldás az adatok védelmére és a biztonság növeléséhez.</p>\n<p>Kérem ne felejtse, hogy a VPN üzemeltetője még mindig meg tudja figyelni a hálózati forgalmát.</p>\n<p>Szeretne csatlakozni a VPN-hez?</p>\n                    "
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:13
+msgid ""
+"\n"
+"Configuring a VPN connection is as easy as uploading an OpenVPN configuration file. Hit the browse button and select your ovpn configuration file to add it to the list of VPN connections.\n"
+"                            "
+msgstr "\nEgy VPN kapcsolat beállítása egyszerű, egy OpenVPN konfigurációs állomány feltöltéssel történhet. Kattintson a Tallóz gombra és válassza ki az ovpn konfigurációs állományt, mellyel hozzáadja azt a VPN kapcsolatok listájához.\n                            "
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/add.phtml:21
+msgid "Upload"
+msgstr "Feltöltés"
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:7
+msgid "Delete VPN configuration"
+msgstr "VPN konfiguráció törlése"
+
+#: ../files/nak/webapp/views/admin/tiles/vpn/modals/delete.phtml:12
+msgid "Are you sure you want to delete the following VPN:"
+msgstr "Biztosan szeretné törölni a következő VPN-t:"
+
+#: ../files/nak/webapp/views/admin/portal.phtml:22
+msgid "Captive portal detected"
+msgstr "Megszakító (captive) portál érzékelve"
+
+#: ../files/nak/webapp/views/admin/portal.phtml:26
+msgid "Click here to open portal page."
+msgstr "Kattintson ide a portál oldal megnyitásához"
+
+#: ../files/nak/webapp/views/layout.phtml:6
+msgid "<title>Welcome!</title>"
+msgstr "<title>Köszöntjük!</title>"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:9
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:9
+msgid "Enter a new network name"
+msgstr "Adjon meg egy új hálózat nevet"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:16
+msgid ""
+"Enter a new wireless network name for your NetAidKit. You will connect your "
+"devices to this wireless network."
+msgstr "Adja meg a NetAidKit wifi hálózatának nevét. Ehhez a hálózathoz csatlakoztatja majd az eszközeit."
+
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:24
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:20
+msgid "Enter a new network password"
+msgstr "Adjon meg új hálózati jelszót"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:31
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:25
+msgid ""
+"To make sure only you and people you trust can connect to your NetAidKit, "
+"choose a password to protect your new wireless network. The key must be "
+"between 8 and 64 characters long."
+msgstr "Ahhoz, hogy csak saját maga és akiben megbízik csatlakozhasson a NetAidKit-jéhez, adjon meg egy wifi jelszót. A jelszónak 8 és 64 karakter hosszúnak kell lennie."
+
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:39
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:31
+msgid "Confirm new network password"
+msgstr "Erősítse meg az új hálózati jelszót"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:44
+msgid "Please retype your wireless network key."
+msgstr "Adja meg újra a wifi hálózat jelszavát"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless.phtml:48
+msgid "Change Wireless Settings"
+msgstr "Wifi beállítások megváltoztatás"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:6
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:6
+msgid "Reset Access Point"
+msgstr "Hozzáférési pont alaphelyztbe állítása"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:11
+msgid ""
+"\n"
+"You are about to reconfigure the netaidkit Access Point.\n"
+"You will be disconnected after clicking the 'Yes' button.\n"
+"You can then reconnect with your new settings.\n"
+"                        "
+msgstr "\nA NetAidKit hozzáférési pont átkonfigurálását választotta.\nAz 'Igen gombra megszakítja a kapcsolatot..\nAz új beállításokkal tud újra csatlakozni.</p>\n                        "
+
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:19
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:18
+msgid "New network name:"
+msgstr "Új hálózati neév:"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:21
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:20
+msgid "Admin password:"
+msgstr "Admin jelszó:"
+
+#: ../files/nak/webapp/views/settings/tiles/wireless/modals/configure.phtml:22
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:21
+msgid "Distress password:"
+msgstr "Vészjelszó:"
+
+#: ../files/nak/webapp/views/settings/tiles/localization.phtml:8
+#: ../files/nak/webapp/views/setup_lang/tiles/setup_lang.phtml:8
+msgid "Detect automatically"
+msgstr "Automatikus detektálás"
+
+#: ../files/nak/webapp/views/settings/tiles/localization.phtml:17
+msgid "Change localization settings"
+msgstr "Nyelvi beállítások változtatása"
+
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:7
+msgid "Enter the current administrator password"
+msgstr "Adja meg az aktuális admin jelszót"
+
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:14
+msgid ""
+"\n"
+"Please enter the current admininstrator password entered during configuration.\n"
+"                        "
+msgstr "\nKérjük, adja meg az aktuális admin jelszót, amit a beállítás során adott meg.\n                        "
+
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:24
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:42
+msgid "Enter a new administrator password"
+msgstr "Adjon meg egy új admin jelszót"
+
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:31
+msgid ""
+"\n"
+"Enter a new administrator password used to log in to the configuration panel of the NetAidKit. The password must be at least 8 characters long.\n"
+"                            "
+msgstr "\nAdjon meg egy új admin jelszót, amivel a konfigurációs beállításokhoz léphet be a NetAidKit-ben. A jelszónak legalább 8 karakteres hosszúnak kell lennie."
+
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:41
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:53
+msgid "Confirm new administrator password"
+msgstr "Erősítse meg az új jelszót"
+
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:47
+msgid "Please retype the new administrator password."
+msgstr "Kérjük gépelje be újra az admin jelszót."
+
+#: ../files/nak/webapp/views/settings/tiles/password.phtml:51
+msgid "Change Password Settings"
+msgstr "Jelszó beállítások megváltoztatása"
+
+#: ../files/nak/webapp/views/settings/tiles/info.phtml:3
+msgid "Software version: "
+msgstr "Szoftver verzió:"
+
+#: ../files/nak/webapp/views/setup_lang/tiles/setup_lang.phtml:17
+msgid "Select language"
+msgstr "Nyelv választása"
+
+#: ../files/nak/webapp/views/admin.phtml:8
+msgid "<h3>Welcome!</h3>"
+msgstr "<h3>Köszöntjük!</h3>"
+
+#: ../files/nak/webapp/views/admin.phtml:10
+msgid ""
+"The NetAidKit is currently connected to the following wireless network:"
+msgstr "A NetAidKit jelenleg az alábbi wifi hálózathoz csatlakozik:"
+
+#: ../files/nak/webapp/views/settings.phtml:7
+msgid "<h3>Wireless</h3>"
+msgstr "<h3>Wifi</h3>"
+
+#: ../files/nak/webapp/views/settings.phtml:8
+msgid ""
+"Here you can manage the NetAidKit basic wireless configuration settings."
+msgstr "Itt kezelheti a NetAidKit alap wifi beállításait."
+
+#: ../files/nak/webapp/views/settings.phtml:13
+msgid "<h3>Password</h3>"
+msgstr "<h3>Jelszó</h3>"
+
+#: ../files/nak/webapp/views/settings.phtml:14
+msgid "Here you can change the NetAidKit admin login password."
+msgstr "Itt változtathatja meg a NetAidKit admin belépési jelszavát."
+
+#: ../files/nak/webapp/views/settings.phtml:19
+msgid "<h3>Localization</h3>"
+msgstr "<h3>Nyelvi beállítások</h3>"
+
+#: ../files/nak/webapp/views/settings.phtml:20
+msgid "Here you can change interface language."
+msgstr "Itt cserélheti az interfész nyelvét."
+
+#: ../files/nak/webapp/views/settings.phtml:24
+msgid "<h3>Device information</h3>"
+msgstr "<h3>Eszköz információ</h3>"
+
+#: ../files/nak/webapp/views/network/tiles/network.phtml:6
+msgid "Broadcast SSID"
+msgstr "Wifi SSID"
+
+#: ../files/nak/webapp/views/network/tiles/network.phtml:7
+msgid "Change Network Settings"
+msgstr "Hálózati beállítások változtatása"
+
+#: ../files/nak/webapp/views/logs.phtml:6
+msgid "This is the basic Tor logfile"
+msgstr "Ez az alap Tor log fájl."
+
+#: ../files/nak/webapp/views/logs.phtml:6
+#: ../files/nak/webapp/views/logs.phtml:11
+msgid "click to download"
+msgstr "kattintson a letöltéshez"
+
+#: ../files/nak/webapp/views/logs.phtml:10
+msgid "<h3>OpenVPN</h3>"
+msgstr "<h3>OpenVPN</h3>"
+
+#: ../files/nak/webapp/views/logs.phtml:11
+msgid "This is the basic OpenVPN logfile"
+msgstr "Ez az alap OpenVPN log fájl"
+
+#: ../files/nak/webapp/views/login/tiles/password.phtml:10
+msgid "Enter your password"
+msgstr "Adja meg jelszavát"
+
+#: ../files/nak/webapp/views/login/tiles/password.phtml:16
+msgid "The password you configured during setup."
+msgstr "A jelszó, amit a telepítés során megadott."
+
+#: ../files/nak/webapp/views/login.phtml:5
+msgid "<h3>Login</h3>"
+msgstr "<h3>Belépés</h3>"
+
+#: ../files/nak/webapp/views/setup_ap.phtml:7
+msgid ""
+"\n"
+"<h3>Setup</h3>\n"
+"<p>Before you can use the NetAidKit, you've got to make it\n"
+"your own. On this page, we will give your NetAidKit a new\n"
+"wireless network name and password and choose an\n"
+"administrator password you will use to make changes in\n"
+"the future.</p>\n"
+"<p>Let's get started!</p>\n"
+"            "
+msgstr "\n<h3>Telepítés</h3>\n<p>Mielőtt használni tudná a NetAidKit-et, először be kell állítania. Ezen az oldalon a NetAidKit-nek új wifi hálózat nevet és jelszót kaphat, és admin jelszót választhat, a jövőbeni beállításokhoz.</p>\n<p>Kezdjük!</p>\n            "
+
+#: ../files/nak/webapp/views/update.phtml:8
+msgid ""
+"\n"
+"<h3>Update Required</h3>\n"
+"<p>A newer version of the software is available.</p>\n"
+"            "
+msgstr "\n<h3>Frissítés szükséges</h3>\n<p>A szoftverből új verzió érhető el.</p>\n            "
+
+#: ../files/nak/webapp/views/update.phtml:14
+msgid "Please press the <i>download</i> button to start."
+msgstr "Kérem nyomjon a <i>letöltés</i>gombra a kezdéshez."
+
+#: ../files/nak/webapp/views/update.phtml:18
+msgid ""
+"\n"
+"You can cancel the download if it takes too long - just\n"
+"press <i>remind me later</i>.\n"
+"                    "
+msgstr "\nMegszakíthatja a letöltés, ha túl sokáig tart - csak nyomja meg, hogy \n <i>emlékeztessen később</i>.\n                    "
+
+#: ../files/nak/webapp/views/update.phtml:23
+msgid ""
+"\n"
+"This step is required to ensure the device will continue to serve\n"
+"its purpose.\n"
+"                    "
+msgstr "\nEz a lépés fontos, hogy biztosak lehessünk, hogy az eszköz folytathassa\nfeladatát.\n                    "
+
+#: ../files/nak/webapp/views/update.phtml:29
+msgid ""
+"\n"
+"After the update is downloaded, press the <i>upgrade</i> button to\n"
+"install. At this point, there's no going back. The upgrade itself\n"
+"should take no more than two minutes.\n"
+"                "
+msgstr "\nA frissítés letöltése után kattintson a <i>frissítés</i> gombra a telepítéshez. E ponttól nincs visszafordulás. A frissítés nem tart tovább mint 2 perc.\n                "
+
+#: ../files/nak/webapp/views/update.phtml:39
+#, php-format
+msgid ""
+"\n"
+"The NetAidKit will reboot during the process, your device might then connect to a different network automatically.\n"
+"Please make sure you are connected to either <b>%s</b> wireless network or NetAidKit LAN port and this page will reload automatically."
+msgstr "\nA NetAidKit újraindul a folyamat során, és lehet, hogy az eszköze más hálózatra csatlakozik ezután.\nLegyen biztos benne, hogy a <b>%s</b> wifi hálózathoz csatlakozik, vagy a NetAidKit LAN portjához csatlakozik és akkor ez az oldal automatikusan újratölt."
+
+#: ../files/nak/webapp/views/update.phtml:51
+msgid "Please wait until the device reboots."
+msgstr "Várjon, amíg az eszköz újraindul."
+
+#: ../files/nak/webapp/views/update.phtml:54
+msgid "Download"
+msgstr "Letöltés"
+
+#: ../files/nak/webapp/views/update.phtml:55
+msgid "Remind me later"
+msgstr "Emlékeztessen később"
+
+#: ../files/nak/webapp/views/update.phtml:56
+msgid "Upgrade"
+msgstr "Frissítés"
+
+#: ../files/nak/webapp/views/setup_ap/tiles/settings/modals/configure.phtml:11
+msgid ""
+"\n"
+"You are about to reconfigure the netaidkit Access Point.\n"
+"You will be disconnected after clicking the 'Yes' button.\n"
+"You can then reconnect with your new settings.</p>\n"
+"                        "
+msgstr "\nA NetAidKit hozzáférési pont átkonfigurálását választotta.\nAz 'Igen gombra megszakítja a kapcsolatot..\nAz új beállításokkal tud újra csatlakozni.</p>\n                        "
+
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:14
+msgid ""
+"Enter a new wireless network name for your NetAidKit. You will connect your "
+"devices to this wireless network once you completed setting up."
+msgstr "Adjon meg egy új wifi hálózat nevet a NetAidKit-hez. Az eszközeit ehhez a hálózathoz kell csatlakoztatnia, ha a beállítások megtörténtek."
+
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:36
+msgid "Please retype the new wireless network key."
+msgstr "Kérem írja be újra az új wifi jelszót."
+
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:47
+msgid ""
+"You will need a password to make changes to the configuration of the "
+"NetAidKit after setting up, choose one here. The password must be at least 8"
+" characters long."
+msgstr "Szüksége van egy jelszóra, hogy a beállításokat a NetAidKit-ben később megváltoztathassa, válasszon egyet most. A jelszónak legalább 8 karakteresnek kell lennie."
+
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:58
+msgid "Please retype the new admin password."
+msgstr "Kérem írja be újra az új admin jelszót."
+
+#: ../files/nak/webapp/views/setup_ap/tiles/settings.phtml:70
+msgid "Finish Setup"
+msgstr "Telepítés befejezése"
+
+#: ../files/nak/webapp/views/update/js/update.pjs:34
+msgid "N/A"
+msgstr "N/A"
+
+#: ../files/nak/webapp/views/admin/js/admin.pjs:64
+msgid "Sorry, your file is to big. Are you sure it is a valid .ovpn file?"
+msgstr "Sajnáljuk a fájlja túl nagy. Biztos, hogy ez egy érvényes .ovpn fájl?"
+
+#: ../files/nak/webapp/views/admin/js/admin.pjs:153
+msgid "<h3>You are connected to a VPN</h3>"
+msgstr "<h3>Csatlakoztatva a VPN-hez</h3>"
+
+#: ../files/nak/webapp/views/settings/js/settings.pjs:14
+#: ../files/nak/webapp/views/setup_ap/js/setup_ap.pjs:14
+msgid "Disconnected"
+msgstr "Kapcsolat nélkül"
+
+#: ../files/nak/webapp/views/settings/js/settings.pjs:15
+#: ../files/nak/webapp/views/setup_ap/js/setup_ap.pjs:15
+msgid ""
+"Please reconnect using the new settings. This page will reload "
+"automatically."
+msgstr "Kérjük csatlakozzon újra az új beállítások használatához. Az oldal automatikusan újratölt."
+
+#~ msgid ""
+#~ "\n"
+#~ "            Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "            install process!"
+#~ msgstr ""
+#~ "\n"
+#~ "            Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "            install process!"
+
+#~ msgid "Connecting..."
+#~ msgstr "Connecting..."
+
+#~ msgid "Allow outside connections without using Tor or VPN is currently:"
+#~ msgstr "Allow outside connections without using Tor or VPN is currently:"
+
+#~ msgid ""
+#~ "\n"
+#~ "Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "install process.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Warning: DO NOT turn off or disconnect the device during the\n"
+#~ "install process.\n"
+#~ "                "
+
+#~ msgid "Downloading update:"
+#~ msgstr "Downloading update:"
+
+#~ msgid "Downloading..."
+#~ msgstr "Downloading..."
+
+#~ msgid ""
+#~ "The downloaded update has an invalid cryptographic signature. Most likely it"
+#~ " didn't download properly. Please try again."
+#~ msgstr ""
+#~ "The downloaded update has an invalid cryptographic signature. Most likely it"
+#~ " didn't download properly. Please try again."
+
+#~ msgid "Couldn't install the update. Please try again later."
+#~ msgstr "Couldn't install the update. Please try again later."
+
