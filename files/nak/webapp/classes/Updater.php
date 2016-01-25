@@ -24,10 +24,8 @@ class Updater
         $this->_streamContext = stream_context_create($this->_http_headers);
         $this->_release = explode('-', trim(file_get_contents($this->_versionFile)));
 
-        if ($this->getBuildType() == 'dev') {
-            $this->_latestVersionUrl .= '?build=dev';
-            $this->_latestImageUrl .= '?build=dev';
-        }
+        $this->_latestVersionUrl .= '?key=new';
+        $this->_latestImageUrl .= '?key=new';
     }
 
     public function getCurrentVersion() {
