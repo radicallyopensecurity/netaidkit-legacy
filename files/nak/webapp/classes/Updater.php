@@ -92,9 +92,9 @@ class Updater
         $pubkey = file_get_contents($this->_pubKeyFile);
 
         $data = file_get_contents($this->_localImagePath);
-        $signature = substr($data, -64);
-        $data = substr($data, 0, -64);
-        $status = openssl_verify($data, $signature, $pubkey);
+        $signature = substr($data, -512);
+        $data = substr($data, 0, -512);
+        $status = openssl_verify($data, $signature, $pubkey, "sha1WithRSAEncryption");
 
         if ($status == 1)
             return true;
