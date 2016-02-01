@@ -4,7 +4,6 @@ class Ovpn {
     /* TODO: Should be from some config file */
     var $ovpn_root = '/nak/ovpn/';
 
-
     /* Returns a list of found files */
     public function getOptions() {
 
@@ -19,13 +18,11 @@ class Ovpn {
                     if (preg_match("/^(.+)\.ovpn$/", $file, $matches)) {
                         $title = $matches[1];
                         $files[] = array("title" => $title, "file" => $file);
-
                     }
                 }
             }
         }
         return $files;
-
     }
     
     public function getCurrent() {
@@ -58,16 +55,12 @@ class Ovpn {
             if (preg_match("/^[a-zA-Z0-9\ -_\.]+.ovpn/", $name)) {        
                 $destination = $this->ovpn_root . "/upload/" . $name;
                 move_uploaded_file($tmp_file, $destination);
-                
                 return true;
             }
             else {
                 unlink($tmp_file);
-                return false;
             }
         }
-
+        return false;
     }
 }
-
-?>
