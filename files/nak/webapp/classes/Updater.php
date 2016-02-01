@@ -58,7 +58,7 @@ class Updater
     public function downloadLatest() {
         // return if there's already a process writing
         // to the image file
-        if ($this->_get_wget_pid($_localImagePath) != -1)
+        if ($this->_get_wget_pid($this->_localImagePath) != -1)
             return;
 
         // launch a wget instance in background
@@ -76,7 +76,7 @@ class Updater
     }
 
     public function stopDownload() {
-        $wget_pid = $this->_get_wget_pid($_localImagePath);
+        $wget_pid = $this->_get_wget_pid($this->_localImagePath);
         if ($wget_pid != -1)
             posix_kill($wget_pid, SIGKILL);
     }
