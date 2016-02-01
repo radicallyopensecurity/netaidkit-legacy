@@ -3,6 +3,9 @@
 class Page
 {
     protected $_allowed_actions = array();
+    /**
+     * @var Request
+     */
     protected $_request;
 
     public function __construct($request)

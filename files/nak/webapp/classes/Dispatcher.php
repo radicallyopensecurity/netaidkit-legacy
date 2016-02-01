@@ -12,6 +12,12 @@ class Dispatcher
                                              'NetworkController',
                                              'ClientController');
 
+    /**
+     * @param Request $request
+     * @return string
+     * @throws Exception
+     * @throws NotFoundException
+     */
     public function run($request)
     {
         $controller = $request->getController();

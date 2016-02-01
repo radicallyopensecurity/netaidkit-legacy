@@ -109,5 +109,3 @@ class I18n {
         return file_exists(self::LOCALEDIR.'/'.self::getlocale().'/rtl');
     }
 }
-
-?>
