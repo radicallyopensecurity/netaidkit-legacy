@@ -27,7 +27,7 @@ class UpdateController extends Page
         if ($request->isPost()) {
             $updater = new Updater();
             if ($updater->updateAvailable()) {
-                $image_data = $updater->downloadLatest();
+                $updater->downloadLatest();
                 die('OK');
             }
         }
