@@ -84,7 +84,7 @@ class SetupController extends Page
 
         if ($key != $key_confirm) {
             $valid = false;
-            $this->_addMessage('error', _('Wireless key does not match.'), 'ap');
+            $this->_addMessage('error', _('Wifi key does not match.'), 'ap');
             $this->_addFormError('key', 'ap');
             $this->_addFormError('key_confirm', 'ap');
         }
