@@ -36,3 +36,29 @@ body {
 #wifi-list .radio {
 	padding-right: 8px;
 }
+
+#notify {
+	transition: all 2s ease;
+	overflow: hidden;
+	max-height: 128px;
+	opacity: 1;
+}
+
+.notify-hidden {
+	transition: all 2s ease;
+	max-height: 0 !important;
+	opacity: 0 !important;
+	padding: 0;
+}
+
+.notify-hidden .notify-buttons {
+	bottom: 0;
+}
+
+/* Notifications now converted and handled by client-side Javascript */
+.tile.info {
+	display: none;
+}
+.tile.error {
+	display: none;
+}

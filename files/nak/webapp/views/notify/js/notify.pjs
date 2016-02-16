@@ -1,0 +1,79 @@
+<script type="text/javascript">
+	notifications = [];
+	notification_active = false;
+
+	// push a notification to the client-side messages stack	
+	pushNotification = function(notification) {
+		if(typeof notification != 'undefined') {
+			notifications.push(notification);
+		}
+		if(notification_active == false) {
+			openNotification(notifications.pop());
+		}
+	}
+	
+	// open a notification
+	openNotification = function(notification) {
+		if(typeof notification != 'undefined') {
+			notification_active == true;
+			var message = notification[0];
+			var type = notification[1];
+			var closetext = notification[2];
+			var buttontext = notification[3];
+			var buttonfunction = notification[4];
+			if(typeof type == 'undefined' || type == '') { type = 'success'; }
+			if(typeof closetext == 'undefined' || closetext == '') { closetext = 'X'; }
+			// buttons
+			output = '<div class="notify-buttons" style="position: absolute; bottom: 15px; right: 15px;">';
+			if(typeof buttontext != 'undefined') {
+				output += '<button onclick="'+buttonfunction+';" class="btn btn-sm btn-primary">'+buttontext+'</button><div style="width: 12px; display: inline-block;"></div>';
+			}
+			output += '<button onclick="closeNotification();" class="btn btn-sm btn-danger">'+closetext+'</button></div>';
+			// content
+			// <p style="font-weight: bold;">Alert title</p>
+			output += '<p>'+message+'</p>';
+			$('#notify').attr('class','alert alert-'+type);
+			$('#notify > div').html(output);
+			// close after 30 seconds
+			notification_active = setTimeout( function() {
+				closeNotification();
+			}, 30000);
+		}
+	}
+
+	// close a notification
+	closeNotification = function() {
+		clearTimeout(notification_active);
+		// close current message
+		var notifyclass = $('#notify').attr('class');
+		$('#notify').attr('class',notifyclass+' notify-hidden');
+		setTimeout( function() {
+			// any new messages on the stack? open the next one
+			notification_active == false;
+			openNotification(notifications.pop());
+		}, 1000);
+	}
+
+	// get all PHP generated info boxes, and convert them to push Notifications
+	convertNotifications = function() {
+		var infobox = 'div.tile.error';
+		$(infobox).each(function() {
+			var message = $(infobox).html();
+			pushNotification([message,'error','Close']);
+		});
+		var infobox = 'div.tile.info';
+		$(infobox).each(function() {
+			var message = $(infobox).html();
+			pushNotification([message,'success','Close']);
+		});
+	}
+	
+    $(document).ready(function() {
+		convertNotifications();
+	});
+	
+	// EXAMPLES:
+	//	pushNotification(['This is a test also...','success','Close','Test','alert("WOOT!")']);
+	//	pushNotification(['This is a test and more stuff!...','warning','Close']);
+	
+</script>
