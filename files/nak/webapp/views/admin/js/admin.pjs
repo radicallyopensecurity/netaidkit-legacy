@@ -25,7 +25,8 @@
                     if (data == 'SUCCESS') {
                         window.location.href = '/admin/index';
                     } else {
-                        alert("Before you can connect to TOR, you must first disconnect from the VPN!");
+						pushNotification(['Before you can connect to TOR, you must first disconnect from the VPN!','warning','Close','Disconnect from VPN','alert("WOOT!")']);
+                        //alert("Before you can connect to TOR, you must first disconnect from the VPN!");
                     }
                 },
             });
@@ -49,7 +50,8 @@
                     if (data == 'SUCCESS') {
                         window.location.href = '/admin/index';
                     } else {
-                        alert("Before you can connect to the VPN, you must first disconnect from TOR!");
+						pushNotification(['Before you can connect to the VPN, you must first disconnect from TOR!','warning','Close','Disconnect from TOR','alert("WOOT!")']);
+                        //alert("Before you can connect to the VPN, you must first disconnect from TOR!");
                     }
                 },
             });
@@ -61,7 +63,8 @@
             var size = file.size;
 
             if (size > 20000) {
-                alert('<?php echo _("Sorry, your file is to big. Are you sure it is a valid .ovpn file?"); ?>');
+				pushNotification(['Sorry, your file is too big. Are you sure it is a valid .ovpn file?','warning','Close']);
+                //alert('<?php echo _("Sorry, your file is too big. Are you sure it is a valid .ovpn file?"); ?>');
                 return;
             }
             document.getElementById('add-vpn').submit();

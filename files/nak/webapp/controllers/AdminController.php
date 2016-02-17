@@ -5,7 +5,7 @@ class AdminController extends Page
     protected $_torLogfile = '/var/log/tor/notices.log';
     protected $_vpnLogfile = '/var/log/openvpn.log';
 
-    protected $_allowed_actions = array('index', 'toggle_tor', 'tor_status',
+    protected $_allowed_actions = array('index', 'update', 'toggle_tor', 'tor_status',
                                         'get_wifi', 'wan', 'toggle_vpn',
                                         'upload_vpn', 'delete_vpn',
                                         'toggle_routing', 'vpn_status');
@@ -46,7 +46,12 @@ class AdminController extends Page
         return $view->display();
     }
 
-
+    public function update()
+    {
+		$_SESSION['update_mode'] = 1;
+		$this->_redirect('/admin/index');
+	}
+	
     public function upload_vpn()
     {
         $vpn_obj = new Ovpn();

@@ -44,6 +44,7 @@ class UpdateReminder {
         $this->_counter = $this->getCounter() + 1;
         $this->_expirationTimestamp = @strtotime('+1 hour');
         $this->_save();
+        $_SESSION['update_mode'] = 0;
     }
 
     protected function _save() {

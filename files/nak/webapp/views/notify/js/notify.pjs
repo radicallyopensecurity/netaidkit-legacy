@@ -26,7 +26,7 @@
 			// buttons
 			output = '<div class="notify-buttons" style="position: absolute; bottom: 15px; right: 15px;">';
 			if(typeof buttontext != 'undefined') {
-				output += '<button onclick="'+buttonfunction+';" class="btn btn-sm btn-primary">'+buttontext+'</button><div style="width: 12px; display: inline-block;"></div>';
+				output += '<button onclick="'+buttonfunction.replace(/\"/g,"'")+';" class="btn btn-sm btn-primary">'+buttontext+'</button><div style="width: 12px; display: inline-block;"></div>';
 			}
 			output += '<button onclick="closeNotification();" class="btn btn-sm btn-danger">'+closetext+'</button></div>';
 			// content
@@ -66,7 +66,11 @@
 			var message = $(infobox).html();
 			pushNotification([message,'success','Close']);
 		});
-	}
+		var infobox = 'div.tile.update';
+		$(infobox).each(function() {
+			var message = $(infobox).html();
+			pushNotification([message,'info','Close','Go to update!','window.location.href = "/admin/update"']);
+		});	}
 	
     $(document).ready(function() {
 		convertNotifications();
