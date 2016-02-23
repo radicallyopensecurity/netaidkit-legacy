@@ -61,7 +61,7 @@
             var size = file.size;
 
             if (size > 20000) {
-                alert('<?php echo _("Sorry, your file is to big. Are you sure it is a valid .ovpn file?"); ?>');
+                alert('<?php echo _("Sorry, your file is too big. Are you sure it is a valid .ovpn file?"); ?>');
                 return;
             }
             document.getElementById('add-vpn').submit();
