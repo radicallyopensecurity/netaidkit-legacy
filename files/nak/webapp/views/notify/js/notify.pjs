@@ -28,7 +28,7 @@
 			if(typeof buttontext != 'undefined') {
 				output += '<button onclick="'+buttonfunction.replace(/\"/g,"'")+';" class="btn btn-sm btn-primary">'+buttontext+'</button><div style="width: 12px; display: inline-block;"></div>';
 			}
-			output += '<button onclick="closeNotification();" class="btn btn-sm btn-danger">'+closetext+'</button></div>';
+			output += '<button onclick="closeNotification();" class="btn btn-sm btn-success">'+closetext+'</button></div>';
 			// content
 			// <p style="font-weight: bold;">Alert title</p>
 			output += '<p>'+message+'</p>';
@@ -56,11 +56,6 @@
 
 	// get all PHP generated info boxes, and convert them to push Notifications
 	convertNotifications = function() {
-		var infobox = 'div.tile.error';
-		$(infobox).each(function() {
-			var message = $(infobox).html();
-			pushNotification([message,'error','Close']);
-		});
 		var infobox = 'div.tile.info';
 		$(infobox).each(function() {
 			var message = $(infobox).html();
@@ -70,7 +65,13 @@
 		$(infobox).each(function() {
 			var message = $(infobox).html();
 			pushNotification([message,'info','Close','Go to update!','window.location.href = "/admin/update"']);
-		});	}
+		});
+		var infobox = 'div.tile.error';
+		$(infobox).each(function() {
+			var message = $(infobox).html();
+			pushNotification([message,'danger','Close']);
+		});
+	}
 	
     $(document).ready(function() {
 		convertNotifications();

@@ -1,0 +1,9 @@
+<?php $updater = new Updater(); $updatestatus = $updater->updateAvailable(); if($updatestatus == null) { ?>
+	<div class="tile error">
+		<p><span class="fui-cross"></span> <?php echo _('The update server cannot be contacted!'); ?></p>
+	</div>
+<?php } else if($updatestatus == true) { ?>
+	<div class="tile update">
+		<p><span class="fui-star-2"></span> <?php echo _('There is a new update available for your NetAidKit!'); ?></p>
+	</div>
+<?php } ?>

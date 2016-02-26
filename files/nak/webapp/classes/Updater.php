@@ -42,17 +42,24 @@ class Updater
     }
 
     public function updateAvailable() {
+		// is there a reminder active?
         $reminder = UpdateReminder::get_reminder();
         if (!($reminder->isExpired()))
             return false;
 
+		// get versions
         $current = $this->getCurrentVersion();
         $latest  = $this->getLatestVersion();
-
-        if (intval($current) < intval($latest))
-            return true;
-        else
-            return false;	# SET TO TRUE TO DEBUG!
+        // return null if not reachable!
+        if($latest === false) {
+				return null;
+		} else {
+			// return versions
+			if (intval($current) < intval($latest))
+				return true;
+			else
+				return false;	# SET TO TRUE TO DEBUG!
+		}
     }
 
     public function downloadLatest() {
