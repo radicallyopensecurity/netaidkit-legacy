@@ -116,5 +116,21 @@
         $('#adminpass_confirm').blur(function() {
             //$('#desc_adminpass_confirm').collapse('hide');
         });
+
+        $('#factory-reset-submit').click(function() {
+			if(typeof factory_reset_clicked == 'undefined') {
+				factory_reset_clicked = 1;
+				$.ajax({
+					type: "GET",
+					url: "/settings/reset",
+					success: function(data) {
+						$('#resetModal').fadeOut();
+						setTimeout(function() {
+							window.location.href = '/';						
+						},5000);
+					},
+				});
+			}
+		});
     });
 </script>

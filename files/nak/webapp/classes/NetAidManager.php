@@ -217,6 +217,11 @@ class NetAidManager
         return $mode;
     }
 
+    static public function factory_reset()
+    {
+        return shell_exec('/nak/scripts/reset.sh');
+    }
+    
     static public function detect_portal() {
         $client = new NakdClient();
         $output = $client->doCommand('isportal', array($mode));

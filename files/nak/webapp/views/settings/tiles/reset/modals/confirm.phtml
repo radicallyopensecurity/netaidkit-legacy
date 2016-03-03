@@ -1,0 +1,24 @@
+<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="apLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo _('Close'); ?></span></button>
+                <h4 class="modal-title" id="apModalTitle"><?php echo _('Factory Reset'); ?></h4>
+            </div>
+            <div class="modal-body">
+                <p id="apModalText">
+                   <?php
+                        echo _("
+You are about to reset your NetAidKit back to factory settings.<br>
+Are you sure you want to do this?
+                        ");
+                   ?>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _('No'); ?></button>
+                <button id="factory-reset-submit" href="#" type="button" class="btn btn-primary"><?php echo _('Yes'); ?></button>
+            </div>
+        </div>
+    </div>
+</div>

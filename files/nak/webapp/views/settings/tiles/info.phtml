@@ -1,5 +1,8 @@
+<?php include('reset/modals/confirm.phtml'); ?>
+
 <div class="tile">
 <?php
     echo _('Software version: ') . htmlspecialchars(NetAidManager::release_info());
+    echo '<br><br><br><button id="factory-reset" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#resetModal">'._('Factory reset').'</button>';
 ?>
 </div>
